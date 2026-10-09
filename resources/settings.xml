@@ -22,7 +22,7 @@
 				</setting>
 				<setting id="mainMenuOrder" type="string" label="30879" help="">
 					<level>2</level>
-					<default>epicFavorites,globalSearch,sourceCategories,categories,random,settings</default>
+					<default>epicFavorites,globalSearch,sourceCategories,categories,settings</default>
 					<visible>false</visible>
 					<control type="edit" format="string"/>
 				</setting>
@@ -788,7 +788,7 @@
 				</setting>
 			</group>
 		</category>
-		<category id="randommovies" label="30868">
+		<category id="randommovies" label="31895">
 			<group id="randomSelection" label="30868">
 				<setting id="randomGenresPicker" type="action" label="31701" help="31705">
 					<level>0</level>
@@ -809,6 +809,110 @@
 					<control type="edit" format="integer"/>
 				</setting>
 				<setting id="randomMinImdb" type="number" label="31700" help="31706">
+					<level>0</level>
+					<default>0.0</default>
+					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
+					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+			</group>
+			<group id="randomSeriesSelection" label="31891">
+				<setting id="randomSeriesGenresPicker" type="action" label="31701" help="31897">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=serien)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="randomSeriesExcludedGenres" type="string" label="31701">
+					<level>0</level>
+					<default>10763,10767</default>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
+				</setting>
+				<setting id="randomSeriesItemsCount" type="integer" label="31899" help="31896">
+					<level>0</level>
+					<default>250</default>
+					<constraints><minimum>1</minimum><step>1</step><maximum>1000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
+				<setting id="randomSeriesMinImdb" type="number" label="31700" help="31706">
+					<level>0</level>
+					<default>0.0</default>
+					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
+					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+			</group>
+			<group id="randomAnimeSelection" label="31892">
+				<setting id="randomAnimeGenresPicker" type="action" label="31701" help="31897">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=animes)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="randomAnimeExcludedGenres" type="string" label="31701">
+					<level>0</level>
+					<default/>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
+				</setting>
+				<setting id="randomAnimeItemsCount" type="integer" label="31899" help="31896">
+					<level>0</level>
+					<default>250</default>
+					<constraints><minimum>1</minimum><step>1</step><maximum>1000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
+				<setting id="randomAnimeMinImdb" type="number" label="31700" help="31706">
+					<level>0</level>
+					<default>0.0</default>
+					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
+					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+			</group>
+			<group id="randomDocsSelection" label="31893">
+				<setting id="randomDocsGenresPicker" type="action" label="31701" help="31897">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=dokus)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="randomDocsExcludedGenres" type="string" label="31701">
+					<level>0</level>
+					<default/>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
+				</setting>
+				<setting id="randomDocsItemsCount" type="integer" label="31899" help="31896">
+					<level>0</level>
+					<default>250</default>
+					<constraints><minimum>1</minimum><step>1</step><maximum>1000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
+				<setting id="randomDocsMinImdb" type="number" label="31700" help="31706">
+					<level>0</level>
+					<default>0.0</default>
+					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
+					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+			</group>
+			<group id="randomKidsSelection" label="31894">
+				<setting id="randomKidsGenresPicker" type="action" label="31701" help="31897">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=kinder)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="randomKidsExcludedGenres" type="string" label="31701">
+					<level>0</level>
+					<default/>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
+				</setting>
+				<setting id="randomKidsItemsCount" type="integer" label="31899" help="31896">
+					<level>0</level>
+					<default>250</default>
+					<constraints><minimum>1</minimum><step>1</step><maximum>1000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
+				<setting id="randomKidsMinImdb" type="number" label="31700" help="31706">
 					<level>0</level>
 					<default>0.0</default>
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>

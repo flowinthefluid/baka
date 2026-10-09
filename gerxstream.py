@@ -116,7 +116,7 @@ HOSTER_GUI_FUNCTIONS = frozenset((
 
 
 MAIN_MENU_ORDER_SETTING = 'mainMenuOrder'
-MAIN_MENU_ORDER_DEFAULT = ('epicFavorites', 'globalSearch', 'sourceCategories', 'livestreams', 'categories', 'random', 'settings')
+MAIN_MENU_ORDER_DEFAULT = ('epicFavorites', 'globalSearch', 'sourceCategories', 'livestreams', 'categories', 'settings')
 
 
 def _mainMenuOrder():
@@ -152,7 +152,6 @@ def showMainMenuOrder():
         'sourceCategories': cConfig().getLocalizedString(30878),
         'livestreams': cConfig().getLocalizedString(30989),
         'categories': cConfig().getLocalizedString(30507),
-        'random': cConfig().getLocalizedString(30868),
         'history': cConfig().getLocalizedString(30903),
         'settings': cConfig().getLocalizedString(30041),
     }
@@ -280,7 +279,7 @@ def parseUrl():
 
         elif sFunction == 'randomGenres':
             from resources.lib import randommovies
-            randommovies.editGenres()
+            randommovies.editGenres(params.getValue('randomKind') or 'filme')
             return
         elif sFunction == 'clearWatchHistory':
             clearWatchHistory()
@@ -584,7 +583,6 @@ def showMainMenu(sFunction):
                                  else os.path.join(ART, 'sources.png'))
         menuGroups['livestreams'].append((oGuiElement, None))
 
-    menuGroups['random'].append((randomGuiElement(), None))
     menuGroups['epicFavorites'].append((epicFavoritesGuiElement(), None))
 
     # VoD Ordner im Hauptmenü anzeigen
@@ -622,6 +620,11 @@ def showContentCategory(params):
     if not plugins:
         oGui.showInfo()
         return
+    # "Zufaellige Filme/Serien/..." steht oben im passenden Inhaltsordner.
+    from resources.lib import randommovies
+    if categoryId in randommovies.KINDS:
+        ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
+        oGui.addFolder(*randommovies.menuEntry(categoryId, os.path.join(ART, randommovies.KINDS[categoryId]['art'])))
     for plugin in plugins:
         oGuiElement = cGuiElement()
         oGuiElement.setTitle(plugin['name'])
@@ -1129,18 +1132,6 @@ def removeEpicFavoriteEntry(params):
                               cConfig().getLocalizedString(30927) % entry['title']):
         if epicfavorites.removeEntry(params.getValue('path'), entry['id']):
             _epicRefresh()
-
-
-def randomGuiElement():
-    ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
-    title = cConfig().getLocalizedString(30868)
-
-    oGuiElement = cGuiElement()
-    oGuiElement.setTitle(title)
-    oGuiElement.setSiteName('random')
-    oGuiElement.setFunction('randomMovies')
-    oGuiElement.setThumbnail(os.path.join(ART, 'search.png'))
-    return oGuiElement
 
 
 def watchHistoryGuiElement():

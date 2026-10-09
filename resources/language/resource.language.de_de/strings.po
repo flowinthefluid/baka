@@ -1960,7 +1960,7 @@ msgstr "Oeffnet bekannte Alternativdomains fuer diese Quelle. Wenn noch keine Al
 
 msgctxt "#30868"
 msgid "Random movies"
-msgstr "Zufallsfilme"
+msgstr "Zufällige Filme"
 
 msgctxt "#30869"
 msgid "Number of random movies"
@@ -3324,8 +3324,8 @@ msgid "By production company"
 msgstr "Nach Filmproduktion"
 
 msgctxt "#31704"
-msgid "%d of %d requested films found. The catalogue or filter may provide fewer matches."
-msgstr "%d von %d gewuenschten Filmen gefunden. Katalog oder Filter liefern eventuell weniger Treffer."
+msgid "%d of %d requested titles found. The catalogue or filter may provide fewer matches."
+msgstr "%d von %d gewuenschten Titeln gefunden. Katalog oder Filter liefern eventuell weniger Treffer."
 
 msgctxt "#31705"
 msgid "Checked genres are allowed. Films belonging to any unchecked genre are excluded from Random. Family and Animation can exclude children's films; these are not exact age classifications. Explicit genre/company selections ignore these exclusions."
@@ -3392,5 +3392,37 @@ msgid "Default 250. Random selection across dated, released, non-adult TMDB film
 msgstr "Standard 250. Zufallsauswahl aus datierten, erschienenen TMDB-Filmen ohne Erwachsenenmarkierung (seit 1800), keine Popularitaetsauswahl. Unbekannte Erscheinungsdaten werden ausgeschlossen. Starke Filter oder kleine Kataloge koennen weniger Filme liefern."
 
 msgctxt "#31721"
-msgid "No genres are allowed or the selected filter is invalid. Please check your random-film settings."
-msgstr "Keine Genres erlaubt oder ungueltiger Auswahlfilter. Bitte die Zufallsfilm-Einstellungen pruefen."
+msgid "No genres are allowed or the selected filter is invalid. Please check your random settings."
+msgstr "Keine Genres erlaubt oder ungueltiger Auswahlfilter. Bitte die Zufalls-Einstellungen pruefen."
+
+msgctxt "#31891"
+msgid "Random series"
+msgstr "Zufällige Serien"
+
+msgctxt "#31892"
+msgid "Random anime"
+msgstr "Zufällige Animes"
+
+msgctxt "#31893"
+msgid "Random documentaries"
+msgstr "Zufällige Dokus"
+
+msgctxt "#31894"
+msgid "Random kids' titles"
+msgstr "Zufällige Kindertitel"
+
+msgctxt "#31895"
+msgid "Random"
+msgstr "Zufall"
+
+msgctxt "#31896"
+msgid "Default 250. Random selection across dated, released, non-adult TMDB titles (since 1800), not a popularity shortlist. Anime, documentaries and kids mix films and series in proportion to their catalogue size. Unknown dates are excluded. Strong filters or a small catalogue can return fewer titles."
+msgstr "Standard 250. Zufallsauswahl aus datierten, erschienenen TMDB-Titeln ohne Erwachsenenmarkierung (seit 1800), keine Popularitaetsauswahl. Animes, Dokus und Kinder mischen Filme und Serien anteilig zur Kataloggroesse. Unbekannte Daten werden ausgeschlossen. Starke Filter oder kleine Kataloge koennen weniger Titel liefern."
+
+msgctxt "#31897"
+msgid "Checked genres are allowed. Titles belonging to any unchecked genre are excluded from Random. An explicit genre selection ignores these exclusions."
+msgstr "Markierte Genres sind erlaubt. Titel mit einem abgewaehlten Genre werden aus Random ausgeschlossen. Gezielte Genreauswahl ignoriert diese Ausschluesse."
+
+msgctxt "#31899"
+msgid "Number of titles"
+msgstr "Anzahl Titel"

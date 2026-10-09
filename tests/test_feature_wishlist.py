@@ -723,7 +723,8 @@ def test_random_menu_does_not_fetch_movies(monkeypatch):
 
     listed = []
     monkeypatch.setattr(randommovies.cTMDB, 'getUrl', lambda *args: (_ for _ in ()).throw(AssertionError('API called')))
-    monkeypatch.setattr(randommovies, '_folder', lambda title, level, mode='', value='': listed.append((level, mode)))
+    monkeypatch.setattr(randommovies, '_folder', lambda title, level, mode='', value='', kind='filme':
+                        listed.append((level, mode)))
     randommovies.showMenu()
     assert listed == [('entries', 'random'), ('genres', ''), ('companies', '')]
 
@@ -845,6 +846,153 @@ def test_random_query_filters_are_whitelisted_and_mode_specific():
     assert 'with_companies=2' in randommovies._query('company', '2')
     assert randommovies._query('genre', '28&include_adult=true') is None
     assert randommovies._query('company', '999999') is None
+
+
+def test_random_entries_live_in_content_folders_not_main_menu(monkeypatch):
+    from resources.lib.handler.ParameterHandler import ParameterHandler
+
+    main = _main_module(monkeypatch)
+    assert 'random' not in main.MAIN_MENU_ORDER_DEFAULT
+    set_setting(main.MAIN_MENU_ORDER_SETTING, 'random,settings,globalSearch')
+    assert 'random' not in main._mainMenuOrder()
+    plugins = [{'id': 'site', 'name': 'Site'}]
+    monkeypatch.setattr(main.cPluginHandler, 'getPluginsForContentCategory', lambda self, category: plugins)
+    added = []
+    monkeypatch.setattr(main.cGui, 'addFolder', lambda self, element, params=None, *args: added.append(
+        (element.getFunction(), dict(params.getAllParameters()) if params else {})))
+    monkeypatch.setattr(main.cGui, 'setEndOfDirectory', lambda self, success=True: None)
+    for category, expected in (('serien', 'serien'), ('animes', 'animes'), ('dokus', 'dokus'),
+                               ('kinder', 'kinder'), ('filme', 'filme'), ('alle', None)):
+        added.clear()
+        params = ParameterHandler()
+        params.setParam('category', category)
+        main.showContentCategory(params)
+        if expected:
+            assert added[0] == ('randomMovies', {'randomKind': expected})
+        else:
+            assert all(function != 'randomMovies' for function, params in added)
+        assert added[-1][0] == 'load'
+
+
+def test_random_kinds_build_media_specific_queries():
+    from resources.lib import randommovies
+
+    tv = randommovies._query('random', '', 'serien', 'tv')
+    assert 'sort_by=first_air_date.asc' in tv and 'with_genres' not in tv
+    set_setting('randomSeriesExcludedGenres', '10763,10767,28')
+    assert 'without_genres=10763,10767' in randommovies._query('random', '', 'serien', 'tv')
+    assert 'Action' not in dict(randommovies._genres('serien')).values()
+    assert set(randommovies._queries('serien', 'random', '')) == {'tv'}
+    anime = randommovies._queries('animes', 'random', '')
+    assert set(anime) == {'movie', 'tv'}
+    assert all('with_genres=16' in extra and 'with_original_language=ja' in extra for extra in anime.values())
+    assert 16 not in dict(randommovies._genres('animes'))
+    kids = randommovies._queries('kinder', 'random', '')
+    assert 'with_genres=10751' in kids['movie'] and 'with_genres=10762' in kids['tv']
+    # Ein reines Filmgenre fragt bei gemischten Arten nur Filme ab.
+    docs = randommovies._queries('dokus', 'genre', '28')
+    assert set(docs) == {'movie'} and 'with_genres=99,28' in docs['movie']
+    assert randommovies._queries('serien', 'genre', '28') is None
+    assert randommovies._queries('serien', 'company', '2') is None
+    assert randommovies._queries('dokus', 'genre', '99') is None
+
+
+def test_random_mixed_sampling_is_proportional_and_keeps_media():
+    from resources.lib import randommovies
+
+    class TMDB:
+        def getUrl(self, path, page, extra):
+            media = path.split('/')[1]
+            total = 30 if media == 'movie' else 10
+            key = 'title' if media == 'movie' else 'name'
+            return {'total_results': total, 'results': [
+                {'id': (page - 1) * 20 + offset + 1, key: '%s %d' % (media, offset)}
+                for offset in range(min(20, total - (page - 1) * 20))]}
+
+    items = randommovies.sampleCatalogs(TMDB(), {'movie': 'a=1', 'tv': 'b=2'}, 40)
+    assert [item['_media'] for item in items].count('movie') == 30
+    assert [item['_media'] for item in items].count('tv') == 10
+    assert all(item.get('name') for item in items if item['_media'] == 'tv')
+
+
+def test_random_series_entries_search_as_tvshows(monkeypatch):
+    import sys
+    import types
+    from resources.lib import randommovies
+
+    main = _main_module(monkeypatch)
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+                                    '?function=randomMovies&randomKind=serien&randomLevel=entries&randomMode=random'])
+    set_setting('randomSeriesItemsCount', '1')
+    monkeypatch.setattr(randommovies.xbmcgui, 'DialogProgress', lambda: types.SimpleNamespace(
+        create=lambda *args: None, update=lambda *args: None,
+        iscanceled=lambda: False, close=lambda: None), raising=False)
+    monkeypatch.setattr(randommovies.xbmc, 'Monitor', lambda: types.SimpleNamespace(
+        abortRequested=lambda: False), raising=False)
+    paths = []
+    item = {'id': 7, 'name': 'Serie', 'original_name': 'Show', 'first_air_date': '2011-04-17'}
+    monkeypatch.setattr(randommovies.cTMDB, 'getUrl', lambda self, path, *args: paths.append(path) or {
+        'total_results': 1, 'results': [dict(item)]})
+    added = []
+    views = []
+    monkeypatch.setattr(randommovies.cGui, 'addFolder', lambda self, element, params, *args: added.append(
+        dict(params.getAllParameters())))
+    monkeypatch.setattr(randommovies.cGui, 'setView', lambda self, view=None: views.append(view))
+    monkeypatch.setattr(randommovies.cGui, 'setEndOfDirectory', lambda self, success=True: None)
+    main.showRandomMovies()
+    assert set(paths) == {'discover/tv'}
+    assert len(added) == 1 and {key: added[0][key] for key in ('searchTitle', 'searchOriginalTitle', 'searchYear',
+                                                               'searchMedia', 'searchTmdbID')} == {
+        'searchTitle': 'Serie', 'searchOriginalTitle': 'Show', 'searchYear': '2011',
+        'searchMedia': 'tvshow', 'searchTmdbID': '7'}
+    assert views == ['tvshows']
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+                                    '?function=randomMovies&randomKind=bogus'])
+    ended = []
+    monkeypatch.setattr(randommovies.cGui, 'setEndOfDirectory', lambda self, success=True: ended.append(success))
+    main.showRandomMovies()
+    assert ended == [False]
+
+
+def test_every_random_kind_has_its_own_settings():
+    import xml.etree.ElementTree as ET
+    from pathlib import Path
+    from resources.lib import randommovies
+
+    root = ET.parse(Path(__file__).resolve().parents[1] / 'resources' / 'settings.xml').getroot()
+    ids = {setting.get('id') for setting in root.find(".//category[@id='randommovies']").findall('.//setting')}
+    for kind in randommovies.KINDS:
+        for name in ('ExcludedGenres', 'ItemsCount', 'MinImdb'):
+            assert randommovies._setting(kind, name) in ids
+        if kind != 'filme':
+            picker = root.find(".//setting[@id='%s']/data" % randommovies._setting(kind, 'GenresPicker')).text
+            assert picker.endswith('randomKind=%s)' % kind)
+
+
+def test_random_sampling_survives_capped_tmdb_totals(monkeypatch):
+    from datetime import date
+    from urllib.parse import parse_qs
+    from resources.lib import randommovies
+
+    # Ein Titel pro Tag, 2000 bis 2099: TMDB meldet ab 20001 nur noch 20001.
+    def real(first, last):
+        return (last - first).days + 1
+
+    class TMDB:
+        def getUrl(self, path, page, extra):
+            terms = parse_qs(extra)
+            first = date.fromisoformat(terms['first_air_date.gte'][0])
+            last = date.fromisoformat(terms['first_air_date.lte'][0])
+            total = real(first, last)
+            day = first.toordinal() + (page - 1) * 20
+            return {'total_results': min(total, 20001), 'results': [
+                {'id': day + offset, 'name': date.fromordinal(day + offset).isoformat()}
+                for offset in range(min(20, total - (page - 1) * 20))]}
+
+    start, end = date(2000, 1, 1), date(2099, 12, 31)
+    monkeypatch.setattr(randommovies.random, 'sample', lambda population, count: [len(population) - 1])
+    items = randommovies.sampleCatalogs(TMDB(), {'tv': 'x=1'}, 1, start=start, end=end)
+    assert [item['name'] for item in items] == ['2099-12-31']
 
 
 def test_category_filters_and_exact_theme_matching(monkeypatch):
