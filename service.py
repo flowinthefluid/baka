@@ -101,7 +101,6 @@ def logResolveUrlVersionStatus():
 
 
 def main():
-    tools.migrateLegacyAddonData()
     cache = cCache()
     cache.clearExpired(cConfig().getSettingInt('cacheTime', 360) * 60)
     cache.set(cConfig().getAddonInfo('id') + '_main', 'running')

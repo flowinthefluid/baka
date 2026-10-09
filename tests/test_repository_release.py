@@ -57,18 +57,7 @@ def test_repository_is_in_catalog_and_datadir(tmp_path, pages_url):
         assert setting.find('default').text == 'inherit'
         assert setting.find('constraints/options/option').text == 'inherit'
 
-    # Letzte GerXStream-Version installiert Baka und das neue Repository mit.
-    transition = catalog.find("addon[@id='plugin.video.gerxstream']")
-    assert transition.get('version') == '1.1.0'
-    requires = {item.get('addon'): item.get('version') for item in transition.find('requires')}
-    assert requires['plugin.video.baka'] == plugin.get('version')
-    assert requires['repository.baka'] == repository.get('version')
-    transition_zip = output / 'zips' / 'plugin.video.gerxstream' / 'plugin.video.gerxstream-1.1.0.zip'
-    with zipfile.ZipFile(transition_zip) as archive:
-        assert archive.testzip() is None
-        assert sorted(archive.namelist()) == ['plugin.video.gerxstream/addon.xml',
-                                              'plugin.video.gerxstream/default.py',
-                                              'plugin.video.gerxstream/icon.png']
+    assert catalog.find("addon[@id='plugin.video.gerxstream']") is None
 
     name = 'repository.baka-1.0.8.zip'
     install_zip = output / name

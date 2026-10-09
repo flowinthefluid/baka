@@ -33,20 +33,6 @@
 				</setting>
 			</group>
 			<group id="content" label="30032">
-				<setting id="prefLanguage" type="string" label="30002" help="30411">
-					<level>0</level>
-					<visible>false</visible>
-					<default>0</default>
-					<constraints>
-						<options>
-							<option label="30105" help="All">0</option>
-							<option label="30103" help="German">1</option>
-							<option label="30104" help="English">2</option>
-							<option label="30194" help="Japanese">3</option>
-						</options>
-					</constraints>
-					<control type="spinner" format="string"/>
-				</setting>
 				<setting id="preferedQuality" type="string" label="30013" help="">
 					<level>0</level>
 					<default>5</default>
@@ -62,7 +48,7 @@
 					</constraints>
 					<control type="spinner" format="string"/>
 				</setting>
-				<setting id="gerxstream.trailer" type="boolean" label="30026" help="">
+				<setting id="baka.trailer" type="boolean" label="30026" help="">
 					<level>1</level>
 					<default>True</default>
 					<control type="toggle"/>
@@ -8138,14 +8124,14 @@
 				</setting>
 			</group>
 		</category>
-		<category id="gerxstream.dev" label="30310" help="">
-			<group id="gerxstream.dev.updates" label="30311">
-				<setting id="repositoryUpdateDevGerxstream" type="boolean" label="30312" help="30411">
+		<category id="baka.dev" label="30310" help="">
+			<group id="baka.dev.updates" label="30311">
+				<setting id="repositoryUpdateDevBaka" type="boolean" label="30312" help="30411">
 					<level>3</level>
 					<default>False</default>
 					<control type="toggle"/>
 				</setting>
-				<setting id="gerxstream.dev.notification" type="action" label="30321" help="">
+				<setting id="baka.dev.notification" type="action" label="30321" help="">
 					<level>0</level>
 					<constraints>
 						<allowempty>true</allowempty>
@@ -8154,50 +8140,50 @@
 						<data>RunPlugin(plugin://plugin.video.baka/?function=devWarning)</data>
 					</control>
 				</setting>
-				<setting id="gerxstream.dev.id" type="string" label="30313" help="30317">
+				<setting id="baka.dev.id" type="string" label="30313" help="30317">
 					<level>3</level>
 					<default/>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
-						<dependency type="visible" setting="repositoryUpdateDevGerxstream">true</dependency>
+						<dependency type="visible" setting="repositoryUpdateDevBaka">true</dependency>
 					</dependencies>
 					<control type="edit" format="string"/>
 						<heading>30310</heading>
 				</setting>
-				<setting id="gerxstream.dev.username" type="string" label="30314" help="30318">
+				<setting id="baka.dev.username" type="string" label="30314" help="30318">
 					<level>3</level>
 					<default/>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
-						<dependency type="visible" setting="repositoryUpdateDevGerxstream">true</dependency>
+						<dependency type="visible" setting="repositoryUpdateDevBaka">true</dependency>
 					</dependencies>
 					<control type="edit" format="string"/>
 						<heading>30310</heading>
 				</setting>
-				<setting id="gerxstream.dev.branch" type="string" label="30315" help="30319">
+				<setting id="baka.dev.branch" type="string" label="30315" help="30319">
 					<level>3</level>
 					<default/>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
-						<dependency type="visible" setting="repositoryUpdateDevGerxstream">true</dependency>
+						<dependency type="visible" setting="repositoryUpdateDevBaka">true</dependency>
 					</dependencies>
 					<control type="edit" format="string"/>
 						<heading>30310</heading>
 				</setting>
-				<setting id="gerxstream.dev.token" type="string" label="30316" help="30320">
+				<setting id="baka.dev.token" type="string" label="30316" help="30320">
 					<level>3</level>
 					<default/>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
 					<dependencies>
-						<dependency type="visible" setting="repositoryUpdateDevGerxstream">true</dependency>
+						<dependency type="visible" setting="repositoryUpdateDevBaka">true</dependency>
 					</dependencies>
 					<control type="edit" format="string"/>
 						<heading>30310</heading>

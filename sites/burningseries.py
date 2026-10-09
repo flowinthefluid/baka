@@ -351,7 +351,6 @@ def showHosters():
     if isMatch:
         for sUrl, sName in aResult:
             if cConfig().isBlockedHoster(sName)[0]: continue # Hoster aus settings.xml oder deaktivierten Resolver ausschließen
-            # sLanguage = cConfig().getSetting('prefLanguage')
             sName = sName.strip()
 
             hoster = {'link': [sUrl, sName], 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang} # Language Code für hoster.py Sprache Prio

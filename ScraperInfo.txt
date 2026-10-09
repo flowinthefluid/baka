@@ -34,32 +34,22 @@ URL_DOKU = URL_MAIN + 			''
 
 ----------------------------------------------------------------------------
 
-# Einbau der Sprachfunktion in Indexseiten
+# Sprachen einer Quelle (resources/lib/languages.py)
 
-	-	sLanguage = cConfig().getSetting('prefLanguage')	# Sprachauswahl aus settings.xml daraus eine Standard def schreiben
-		params.setParam('sLanguage', sLanguage)
-	0 = Alle Sprachen
-	1 = Deutsch
-	2 = English
-	3 = Japanisch
+	SITE_LANGUAGES = ('de', 'en')	# Tonsprachen der Quelle; () = sprachunabhaengig
+	SITE_SUBTITLES = ('de',)		# optional: Untertitel bei Originalton
 
-	# z.B. beim Menü
-	def load():
-		logger.info('Load %s' % SITE_NAME)
-		params = ParameterHandler()
-		# Spracheinstellung aus der settings.xml
-		sLanguage = cConfig().getSetting('prefLanguage')
-		if sLanguage == '1':	# 1 = Deutsch
-			sLanguage = '2'
-		elif sLanguage == '2':	# 2 = Englisch
-			sLanguage = '3'
-		else:
-			sLanguage = 'all'	# 0 = Alle Sprachen
-		params.setParam('sLanguage', sLanguage)	
-		params.setParam('sUrl', URL_KINO)
-		cGui().addFolder(cGuiElement('Aktuelle Kinofilme', SITE_IDENTIFIER, 'showEntries'), params) # cConfig().getLocalizedString(30500) setzen für den jeweiligen Eintrag
-		cGui().addFolder(cGuiElement(cConfig().getLocalizedString(30500), SITE_IDENTIFIER, 'showEntries'), params)
-		
+	# Streams kennzeichnen statt eigener Sprachweichen:
+	from resources.lib import languages
+	if not languages.streamAllowed(audio, subs): continue
+	languages.tagStream(hoster, audio, subs)	# Anzeige "(JA) Sub: (DE)" und Sortierung
+
+	# Seiten mit eigenem Sprachparameter (z.B. '2' = Deutsch, '3' = Englisch):
+	sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
+	params.setParam('sLanguage', sLang)
+
+	# Danach: python tools/register_site.py --sync-languages
+
 ----------------------------------------------------------------------------
 
 # Einbau der Qualitätfunktion in Indexseiten		

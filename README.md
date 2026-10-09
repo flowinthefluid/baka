@@ -52,9 +52,7 @@ gewohnte Kodi-Oberfläche. Ein Klick, Hoster wählen (oder automatisch wählen l
 läuft.
 
 > **Baka?** Steht für *Best AIO Kodi Addon* – und ja, auf Japanisch heißt es auch
-> „Dummkopf“. Bis Version 1.0.38 hieß das Addon **GerXStream**. Wer GerXStream
-> installiert hat, bekommt Baka mit dem nächsten Update automatisch; Favoriten,
-> Watchlist, Historie und Einstellungen werden übernommen, alte Links weitergeleitet.
+> „Dummkopf“.
 
 Drumherum ist ein ganzes Ökosystem gewachsen: TMDB-Kategorien über alle Quellen
 hinweg, Zufallsfilme/-serien/-animes, verschachtelte Favoriten, Binge-Modus mit automatischer
@@ -305,7 +303,7 @@ flowchart LR
     U --> PL([▶ Kodi-Player])
     L --> PL
     SV[service.py] -. M3U/XMLTV .-> IPTV([PVR IPTV Simple])
-    SV -. Migration · Cache · Checks .-> P
+    SV -. Cache · Checks .-> P
     G[contentgate.py<br/>fail-closed] -. Sichtbarkeit / NSFW .-> L
     G -. .-> P
 
@@ -346,7 +344,7 @@ sequenceDiagram
 | Bereich | Pfad |
 |:--|:--|
 | Einstieg, Routing-Whitelist, Hauptmenü, globale Suche | [`baka.py`](baka.py) |
-| Hintergrunddienst (Migration, Cache, Versions-Checks, Export) | [`service.py`](service.py) |
+| Hintergrunddienst (Cache, Versions-Checks, Export) | [`service.py`](service.py) |
 | Site-Plugins (eine Datei pro Quelle) | [`sites/`](sites/) |
 | GUI-Abstraktion, Hoster-Auswahl, Player | [`resources/lib/gui/`](resources/lib/gui/) |
 | HTTP, Bot-Schutz, Download-Handler (JDownloader, pyLoad) | [`resources/lib/handler/`](resources/lib/handler/) |
@@ -409,8 +407,7 @@ und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiederga
 <details>
 <summary><b>🌐 Sprachen & Regionen</b></summary>
 
-- Beim ersten Start fragt Baka einmal, welche Sprachen du verstehst. Wer von
-  GerXStream kommt, behält seine bisherige Auswahl ohne Rückfrage.
+- Beim ersten Start fragt Baka einmal, welche Sprachen du verstehst.
 - **Einstellungen → Sprachen & Regionen**: Tonsprachen (je ein Schalter, dazu die
   bevorzugte), *Original mit Untertiteln* (z. B. Japanisch mit deutschen
   Untertiteln), **Meine Länder** und die Sprache für Titel und Beschreibungen.

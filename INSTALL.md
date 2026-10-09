@@ -138,14 +138,3 @@ nicht verschoben; **Indexseiten 1** und **Indexseiten 2** sind jetzt **Indexseit
    weltweite Rangliste. Wikidata-Laender und Filmografien koennen unvollstaendig
    sein; unbekannte Laender werden nicht pauschal als **Other** einsortiert.
 
-## Datenmigration bei ID-Wechsel
-
-Beim ersten Start unter `plugin.video.baka`:
-
-1. Bestehende Daten aus `special://home/userdata/addon_data/plugin.video.xstream/`
-   werden nach `special://home/userdata/addon_data/plugin.video.baka/` kopiert
-2. Bereits vorhandene Dateien im Ziel werden nicht ueberschrieben
-3. Der Lauf wird durch Markerdatei dokumentiert:
-   `special://home/userdata/addon_data/plugin.video.baka/.baka_data_migrated`
-
-Falls noch eine alte Installation `plugin.video.xstream` vorhanden ist, erscheint einmalig ein Hinweisdialog.

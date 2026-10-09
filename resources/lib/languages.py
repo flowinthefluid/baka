@@ -54,7 +54,6 @@ PREFERRED_SETTING = 'langAudioPreferred'
 OTHER_MODE_SETTING = 'langOtherMode'        # 'folder' | 'hide'
 COUNTRIES_SETTING = 'regionCountries'       # CSV; leer = alle Laender
 SETUP_SETTING = 'langSetupDone'
-LEGACY_SETTING = 'prefLanguage'             # 0 alle, 1 DE, 2 EN, 3 JA
 DEFAULT_SOURCE_LANGUAGES = ('de',)
 
 
@@ -238,31 +237,9 @@ def applyChoice(audio, subs, preferred=''):
     config.setSetting(SETUP_SETTING, 'true')
 
 
-def _legacyChoice(value):
-    """Uebernimmt die alte Einstellung "Bevorzugte Sprache" (Alle/DE/EN/JA)."""
-    if value == '1':
-        return ['de'], [], 'de'
-    if value == '2':
-        return ['en', 'de'], [], 'en'
-    if value == '3':
-        return ['ja', 'de'], ['de', 'en'], 'ja'
-    return ['de', 'en', 'ja'], ['de', 'en'], 'de'
-
-
-def ensureSetup(interactive=True, migratedFrom=''):
-    """Richtet die Sprachen beim ersten Start einmalig ein.
-
-    Wer von GerXStream kommt, behaelt seine bisherige Auswahl ohne Rueckfrage.
-    Alle anderen werden einmal gefragt, welche Sprachen sie verstehen.
-    """
-    config = cConfig()
-    if config.getSettingBool(SETUP_SETTING, False):
-        return False
-    legacy = config.getSetting(LEGACY_SETTING, '')
-    if migratedFrom or legacy in ('1', '2', '3'):
-        applyChoice(*_legacyChoice(legacy))
-        return True
-    if not interactive:
+def ensureSetup(interactive=True):
+    """Fragt beim ersten Start einmalig, welche Sprachen verstanden werden."""
+    if cConfig().getSettingBool(SETUP_SETTING, False) or not interactive:
         return False
     return chooseLanguages()
 

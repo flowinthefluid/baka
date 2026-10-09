@@ -8,7 +8,6 @@ def main():
     import platform
 
     from resources.lib.config import cConfig
-    from resources.lib import tools
     from xbmc import LOGINFO as LOGNOTICE, log
     from xbmcvfs import translatePath
 
@@ -25,12 +24,9 @@ def main():
     log(LOGMESSAGE + ' -> [default]: Start Baka Log, Version %s ' % cConfig().getAddonInfo('version'), LOGNOTICE)
     log(LOGMESSAGE + ' -> [default]: Python-Version: %s' % platform.python_version(), LOGNOTICE)
 
-    tools.migrateLegacyAddonData()
-    tools.showLegacyInstallHintOnce()
-    # Sprachen einmalig einrichten: GerXStream-Nutzer behalten ihre Auswahl,
-    # alle anderen werden gefragt, welche Sprachen sie verstehen.
+    # Sprachen beim ersten Start einmalig einrichten.
     from resources.lib import languages
-    languages.ensureSetup(interactive=True, migratedFrom=tools.migratedFrom())
+    languages.ensureSetup(interactive=True)
 
     try:
         parseUrl()

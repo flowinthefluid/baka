@@ -69,22 +69,6 @@ def test_site_values_follow_a_single_chosen_language():
 
 # --- Einrichtung -----------------------------------------------------------
 
-def test_gerxstream_users_keep_their_old_choice_without_a_dialog(monkeypatch):
-    monkeypatch.setattr(languages.xbmcgui.Dialog, 'multiselect',
-                        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError('no dialog')), raising=False)
-    set_setting(languages.LEGACY_SETTING, '1')
-    assert languages.ensureSetup(interactive=True)
-    assert languages.audioLanguages() == ['de'] and languages.subtitleLanguages() == []
-    assert languages.countries() == ['de', 'at', 'ch']
-    assert not languages.ensureSetup(interactive=True)
-
-
-def test_migrated_users_with_all_languages_get_german_english_japanese():
-    assert languages.ensureSetup(interactive=False, migratedFrom='plugin.video.gerxstream')
-    assert languages.audioLanguages() == ['de', 'en', 'ja']
-    assert languages.subtitleLanguages() == ['de', 'en']
-
-
 def test_new_users_are_asked_once_and_service_never_asks(monkeypatch):
     assert not languages.ensureSetup(interactive=False)
     monkeypatch.setattr(languages, 'kodiLanguage', lambda: 'en')
@@ -271,7 +255,7 @@ def test_language_settings_page_matches_the_language_list():
     for code in languages.LANGUAGE_CODES:
         assert languages.AUDIO_SETTING % code in ids and languages.SUBS_SETTING % code in ids
     assert {'langAudioPreferred', 'langOtherMode', 'regionCountries', 'tmdb_lang', 'langSetupDone'} <= ids
-    assert root.find(".//setting[@id='prefLanguage']/visible").text == 'false'
+    assert root.find(".//setting[@id='prefLanguage']") is None
     options = [option.text for option in root.findall(".//setting[@id='langAudioPreferred']//option")]
     assert '' not in options and None not in options  # leere Optionen lassen Kodi abstuerzen
 
@@ -296,7 +280,7 @@ def test_sites_no_longer_read_the_old_language_setting():
     for path in (ROOT / 'sites').glob('*.py'):
         text = path.read_text(encoding='utf-8')
         assert re.search(r"^SITE_LANGUAGES = ", text, re.M), path.name
-        assert "getSetting('prefLanguage')" not in text.replace("# sLanguage = cConfig().getSetting('prefLanguage')", ''), path.name
+        assert 'prefLanguage' not in text, path.name
 
 
 def test_kinox_hides_languages_nobody_chose():

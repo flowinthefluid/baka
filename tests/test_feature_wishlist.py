@@ -405,7 +405,6 @@ def test_source_metadata_import_does_not_fetch_movie_catalog(monkeypatch):
     import runpy
     from resources.lib.handler.requestHandler import cRequestHandler
 
-    set_setting('prefLanguage', '0')
     requests = []
     monkeypatch.setattr(cRequestHandler, 'request',
                         lambda self: requests.append(self) or '{"movies": []}')

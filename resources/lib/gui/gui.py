@@ -369,7 +369,7 @@ class cGui:
                                   'RunPlugin(%s?site=epicFavorites&function=setWatchlistStatus&%s)' %
                                   (self.pluginPath, urlencode(favoriteParams)))]
         if oGuiElement._mediaType == 'movie' or oGuiElement._mediaType == 'tvshow':
-            if cConfig().getSettingBool('gerxstream.trailer', False):
+            if cConfig().getSettingBool('baka.trailer', False):
                 if not xbmc.getCondVisibility('System.HasAddon(%s)' % 'script.module.xstream.trailer'):  # Schauen ob Addon installiert
                     xbmc.executebuiltin('InstallAddon(%s)' % 'script.module.xstream.trailer')  # Addon installieren
                 contextitem.setTitle(cConfig().getLocalizedString(30027))  # Trailer Funktion

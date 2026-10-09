@@ -42,8 +42,6 @@ EXCLUDED_DIRS = {
     # gehoeren als eigenstaendige Addons niemals ins Plugin-Zip.
     'repository.baka',
     'repository.resolveurl',
-    # Letzte GerXStream-Version als eigenes Weiterleitungs-Addon.
-    'transition',
 }
 
 # Dateien, die nie ins Release gehoeren. fnmatch-Muster gegen den Dateinamen.

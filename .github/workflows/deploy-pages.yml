@@ -14,7 +14,6 @@ on:
       - 'repository.baka/**'
       - 'resources/**'
       - 'sites/**'
-      - 'transition/**'
       - 'tools/build_repo.py'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:

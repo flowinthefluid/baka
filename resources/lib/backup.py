@@ -14,7 +14,7 @@ from urllib.parse import unquote, urljoin, urlsplit
 import xbmcgui
 from xbmcvfs import File as VfsFile, exists as vfsExists, translatePath
 
-from resources.lib import epicfavorites, legacy
+from resources.lib import epicfavorites
 from resources.lib.config import cConfig
 
 
@@ -276,14 +276,11 @@ def _decodePayload(content):
         payload = json.loads(content)
     except (TypeError, ValueError):
         return None
-    if (not isinstance(payload, dict) or
-            payload.get('format') not in (FORMAT,) + legacy.LEGACY_BACKUP_FORMATS or
+    if (not isinstance(payload, dict) or payload.get('format') != FORMAT or
             payload.get('format_version') != FORMAT_VERSION or
             not isinstance(payload.get('sections'), dict)):
         return None
-    # Sicherungen aus GerXStream-Zeiten speichern plugin://-Ziele mit der
-    # alten Kennung.
-    return legacy.rewriteTargets(payload)
+    return payload
 
 
 def _requestedSections(section, payload=None):
@@ -449,7 +446,7 @@ def _cloudUrl(filename='', endpoint=None):
 
 
 def _backupFilename(filename):
-    return re.fullmatch(r'(?:baka|gerxstream)-[a-z_]+-\d{8}-\d{6}(?:-[a-f0-9]{8})?\.(?:json|zip)', filename) is not None
+    return re.fullmatch(r'baka-[a-z_]+-\d{8}-\d{6}(?:-[a-f0-9]{8})?\.(?:json|zip)', filename) is not None
 
 
 def _cloudRequest(method, filename='', content=None):
