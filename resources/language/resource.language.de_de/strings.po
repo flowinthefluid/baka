@@ -4162,3 +4162,7 @@ msgstr "Welche Watchlist?"
 msgctxt "#32206"
 msgid "Play list"
 msgstr "Liste abspielen"
+
+msgctxt "#32207"
+msgid "Main menu"
+msgstr "Hauptmenü"

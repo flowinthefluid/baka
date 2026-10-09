@@ -3,29 +3,6 @@
 	<section id="plugin.video.baka">
 		<category id="general" label="30020" help="">
 			<group id="presentation" label="30031">
-				<setting id="GlobalSearchPosition" type="boolean" label="30011" help="30411">
-					<level>1</level>
-					<default>True</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="SettingsFolder" type="boolean" label="30012" help="30411">
-					<level>1</level>
-					<default>True</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="mainMenuOrderEditor" type="action" label="30879" help="30883">
-					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.baka/?function=mainMenuOrder)</data>
-					<control type="button" format="action">
-						<close>true</close>
-					</control>
-				</setting>
-				<setting id="mainMenuOrder" type="string" label="30879" help="">
-					<level>2</level>
-					<default>epicFavorites,globalSearch,sourceCategories,categories,settings</default>
-					<visible>false</visible>
-					<control type="edit" format="string"/>
-				</setting>
 				<setting id="replacefanart" type="boolean" label="30019" help="">
 					<level>2</level>
 					<default>True</default>
@@ -663,6 +640,26 @@
 			</group>
 		</category>
 		<category id="livestreams" label="30960" help="">
+			<group id="mainMenu" label="32207">
+				<setting id="mainMenuOrderEditor" type="action" label="30879" help="30883">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=mainMenuOrder)</data>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+				<setting id="SettingsFolder" type="boolean" label="30012" help="30411">
+					<level>1</level>
+					<default>True</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="mainMenuOrder" type="string" label="30879" help="">
+					<level>2</level>
+					<default>epicFavorites,globalSearch,sourceCategories,categories,settings</default>
+					<visible>false</visible>
+					<control type="edit" format="string"/>
+				</setting>
+			</group>
 			<group id="lsSections" label="30966">
 				<setting id="lsSectionTv" type="boolean" label="30961" help="">
 					<level>0</level>

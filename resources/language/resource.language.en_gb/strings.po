@@ -4163,3 +4163,7 @@ msgstr "Which watchlist?"
 msgctxt "#32206"
 msgid "Play list"
 msgstr "Play list"
+
+msgctxt "#32207"
+msgid "Main menu"
+msgstr "Main menu"
