@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Python 3
-"""Baut das installierbare Kodi-Zip fuer GerXStream (Befund N13).
+"""Baut das installierbare Kodi-Zip fuer Baka (Befund N13).
 
 Kodi erwartet im Archiv genau einen Wurzelordner, der so heisst wie die
 Addon-ID. Alles, was nur zur Entwicklung gehoert (Bytecode, Dokumentation,
@@ -40,8 +40,10 @@ EXCLUDED_DIRS = {
     '.vscode',
     # Zeiger-Addons fuer das eigene Hosting-Repo (docs/REPO-SPEC.md); die
     # gehoeren als eigenstaendige Addons niemals ins Plugin-Zip.
-    'repository.gerxstream',
+    'repository.baka',
     'repository.resolveurl',
+    # Letzte GerXStream-Version als eigenes Weiterleitungs-Addon.
+    'transition',
 }
 
 # Dateien, die nie ins Release gehoeren. fnmatch-Muster gegen den Dateinamen.

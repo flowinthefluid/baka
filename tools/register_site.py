@@ -74,7 +74,7 @@ GROUP_TEMPLATE = """\t\t\t<group id="{sid}" label="{label}">
 \t\t\t\t</setting>
 \t\t\t\t<setting id="plugin_{sid}_cookieAssistant" type="action" label="31470" help="31480">
 \t\t\t\t\t<level>2</level>
-\t\t\t\t\t<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source={sid})</data>
+\t\t\t\t\t<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source={sid})</data>
 \t\t\t\t\t<dependencies>
 \t\t\t\t\t\t<dependency type="enable" operator="!is" setting="plugin_{sid}">false</dependency>
 \t\t\t\t\t\t<dependency type="visible" operator="!is" setting="plugin_{sid}">false</dependency>

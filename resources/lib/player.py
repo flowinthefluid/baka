@@ -11,7 +11,7 @@ from resources.lib.tools import addon_log as log
 from resources.lib.episodequeue import EPISODE_PLAYLIST_PROPERTY
 
 
-class GerxstreamPlayer(xbmc.Player):
+class BakaPlayer(xbmc.Player):
     def __init__(self, *args, **kwargs):
         # super() statt unbound Base-Call: xbmc.Player.__init__(self, ...) wirft
         # unter Kodi 22 / Python 3.14 einen TypeError (xbmc/xbmc#29309).
@@ -106,7 +106,7 @@ class cPlayer:
 
     def startPlayer(self):
         log(cConfig().getLocalizedString(30166) + ' -> [player]: start player', LOGNOTICE)
-        xbmcPlayer = GerxstreamPlayer()
+        xbmcPlayer = BakaPlayer()
         self.__class__._activePlayer = xbmcPlayer
         monitor = xbmc.Monitor()
         startTime = time.time()

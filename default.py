@@ -2,7 +2,7 @@
 # Python 3
 
 def main():
-    from gerxstream import parseUrl
+    from baka import parseUrl
     from os.path import join
     from sys import path
     import platform
@@ -22,7 +22,7 @@ def main():
 
     LOGMESSAGE = cConfig().getLocalizedString(30166)
     log('-----------------------------------------------------------------------', LOGNOTICE)
-    log(LOGMESSAGE + ' -> [default]: Start GerXStream Log, Version %s ' % cConfig().getAddonInfo('version'), LOGNOTICE)
+    log(LOGMESSAGE + ' -> [default]: Start Baka Log, Version %s ' % cConfig().getAddonInfo('version'), LOGNOTICE)
     log(LOGMESSAGE + ' -> [default]: Python-Version: %s' % platform.python_version(), LOGNOTICE)
 
     tools.migrateLegacyAddonData()
@@ -43,7 +43,7 @@ def main():
             message = ('Die Quelle konnte nicht verarbeitet werden.\n\n'
                        'Technischer Grund: %s\n\n'
                        'Details stehen im Kodi-Protokoll.') % e.__class__.__name__
-            xbmcgui.Dialog().ok('GerXStream', message)
+            xbmcgui.Dialog().ok('Baka', message)
 
 if __name__ == "__main__":
     main()

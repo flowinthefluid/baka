@@ -1,15 +1,15 @@
-# Installation Hinweise (GerXstream)
+# Installation Hinweise (Baka)
 
-Dieses Addon nutzt die ID `plugin.video.gerxstream`.
+Dieses Addon nutzt die ID `plugin.video.baka`.
 
 ## Voraussetzungen
 
 1. Kodi 22 (primaer) oder Kodi 21 (weicher Fallback)
 2. `script.module.resolveurl` muss installiert sein
-3. Das GerXStream Repository (`repository.gerxstream`) aus der ZIP-Datei der
+3. Das Baka Repository (`repository.baka`) aus der ZIP-Datei der
    GitHub-Pages-Quelle installieren (`https://flowinthefluid.github.io/gerxstream/repo/`).
-   Aktuelle Repository-ZIP: `repository.gerxstream-1.0.8.zip`.
-   Anschliessend kann GerXStream über
+   Aktuelle Repository-ZIP: `repository.baka-1.0.8.zip`.
+   Anschliessend kann Baka über
    **Aus Repository installieren** installiert werden. ResolveURL 5.1.209 wird
    als Abhängigkeit aus demselben Repository bereitgestellt.
 
@@ -17,17 +17,17 @@ Dieses Addon nutzt die ID `plugin.video.gerxstream`.
 
 - Empfohlener Mindeststand: `5.1.208` (aktuelle Hoster-Unterstuetzung)
 - Der Import in `addon.xml` verlangt mindestens `5.1.209`; Kodi installiert
-  diese Version über das GerXStream Repository, falls sie noch nicht vorhanden ist.
+  diese Version über das Baka Repository, falls sie noch nicht vorhanden ist.
 - Beim Start wird die installierte Version immer ins Kodi-Log geschrieben
 - Liegt die Version unter `5.1.208`, erzeugt der Service eine `LOGWARNING` Meldung
 
 ## Updates
 
-- GerXStream und ResolveURL werden über Kodis Add-on-Verwaltung aktualisiert.
+- Baka und ResolveURL werden über Kodis Add-on-Verwaltung aktualisiert.
 - Direkte Selbst-Updates aus GitHub werden nicht als Veröffentlichungsweg verwendet.
 - GitHub Actions testet jeden neuen Stand und baut auf `main` den Pages-Katalog samt
    ZIPs aus den Quellen. Nach erfolgreicher Auslieferung steht Version 1.0.32 unter
-   `zips/plugin.video.gerxstream/plugin.video.gerxstream-1.0.32.zip` bereit.
+   `zips/plugin.video.baka/plugin.video.baka-1.0.32.zip` bereit.
 
 ## Wiedergabe ab 1.0.34
 
@@ -83,7 +83,7 @@ unveraendert; nach einer Aktion erscheint wieder das Import-/Export-Menue.
 - **HTTPS-WebDAV (z.B. Nextcloud)**: bestehenden Sicherungsordner erstellen,
    seine HTTPS-WebDAV-Adresse, Benutzername und ein eigenes App-Passwort aus
    den Nextcloud-Sicherheitseinstellungen eintragen. Beispieladresse:
-   `https://cloud.example/remote.php/dav/files/USERNAME/GerXStream/`.
+   `https://cloud.example/remote.php/dav/files/USERNAME/Baka/`.
    Das App-Passwort ausschliesslich direkt in Kodi eingeben. Die Zugangsdaten
    werden in Kodis lokalen Einstellungen gespeichert, nicht verschluesselt.
    Selbstsignierte/ungueltige Zertifikate und HTTP werden nicht akzeptiert.
@@ -140,12 +140,12 @@ nicht verschoben; **Indexseiten 1** und **Indexseiten 2** sind jetzt **Indexseit
 
 ## Datenmigration bei ID-Wechsel
 
-Beim ersten Start unter `plugin.video.gerxstream`:
+Beim ersten Start unter `plugin.video.baka`:
 
 1. Bestehende Daten aus `special://home/userdata/addon_data/plugin.video.xstream/`
-   werden nach `special://home/userdata/addon_data/plugin.video.gerxstream/` kopiert
+   werden nach `special://home/userdata/addon_data/plugin.video.baka/` kopiert
 2. Bereits vorhandene Dateien im Ziel werden nicht ueberschrieben
 3. Der Lauf wird durch Markerdatei dokumentiert:
-   `special://home/userdata/addon_data/plugin.video.gerxstream/.gerxstream_data_migrated`
+   `special://home/userdata/addon_data/plugin.video.baka/.baka_data_migrated`
 
 Falls noch eine alte Installation `plugin.video.xstream` vorhanden ist, erscheint einmalig ein Hinweisdialog.

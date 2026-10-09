@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Lokale, verschachtelte Favoriten fuer GerXStream.
+"""Lokale, verschachtelte Favoriten fuer Baka.
 
 Gespeichert werden nur der Kodi-Plugin-Aufruf und die sichtbaren Metadaten,
 niemals aufgeloeste Stream- oder Hoster-URLs. Damit bleibt ein Favorit auch
-bei wechselnden Hostern ein normaler GerXStream-Eintrag.
+bei wechselnden Hostern ein normaler Baka-Eintrag.
 """
 
 import json
@@ -391,7 +391,7 @@ def seriesEntry(entry):
 
 def targetForEntry(entry):
     target = normaliseTarget(entry.get('series_target') or entry.get('target'))
-    if not target.startswith('plugin://plugin.video.gerxstream/') or not entry.get('media_type'):
+    if not target.startswith('plugin://plugin.video.baka/') or not entry.get('media_type'):
         return target
     parsed = urlsplit(target)
     query = dict(parse_qsl(parsed.query))

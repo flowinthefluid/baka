@@ -7,7 +7,7 @@ von Hand bleibt, so kurz wie moeglich:
 
 1. Seite im Browser oeffnen und die Pruefung bestaetigen,
 2. die Anfrage "als cURL kopieren",
-3. einfuegen - direkt in Kodi oder ueber eine kleine Seite, die GerXStream
+3. einfuegen - direkt in Kodi oder ueber eine kleine Seite, die Baka
    fuer ein paar Minuten im Heimnetz anbietet (bequem vom PC oder Handy aus).
 
 Cookie **und** User-Agent werden daraus automatisch gelesen und in die
@@ -154,7 +154,7 @@ def _accept(siteId, text):
 
 _PAGE = '''<!doctype html><html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GerXStream Cookie-Assistent</title>
+<title>Baka Cookie-Assistent</title>
 <style>body{font-family:system-ui,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;
 background:#111;color:#eee}textarea{width:100%%;height:220px;box-sizing:border-box;font:13px monospace}
 button{font-size:17px;padding:10px 22px;margin-top:12px}.msg{padding:10px;border-radius:6px;background:#234}
@@ -250,12 +250,12 @@ class _Receiver(object):
 def receiveFromBrowser(siteId, sourceName):
     address = xbmc.getInfoLabel('Network.IPAddress') or ''
     if not address or address.startswith('127.'):
-        xbmcgui.Dialog().ok('GerXStream', _t(31487))
+        xbmcgui.Dialog().ok('Baka', _t(31487))
         return False
     try:
         receiver = _Receiver(siteId, sourceName)
     except OSError:
-        xbmcgui.Dialog().ok('GerXStream', _t(31487))
+        xbmcgui.Dialog().ok('Baka', _t(31487))
         return False
     progress = xbmcgui.DialogProgress()
     progress.create(_t(31470), _t(31488) % receiver.url())
@@ -290,7 +290,7 @@ def _instructions(siteId, sourceName):
 
 def _showResult(result):
     labels = {'ok': 31490, 'blocked': 31491, 'error': 31492}
-    xbmcgui.Dialog().ok('GerXStream', _t(labels.get(result, 31492)))
+    xbmcgui.Dialog().ok('Baka', _t(labels.get(result, 31492)))
 
 
 def _chooseSource():
@@ -333,12 +333,12 @@ def run(siteId=None):
                 received = False
                 if text:
                     received, message = _accept(siteId, text)
-                    dialog.ok('GerXStream', message)
-            if received and dialog.yesno('GerXStream', _t(31478)):
+                    dialog.ok('Baka', message)
+            if received and dialog.yesno('Baka', _t(31478)):
                 _showResult(test(siteId))
         elif choice == 3:
             _showResult(test(siteId))
         elif choice == 4:
             store(siteId, '', '')
             cConfig().setSetting('plugin_%s_bypassUserAgent' % siteId, '')
-            dialog.notification('GerXStream', _t(31479), xbmcgui.NOTIFICATION_INFO, 3000)
+            dialog.notification('Baka', _t(31479), xbmcgui.NOTIFICATION_INFO, 3000)

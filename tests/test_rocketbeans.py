@@ -154,7 +154,7 @@ def test_rocketbeans_account_settings_use_real_routes():
     assert account is not None
     for action in ('login', 'logout'):
         setting = account.find("setting[@id='rocketbeans.%s']" % action)
-        assert setting.findtext('data') == ('RunPlugin(plugin://plugin.video.gerxstream/'
+        assert setting.findtext('data') == ('RunPlugin(plugin://plugin.video.baka/'
                                           '?site=rocketbeans&function=%s)' % action)
     assert account.find("setting[@id='rocketbeans.pass']/control/hidden").text == 'true'
     assert account.find("setting[@id='rocketbeans.token']/visible").text == 'false'

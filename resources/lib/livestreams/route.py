@@ -468,7 +468,7 @@ def play(params):
 
 def _notify(text):
     xbmc.executebuiltin('Notification(%s,%s,4000,%s)'
-                        % ('GerXStream', text, cConfig().getAddonInfo('icon')))
+                        % ('Baka', text, cConfig().getAddonInfo('icon')))
 
 
 def _resolve_fail():
@@ -535,7 +535,7 @@ def _rabbithole_play(use_resolve, reshuffle=False):
             _notify(_label(31200, 'Nichts verfuegbar'))
             return
         import xbmcgui
-        if xbmcgui.Dialog().yesno('GerXStream', _label(31240, 'Alle gezeigt. Neu mischen?')):
+        if xbmcgui.Dialog().yesno('Baka', _label(31240, 'Alle gezeigt. Neu mischen?')):
             _rabbithole_play(use_resolve, reshuffle=True)
         return
 
@@ -709,4 +709,4 @@ def run_refresh():
 
 
 def run_export_hint():
-    xbmcgui.Dialog().ok('GerXStream', export.config_hint())
+    xbmcgui.Dialog().ok('Baka', export.config_hint())

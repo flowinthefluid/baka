@@ -81,7 +81,7 @@ def requireImdbKey(minimum):
     if re.fullmatch(r'[A-Za-z0-9]{4,40}', cConfig().getSetting(OMDB_KEY_SETTING).strip()):
         return True
     from resources.lib.gui.gui import cGui
-    cGui().showInfo('GerXStream', cConfig().getLocalizedString(31710))
+    cGui().showInfo('Baka', cConfig().getLocalizedString(31710))
     return False
 
 

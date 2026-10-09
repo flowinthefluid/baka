@@ -12,7 +12,7 @@ from resources.lib.config import cConfig
 
 
 STORAGE_FILE = 'episode_queues.json'
-EPISODE_PLAYLIST_PROPERTY = 'GerXStream.EpisodePlaylist'
+EPISODE_PLAYLIST_PROPERTY = 'Baka.EpisodePlaylist'
 MAX_QUEUES = 30
 MAX_AGE = 6 * 60 * 60
 
@@ -55,7 +55,7 @@ def _validQueueId(value):
 
 
 def _validTarget(value):
-    return isinstance(value, str) and value.startswith('plugin://plugin.video.gerxstream/')
+    return isinstance(value, str) and value.startswith('plugin://plugin.video.baka/')
 
 
 def _prune(data, now=None):

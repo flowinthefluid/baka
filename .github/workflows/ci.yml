@@ -1,4 +1,4 @@
-# CI fuer GerXStream.
+# CI fuer Baka.
 #
 # Hinweis: Die Live-Auslieferung des Kodi-Repositorys erfolgt ueber
 # .github/workflows/deploy-pages.yml (GitHub Pages). Diese Workflow-Datei prueft
@@ -40,5 +40,5 @@ jobs:
       - name: Upload repository artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gerxstream-repo
+          name: baka-repo
           path: dist/

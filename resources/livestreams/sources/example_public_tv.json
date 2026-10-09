@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_comment": "Beispielkatalog mit ausschliesslich oeffentlich bereitgestellten Live-Streams oeffentlich-rechtlicher Sender. Struktur zum Nachbauen eigener Kataloge. Eigene Quellen gehoeren nach <profile>/plugin.video.gerxstream/livestreams/sources/. Jeder Kanal MUSS 'nsfw' explizit als true/false setzen - sonst blendet das Gate ihn aus (fail-closed). Die frei empfangbaren Sender stehen in tv_dach.json (tools/build_tv_catalog.py).",
+  "_comment": "Beispielkatalog mit ausschliesslich oeffentlich bereitgestellten Live-Streams oeffentlich-rechtlicher Sender. Struktur zum Nachbauen eigener Kataloge. Eigene Quellen gehoeren nach <profile>/plugin.video.baka/livestreams/sources/. Jeder Kanal MUSS 'nsfw' explizit als true/false setzen - sonst blendet das Gate ihn aus (fail-closed). Die frei empfangbaren Sender stehen in tv_dach.json (tools/build_tv_catalog.py).",
   "channels": [
     {
       "id": "gxs:social:int:youtube-example",

@@ -1,6 +1,6 @@
-# Addon Name: GerXStream
-# Addon id: plugin.video.gerxstream
-# Addon Provider: GerXStream
+# Addon Name: Baka
+# Addon id: plugin.video.baka
+# Addon Provider: Baka
 # Use the following entry for the translation
 # from resources.lib.config import cConfig + cConfig().getLocalizedString(30041)
 
@@ -50,7 +50,7 @@ msgid "Pre-validate and sort hosterlist (slow on weak systems)"
 msgstr ""
 
 msgctxt "#30010"
-msgid "Enable automatic GerXStream Update"
+msgid "Enable automatic Baka Update"
 msgstr ""
 
 msgctxt "#30011"
@@ -170,7 +170,7 @@ msgid "Settings"
 msgstr ""
 
 msgctxt "#30042"
-msgid "GerXStream Settings"
+msgid "Baka Settings"
 msgstr ""
 
 msgctxt "#30043"
@@ -296,7 +296,7 @@ msgid "Site-Plugins 2"
 msgstr ""
 
 msgctxt "#30096"
-msgid "GerXStream Updates"
+msgid "Baka Updates"
 msgstr ""
 
 msgctxt "#30097"
@@ -312,11 +312,11 @@ msgid "Branch Info:		[COLOR green]Release - Version directly from Guial00´s Git
 msgstr ""
 
 msgctxt "#30100"
-msgid "Branch Info:		[COLOR orange]Nightly - Version with hotfixes from the GerXStream team.[/COLOR]"
+msgid "Branch Info:		[COLOR orange]Nightly - Version with hotfixes from the Baka team.[/COLOR]"
 msgstr ""
 
 msgctxt "#30101"
-msgid "[COLOR green]Release - Version directly from Guial00´s Github.[/COLOR][CR][COLOR orange]Nightly - Version with hotfixes from the GerXStream team.[/COLOR]"
+msgid "[COLOR green]Release - Version directly from Guial00´s Github.[/COLOR][CR][COLOR orange]Nightly - Version with hotfixes from the Baka team.[/COLOR]"
 msgstr ""
 
 msgctxt "#30102"
@@ -364,15 +364,15 @@ msgid "Search for updates ..."
 msgstr ""
 
 msgctxt "#30113"
-msgid "GerXStream update installed successfully."
+msgid "Baka update installed successfully."
 msgstr ""
 
 msgctxt "#30114"
-msgid "GerXStream update finished with errors."
+msgid "Baka update finished with errors."
 msgstr ""
 
 msgctxt "#30115"
-msgid "No GerXStream update available."
+msgid "No Baka update available."
 msgstr ""
 
 msgctxt "#30116"
@@ -393,14 +393,14 @@ msgstr ""
 
 msgctxt "#30120"
 msgid "You don't have a working ResolveUrl installed, no videos can be played please reinstall the resolver."
-msgstr "You don't have a working ResolveUrl installed, no videos can be played. Reinstall script.module.resolveurl, e.g. via the 'ResolveURL Repository' source inside the GerXStream Repository."
+msgstr "You don't have a working ResolveUrl installed, no videos can be played. Reinstall script.module.resolveurl, e.g. via the 'ResolveURL Repository' source inside the Baka Repository."
 
 msgctxt "#30121"
 msgid "Start manual update"
 msgstr "Update Resolver"
 
 msgctxt "#30122"
-msgid "GerXStream search started ..."
+msgid "Baka search started ..."
 msgstr ""
 
 msgctxt "#30123"
@@ -416,7 +416,7 @@ msgid " search complete"
 msgstr ""
 
 msgctxt "#30126"
-msgid "GerXStream search complete !"
+msgid "Baka search complete !"
 msgstr ""
 
 msgctxt "#30127"
@@ -516,11 +516,11 @@ msgid "Please select part"
 msgstr ""
 
 msgctxt "#30151"
-msgid "GerXStream Update Manager"
+msgid "Baka Update Manager"
 msgstr ""
 
 msgctxt "#30152"
-msgid "Welcome to the GerXStream update manager. For automatic update please set the desired branch selection in the settings, for manual update please choose what should be updated in the following windows."
+msgid "Welcome to the Baka update manager. For automatic update please set the desired branch selection in the settings, for manual update please choose what should be updated in the following windows."
 msgstr ""
 
 msgctxt "#30153"
@@ -532,7 +532,7 @@ msgid "perform"
 msgstr ""
 
 msgctxt "#30155"
-msgid "Please select whether you want to perform the GerXStream [Release] or [Nightly] update.[CR][COLOR green]Release versions have been tested and contain hardly any errors.[/COLOR][CR][COLOR orange ]Nightly - versions are experimental and may contain bugs.[/COLOR]"
+msgid "Please select whether you want to perform the Baka [Release] or [Nightly] update.[CR][COLOR green]Release versions have been tested and contain hardly any errors.[/COLOR][CR][COLOR orange ]Nightly - versions are experimental and may contain bugs.[/COLOR]"
 msgstr ""
 
 msgctxt "#30156"
@@ -680,19 +680,19 @@ msgid "Delete HTML cache now"
 msgstr ""
 
 msgctxt "#30166"
-msgid "[GerXStream]"
-msgstr "[GerXStream]"
+msgid "[Baka]"
+msgstr "[Baka]"
 
 msgctxt "#30167"
-msgid "Choose GerXStream Github Branch"
+msgid "Choose Baka Github Branch"
 msgstr ""
 
 msgctxt "#30168"
-msgid "Branch Info:		[COLOR green]Release - Version directly from GerXStream Github.[/COLOR]"
+msgid "Branch Info:		[COLOR green]Release - Version directly from Baka Github.[/COLOR]"
 msgstr ""
 
 msgctxt "#30169"
-msgid "Branch Info:		[COLOR orange]Nightly - Version with hotfixes from the GerXStream team.[/COLOR]"
+msgid "Branch Info:		[COLOR orange]Nightly - Version with hotfixes from the Baka team.[/COLOR]"
 msgstr ""
 
 msgctxt "#30170"
@@ -708,7 +708,7 @@ msgid "TMDB language setting"
 msgstr ""
 
 msgctxt "#30173"
-msgid "[COLOR green]Release - Version directly from GerXStream Github.[/COLOR][CR][COLOR orange]Nightly - Version with hotfixes from the GerXStream team.[/COLOR]"
+msgid "[COLOR green]Release - Version directly from Baka Github.[/COLOR][CR][COLOR orange]Nightly - Version with hotfixes from the Baka team.[/COLOR]"
 msgstr ""
 
 msgctxt "#30174"
@@ -1056,23 +1056,23 @@ msgid "Your ISP censors your Internet access!"
 msgstr ""
 
 msgctxt "#30261"
-msgid "To protect yourself from censorship, we recommend to use the new setting in GerXStream called 'Evade DNS lock' or change your DNS at your router and/or boxes to Google or Cloudflare - for both ipV4 and ipV6 protocols. Instructions can be found with a Google search, e.g. 'Change Fritzbox DNS Server'"
+msgid "To protect yourself from censorship, we recommend to use the new setting in Baka called 'Evade DNS lock' or change your DNS at your router and/or boxes to Google or Cloudflare - for both ipV4 and ipV6 protocols. Instructions can be found with a Google search, e.g. 'Change Fritzbox DNS Server'"
 msgstr ""
 
 msgctxt "#30262"
-msgid "[COLOR red]This page requires a free user account. Please register at http://flimmerstube.com and enter your account details in the GerXStream settings.[/COLOR]"
+msgid "[COLOR red]This page requires a free user account. Please register at http://flimmerstube.com and enter your account details in the Baka settings.[/COLOR]"
 msgstr ""
 
 msgctxt "#30263"
-msgid "[COLOR red]This page requires a free user account. Please register at https://aniworld.to/ and enter your account details in the GerXStream settings.[/COLOR]"
+msgid "[COLOR red]This page requires a free user account. Please register at https://aniworld.to/ and enter your account details in the Baka settings.[/COLOR]"
 msgstr ""
 
 msgctxt "#30264"
-msgid "[COLOR red]This page requires a free user account. Please register at https://s.to/ and enter your account details in the GerXStream settings.[/COLOR]"
+msgid "[COLOR red]This page requires a free user account. Please register at https://s.to/ and enter your account details in the Baka settings.[/COLOR]"
 msgstr ""
 
 msgctxt "#30265"
-msgid "GerXStream Support Information"
+msgid "Baka Support Information"
 msgstr ""
 
 msgctxt "#30266"
@@ -1084,7 +1084,7 @@ msgid "View support information"
 msgstr ""
 
 msgctxt "#30268"
-msgid "Please select whether you want to perform the ResolveURL [Release] or [Nightly] update.[CR][COLOR green]Release - Version directly from Guial00's Github.[/COLOR][CR][COLOR orange ]Nightly - version with hotfixes from the GerXStream team.[/COLOR]"
+msgid "Please select whether you want to perform the ResolveURL [Release] or [Nightly] update.[CR][COLOR green]Release - Version directly from Guial00's Github.[/COLOR][CR][COLOR orange ]Nightly - version with hotfixes from the Baka team.[/COLOR]"
 msgstr ""
 
 msgctxt "#30269"
@@ -1112,7 +1112,7 @@ msgid "View change log after update"
 msgstr ""
 
 msgctxt "#30275"
-msgid "[B][COLOR cyan]GerXStream[/COLOR] [COLOR white]Changelog[/COLOR][/B]"
+msgid "[B][COLOR cyan]Baka[/COLOR] [COLOR white]Changelog[/COLOR][/B]"
 msgstr ""
 
 msgctxt "#30276"
@@ -1216,11 +1216,11 @@ msgid "Developer Options"
 msgstr ""
 
 msgctxt "#30311"
-msgid "GerXStream Developer Menu"
+msgid "Baka Developer Menu"
 msgstr ""
 
 msgctxt "#30312"
-msgid "Enable automatic GerXStream Dev Update"
+msgid "Enable automatic Baka Dev Update"
 msgstr ""
 
 msgctxt "#30313"
@@ -1260,7 +1260,7 @@ msgid "[COLOR red]Show warning about handling developer options now![/COLOR]"
 msgstr ""
 
 msgctxt "#30322"
-msgid "[B][COLOR cyan]GerXStream[/COLOR] [COLOR white]Warning (Developer Options)[/COLOR][/B]"
+msgid "[B][COLOR cyan]Baka[/COLOR] [COLOR white]Warning (Developer Options)[/COLOR][/B]"
 msgstr ""
 
 msgctxt "#30323"
@@ -1308,7 +1308,7 @@ msgid "HTML cache folder has been cleaned"
 msgstr ""
 
 msgctxt "#30406"
-msgid "Choose GerXStream Version"
+msgid "Choose Baka Version"
 msgstr ""
 
 msgctxt "#30407"
@@ -1352,7 +1352,7 @@ msgid "Update disabled - Branch: "
 msgstr ""
 
 msgctxt "#30417"
-msgid "GerXStream DNS Status: Bypass DNS block"
+msgid "Baka DNS Status: Bypass DNS block"
 msgstr ""
 
 msgctxt "#30418"
@@ -1404,7 +1404,7 @@ msgid "Domain is currently unavailable"
 msgstr ""
 
 msgctxt "#30430"
-msgid "Index page in GerXStream"
+msgid "Index page in Baka"
 msgstr ""
 
 msgctxt "#30431"
@@ -2168,7 +2168,7 @@ msgid "Maximum time a single provider may use during global search."
 msgstr ""
 
 msgctxt "#30902"
-msgid "Update GerXStream"
+msgid "Update Baka"
 msgstr ""
 
 msgctxt "#30903"
@@ -2336,7 +2336,7 @@ msgid "Backup and restore"
 msgstr ""
 
 msgctxt "#30936"
-msgid "Export and import GerXStream settings, accounts and Epic-Favorites."
+msgid "Export and import Baka settings, accounts and Epic-Favorites."
 msgstr ""
 
 msgctxt "#30937"
@@ -3125,8 +3125,8 @@ msgid "Open in a browser on your PC or phone (same home network):[CR][B]%s[/B][C
 msgstr "Open in a browser on your PC or phone (same home network):[CR][B]%s[/B][CR]and paste the copied text there."
 
 msgctxt "#31489"
-msgid "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or phone' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]GerXStream reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
-msgstr "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or phone' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]GerXStream reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
+msgid "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or phone' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]Baka reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
+msgstr "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or phone' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]Baka reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
 
 msgctxt "#31490"
 msgid "The source is reachable with the stored session."

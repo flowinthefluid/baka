@@ -5,8 +5,8 @@ import os
 _STORE = {}   # addon_id -> {setting_id: str}
 
 _INFO_DEFAULTS = {
-    'id': 'plugin.video.gerxstream',
-    'name': 'GerXStream',
+    'id': 'plugin.video.baka',
+    'name': 'Baka',
     'version': '1.0.28',
     'profile': os.environ.get('GXS_PROFILE', '/tmp/gxs-test-profile'),
     'path': os.environ.get('GXS_ADDON_PATH', os.getcwd()),
@@ -20,7 +20,7 @@ def _reset():
 
 
 class Addon(object):
-    def __init__(self, addon_id='plugin.video.gerxstream'):
+    def __init__(self, addon_id='plugin.video.baka'):
         self._id = addon_id
         _STORE.setdefault(addon_id, {})
 
@@ -40,7 +40,7 @@ class Addon(object):
             return 0
 
     def getAddonInfo(self, key):
-        if self._id == 'plugin.video.gerxstream':
+        if self._id == 'plugin.video.baka':
             return _INFO_DEFAULTS.get(key, '')
         return {'id': self._id, 'version': '0', 'profile': _INFO_DEFAULTS['profile']}.get(key, '')
 

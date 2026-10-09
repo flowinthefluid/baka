@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Persistent, privacy-local playback history for GerXStream."""
+"""Persistent, privacy-local playback history for Baka."""
 
 import json
 import os

@@ -77,8 +77,8 @@ class cGui:
                 values.get('season', ''), values.get('episode', ''),
                 values.get('TVShowTitle', ''), params.getValue('sUrl'))
             params.setParam('watchId', watchId)
-            oGuiElement.addItemProperties('GerXStream.WatchId', watchId)
-        savedTarget = oGuiElement.getItemProperties().get('GerXStream.Target', '')
+            oGuiElement.addItemProperties('Baka.WatchId', watchId)
+        savedTarget = oGuiElement.getItemProperties().get('Baka.Target', '')
         trackEpisode = (oGuiElement._mediaType == 'episode' and not isHoster and not savedTarget
                 and not oGuiElement.getItemProperties().get('epicFavoritesManaged'))
         if trackEpisode:
@@ -104,14 +104,14 @@ class cGui:
                             or incoming.getValue('TVShowTitle') or '')
             params.setParam('watchlistYear', incoming.getValue('watchlistYear') or '')
         sUrl = savedTarget or self.__createItemUrl(oGuiElement, False if queueEnabled else bIsFolder, params)
-        if not savedTarget and params.getValue('watchlistTarget') and sUrl.startswith('plugin://plugin.video.gerxstream/'):
+        if not savedTarget and params.getValue('watchlistTarget') and sUrl.startswith('plugin://plugin.video.baka/'):
             parsed = urlsplit(sUrl)
             query = dict(parse_qsl(parsed.query))
             for key in ('watchlistTarget', 'watchlistTitle', 'watchlistYear', 'watchlistIsFolder'):
                 query[key] = params.getValue(key) or ''
             sUrl = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), ''))
         if (not isHoster and not savedTarget and oGuiElement._mediaType in ('tvshow', 'movie')
-                and sUrl.startswith('plugin://plugin.video.gerxstream/')):
+                and sUrl.startswith('plugin://plugin.video.baka/')):
             from resources.lib import epicfavorites
             parsed = urlsplit(sUrl)
             query = dict(parse_qsl(parsed.query))
@@ -125,7 +125,7 @@ class cGui:
         if trackEpisode:
             self._episodeQueues[self._episodeQueueKey]['targets'].append(sUrl)
         startEpisodeQueue = (queueEnabled
-                             and sUrl.startswith('plugin://plugin.video.gerxstream/'))
+                             and sUrl.startswith('plugin://plugin.video.baka/'))
         if startEpisodeQueue:
             bIsFolder = False
             sUrl = '%s?%s' % (self.pluginPath, urlencode({
@@ -161,7 +161,7 @@ class cGui:
 
     def createListItem(self, oGuiElement):
         itemValues = oGuiElement.getItemValues()
-        itemTitle = oGuiElement.getItemProperties().get('GerXStream.DisplayTitle') or oGuiElement.getTitle()
+        itemTitle = oGuiElement.getItemProperties().get('Baka.DisplayTitle') or oGuiElement.getTitle()
         infoString = ''
         if self.globalSearch: # Reihenfolge der zu anzeigenden GUI Elemente
             infoString += ' %s' % oGuiElement.getSiteName()
@@ -193,9 +193,9 @@ class cGui:
         if len(aProperties) > 0:
             for sPropertyKey in aProperties.keys():
                 listitem.setProperty(sPropertyKey, aProperties[sPropertyKey])
-        watchId = aProperties.get('GerXStream.WatchId', '')
+        watchId = aProperties.get('Baka.WatchId', '')
         if watchId:
-            listitem.getVideoInfoTag().setUniqueID(watchId, 'gerxstream')
+            listitem.getVideoInfoTag().setUniqueID(watchId, 'baka')
         if playbackstate.isWatched(watchId):
             listitem.getVideoInfoTag().setPlaycount(1)
             listitem.getVideoInfoTag().setResumePoint(0, 0)
@@ -341,7 +341,7 @@ class cGui:
                 contextmenus += [(contextitem.getTitle(), "RunPlugin(%s)" % (sTest,),)]
         itemValues = oGuiElement.getItemValues()
         contextitem = cContextElement()
-        # Eigene, verschachtelte GerXStream-Favoriten. Der originale
+        # Eigene, verschachtelte Baka-Favoriten. Der originale
         # Plugin-Aufruf wird gespeichert, nicht die (kurzlebige) Stream-URL;
         # deshalb funktionieren Favoriten auch nach einem Hosterwechsel.
         # Eintraege innerhalb von Epic-Favorites selbst markieren sich, damit
@@ -453,7 +453,7 @@ class cGui:
 
     def setView(self, content='movies'):
         # set the listing to a certain content, makes special views available
-        # sets view to the viewID which is selected in GerXStream settings
+        # sets view to the viewID which is selected in Baka settings
         # see http://mirrors.xbmc.org/docs/python-docs/stable/xbmcplugin.html#-setContent
         # (seasons is also supported but not listed)
         content = content.lower()
@@ -552,7 +552,7 @@ class cGui:
         xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (str(sTitle), (str(sDescription)), iSeconds, cConfig().getAddonInfo('icon')))
 
     @staticmethod
-    def showInfo(sTitle='GerXStream', sDescription=None, iSeconds=0):
+    def showInfo(sTitle='Baka', sDescription=None, iSeconds=0):
         if sDescription is None:
             sDescription = cConfig().getLocalizedString(30253)
         if iSeconds == 0:
@@ -562,7 +562,7 @@ class cGui:
         xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (str(sTitle), (str(sDescription)), iSeconds, cConfig().getAddonInfo('icon')))
 
     @staticmethod
-    def showLanguage(sTitle='GerXStream', sDescription=None, iSeconds=0):
+    def showLanguage(sTitle='Baka', sDescription=None, iSeconds=0):
         if sDescription is None:
             sDescription = cConfig().getLocalizedString(30403)
         if iSeconds == 0:

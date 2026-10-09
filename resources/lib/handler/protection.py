@@ -460,7 +460,7 @@ def notifyOnce(siteId, kind, url='', interactive=True):
 def _showNotification(message):
     try:
         import xbmcgui
-        xbmcgui.Dialog().ok('GerXStream', message)
+        xbmcgui.Dialog().ok('Baka', message)
     except Exception as exc:
         logger.info('-> [protection]: Hinweisdialog nicht moeglich: %s' % exc)
 

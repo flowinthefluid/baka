@@ -110,7 +110,7 @@ def test_stop_does_not_restart_directory_loading(monkeypatch, monitored_playback
     monkeypatch.setattr(playbackstate.xbmc, 'executebuiltin',
                         lambda *args: commands.append(args))
     monkeypatch.setattr(playbackstate.xbmc, 'getInfoLabel',
-                        lambda name: 'plugin://plugin.video.gerxstream/?site=source&function=showEpisodes'
+                        lambda name: 'plugin://plugin.video.baka/?site=source&function=showEpisodes'
                         if name == 'Container.FolderPath' else '')
     monkeypatch.setattr(playbackstate.xbmc, 'getCondVisibility', lambda _condition: False)
     state['time'] = elapsed
@@ -253,7 +253,7 @@ def test_playback_start_returns_without_waiting_for_video_end(monkeypatch):
             assert timeout == 1
             created[0].avStarted = True
 
-    monkeypatch.setattr(player, 'GerxstreamPlayer', VideoPlayer)
+    monkeypatch.setattr(player, 'BakaPlayer', VideoPlayer)
     monkeypatch.setattr(player.xbmc, 'Monitor', Monitor)
     monkeypatch.setattr(player.xbmc, 'executebuiltin', lambda *args: commands.append(args))
 
@@ -272,7 +272,7 @@ def test_playback_already_fullscreen_keeps_dialogs_open(monkeypatch):
         def abortRequested(self):
             return False
 
-    monkeypatch.setattr(player, 'GerxstreamPlayer', VideoPlayer)
+    monkeypatch.setattr(player, 'BakaPlayer', VideoPlayer)
     monkeypatch.setattr(player.xbmc, 'Monitor', Monitor)
     monkeypatch.setattr(player.xbmc, 'executebuiltin', lambda *args: commands.append(args))
 
@@ -291,7 +291,7 @@ def test_playback_failure_does_not_open_fullscreen(monkeypatch):
         def abortRequested(self):
             return False
 
-    monkeypatch.setattr(player, 'GerxstreamPlayer', VideoPlayer)
+    monkeypatch.setattr(player, 'BakaPlayer', VideoPlayer)
     monkeypatch.setattr(player.xbmc, 'Monitor', Monitor)
     monkeypatch.setattr(player.xbmc, 'executebuiltin', commands.append)
 
@@ -304,7 +304,7 @@ def test_av_started_switches_fullscreen_once_without_closing_dialogs(monkeypatch
     monkeypatch.setattr(player.xbmc, 'getCondVisibility', lambda _condition: False)
     monkeypatch.setattr(player.xbmc, 'executebuiltin', lambda *args: commands.append(args))
 
-    kodi_player = player.GerxstreamPlayer()
+    kodi_player = player.BakaPlayer()
     kodi_player.onAVStarted()
 
     assert kodi_player.avStarted is True
@@ -316,7 +316,7 @@ def test_av_started_leaves_kodi_fullscreen_alone(monkeypatch):
     monkeypatch.setattr(player.xbmc, 'getCondVisibility', lambda _condition: True)
     monkeypatch.setattr(player.xbmc, 'executebuiltin', lambda *args: commands.append(args))
 
-    player.GerxstreamPlayer().onAVStarted()
+    player.BakaPlayer().onAVStarted()
 
     assert commands == []
 
@@ -324,10 +324,10 @@ def test_av_started_leaves_kodi_fullscreen_alone(monkeypatch):
 def test_old_player_stop_cannot_clear_a_new_episode_playlist(monkeypatch):
     import xbmcgui
 
-    old_player = player.GerxstreamPlayer()
+    old_player = player.BakaPlayer()
     window = xbmcgui.Window(10000)
     window.setProperty(player.EPISODE_PLAYLIST_PROPERTY, 'queue:0:current')
-    new_player = player.GerxstreamPlayer()
+    new_player = player.BakaPlayer()
     monkeypatch.setattr(player.cPlayer, '_activePlayer', new_player)
 
     old_player.onPlayBackStopped()

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.gerxstream" name="GerXStream → Baka" version="1.1.0" provider-name="baka">
+	<requires>
+		<import addon="xbmc.python" version="3.0.1"/>
+		<import addon="plugin.video.baka" version="@BAKA_VERSION@"/>
+		<import addon="repository.baka" version="@REPOSITORY_VERSION@"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="de_DE">GerXStream heißt jetzt Baka</summary>
+		<summary lang="en_GB">GerXStream is now called Baka</summary>
+		<description lang="de_DE">Dieses Update installiert Baka und übernimmt Favoriten, Watchlist, Historie und Einstellungen. Alte Links und Kodi-Favoriten werden an Baka weitergeleitet. GerXStream kann deinstalliert werden, sobald keine alten Kodi-Favoriten mehr darauf zeigen.</description>
+		<description lang="en_GB">This update installs Baka and carries over favourites, watchlist, history and settings. Old links and Kodi favourites are forwarded to Baka. GerXStream can be uninstalled once no old Kodi favourites point to it.</description>
+		<platform>all</platform>
+		<license>GPL-3.0-only</license>
+		<news>GerXStream heißt jetzt Baka. Baka wird automatisch installiert und übernimmt deine Daten.</news>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
+	</extension>
+</addon>

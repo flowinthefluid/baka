@@ -337,7 +337,7 @@ class cPluginHandler:
     def pluginInfo(self):
         # Erstelle Liste mit den Indexseiten Informationen
         list_of_plugins = []
-        fileNames = self.__getFileNamesFromFolder(self.defaultFolder) # Hole Plugins aus GerXStream
+        fileNames = self.__getFileNamesFromFolder(self.defaultFolder) # Hole Plugins aus Baka
         for fileName in fileNames:
             pluginData = self.__getPluginDataIndex(fileName, self.defaultFolder) # Hole Plugin Daten
             if pluginData:
@@ -379,7 +379,7 @@ class cPluginHandler:
 
         RESOLVEURL = addonInfo('repository.resolveurl') if os.path.exists(ADDON_PATH % 'repository.resolveurl') else ''
         resolverInfo = addonInfo('script.module.resolveurl')
-        repositoryInfo = addonInfo('repository.gerxstream')
+        repositoryInfo = addonInfo('repository.baka')
         try:
             sourceRepo = getRepofromAddonsDB(cConfig().getAddonInfo('id'))
         except Exception:
@@ -394,14 +394,14 @@ class cPluginHandler:
             + 'Arbeitsspeicher:  ' + infoLabel('System.Memory(total)') + '\n'
             + '\n'  # Absatz
             + cConfig().getLocalizedString(30414) + '\n'  # Plugin Informationen
-            + 'Installierte GerXStream-Version:  ' + cConfig().getAddonInfo('version') + '\n'
+            + 'Installierte Baka-Version:  ' + cConfig().getAddonInfo('version') + '\n'
             + cConfig().getAddonInfo('name') + ':  ' + cConfig().getAddonInfo('id') + '\n'
             + resolverInfo
             + 'ResolveURL Status:  ' + UPDATERU + cConfig().getSettingString('resolver.branch') + '\n'  # Resolver Update Status und Branch
             + cConfig().getLocalizedString(30435) + ' ' + sourceRepo + '\n' # Repo-Info
             + '\n'  # Absatz
             + cConfig().getLocalizedString(30420) + '\n'  # DNS Informationen
-            + cConfig().getLocalizedString(30417) + ' ' + BYPASS + '\n'  # GerXStream DNS Bypass aktiv/inaktiv
+            + cConfig().getLocalizedString(30417) + ' ' + BYPASS + '\n'  # Baka DNS Bypass aktiv/inaktiv
             + cConfig().getLocalizedString(30434) + '1' + ' ' + getDNS('Network.DNS1Address') + '\n' # DNS Nameserver 1
             + cConfig().getLocalizedString(30434) + '2' + ' ' + getDNS('Network.DNS2Address') + '\n' # DNS Nameserver 2
             + '\n'  # Absatz

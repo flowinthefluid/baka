@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Portabler Repository-Build fuer GerXStream (Python, ohne xmllint/zip-Binary).
+"""Portabler Repository-Build fuer Baka (Python, ohne xmllint/zip-Binary).
 
 Erzeugt dieselben Artefakte wie tools/build-gitlab-pages.sh, aber
 plattformunabhaengig und CI-tauglich (GitHub Actions). Standard-Ausgabe ist
@@ -27,11 +27,14 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Exakt die Laufzeitdateien, die auch der Shell-Build ausliefert (keine
 # Entwicklungs-/Testdateien: tests/, docs/, tools/ bleiben aussen vor).
-PLUGIN_PAYLOAD = ('addon.xml', 'default.py', 'gerxstream.py', 'service.py',
+PLUGIN_PAYLOAD = ('addon.xml', 'default.py', 'baka.py', 'service.py',
                   'changelog.txt', 'license.txt', 'resources', 'sites')
 ASSETS = ('icon.png', 'fanart.jpg', 'banner.png', 'clearlogo.png')
 RESOLVER_ID = 'script.module.resolveurl'
-REPO_ID = 'repository.gerxstream'
+REPO_ID = 'repository.baka'
+# Letzte Version unter der alten ID: setzt Baka voraus, damit Kodi es beim
+# Update automatisch installiert, und leitet alte Links weiter.
+TRANSITION_DIR = os.path.join(PROJECT_DIR, 'transition', 'plugin.video.gerxstream')
 
 
 def _addon_field(addon_xml, attr):
@@ -121,6 +124,28 @@ def _zip_dir(src_root, arcname_root, zip_path):
                 zf.write(full, os.path.join(arcname_root, rel))
 
 
+def _build_transition(out_dir, baka_version):
+    template = open(os.path.join(TRANSITION_DIR, 'addon.xml.in'), encoding='utf-8').read()
+    repository_version = _addon_field(os.path.join(PROJECT_DIR, REPO_ID, 'addon.xml.in'), 'version')
+    manifest = template.replace('@BAKA_VERSION@', baka_version).replace('@REPOSITORY_VERSION@', repository_version)
+    root = ET.fromstring(manifest.encode('utf-8'))
+    transition_id, version = root.get('id'), root.get('version')
+    target_dir = os.path.join(out_dir, 'zips', transition_id)
+    os.makedirs(target_dir)
+    with tempfile.TemporaryDirectory() as tmp:
+        payload = os.path.join(tmp, transition_id)
+        os.makedirs(payload)
+        with open(os.path.join(payload, 'addon.xml'), 'wb') as fh:
+            fh.write(manifest.encode('utf-8'))
+        shutil.copy2(os.path.join(TRANSITION_DIR, 'default.py'), os.path.join(payload, 'default.py'))
+        shutil.copy2(os.path.join(PROJECT_DIR, 'resources', 'icon.png'), os.path.join(payload, 'icon.png'))
+        _zip_dir(payload, transition_id, os.path.join(target_dir, '%s-%s.zip' % (transition_id, version)))
+        for asset in ('addon.xml', 'icon.png'):
+            shutil.copy2(os.path.join(payload, asset), os.path.join(target_dir, asset))
+    print('Uebergangs-Addon gebaut: %s %s' % (transition_id, version))
+    return manifest
+
+
 def build(out_dir, pages_url=None, force=False):
     addon_xml = os.path.join(PROJECT_DIR, 'addon.xml')
     addon_id = _addon_field(addon_xml, 'id')
@@ -205,6 +230,8 @@ def build(out_dir, pages_url=None, force=False):
                 shutil.copy2(os.path.join(rp, asset), os.path.join(repo_dir, asset))
         print('Repository-Pointer gebaut (Pages-URL: %s)' % rurl)
 
+    transition_manifest = _build_transition(out_dir, version)
+
     # addons.xml zusammensetzen (Format identisch zum Shell-Build).
     parts = ['<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<addons>\n']
     parts.append(_strip_xml_decl(resolver_manifest))
@@ -213,10 +240,11 @@ def build(out_dir, pages_url=None, force=False):
     parts.append(_strip_xml_decl(open(addon_xml, encoding='utf-8').read()))
     if not parts[-1].endswith('\n'):
         parts.append('\n')
-    if repository_manifest:
-        parts.append(_strip_xml_decl(repository_manifest))
-        if not parts[-1].endswith('\n'):
-            parts.append('\n')
+    for manifest in (repository_manifest, transition_manifest):
+        if manifest:
+            parts.append(_strip_xml_decl(manifest))
+            if not parts[-1].endswith('\n'):
+                parts.append('\n')
     parts.append('</addons>\n')
     addons_xml = ''.join(parts)
     # Hash exactly the bytes served to Kodi. Text mode would translate LF to
@@ -247,7 +275,7 @@ def build(out_dir, pages_url=None, force=False):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description='GerXStream Repository-Build')
+    ap = argparse.ArgumentParser(description='Baka Repository-Build')
     ap.add_argument('--out', default=os.path.join(PROJECT_DIR, 'dist'))
     ap.add_argument('--bump', choices=('patch', 'minor', 'major'))
     ap.add_argument('--pages-url', default=os.environ.get('PAGES_URL'))

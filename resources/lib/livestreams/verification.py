@@ -111,6 +111,6 @@ def report_dialog():
     try:
         import xbmcgui
         report = verify_registered()
-        xbmcgui.Dialog().textviewer('GerXStream - Quellenpruefung', summarize(report))
+        xbmcgui.Dialog().textviewer('Baka - Quellenpruefung', summarize(report))
     except Exception:
         pass

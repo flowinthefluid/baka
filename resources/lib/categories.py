@@ -376,7 +376,7 @@ def _mediatheken(params):
             cGui().addFolder(element, channelParams)
             listed += 1
     if not listed:
-        cGui().showInfo('GerXStream', _label(31502, 'Keine Mediathek-Quelle aktiviert'))
+        cGui().showInfo('Baka', _label(31502, 'Keine Mediathek-Quelle aktiviert'))
     cGui().setEndOfDirectory()
 
 
@@ -394,7 +394,7 @@ def _filterItems(items, minimum, media=None):
     import xbmcgui
 
     progress = xbmcgui.DialogProgress()
-    progress.create('GerXStream', _label(31616))
+    progress.create('Baka', _label(31616))
     monitor = xbmc.Monitor()
     selected = []
     try:
@@ -433,7 +433,7 @@ def _indexAll(params):
         cGui().setEndOfDirectory(False)
         return
     if not items:
-        cGui().showInfo('GerXStream', _label(31714))
+        cGui().showInfo('Baka', _label(31714))
 
     seen = set()
     total = len(items)
@@ -745,7 +745,7 @@ def editPeopleGroups(params):
     elif len(groups) > 1 and 'all' in groups:
         groups.remove('all')
     cConfig().setSetting(prefix + 'PeopleGroups', ','.join(groups))
-    cGui().showInfo('GerXStream', ', '.join(_label(labelId) for key, labelId in PEOPLE_GROUPS
+    cGui().showInfo('Baka', ', '.join(_label(labelId) for key, labelId in PEOPLE_GROUPS
                                           if key in groups), 4)
 
 
@@ -812,7 +812,7 @@ def _people(params):
         from resources.lib import plotinfo
         import xbmcgui
         if not (cConfig().getSetting(plotinfo.OMDB_KEY_SETTING) or '').strip():
-            xbmcgui.Dialog().ok('GerXStream', _label(31613))
+            xbmcgui.Dialog().ok('Baka', _label(31613))
             cGui().setEndOfDirectory(False)
             return
     page = 1
@@ -860,7 +860,7 @@ def _people(params):
         from resources.lib import persondata
         profiles = persondata.filmProfiles([person.get('id') for person in people], role)
         if not profiles:
-            cGui().showInfo('GerXStream', _label(31614), 4)
+            cGui().showInfo('Baka', _label(31614), 4)
             cGui().setEndOfDirectory(False)
             return
     people = [person for person in people if _personInGroups(person, groups, profiles)]
@@ -871,7 +871,7 @@ def _people(params):
             cGui().setEndOfDirectory(False)
             return
         if not any(data.get('imdb_count') for data in extra.values()):
-            cGui().showInfo('GerXStream', _label(31615), 4)
+            cGui().showInfo('Baka', _label(31615), 4)
             cGui().setEndOfDirectory(False)
             return
     if sortMode in ('films', 'awards') and people:
@@ -881,7 +881,7 @@ def _people(params):
         except Exception as e:
             logger.error('-> [categories]: person counts unavailable (%s)' % type(e).__name__)
         if not extra:
-            cGui().showInfo('GerXStream', cConfig().getLocalizedString(31456), 4)
+            cGui().showInfo('Baka', cConfig().getLocalizedString(31456), 4)
     ordered = sorted(people, key=lambda item: _personSortKey(item, sortMode, extra))
     if peopleLimit:
         ordered = ordered[:peopleLimit]
@@ -971,7 +971,7 @@ def _entries(params):
         return
     path, extra, page = _buildQuery(params)
     if not path:
-        cGui().showInfo('GerXStream', _label(31719))
+        cGui().showInfo('Baka', _label(31719))
         cGui().setEndOfDirectory(False)
         return
     media = 'tv' if 'tv' in path.split('/') else 'movie'
@@ -988,7 +988,7 @@ def _entries(params):
         cGui().setEndOfDirectory(False)
         return
     if not results:
-        cGui().showInfo('GerXStream', _label(31714))
+        cGui().showInfo('Baka', _label(31714))
 
     total = len(results)
     for item in results:

@@ -47,7 +47,7 @@ def test_watchlist_series_groups_episodes_and_remembers_latest_provider(monkeypa
     monkeypatch.setattr(epicfavorites, '_profilePath', lambda: str(tmp_path / 'favorites.json'))
     monkeypatch.setattr(history, '_historyPath', lambda: str(tmp_path / 'history.json'))
     for index, source in enumerate(('serienstream', 'aniworld', 'serienstream'), 1):
-        folder = 'plugin://plugin.video.gerxstream/?site=%s&function=showEpisodes&sUrl=carrie' % source
+        folder = 'plugin://plugin.video.baka/?site=%s&function=showEpisodes&sUrl=carrie' % source
         assert history.record('CarrieS01E0%d' % index, mediaType='episode', source=source,
                               season='1', episode=str(index), showTitle='Carrie',
                               seriesTitle='Carrie (2026)', year='2026', seriesTarget=folder,
@@ -67,7 +67,7 @@ def test_watchlist_preserves_favorite_folders_and_manual_status(monkeypatch, tmp
     assert epicfavorites.importData({'version': 1, 'folders': [], 'entries': []})
     assert epicfavorites.createFolder('', 'Meine Serien')
     entry = {'title': 'Carrie (2026)', 'media_type': 'tvshow', 'is_folder': True,
-             'target': 'plugin://plugin.video.gerxstream/?site=serienstream&function=showSeasons'}
+             'target': 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons'}
     assert epicfavorites.setStatus(entry, 'completed')
     assert epicfavorites.setStatus(entry, 'watching', automatic=True)
     assert len(epicfavorites.watchEntries('completed')) == 1
@@ -83,7 +83,7 @@ def test_episode_playback_context_retains_series_folder(monkeypatch):
     import json
 
     params = ParameterHandler()
-    folder = 'plugin://plugin.video.gerxstream/?site=serienstream&function=showEpisodes&sUrl=carrie'
+    folder = 'plugin://plugin.video.baka/?site=serienstream&function=showEpisodes&sUrl=carrie'
     params.addParams({'site': 'serienstream', 'mediaType': 'episode', 'season': '1', 'episode': '2',
                       'watchlistTarget': folder, 'watchlistTitle': 'Carrie', 'watchlistYear': '2026'})
     playbackstate.beginPlayback({'title': 'S01E02', 'showTitle': 'Carrie',
@@ -103,7 +103,7 @@ def test_watchlist_menu_and_history_timestamp_toggle(monkeypatch, real_strings):
     from resources.lib.handler.ParameterHandler import ParameterHandler
 
     main = _main_module(monkeypatch)
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1', ''])
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1', ''])
     added = []
     monkeypatch.setattr(cGui, 'addFolder', lambda self, element, *args: added.append(element))
     monkeypatch.setattr(cGui, 'setView', lambda *args: None)
@@ -111,7 +111,7 @@ def test_watchlist_menu_and_history_timestamp_toggle(monkeypatch, real_strings):
     main.showEpicFavorites(ParameterHandler())
     assert [element.getTitle() for element in added] == [
         'Favorites', 'Geplant', 'Am Schauen', 'Abgeschlossen', 'Abgebrochen', 'Historie']
-    target = 'plugin://plugin.video.gerxstream/?site=serienstream&function=showSeasons&sUrl=carrie'
+    target = 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons&sUrl=carrie'
     monkeypatch.setattr(history, 'entries', lambda: [{'title': 'CarrieS01E01', 'source': 'serienstream',
                                                      'watched_at': 1700000000, 'series_target': target}])
     for enabled in ('false', 'true'):
@@ -120,7 +120,7 @@ def test_watchlist_menu_and_history_timestamp_toggle(monkeypatch, real_strings):
         main.showWatchHistory()
         description = added[0].getDescription()
         assert (main._historyTimestamp(1700000000) in description) == (enabled == 'true')
-        assert added[0].getItemProperties()['GerXStream.Target'] == target
+        assert added[0].getItemProperties()['Baka.Target'] == target
     settings = ET.parse(Path(__file__).resolve().parents[1] / 'resources' / 'settings.xml')
     assert settings.find(".//setting[@id='watchHistoryTimestamps']/default").text == 'False'
 
@@ -140,7 +140,7 @@ def test_series_folder_context_survives_reopening_and_episode_navigation(monkeyp
     monkeypatch.setattr(cGui, '_episodeQueues', {})
     listed = []
     monkeypatch.setattr(xbmcplugin, 'addDirectoryItem', lambda *args: listed.append(args))
-    base = 'plugin://plugin.video.gerxstream/'
+    base = 'plugin://plugin.video.baka/'
     monkeypatch.setattr(sys, 'argv', [base, '1', '?site=serienstream&function=showSearch&sUrl=search'])
     series = cGuiElement('Carrie (2026)', 'serienstream', 'showSeasons')
     series.setMediaType('tvshow')
@@ -188,7 +188,7 @@ def test_watchlist_tracks_without_history_and_preserves_movie_folder(monkeypatch
     monkeypatch.setattr(epicfavorites, '_profilePath', lambda: str(tmp_path / 'favorites.json'))
     monkeypatch.setattr(history, '_historyPath', lambda: str(tmp_path / 'history.json'))
     set_setting('watchHistoryEnabled', 'false')
-    target = 'plugin://plugin.video.gerxstream/?site=netzkino&function=showDetails&sUrl=movie'
+    target = 'plugin://plugin.video.baka/?site=netzkino&function=showDetails&sUrl=movie'
     assert history.record('Film', target=target, targetIsFolder=True) is False
     entries = epicfavorites.watchEntries('watching')
     assert len(entries) == 1
@@ -204,7 +204,7 @@ def test_watchlist_status_changes_backup_and_copy_to_favorites(monkeypatch, tmp_
     main = _main_module(monkeypatch)
     monkeypatch.setattr(epicfavorites, '_profilePath', lambda: str(tmp_path / 'favorites.json'))
     entry = {'title': 'Carrie (2026)', 'media_type': 'tvshow', 'is_folder': True,
-             'target': 'plugin://plugin.video.gerxstream/?site=serienstream&function=showSeasons&sUrl=carrie'}
+             'target': 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons&sUrl=carrie'}
     for status in epicfavorites.STATUSES:
         assert epicfavorites.setStatus(entry, status)
         assert len(epicfavorites.watchEntries(status)) == 1
@@ -237,7 +237,7 @@ def test_status_list_has_one_action_per_command(monkeypatch, tmp_path, real_stri
     main = _main_module(monkeypatch)
     monkeypatch.setattr(epicfavorites, '_profilePath', lambda: str(tmp_path / 'favorites.json'))
     assert epicfavorites.setStatus({'title': 'Carrie', 'media_type': 'tvshow', 'is_folder': True,
-                                   'target': 'plugin://plugin.video.gerxstream/?site=serienstream&function=showSeasons'}, 'planned')
+                                   'target': 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons'}, 'planned')
     listed = []
     monkeypatch.setattr(cGui, 'addFolder', lambda self, element, *args: listed.append(element))
     monkeypatch.setattr(cGui, 'setView', lambda *args: None)
@@ -252,7 +252,7 @@ def test_filmpalast_episode_suffix_in_series_name_is_not_a_new_series(monkeypatc
 
     monkeypatch.setattr(epicfavorites, '_profilePath', lambda: str(tmp_path / 'favorites.json'))
     monkeypatch.setattr(history, '_historyPath', lambda: str(tmp_path / 'history.json'))
-    folder = 'plugin://plugin.video.gerxstream/?site=filmpalast&function=showSeasons&sUrl=carrie'
+    folder = 'plugin://plugin.video.baka/?site=filmpalast&function=showSeasons&sUrl=carrie'
     for title in ('Carrie S01E08', 'CarrieS01E09'):
         assert history.record('Episode 01', mediaType='episode', showTitle=title,
                               target=folder, seriesTarget=folder, seriesTitle=title)
@@ -445,7 +445,7 @@ def _main_module(monkeypatch):
     import types
 
     monkeypatch.setitem(sys.modules, 'resolveurl', types.ModuleType('resolveurl'))
-    return importlib.import_module('gerxstream')
+    return importlib.import_module('baka')
 
 
 def test_saved_favorite_uses_provider_route_not_wrapper(monkeypatch, real_strings):
@@ -456,11 +456,11 @@ def test_saved_favorite_uses_provider_route_not_wrapper(monkeypatch, real_string
     import xbmcplugin
 
     main = _main_module(monkeypatch)
-    target = 'plugin://plugin.video.gerxstream/?site=serienstream&function=showSeasons&sUrl=serie/carrie'
+    target = 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons&sUrl=serie/carrie'
     monkeypatch.setattr(epicfavorites, 'contents', lambda path: ('', {}, [], [{
         'id': 'a' * 32, 'title': 'Carrie (2026)', 'target': target,
         'is_folder': True, 'media_type': 'tvshow'}]))
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1', ''])
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1', ''])
     monkeypatch.setattr(cGui, '_cGui__createContextMenu', lambda self, element, item, *args: item)
     monkeypatch.setattr(cGui, 'setView', lambda *args: None)
     monkeypatch.setattr(cGui, 'setEndOfDirectory', lambda *args: None)
@@ -482,7 +482,7 @@ def test_saved_favorite_uses_provider_route_not_wrapper(monkeypatch, real_string
 
 
 def test_selected_movie_does_not_match_anime_or_other_next_titles(monkeypatch):
-    gerxstream = _main_module(monkeypatch)
+    baka = _main_module(monkeypatch)
     from resources.lib.gui.guiElement import cGuiElement
     from resources.lib.handler.ParameterHandler import ParameterHandler
 
@@ -503,11 +503,11 @@ def test_selected_movie_does_not_match_anime_or_other_next_titles(monkeypatch):
             element.setMediaType(media)
         if year:
             element.setYear(year)
-        assert gerxstream._matchesSelectedTitle({'guiElement': element}, params) == expected
+        assert baka._matchesSelectedTitle({'guiElement': element}, params) == expected
 
 
 def test_missing_selected_movie_keeps_current_directory(monkeypatch, real_strings):
-    gerxstream = _main_module(monkeypatch)
+    baka = _main_module(monkeypatch)
     from resources.lib.gui.gui import cGui
     from resources.lib.handler.ParameterHandler import ParameterHandler
 
@@ -515,11 +515,11 @@ def test_missing_selected_movie_keeps_current_directory(monkeypatch, real_string
     ended = []
     messages = []
     monkeypatch.setattr(gui, 'setEndOfDirectory', lambda success=True: ended.append(success))
-    monkeypatch.setattr(gerxstream, '_collectGlobalSearchResults', lambda *args: gui)
-    monkeypatch.setattr(gerxstream.xbmcgui.Dialog, 'ok', lambda *args: messages.append(args))
+    monkeypatch.setattr(baka, '_collectGlobalSearchResults', lambda *args: gui)
+    monkeypatch.setattr(baka.xbmcgui.Dialog, 'ok', lambda *args: messages.append(args))
     params = ParameterHandler()
     params.setParam('searchTitle', 'Next')
-    assert gerxstream.searchTMDB(params) is False
+    assert baka.searchTMDB(params) is False
     assert ended == [False]
     assert 'Next' in messages[0][-1]
 
@@ -601,14 +601,14 @@ def test_body_read_timeout_is_quiet_in_background(monkeypatch):
 
 
 def test_empty_global_search_preserves_origin(monkeypatch):
-    gerxstream = _main_module(monkeypatch)
+    baka = _main_module(monkeypatch)
     from resources.lib.gui.gui import cGui
 
     gui = cGui()
     ended = []
     monkeypatch.setattr(gui, 'setEndOfDirectory', lambda success=True: ended.append(success))
-    monkeypatch.setattr(gerxstream, '_collectGlobalSearchResults', lambda *args: gui)
-    assert gerxstream.searchGlobal('Next') is False
+    monkeypatch.setattr(baka, '_collectGlobalSearchResults', lambda *args: gui)
+    assert baka.searchGlobal('Next') is False
     assert ended == [False]
 
 
@@ -708,7 +708,7 @@ def test_random_menu_route_returns_before_scraper_dispatch(monkeypatch):
     import sys
 
     main = _main_module(monkeypatch)
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1',
                                     '?site=random&function=randomMovies'])
     shown = []
     monkeypatch.setattr(main, 'showRandomMovies', lambda: shown.append(True))
@@ -746,7 +746,7 @@ def test_random_entry_route_preserves_metadata_and_cleans_up(monkeypatch, real_s
     from resources.lib import randommovies
 
     main = _main_module(monkeypatch)
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1',
                                     '?function=randomMovies&randomLevel=entries&randomMode=genre&randomValue=28'])
     set_setting('randomItemsCount', '2')
     closed = []
@@ -779,7 +779,7 @@ def test_random_entry_route_preserves_metadata_and_cleans_up(monkeypatch, real_s
     canceled[0] = False
     set_setting('randomExcludedGenres', '16')
     items[0]['genre_ids'] = [16, 28]
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1',
                                     '?function=randomMovies&randomLevel=entries&randomMode=random'])
     main.showRandomMovies()
     assert len(added) == 1 and added[0][1]['searchTmdbID'] == '2'
@@ -921,7 +921,7 @@ def test_random_series_entries_search_as_tvshows(monkeypatch):
     from resources.lib import randommovies
 
     main = _main_module(monkeypatch)
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1',
                                     '?function=randomMovies&randomKind=serien&randomLevel=entries&randomMode=random'])
     set_setting('randomSeriesItemsCount', '1')
     monkeypatch.setattr(randommovies.xbmcgui, 'DialogProgress', lambda: types.SimpleNamespace(
@@ -946,7 +946,7 @@ def test_random_series_entries_search_as_tvshows(monkeypatch):
         'searchTitle': 'Serie', 'searchOriginalTitle': 'Show', 'searchYear': '2011',
         'searchMedia': 'tvshow', 'searchTmdbID': '7'}
     assert views == ['tvshows']
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '1',
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '1',
                                     '?function=randomMovies&randomKind=bogus'])
     ended = []
     monkeypatch.setattr(randommovies.cGui, 'setEndOfDirectory', lambda self, success=True: ended.append(success))
@@ -1140,20 +1140,20 @@ def test_plugin_worker_request_errors_stay_in_own_thread(monkeypatch):
     from concurrent.futures import ThreadPoolExecutor
     from resources.lib.handler.requestHandler import cRequestHandler
 
-    gerxstream = _main_module(monkeypatch)
+    baka = _main_module(monkeypatch)
     module = types.ModuleType('test_search_provider')
     module._search = lambda gui, text: gui.searchResults.append(
         {'quiet': cRequestHandler('https://example.test/movie').ignoreErrors})
     monkeypatch.setitem(sys.modules, module.__name__, module)
     with ThreadPoolExecutor(max_workers=1) as executor:
-        result = executor.submit(gerxstream._pluginSearch, {'id': module.__name__, 'name': 'Test'}, 'Next').result()
+        result = executor.submit(baka._pluginSearch, {'id': module.__name__, 'name': 'Test'}, 'Next').result()
         assert result == [{'quiet': True}]
         assert executor.submit(lambda: cRequestHandler('https://example.test/').ignoreErrors).result() is False
     assert cRequestHandler('https://example.test/').ignoreErrors is False
 
 
 def test_selected_movie_original_title_fallback_renders_only_matching_movie(monkeypatch):
-    gerxstream = _main_module(monkeypatch)
+    baka = _main_module(monkeypatch)
     from resources.lib.gui.gui import cGui
     from resources.lib.gui.guiElement import cGuiElement
     from resources.lib.handler.ParameterHandler import ParameterHandler
@@ -1172,13 +1172,13 @@ def test_selected_movie_original_title_fallback_renders_only_matching_movie(monk
         gui.searchResults = ([{'guiElement': movie}] if len(attempts) > 1 else [{'guiElement': other}])
         return gui
 
-    monkeypatch.setattr(gerxstream, '_collectGlobalSearchResults', collect)
+    monkeypatch.setattr(baka, '_collectGlobalSearchResults', collect)
     rendered = []
-    monkeypatch.setattr(gerxstream, '_renderCollectedSearchResults', lambda gui, results: rendered.extend(results) or True)
+    monkeypatch.setattr(baka, '_renderCollectedSearchResults', lambda gui, results: rendered.extend(results) or True)
     params = ParameterHandler()
     for key, value in {'searchTitle': 'Der naechste Film', 'searchOriginalTitle': 'The Next Movie',
                        'searchYear': '2007', 'searchMedia': 'movie'}.items():
         params.setParam(key, value)
-    assert gerxstream.searchTMDB(params) is True
+    assert baka.searchTMDB(params) is True
     assert attempts == ['Der naechste Film', 'The Next Movie']
     assert rendered == [{'guiElement': movie}]

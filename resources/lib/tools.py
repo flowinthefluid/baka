@@ -21,10 +21,16 @@ from difflib import SequenceMatcher
 from functools import lru_cache
 from os import path, chdir
 
-LEGACY_ADDON_ID = 'plugin.video.xstream'
-CURRENT_ADDON_ID = 'plugin.video.gerxstream'
-ADDON_DATA_MIGRATION_MARKER = '.gerxstream_data_migrated'
-LEGACY_INSTALL_HINT_MARKER = '.gerxstream_legacy_install_hint_shown'
+from resources.lib.legacy import CURRENT_ADDON_ID, LEGACY_ADDON_IDS, rewriteTarget, rewriteTargets
+
+ADDON_DATA_MIGRATION_MARKER = '.baka_data_migrated'
+LEGACY_INSTALL_HINT_MARKER = '.baka_legacy_install_hint_shown'
+# Nicht uebernommen: Einstellungen laufen ueber setSetting (Kodi haelt sie im
+# Speicher und wuerde eine kopierte Datei ueberschreiben); Caches enthalten
+# Pfade ins alte Addon und werden neu aufgebaut.
+MIGRATION_SKIP = frozenset(('settings.xml', 'pluginDB', 'htmlcache'))
+LEGACY_KEYMAP = 'gerxstream-rabbithole.xml'
+CURRENT_KEYMAP = 'baka-rabbithole.xml'
 
 
 def _addonDataPath(addon_id):
@@ -42,48 +48,115 @@ def _writeMarker(marker_path, content):
         xbmc.log('[tools] Failed to write marker %s: %s' % (marker_path, e), xbmc.LOGERROR)
 
 
+def legacySettings(settings_path):
+    """Gesetzte (nicht voreingestellte) Werte einer alten settings.xml."""
+    import xml.etree.ElementTree as ElementTree
+
+    try:
+        root = ElementTree.parse(settings_path).getroot()
+    except (OSError, ElementTree.ParseError):
+        return {}
+    values = {}
+    for setting in root.iter('setting'):
+        setting_id = setting.get('id')
+        if not setting_id or setting.get('default') == 'true':
+            continue
+        # Format 2: Wert als Text; Format 1: Wert als Attribut.
+        value = setting.get('value') if 'value' in setting.attrib else (setting.text or '')
+        values[setting_id] = rewriteTarget(value)
+    return values
+
+
+def _copyLegacyFile(src_file, dst_file):
+    if src_file.lower().endswith('.json'):
+        try:
+            with open(src_file, encoding='utf-8') as source:
+                data = rewriteTargets(json.load(source))
+            with open(dst_file, 'w', encoding='utf-8') as target:
+                json.dump(data, target, ensure_ascii=False, separators=(',', ':'))
+            return
+        except ValueError:
+            pass  # kein gueltiges JSON: unveraendert kopieren
+    shutil.copy2(src_file, dst_file)
+
+
+def _migrateLegacyKeymap():
+    keymaps = translatePath('special://profile/keymaps')
+    old_keymap = os.path.join(keymaps, LEGACY_KEYMAP)
+    new_keymap = os.path.join(keymaps, CURRENT_KEYMAP)
+    if not os.path.isfile(old_keymap):
+        return
+    try:
+        if not os.path.exists(new_keymap):
+            with open(old_keymap, encoding='utf-8') as source:
+                content = rewriteTarget(source.read())
+            with open(new_keymap, 'w', encoding='utf-8') as target:
+                target.write(content)
+        os.remove(old_keymap)
+        xbmc.executebuiltin('ReloadKeymaps')
+    except Exception as e:
+        xbmc.log('[tools] Could not migrate keymap %s: %s' % (old_keymap, e), xbmc.LOGERROR)
+
+
 def migrateLegacyAddonData():
+    """Uebernimmt einmalig die Daten des neuesten Vorgaenger-Addons."""
     addon_id = cConfig().getAddonInfo('id')
     if addon_id != CURRENT_ADDON_ID:
         return False
 
-    old_data_path = _addonDataPath(LEGACY_ADDON_ID)
     new_data_path = _addonDataPath(CURRENT_ADDON_ID)
     marker_path = os.path.join(new_data_path, ADDON_DATA_MIGRATION_MARKER)
-
     if os.path.isfile(marker_path):
         return False
 
+    legacy_id = next((legacy for legacy in LEGACY_ADDON_IDS if os.path.isdir(_addonDataPath(legacy))), None)
     copied_files = 0
+    migrated_settings = 0
     os.makedirs(new_data_path, exist_ok=True)
 
-    if os.path.isdir(old_data_path):
-        for src_root, _, file_names in os.walk(old_data_path):
+    if legacy_id:
+        old_data_path = _addonDataPath(legacy_id)
+        for src_root, dir_names, file_names in os.walk(old_data_path):
+            dir_names[:] = [name for name in dir_names if name not in MIGRATION_SKIP]
             rel_path = os.path.relpath(src_root, old_data_path)
             dst_root = new_data_path if rel_path == '.' else os.path.join(new_data_path, rel_path)
             os.makedirs(dst_root, exist_ok=True)
             for file_name in file_names:
+                if file_name in MIGRATION_SKIP or file_name.startswith('.'):
+                    continue
                 src_file = os.path.join(src_root, file_name)
                 dst_file = os.path.join(dst_root, file_name)
                 if os.path.exists(dst_file):
                     continue
                 try:
-                    shutil.copy2(src_file, dst_file)
+                    _copyLegacyFile(src_file, dst_file)
                     copied_files += 1
                 except Exception as e:
                     xbmc.log('[tools] Could not migrate %s: %s' % (src_file, e), xbmc.LOGERROR)
+        config = cConfig()
+        for setting_id, value in legacySettings(os.path.join(old_data_path, 'settings.xml')).items():
+            try:
+                config.setSetting(setting_id, value)
+                migrated_settings += 1
+            except Exception as e:
+                xbmc.log('[tools] Could not migrate setting %s: %s' % (setting_id, e), xbmc.LOGERROR)
+        _migrateLegacyKeymap()
 
-    marker_content = 'migrated_from=%s\ntime=%s\nfiles=%s\n' % (
-        LEGACY_ADDON_ID,
-        int(time.time()),
-        copied_files)
+    marker_content = 'migrated_from=%s\ntime=%s\nfiles=%s\nsettings=%s\n' % (
+        legacy_id or '', int(time.time()), copied_files, migrated_settings)
     _writeMarker(marker_path, marker_content)
-    if copied_files:
-        xbmc.log('[tools] Migrated %s addon_data files from %s to %s' % (copied_files, LEGACY_ADDON_ID, CURRENT_ADDON_ID), xbmc.LOGINFO)
-    return copied_files > 0
+    if legacy_id:
+        xbmc.log('[tools] Migrated %s files and %s settings from %s to %s' % (
+            copied_files, migrated_settings, legacy_id, CURRENT_ADDON_ID), xbmc.LOGINFO)
+    return bool(copied_files or migrated_settings)
 
 
 def showLegacyInstallHintOnce():
+    """Hinweis auf eine parallel installierte xStream-Altinstallation.
+
+    GerXStream bleibt als Weiterleitung auf Baka installiert und ist deshalb
+    keine Doppelinstallation.
+    """
     addon_id = cConfig().getAddonInfo('id')
     if addon_id != CURRENT_ADDON_ID:
         return
@@ -93,14 +166,14 @@ def showLegacyInstallHintOnce():
     if os.path.isfile(marker_path):
         return
 
-    legacy_addon_path = translatePath(os.path.join('special://home/addons', LEGACY_ADDON_ID))
+    legacy_addon_path = translatePath(os.path.join('special://home/addons', 'plugin.video.xstream'))
     if not os.path.isdir(legacy_addon_path):
         return
 
     xbmcgui.Dialog().ok(
         cConfig().getAddonInfo('name'),
         'Alte Installation erkannt: plugin.video.xstream.\n'
-        'Dieses Addon verwendet jetzt plugin.video.gerxstream.\n'
+        'Dieses Addon verwendet jetzt plugin.video.baka.\n'
         'Bitte entferne die alte Installation, um Doppelinstallationen zu vermeiden.')
     _writeMarker(marker_path, 'shown=%s\n' % int(time.time()))
 
@@ -332,7 +405,7 @@ class cParser:
         return base64.b64decode(text).decode('utf-8')
 
 
-# GerXStream interner Log
+# Baka interner Log
 class logger:
     @staticmethod
     def info(sInfo):

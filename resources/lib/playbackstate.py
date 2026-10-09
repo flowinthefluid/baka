@@ -17,7 +17,7 @@ from resources.lib.config import cConfig
 from resources.lib.episodequeue import EPISODE_PLAYLIST_PROPERTY
 
 
-PLAYBACK_PROPERTY = 'GerXStream.PlaybackContext'
+PLAYBACK_PROPERTY = 'Baka.PlaybackContext'
 WATCHED_PERCENT = 90
 WATCHED_FILE = 'watched_items.json'
 
@@ -174,7 +174,7 @@ class PlaybackMonitor(xbmc.Player):
             playingKey = ''
             if not pending or pending['stream'] != stream:
                 try:
-                    playingKey = self.getVideoInfoTag().getUniqueID('gerxstream')
+                    playingKey = self.getVideoInfoTag().getUniqueID('baka')
                 except (AttributeError, RuntimeError):
                     pass
             if (_validKey(playingKey)

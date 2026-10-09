@@ -22,7 +22,7 @@ CHANNEL = {
 
 @pytest.fixture
 def route(monkeypatch):
-    sys.argv = ['plugin://plugin.video.gerxstream/', '-1', '']
+    sys.argv = ['plugin://plugin.video.baka/', '-1', '']
     from resources.lib.livestreams import route as r
     from resources.lib.livestreams import catalog, selector
     monkeypatch.setattr(catalog, 'get_channel', lambda cid: CHANNEL if cid == CHANNEL['id'] else None)

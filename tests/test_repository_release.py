@@ -25,7 +25,7 @@ def test_repository_is_in_catalog_and_datadir(tmp_path, pages_url):
     resolver_zip = output / 'zips' / 'script.module.resolveurl' / ('script.module.resolveurl-%s.zip' % resolver_version)
     assert resolver_zip.exists()
 
-    repository = catalog.find("addon[@id='repository.gerxstream']")
+    repository = catalog.find("addon[@id='repository.baka']")
     assert repository is not None
     assert repository.get('version') == '1.0.8'
     assert repository.find('./extension/dir/info').text == pages_url + '/catalog/addons.xml'
@@ -34,15 +34,15 @@ def test_repository_is_in_catalog_and_datadir(tmp_path, pages_url):
     assert (output / 'catalog' / 'addons.xml').read_bytes() == catalog_bytes
     assert (output / 'catalog' / 'addons.xml.md5').read_text() == (output / 'addons.xml.md5').read_text()
 
-    plugin = catalog.find("addon[@id='plugin.video.gerxstream']")
+    plugin = catalog.find("addon[@id='plugin.video.baka']")
     assert plugin.get('version') == '1.0.38'
-    plugin_zip = output / 'zips' / 'plugin.video.gerxstream' / 'plugin.video.gerxstream-1.0.38.zip'
+    plugin_zip = output / 'zips' / 'plugin.video.baka' / 'plugin.video.baka-1.0.38.zip'
     with zipfile.ZipFile(plugin_zip) as archive:
         assert archive.testzip() is None
-        plugin_manifest = ET.fromstring(archive.read('plugin.video.gerxstream/addon.xml'))
-        settings = ET.fromstring(archive.read('plugin.video.gerxstream/resources/settings.xml'))
-        random_movies = archive.read('plugin.video.gerxstream/resources/lib/randommovies.py').decode('utf-8')
-        rocketbeans = archive.read('plugin.video.gerxstream/sites/rocketbeans.py').decode('utf-8')
+        plugin_manifest = ET.fromstring(archive.read('plugin.video.baka/addon.xml'))
+        settings = ET.fromstring(archive.read('plugin.video.baka/resources/settings.xml'))
+        random_movies = archive.read('plugin.video.baka/resources/lib/randommovies.py').decode('utf-8')
+        rocketbeans = archive.read('plugin.video.baka/sites/rocketbeans.py').decode('utf-8')
     assert plugin_manifest.get('version') == plugin.get('version')
     assert 'def showSeasons(' in rocketbeans
     assert 'def login(' in rocketbeans
@@ -57,14 +57,27 @@ def test_repository_is_in_catalog_and_datadir(tmp_path, pages_url):
         assert setting.find('default').text == 'inherit'
         assert setting.find('constraints/options/option').text == 'inherit'
 
-    name = 'repository.gerxstream-1.0.8.zip'
+    # Letzte GerXStream-Version installiert Baka und das neue Repository mit.
+    transition = catalog.find("addon[@id='plugin.video.gerxstream']")
+    assert transition.get('version') == '1.1.0'
+    requires = {item.get('addon'): item.get('version') for item in transition.find('requires')}
+    assert requires['plugin.video.baka'] == plugin.get('version')
+    assert requires['repository.baka'] == repository.get('version')
+    transition_zip = output / 'zips' / 'plugin.video.gerxstream' / 'plugin.video.gerxstream-1.1.0.zip'
+    with zipfile.ZipFile(transition_zip) as archive:
+        assert archive.testzip() is None
+        assert sorted(archive.namelist()) == ['plugin.video.gerxstream/addon.xml',
+                                              'plugin.video.gerxstream/default.py',
+                                              'plugin.video.gerxstream/icon.png']
+
+    name = 'repository.baka-1.0.8.zip'
     install_zip = output / name
-    update_zip = output / 'zips' / 'repository.gerxstream' / name
+    update_zip = output / 'zips' / 'repository.baka' / name
     assert install_zip.read_bytes() == update_zip.read_bytes()
     index_html = (output / 'index.html').read_text(encoding='utf-8')
     assert name in index_html
     with zipfile.ZipFile(update_zip) as archive:
         assert archive.testzip() is None
-        manifest = ET.fromstring(archive.read('repository.gerxstream/addon.xml'))
+        manifest = ET.fromstring(archive.read('repository.baka/addon.xml'))
     assert manifest.get('version') == repository.get('version')
     assert manifest.find('./extension/dir/checksum').text == repository.find('./extension/dir/checksum').text

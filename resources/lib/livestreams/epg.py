@@ -23,7 +23,7 @@ from urllib.request import Request, urlopen
 
 from resources.lib.tools import logger
 
-_UA = 'Mozilla/5.0 (compatible; GerXStream-EPG/1.0)'
+_UA = 'Mozilla/5.0 (compatible; Baka-EPG/1.0)'
 _XMLTV_TS = '%Y%m%d%H%M%S'
 
 
@@ -77,7 +77,7 @@ def build_guide(source_urls, visible_epg_ids, out_path, window_hours=6):
     try:
         with open(tmp_path, 'w', encoding='utf-8') as out:
             out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-            out.write('<tv generator-info-name="GerXStream">\n')
+            out.write('<tv generator-info-name="Baka">\n')
 
             for url in source_urls:
                 data = _fetch(url)

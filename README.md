@@ -1,16 +1,16 @@
 <!-- ═══════════════════════════════════════════════════════════════════════
-     GerXStream · README
+     Baka · README
      Farben aus dem Markendesign: Violett #7B3FE4 → Smaragd #1FC38E
      ═══════════════════════════════════════════════════════════════════════ -->
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7B3FE4,100:1FC38E&height=140&section=header" width="100%" alt=""/>
 
 <p align="center">
-  <img src="resources/clearlogo.png" alt="GerXStream" width="380">
+  <img src="resources/clearlogo.png" alt="Baka" width="380">
 </p>
 
 <p align="center">
-  <a href="#-was-ist-gerxstream">
+  <a href="#-was-ist-baka">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=1FC38E&center=true&vCenter=true&width=640&lines=Eine+Suchmaschine.+Alle+Quellen.+Ein+Klick.;Filme+%C2%B7+Serien+%C2%B7+Animes+%C2%B7+Dokus+%C2%B7+Live;Rein+ins+Rabbithole+%F0%9F%90%87;Made+for+Kodi+22+%22Piers%22" alt="Eine Suchmaschine. Alle Quellen. Ein Klick.">
   </a>
 </p>
@@ -41,22 +41,27 @@
 
 ---
 
-## 🎬 Was ist GerXStream?
+## 🎬 Was ist Baka?
 
 > **Du willst einen Film sehen. Nicht zehn Apps öffnen.**
 
-GerXStream ist ein **Meta-Suchmaschinen-Addon für Kodi**. Du tippst einen Titel ein –
-GerXStream fragt **alle aktivierten Quellen gleichzeitig** ab, fasst doppelte
+Baka ist ein **Meta-Suchmaschinen-Addon für Kodi**. Du tippst einen Titel ein –
+Baka fragt **alle aktivierten Quellen gleichzeitig** ab, fasst doppelte
 Treffer zusammen, hängt Cover, Bewertungen und Cast dran und legt dir alles in die
 gewohnte Kodi-Oberfläche. Ein Klick, Hoster wählen (oder automatisch wählen lassen),
 läuft.
+
+> **Baka?** Steht für *Best AIO Kodi Addon* – und ja, auf Japanisch heißt es auch
+> „Dummkopf“. Bis Version 1.0.38 hieß das Addon **GerXStream**. Wer GerXStream
+> installiert hat, bekommt Baka mit dem nächsten Update automatisch; Favoriten,
+> Watchlist, Historie und Einstellungen werden übernommen, alte Links weitergeleitet.
 
 Drumherum ist ein ganzes Ökosystem gewachsen: TMDB-Kategorien über alle Quellen
 hinweg, Zufallsfilme/-serien/-animes, verschachtelte Favoriten, Binge-Modus mit automatischer
 nächster Folge, öffentlich-rechtliche Mediatheken, frei empfangbares Live-TV mit EPG –
 und ein **Webcam-Rabbithole**, aus dem man nachts um drei nicht mehr rauskommt.
 
-GerXStream ist der Nachfolger von xStream: komplett auf Python 3 umgebaut, mit eigenem
+Baka ist der Nachfolger von xStream: komplett auf Python 3 umgebaut, mit eigenem
 Branding, gehärtetem Kern und **Deutsch als erster Sprache**.
 
 <p align="center">
@@ -167,7 +172,7 @@ sonst nie anzeigen. (IMDb/RT über einen eigenen, kostenlosen OMDb-Key.)
 ### 🍪 Cookie-Assistent
 Quelle hängt hinter Cloudflare oder DDoS-Guard? Im Browser die Prüfung
 bestätigen, Anfrage „als cURL kopieren", einfügen – **direkt in Kodi oder vom
-Handy/PC** über eine kleine Seite, die GerXStream kurz im Heimnetz anbietet.
+Handy/PC** über eine kleine Seite, die Baka kurz im Heimnetz anbietet.
 Vollautomatisch geht's mit **FlareSolverr**.
 
 </td>
@@ -196,7 +201,7 @@ Und wer von xStream kommt: Daten werden beim ersten Start **automatisch
 ### 🧭 So sieht das Hauptmenü aus
 
 ```text
-GerXStream
+Baka
 ├── ⭐ Epic-Favorites           ← immer oben, deine Ordnerwelt
 ├── 🔎 Globale Suche            ← alle · Filme · Serien · Animes · Dokus · Kinder
 ├── 📂 Alle / Filme / Serien / Animes / Dokus / Kinder   ← Quellen nach Inhalt, oben jeweils 🎲 Zufällig
@@ -265,11 +270,11 @@ Strände, Piers, Parks, Verkehr. Jede mit Betreiberquelle und Prüfdatum.
 > ein Adlerhorst. **Keine Wiederholung** innerhalb der Sitzung – die Engine merkt sich,
 > was du schon gesehen hast, und vergisst es beim Kodi-Neustart wieder (RAM-only,
 > kein Dateimüll). Ändern sich Filter oder Kategorien, startet die Session neu.
-> Mit dem optionalen Keymap [`gerxstream-rabbithole.xml`](resources/keymaps/gerxstream-rabbithole.xml)
+> Mit dem optionalen Keymap [`baka-rabbithole.xml`](resources/keymaps/baka-rabbithole.xml)
 > springt die **Pfeiltaste ↓** im Vollbild direkt zur nächsten Kamera.
 
 **Für Power-User:** Der Hintergrunddienst schreibt `playlist.m3u` und `guide.xml`
-(XMLTV) nach `special://profile/addon_data/plugin.video.gerxstream/livestreams/` –
+(XMLTV) nach `special://profile/addon_data/plugin.video.baka/livestreams/` –
 damit wird der **PVR IPTV Simple Client** zum vollwertigen TV-Guide. Im Addon selbst
 gibt's „Jetzt / Danach" direkt am Sender. Der Button **„IPTV-Simple-Einrichtung
 anzeigen"** zeigt den Pfad, **„Quellen prüfen"** validiert den Katalog.
@@ -287,7 +292,7 @@ anzeigen"** zeigt den Pfad, **„Quellen prüfen"** validiert den Katalog.
 ```mermaid
 flowchart LR
     K([Kodi<br/>plugin://]) --> D[default.py]
-    D --> P{gerxstream.py<br/>parseUrl}
+    D --> P{baka.py<br/>parseUrl}
     P -- Whitelist-Check --> S[[sites/*.py<br/>49 Site-Plugins]]
     P --> C[categories.py<br/>TMDB · OMDb · Wikidata]
     P --> L[livestreams/<br/>route · catalog · epg]
@@ -315,7 +320,7 @@ flowchart LR
 sequenceDiagram
     autonumber
     actor Du
-    participant GX as GerXStream
+    participant GX as Baka
     participant Pool as ThreadPool (≤ 6)
     participant Q as Quellen
     Du->>GX: „Dune"
@@ -339,7 +344,7 @@ sequenceDiagram
 
 | Bereich | Pfad |
 |:--|:--|
-| Einstieg, Routing-Whitelist, Hauptmenü, globale Suche | [`gerxstream.py`](gerxstream.py) |
+| Einstieg, Routing-Whitelist, Hauptmenü, globale Suche | [`baka.py`](baka.py) |
 | Hintergrunddienst (Migration, Cache, Versions-Checks, Export) | [`service.py`](service.py) |
 | Site-Plugins (eine Datei pro Quelle) | [`sites/`](sites/) |
 | GUI-Abstraktion, Hoster-Auswahl, Player | [`resources/lib/gui/`](resources/lib/gui/) |
@@ -357,7 +362,7 @@ sequenceDiagram
 
 ## 🔒 Sicherheit (nicht verhandelbar)
 
-GerXStream verarbeitet ständig fremdes HTML, fremde JSON-Antworten und
+Baka verarbeitet ständig fremdes HTML, fremde JSON-Antworten und
 `plugin://`-URLs, die jeder basteln kann. Deshalb gelten feste Regeln:
 
 |  | Regel |
@@ -382,8 +387,8 @@ GerXStream verarbeitet ständig fremdes HTML, fremde JSON-Antworten und
    ```text
    https://flowinthefluid.github.io/gerxstream/repo/
    ```
-2. **Add-ons → Aus ZIP-Datei installieren** → `repository.gerxstream-1.0.7.zip`
-3. **Aus Repository installieren → GerXStream Repository → Video-Addons → GerXStream**
+2. **Add-ons → Aus ZIP-Datei installieren** → `repository.baka-1.0.7.zip`
+3. **Aus Repository installieren → Baka Repository → Video-Addons → Baka**
 4. Fertig. ResolveURL 5.1.209 kommt als Abhängigkeit aus demselben Repository mit,
    Updates laufen über Kodis Add-on-Verwaltung.
 
@@ -487,7 +492,7 @@ und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiederga
 
 > **Ein Ort für alles, was man in Kodi gucken will** – schnell, deutsch, ehrlich.
 > Nicht die meisten Quellen um jeden Preis, sondern die, die funktionieren.
-> Und wenn etwas nicht geht, sagt GerXStream das, statt so zu tun als ob.
+> Und wenn etwas nicht geht, sagt Baka das, statt so zu tun als ob.
 
 **Auf dem Radar**
 
@@ -503,7 +508,7 @@ und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiederga
 - [x] ~~Live-TV über M3U/XMLTV~~ → Export für IPTV Simple
 - [x] ~~Zufallsauswahl~~ → drei Modi über den ganzen TMDB-Katalog
 
-**Was GerXStream bewusst *nicht* baut** – und warum
+**Was Baka bewusst *nicht* baut** – und warum
 
 | ❌ | Grund |
 |:--|:--|
@@ -517,7 +522,7 @@ und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiederga
 
 ## 🧩 Mitentwickeln
 
-GerXStream läuft ausschließlich unter **Python 3**. Jede Quelle ist ein eigenständiges
+Baka läuft ausschließlich unter **Python 3**. Jede Quelle ist ein eigenständiges
 Modul unter [`sites/`](sites/) – austauschbar, einzeln abschaltbar, einzeln testbar.
 
 ```python
@@ -537,7 +542,7 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
 **Die drei goldenen Regeln für neue Quellen**
 
 1. Jede von außen aufrufbare Funktion **muss** in `SCRAPER_ENTRY_FUNCTIONS` in
-   [`gerxstream.py`](gerxstream.py) stehen – sonst ist sie nicht routbar.
+   [`baka.py`](baka.py) stehen – sonst ist sie nicht routbar.
 2. **Kein** `xbmcplugin`/`xbmcgui`/`requests`/`xbmcaddon` direkt im Site-Plugin.
 3. Registrieren mit einem Befehl statt 40 Zeilen an drei Stellen:
    ```sh
@@ -556,15 +561,15 @@ Die CI (GitLab und GitHub Actions) führt die Tests aus und baut daraus automati
 Kodi-Repository mit allen ZIPs. Architektur, Konventionen und Sicherheitsregeln im
 Detail: **[docs/CODING-PLAN.md](docs/CODING-PLAN.md)**.
 
-Quellcode, Tickets und Releases: **[gitlab.com/gerxstream/gerxstream](https://gitlab.com/gerxstream/gerxstream)**
+Quellcode, Tickets und Releases: **[gitlab.com/gerxstream/baka](https://gitlab.com/gerxstream/gerxstream)**
 · Mirror: [github.com/flowinthefluid/gerxstream](https://github.com/flowinthefluid/gerxstream)
 
 ---
 
 ## ⚖️ Hinweis & Lizenz
 
-GerXStream ist eine **Suchmaschine**. Die Site-Plugins liefern nur Verknüpfungen zu den
-jeweiligen Webseiten – deren Inhalte stehen in keinerlei Bezug zu GerXStream oder den
+Baka ist eine **Suchmaschine**. Die Site-Plugins liefern nur Verknüpfungen zu den
+jeweiligen Webseiten – deren Inhalte stehen in keinerlei Bezug zu Baka oder den
 Entwickler:innen. Für die Nutzung der angebundenen Angebote ist jede:r selbst
 verantwortlich.
 

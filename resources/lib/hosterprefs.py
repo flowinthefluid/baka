@@ -35,7 +35,7 @@ MODE_ONLY = 'only'
 MODE_AUTO = 'auto'
 MODES = (MODE_OFF, MODE_SORT, MODE_ONLY, MODE_AUTO)
 
-STICKY_PROPERTY = 'GerXStream.StickyHoster'
+STICKY_PROPERTY = 'Baka.StickyHoster'
 
 SEEN_FILE = 'seen_hosters.json'
 SEEN_PER_SITE = 60

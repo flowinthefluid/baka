@@ -60,7 +60,7 @@ def test_search_renderer_uses_grouping_without_losing_results():
     from pathlib import Path
     from types import SimpleNamespace
 
-    path = Path(__file__).resolve().parents[1] / 'gerxstream.py'
+    path = Path(__file__).resolve().parents[1] / 'baka.py'
     tree = ast.parse(path.read_text(encoding='utf-8-sig'))
     function = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
                     and node.name == '_renderCollectedSearchResults')

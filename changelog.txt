@@ -1,3 +1,14 @@
+[B]Baka – nächste Version (unveröffentlicht)[/B]
+
+09.10.2026
+
+- GerXStream heißt jetzt Baka (plugin.video.baka, repository.baka). Beim ersten Start übernimmt Baka Favoriten, Watchlist, Historie, Gesehen-Markierungen, Konten und Einstellungen; gespeicherte Links zeigen danach auf Baka. Caches werden neu aufgebaut.
+- Die letzte GerXStream-Version 1.1.0 installiert Baka und das neue Repository automatisch mit und leitet alte Links, Kodi-Favoriten und die Rabbithole-Tastenbelegung an Baka weiter.
+- Sicherungen aus GerXStream-Zeiten bleiben importierbar.
+- Zufallsauswahl in jedem Inhaltsordner: Zufällige Filme, Serien, Animes, Dokus und Kindertitel mit jeweils eigenen Genres, Anzahl und IMDb-Mindestwertung. Korrigiert: Wegen der TMDB-Trefferobergrenze kamen Zufallsfilme bisher nur aus der Frühzeit des Kinos.
+- Globale Suche fasst identische Treffer mehrerer Quellen zusammen.
+- JPEG-Webcams: Stop/Zurück beendet die Bildaktualisierung zuverlässig.
+
 [B]Version: 1.0.38[/B]
 
 09.10.2026

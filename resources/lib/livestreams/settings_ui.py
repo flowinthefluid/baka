@@ -46,7 +46,7 @@ def _all_genres():
 def edit_countries():
     countries = _all_countries()
     if not countries:
-        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(31200))
+        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(31200))
         return
     labels = [taxonomy.country_label(c) for c in countries]
     current = set(x.strip().lower() for x in (cConfig().getSetting('lsCountries', '') or '').split(',') if x.strip())
@@ -65,7 +65,7 @@ def edit_countries():
 def edit_genres():
     genres = _all_genres()
     if not genres:
-        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(31200))
+        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(31200))
         return
     labels = [taxonomy.genre_label(g) for g in genres]
     hidden = set(x.strip().lower() for x in (cConfig().getSetting('lsGenresHidden', '') or '').split(',') if x.strip())

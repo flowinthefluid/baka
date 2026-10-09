@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Python 3
-"""Zentrale Sichtbarkeits- und NSFW-Logik fuer GerXStream.
+"""Zentrale Sichtbarkeits- und NSFW-Logik fuer Baka.
 
 Ein einziger Ort entscheidet, ob ein Inhalt sichtbar ist - fuer die
 Livestream-Menues, den M3U-Export, den EPG-Grabber, die globale Suche und

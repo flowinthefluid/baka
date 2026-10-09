@@ -96,7 +96,7 @@ def test_route_uses_resolved_pluto_url(monkeypatch):
 def test_m3u_export_uses_addon_route_for_session_sources():
     from resources.lib.livestreams import m3u
     channel = model.normalize_channel(pluto.build_channels(RAW[:1], [], 'de')[0])
-    assert m3u._direct_url(channel).startswith('plugin://plugin.video.gerxstream/')
+    assert m3u._direct_url(channel).startswith('plugin://plugin.video.baka/')
 
 
 def test_mediatheken_folder_lists_sources_and_channels(monkeypatch, real_strings):

@@ -18,7 +18,7 @@ from urllib.parse import urlencode
 from resources.lib import contentgate
 from resources.lib.livestreams import catalog, selector, taxonomy
 
-ADDON_ID = 'plugin.video.gerxstream'
+ADDON_ID = 'plugin.video.baka'
 
 
 def _plugin_play_url(channel):
@@ -89,7 +89,7 @@ def generate(channels=None, direct=False):
     lines = ['#EXTM3U\n']
     # Fingerprint als Kommentar - hilft beim Debuggen und macht Aenderungen
     # der Sichtbarkeit im Export nachvollziehbar.
-    lines.append('# gerxstream visibility=%s\n' % contentgate.visibility_fingerprint())
+    lines.append('# baka visibility=%s\n' % contentgate.visibility_fingerprint())
     for channel in channels:
         url = _direct_url(channel) if direct else _plugin_play_url(channel)
         if not url:

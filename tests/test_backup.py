@@ -44,7 +44,7 @@ def test_share_profile_preserves_hoster_order_and_menu():
 
 
 def test_addon_package_has_manifest_but_no_profile_or_cache(monkeypatch, tmp_path):
-    (tmp_path / 'addon.xml').write_text('<addon id="plugin.video.gerxstream"/>')
+    (tmp_path / 'addon.xml').write_text('<addon id="plugin.video.baka"/>')
     (tmp_path / 'resources').mkdir()
     (tmp_path / 'resources' / 'settings.xml').write_text('<settings/>')
     (tmp_path / 'resources' / 'cache').mkdir()
@@ -55,8 +55,8 @@ def test_addon_package_has_manifest_but_no_profile_or_cache(monkeypatch, tmp_pat
     target = io.BytesIO()
     backup._packageAddon(target)
     with zipfile.ZipFile(target) as package:
-        assert package.namelist() == ['plugin.video.gerxstream/addon.xml',
-                                     'plugin.video.gerxstream/resources/settings.xml']
+        assert package.namelist() == ['plugin.video.baka/addon.xml',
+                                     'plugin.video.baka/resources/settings.xml']
         assert package.testzip() is None
 
 
@@ -137,7 +137,7 @@ def test_remote_paths_use_forward_slashes():
 
 def test_cloud_listing_ignores_other_hosts_and_traversal(monkeypatch):
     set_setting('backupCloudUrl', 'https://cloud.test/files/user')
-    filename = 'gerxstream-portable-20261009-120000-abcdef12.json'
+    filename = 'baka-portable-20261009-120000-abcdef12.json'
     listing = '<d:multistatus xmlns:d="DAV:">%s</d:multistatus>' % ''.join(
         '<d:response><d:href>%s</d:href></d:response>' % href for href in (
             '/files/user/' + filename,
@@ -174,7 +174,7 @@ def test_cloud_never_accepts_redirects_or_failed_uploads(monkeypatch, status):
 
     monkeypatch.setattr(requests, 'Session', Session)
     with pytest.raises(backup.BackupTransferError):
-        backup._cloudRequest('PUT', 'gerxstream-share-20261009-120000.json', b'{}')
+        backup._cloudRequest('PUT', 'baka-share-20261009-120000.json', b'{}')
     assert calls[0][2]['allow_redirects'] is False
     assert calls[0][2]['verify'] is True
     assert calls[0][2]['headers']['If-None-Match'] == '*'
@@ -262,7 +262,7 @@ def test_selected_cloud_import_applies_accounts_when_requested(monkeypatch, real
 
     monkeypatch.setattr(backup.xbmcgui, 'Dialog', Dialog)
     monkeypatch.setattr(backup, '_storage', lambda dialog: 'nextcloud')
-    monkeypatch.setattr(backup, '_cloudFiles', lambda: ['gerxstream-custom-20261009-120000.json'])
+    monkeypatch.setattr(backup, '_cloudFiles', lambda: ['baka-custom-20261009-120000.json'])
     monkeypatch.setattr(backup, '_cloudRequest', lambda *args: json.dumps(payload).encode('utf-8'))
     assert backup.importBackup('custom')
     assert len(confirmations) == 1

@@ -26,7 +26,7 @@ def test_header_and_extm3u():
     assert out.startswith('#EXTM3U')
     assert 'tvg-id="ard.de"' in out
     assert 'group-title="Fernsehen;Deutschland;Nachrichten"' in out
-    assert 'plugin://plugin.video.gerxstream/' in out  # plugin-URL, keine Roh-URL
+    assert 'plugin://plugin.video.baka/' in out  # plugin-URL, keine Roh-URL
 
 
 def test_direct_mode_emits_raw_url():
@@ -54,4 +54,4 @@ def test_nsfw_included_when_enabled():
 def test_fingerprint_comment_present():
     cConfig().setSetting('showAdult', 'false')
     out = m3u.generate([ARD])
-    assert '# gerxstream visibility=' in out
+    assert '# baka visibility=' in out

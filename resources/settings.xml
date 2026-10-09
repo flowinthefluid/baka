@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <settings version="1">
-	<section id="plugin.video.gerxstream">
+	<section id="plugin.video.baka">
 		<category id="general" label="30020" help="">
 			<group id="presentation" label="30031">
 				<setting id="GlobalSearchPosition" type="boolean" label="30011" help="30411">
@@ -15,7 +15,7 @@
 				</setting>
 				<setting id="mainMenuOrderEditor" type="action" label="30879" help="30883">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=mainMenuOrder)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=mainMenuOrder)</data>
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
@@ -96,7 +96,7 @@
 				</setting>
 				<setting id="watchHistoryClear" type="action" label="30910" help="30911">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=clearWatchHistory)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=clearWatchHistory)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="watchHistoryTimestamps" type="boolean" label="31856" help="31857">
@@ -161,7 +161,7 @@
 				</setting>
 				<setting id="preferredHosterPicker" type="action" label="31402" help="31403">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=preferredHosterMenu)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=preferredHosterMenu)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="preferredHosterMode">off</dependency>
 					</dependencies>
@@ -229,7 +229,7 @@
 				</setting>
 				<setting id="blockedHosterPicker" type="action" label="30861" help="30862">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=blockedHosterMenu)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=blockedHosterMenu)</data>
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
@@ -313,7 +313,7 @@
 				</setting>
 				<setting id="cookieAssistant" type="action" label="31470" help="31480">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant)</data>
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
@@ -391,7 +391,7 @@
 				</setting>
 				<setting id="delHtmlCache" type="action" label="30165" help="">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=clearCache)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=clearCache)</data>
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
@@ -434,7 +434,7 @@
 			<group id="lsRabbithole" label="31241">
 				<setting id="rhCategoriesEditor" type="action" label="31242" help="31243">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=lsRabbitholeCategories)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=lsRabbitholeCategories)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="rhCategories" type="string" label="31242" help="">
@@ -512,7 +512,7 @@
 				</setting>
 				<setting id="lsCountriesEditor" type="action" label="30974" help="30975">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=lsCountriesEditor)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=lsCountriesEditor)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="lsCountries" type="string" label="30974" help="">
@@ -526,7 +526,7 @@
 			<group id="lsGenres" label="30976">
 				<setting id="lsGenresEditor" type="action" label="30977" help="30978">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=lsGenresEditor)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=lsGenresEditor)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="lsGenresHidden" type="string" label="30977" help="">
@@ -608,17 +608,17 @@
 				</setting>
 				<setting id="lsRefreshNow" type="action" label="30987" help="">
 					<level>3</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsRefresh)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=livestreamsRefresh)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="lsExportHint" type="action" label="30988" help="">
 					<level>3</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsExportHint)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=livestreamsExportHint)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="lsVerify" type="action" label="30999" help="">
 					<level>3</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsVerify)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=livestreamsVerify)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="lsLastRefresh" type="string" label="30984" help="">
@@ -670,7 +670,7 @@
 				</setting>
 				<setting id="start.popup.update.notification" type="action" label="30276" help="">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=changelog)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=changelog)</data>
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
@@ -702,12 +702,12 @@
 				</setting>
 				<setting id="rocketbeans.login" type="action" label="31509" help="31519">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=rocketbeans&amp;function=login)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=rocketbeans&amp;function=login)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="rocketbeans.logout" type="action" label="31510">
 					<level>1</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=rocketbeans&amp;function=logout)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=rocketbeans&amp;function=logout)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="rocketbeans.token" type="string" label="31506">
@@ -792,7 +792,7 @@
 			<group id="randomSelection" label="30868">
 				<setting id="randomGenresPicker" type="action" label="31701" help="31705">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=randomGenres)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="randomExcludedGenres" type="string" label="31701">
@@ -818,7 +818,7 @@
 			<group id="randomSeriesSelection" label="31891">
 				<setting id="randomSeriesGenresPicker" type="action" label="31701" help="31897">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=serien)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=randomGenres&amp;randomKind=serien)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="randomSeriesExcludedGenres" type="string" label="31701">
@@ -844,7 +844,7 @@
 			<group id="randomAnimeSelection" label="31892">
 				<setting id="randomAnimeGenresPicker" type="action" label="31701" help="31897">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=animes)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=randomGenres&amp;randomKind=animes)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="randomAnimeExcludedGenres" type="string" label="31701">
@@ -870,7 +870,7 @@
 			<group id="randomDocsSelection" label="31893">
 				<setting id="randomDocsGenresPicker" type="action" label="31701" help="31897">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=dokus)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=randomGenres&amp;randomKind=dokus)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="randomDocsExcludedGenres" type="string" label="31701">
@@ -896,7 +896,7 @@
 			<group id="randomKidsSelection" label="31894">
 				<setting id="randomKidsGenresPicker" type="action" label="31701" help="31897">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=randomGenres&amp;randomKind=kinder)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=randomGenres&amp;randomKind=kinder)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="randomKidsExcludedGenres" type="string" label="31701">
@@ -974,7 +974,7 @@
 				</setting>
 				<setting id="actorPeopleGroupsPicker" type="action" label="31601" help="31611">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=peopleGroups&amp;catRole=Acting)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=peopleGroups&amp;catRole=Acting)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="actorPeopleGroups" type="string" label="31601">
@@ -1019,7 +1019,7 @@
 				</setting>
 				<setting id="directorPeopleGroupsPicker" type="action" label="31601" help="31611">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=peopleGroups&amp;catRole=Directing)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=peopleGroups&amp;catRole=Directing)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="directorPeopleGroups" type="string" label="31601">
@@ -1080,7 +1080,7 @@
 				</setting>
 				<setting id="plugin_aniworld_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=aniworld)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=aniworld)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_aniworld">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_aniworld">false</dependency>
@@ -1141,7 +1141,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=aniworld&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=aniworld&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -1236,7 +1236,7 @@
 				</setting>
 				<setting id="plugin_api_all_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=api_all)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=api_all)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_api_all">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_api_all">false</dependency>
@@ -1303,7 +1303,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=api_all&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=api_all&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -1397,7 +1397,7 @@
 				</setting>
 				<setting id="plugin_burningseries_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=burningseries)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=burningseries)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_burningseries">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_burningseries">false</dependency>
@@ -1459,7 +1459,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=burningseries&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=burningseries&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -1585,7 +1585,7 @@
 				</setting>
 				<setting id="plugin_einschalten_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=einschalten)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=einschalten)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_einschalten">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_einschalten">false</dependency>
@@ -1641,7 +1641,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=einschalten&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=einschalten&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -1735,7 +1735,7 @@
 				</setting>
 				<setting id="plugin_filmpalast_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=filmpalast)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=filmpalast)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_filmpalast">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_filmpalast">false</dependency>
@@ -1791,7 +1791,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=filmpalast&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=filmpalast&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -1885,7 +1885,7 @@
 				</setting>
 				<setting id="plugin_hdfilme_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=hdfilme)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=hdfilme)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
@@ -1941,7 +1941,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=hdfilme&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=hdfilme&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2035,7 +2035,7 @@
 				</setting>
 				<setting id="plugin_hdfilme_1_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=hdfilme_1)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=hdfilme_1)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
@@ -2097,7 +2097,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=hdfilme_1&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=hdfilme_1&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2171,7 +2171,7 @@
 				</setting>
 				<setting id="plugin_internetarchive_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=internetarchive)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=internetarchive)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_internetarchive">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_internetarchive">false</dependency>
@@ -2300,7 +2300,7 @@
 				</setting>
 				<setting id="plugin_kinoger_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kinoger)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kinoger)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
@@ -2358,7 +2358,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kinoger&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kinoger&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2452,7 +2452,7 @@
 				</setting>
 				<setting id="plugin_kinokiste_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kinokiste)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kinokiste)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
@@ -2508,7 +2508,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kinokiste&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kinokiste&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2602,7 +2602,7 @@
 				</setting>
 				<setting id="plugin_kinox_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kinox)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kinox)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
@@ -2671,7 +2671,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kinox&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kinox&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2765,7 +2765,7 @@
 				</setting>
 				<setting id="plugin_kkiste_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kkiste)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kkiste)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
@@ -2821,7 +2821,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kkiste&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kkiste&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -2915,7 +2915,7 @@
 				</setting>
 				<setting id="plugin_megakino_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=megakino)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=megakino)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
@@ -2971,7 +2971,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=megakino&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=megakino&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3065,7 +3065,7 @@
 				</setting>
 				<setting id="plugin_moflix-stream_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=moflix-stream)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=moflix-stream)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
@@ -3121,7 +3121,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=moflix-stream&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=moflix-stream&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3215,7 +3215,7 @@
 				</setting>
 				<setting id="plugin_movie2k_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=movie2k)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=movie2k)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
@@ -3271,7 +3271,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=movie2k&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=movie2k&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3365,7 +3365,7 @@
 				</setting>
 				<setting id="plugin_movie4k_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=movie4k)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=movie4k)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
@@ -3421,7 +3421,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=movie4k&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=movie4k&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3547,7 +3547,7 @@
 				</setting>
 				<setting id="plugin_serienstream_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=serienstream)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=serienstream)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
@@ -3608,7 +3608,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=serienstream&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=serienstream&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3702,7 +3702,7 @@
 				</setting>
 				<setting id="plugin_streamcloud_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=streamcloud)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=streamcloud)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
@@ -3763,7 +3763,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=streamcloud&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=streamcloud&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3847,7 +3847,7 @@
 				</setting>
 				<setting id="plugin_topstreamfilm_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=topstreamfilm)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=topstreamfilm)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_topstreamfilm">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_topstreamfilm">false</dependency>
@@ -3903,7 +3903,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=topstreamfilm&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=topstreamfilm&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -3997,7 +3997,7 @@
 				</setting>
 				<setting id="plugin_xcine_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=xcine)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=xcine)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
@@ -4058,7 +4058,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=xcine&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=xcine&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4140,7 +4140,7 @@
 				</setting>
 				<setting id="plugin_mediaccc_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=mediaccc)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=mediaccc)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_mediaccc">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_mediaccc">false</dependency>
@@ -4196,7 +4196,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=mediaccc&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=mediaccc&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4288,7 +4288,7 @@
 				</setting>
 				<setting id="plugin_ardmediathek_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=ardmediathek)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=ardmediathek)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_ardmediathek">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_ardmediathek">false</dependency>
@@ -4344,7 +4344,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=ardmediathek&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=ardmediathek&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4453,7 +4453,7 @@
 				</setting>
 				<setting id="plugin_arte_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=arte)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=arte)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_arte">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_arte">false</dependency>
@@ -4509,7 +4509,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=arte&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=arte&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4601,7 +4601,7 @@
 				</setting>
 				<setting id="plugin_kinoking_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kinoking)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kinoking)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoking">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoking">false</dependency>
@@ -4657,7 +4657,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kinoking&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kinoking&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4749,7 +4749,7 @@
 				</setting>
 				<setting id="plugin_animetoast_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=animetoast)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=animetoast)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_animetoast">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_animetoast">false</dependency>
@@ -4805,7 +4805,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=animetoast&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=animetoast&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -4897,7 +4897,7 @@
 				</setting>
 				<setting id="plugin_animeloads_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=animeloads)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=animeloads)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_animeloads">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_animeloads">false</dependency>
@@ -4953,7 +4953,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=animeloads&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=animeloads&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5045,7 +5045,7 @@
 				</setting>
 				<setting id="plugin_kayoanime_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kayoanime)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kayoanime)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kayoanime">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kayoanime">false</dependency>
@@ -5101,7 +5101,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=kayoanime&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=kayoanime&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5193,7 +5193,7 @@
 				</setting>
 				<setting id="plugin_animestream_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=animestream)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=animestream)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_animestream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_animestream">false</dependency>
@@ -5249,7 +5249,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=animestream&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=animestream&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5341,7 +5341,7 @@
 				</setting>
 				<setting id="plugin_anime4_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=anime4)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=anime4)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_anime4">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_anime4">false</dependency>
@@ -5397,7 +5397,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=anime4&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=anime4&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5489,7 +5489,7 @@
 				</setting>
 				<setting id="plugin_proxer_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=proxer)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=proxer)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_proxer">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_proxer">false</dependency>
@@ -5545,7 +5545,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=proxer&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=proxer&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5637,7 +5637,7 @@
 				</setting>
 				<setting id="plugin_mediathekviewweb_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=mediathekviewweb)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=mediathekviewweb)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_mediathekviewweb">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_mediathekviewweb">false</dependency>
@@ -5693,7 +5693,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=mediathekviewweb&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=mediathekviewweb&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5785,7 +5785,7 @@
 				</setting>
 				<setting id="plugin_flashmoviez_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=flashmoviez)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=flashmoviez)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_flashmoviez">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_flashmoviez">false</dependency>
@@ -5841,7 +5841,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=flashmoviez&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=flashmoviez&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -5933,7 +5933,7 @@
 				</setting>
 				<setting id="plugin_flixitvstream_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=flixitvstream)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=flixitvstream)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_flixitvstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_flixitvstream">false</dependency>
@@ -5989,7 +5989,7 @@
 
 					<level>2</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=flixitvstream&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=flixitvstream&amp;function=showDomains)</data>
 
 					<dependencies>
 
@@ -6070,7 +6070,7 @@
 				</setting>
 				<setting id="plugin_huhu_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=huhu)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=huhu)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_huhu">false</dependency>
@@ -6146,7 +6146,7 @@
 				</setting>
 				<setting id="plugin_kool_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=kool)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=kool)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kool">false</dependency>
@@ -6222,7 +6222,7 @@
 				</setting>
 				<setting id="plugin_oha_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=oha)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=oha)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_oha">false</dependency>
@@ -6298,7 +6298,7 @@
 				</setting>
 				<setting id="plugin_vavoo_cookieAssistant" type="action" label="31470" help="31480">
 					<level>2</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?function=cookieAssistant&amp;source=vavoo)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=cookieAssistant&amp;source=vavoo)</data>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_vavoo">false</dependency>
@@ -6626,7 +6626,7 @@
 			<group id="backuplocation" label="31869">
 				<setting id="backupManager" type="action" label="30935" help="30936">
 					<level>0</level>
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=backup&amp;function=showBackupMenu)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=backup&amp;function=showBackupMenu)</data>
 					<control type="button" format="action"><close>true</close></control>
 				</setting>
 				<setting id="backupStorage" type="string" label="31869" help="">
@@ -6863,7 +6863,7 @@
 						<allowempty>true</allowempty>
 					</constraints>
 					<control type="button" format="action">
-						<data>RunPlugin(plugin://plugin.video.gerxstream/?function=devWarning)</data>
+						<data>RunPlugin(plugin://plugin.video.baka/?function=devWarning)</data>
 					</control>
 				</setting>
 				<setting id="gerxstream.dev.id" type="string" label="30313" help="30317">
@@ -6976,7 +6976,7 @@
 
 					<level>3</level>
 
-					<data>RunPlugin(plugin://plugin.video.gerxstream/?site=testplugin&amp;function=showDomains)</data>
+					<data>RunPlugin(plugin://plugin.video.baka/?site=testplugin&amp;function=showDomains)</data>
 
 					<dependencies>
 

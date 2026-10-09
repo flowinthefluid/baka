@@ -208,7 +208,7 @@ def test_context_menu_always_offers_hoster_selection(real_strings):
     element = cGuiElement('Film', 'kinox', 'getHosters')
     element.setMediaType('movie')
     gui = cGui()
-    getattr(gui, '_cGui__createContextMenu')(element, Item(), False, 'plugin://plugin.video.gerxstream/?site=kinox')
+    getattr(gui, '_cGui__createContextMenu')(element, Item(), False, 'plugin://plugin.video.baka/?site=kinox')
     commands = [command for _label, command in captured['items']]
     assert any('manual=1' in command for command in commands)
     json.dumps(commands)

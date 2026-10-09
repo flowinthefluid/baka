@@ -5,7 +5,7 @@ from resources.lib import tmdbinfo
 
 @pytest.mark.parametrize('missing_fields', [False, True, None])
 def test_actor_filmography_uses_valid_page_and_optional_person_fields(monkeypatch, missing_fields):
-    properties = {'gerxstream_menu': 'Cast'}
+    properties = {'baka_menu': 'Cast'}
     listed = []
     calls = []
     notifications = []
@@ -74,10 +74,10 @@ def test_actor_filmography_uses_valid_page_and_optional_person_fields(monkeypatc
     tmdbinfo.WindowsBoxes('Carrie', 'Carrie', 'tvshow')
     assert calls == [('person/2296', 1, 'append_to_response=movie_credits,tv_credits')]
     if missing_fields is None:
-        assert properties['gerxstream_menu'] == 'Cast'
+        assert properties['baka_menu'] == 'Cast'
         assert len(notifications) == 1
         return
-    assert properties['gerxstream_menu'] == 'Person'
+    assert properties['baka_menu'] == 'Person'
     assert properties['Person_name'] == 'Matthew Lillard'
     assert properties['Person_place_of_birth'] == ''
     assert properties['Person_biography'] == ''

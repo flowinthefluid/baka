@@ -443,17 +443,17 @@ class cRequestHandler:
                     return ''
                 else:
                     if not self.ignoreErrors:
-                        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(30259) + ' {0} {1}'.format(self._sUrl, str(e)))
+                        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(30259) + ' {0} {1}'.format(self._sUrl, str(e)))
                     logger.error(' -> [requestHandler]: HTTPError ' + str(e) + ' Url: ' + self._safeUrlForLog(self._sUrl))
                     return 'SEITE NICHT ERREICHBAR'
             else:
                 if not self.ignoreErrors:
-                    xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(30259) + ' {0} {1}'.format(self._sUrl, str(e)))
+                    xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(30259) + ' {0} {1}'.format(self._sUrl, str(e)))
                 logger.error(' -> [requestHandler]: HTTPError ' + str(e) + ' Url: ' + self._safeUrlForLog(self._sUrl))
                 return 'SEITE NICHT ERREICHBAR'
         except URLError as e:
             if not self.ignoreErrors:
-                xbmcgui.Dialog().ok('GerXStream', str(e.reason))
+                xbmcgui.Dialog().ok('Baka', str(e.reason))
             logger.error(' -> [requestHandler]: URLError ' + str(e.reason) + ' Url: ' + self._safeUrlForLog(self._sUrl))
             return 'URL FEHLER'
         except (TimeoutError, socket.timeout) as e:
@@ -462,12 +462,12 @@ class cRequestHandler:
             # aelteren und neueren Plattformen nie mit einem Traceback aus
             # einem Verzeichnisaufruf faellt.
             if not self.ignoreErrors:
-                xbmcgui.Dialog().ok('GerXStream', str(e) or 'Zeitueberschreitung')
+                xbmcgui.Dialog().ok('Baka', str(e) or 'Zeitueberschreitung')
             logger.error(' -> [requestHandler]: TimeoutError %s Url: %s' % (e, self._safeUrlForLog(self._sUrl)))
             return 'TIMEOUT'
         except HTTPException as e:
             if not self.ignoreErrors:
-                xbmcgui.Dialog().ok('GerXStream', str(e))
+                xbmcgui.Dialog().ok('Baka', str(e))
             logger.error(' -> [requestHandler]: HTTPException ' + str(e) + ' Url: ' + self._safeUrlForLog(self._sUrl))
             return 'TIMEOUT'
 
@@ -477,7 +477,7 @@ class cRequestHandler:
             raw_content = oResponse.read()
         except (TimeoutError, socket.timeout, HTTPException) as error:
             if not self.ignoreErrors:
-                xbmcgui.Dialog().ok('GerXStream', str(error) or 'Zeitueberschreitung')
+                xbmcgui.Dialog().ok('Baka', str(error) or 'Zeitueberschreitung')
             logger.error(' -> [requestHandler]: ReadError %s Url: %s' % (error, self._safeUrlForLog(self._sUrl)))
             return 'TIMEOUT'
         finally:
@@ -649,7 +649,7 @@ class cRequestHandler:
         files = os.listdir(self._cachePath)
         for file in files:
             os.remove(os.path.join(self._cachePath, file))
-            xbmcgui.Dialog().notification('GerXStream', cConfig().getLocalizedString(30405), xbmcgui.NOTIFICATION_INFO, 100, False)
+            xbmcgui.Dialog().notification('Baka', cConfig().getLocalizedString(30405), xbmcgui.NOTIFICATION_INFO, 100, False)
 
 
 class cBF:

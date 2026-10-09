@@ -119,7 +119,7 @@ def _listEvents(aEvents, oGui=None, sGui=False):
         return
 
     params = ParameterHandler()
-    # Filter nach eingestellter Sprache in gerxstream laden
+    # Filter nach eingestellter Sprache in baka laden
     sLanguage = cConfig().getSetting('prefLanguage')
     total = len(aEvents)
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Python 3
-"""GerXStream Livestream-Paket.
+"""Baka Livestream-Paket.
 
 Adapter-/Provider-Modell fuer Live-Inhalte (Fernsehen, Sport, Social Media,
 Wetter, Webcams). Alle Kataloge laufen durch ``resources.lib.contentgate``.

@@ -3,7 +3,7 @@
 
 """Compatibility hooks for the former in-addon updater.
 
-GerXStream and ResolveURL are released through the installed Kodi repository.
+Baka and ResolveURL are released through the installed Kodi repository.
 Kodi verifies and installs those packages itself, so this module must never
 download or unpack add-ons from an unrelated forge at runtime.
 """
@@ -15,10 +15,10 @@ from resources.lib.tools import addon_log as log
 
 
 def _show_repository_notice(silent):
-    message = 'Aktualisierungen werden über das GerXStream Repository installiert.'
-    log('[GerXStream] %s' % message, LOGINFO)
+    message = 'Aktualisierungen werden über das Baka Repository installiert.'
+    log('[Baka] %s' % message, LOGINFO)
     if not silent:
-        Dialog().ok('GerXStream', message)
+        Dialog().ok('Baka', message)
 
 
 def resolverUpdate(silent=False):
@@ -27,8 +27,8 @@ def resolverUpdate(silent=False):
     return None
 
 
-def GerXStreamDevUpdate(silent=False):
-    """Keep legacy callers harmless; Kodi updates GerXStream via the repository."""
+def BakaDevUpdate(silent=False):
+    """Keep legacy callers harmless; Kodi updates Baka via the repository."""
     _show_repository_notice(silent)
     return None
 

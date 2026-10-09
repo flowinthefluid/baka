@@ -23,11 +23,11 @@ if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
     logger.info('-> [SitePlugin]: globalSearch for %s is deactivated.' % SITE_NAME)
 
 # Domain Abfrage
-DOMAIN = cConfig().getSetting('plugin_' + SITE_IDENTIFIER + '.domain', 'kinoz.to') # Domain Auswahl über die GerXStream Einstellungen möglich
+DOMAIN = cConfig().getSetting('plugin_' + SITE_IDENTIFIER + '.domain', 'kinoz.to') # Domain Auswahl über die Baka Einstellungen möglich
 STATUS = cConfig().getSetting('plugin_' + SITE_IDENTIFIER + '_status') # Status Code Abfrage der Domain
 ACTIVE = cConfig().getSetting('plugin_' + SITE_IDENTIFIER) # Ob Plugin aktiviert ist oder nicht
 
-# Domain Auswahl über die GerXStream Einstellungen möglich
+# Domain Auswahl über die Baka Einstellungen möglich
 URL_MAIN = 'https://' + DOMAIN
 # URL_MAIN = 'https://ww19.kinox.to'
 URL_NEWS = URL_MAIN + '/index.php'

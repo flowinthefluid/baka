@@ -52,7 +52,7 @@ def _check_network(raw, timeout):
                 skip += 1
                 continue
             try:
-                req = Request(url, method='HEAD', headers={'User-Agent': 'GerXStream-check/1.0'})
+                req = Request(url, method='HEAD', headers={'User-Agent': 'Baka-check/1.0'})
                 with urlopen(req, timeout=timeout) as resp:
                     code = getattr(resp, 'status', 200)
                 print('  OK  [%s] %s' % (code, url))
@@ -87,7 +87,7 @@ def _check_guide(path):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description='GerXStream Katalog-/Stream-Check')
+    ap = argparse.ArgumentParser(description='Baka Katalog-/Stream-Check')
     ap.add_argument('--dir', default=os.path.join(PROJECT_DIR, 'resources', 'livestreams', 'sources'))
     ap.add_argument('--check-network', action='store_true')
     ap.add_argument('--timeout', type=float, default=8.0)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  OPTIONALER Rabbithole-Keymap fuer GerXStream.
+  OPTIONALER Rabbithole-Keymap fuer Baka.
 
   Bindet im Vollbildvideo die Taste "Runter" (und PageDown) an "naechste
   zufaellige Webcam". Links/Rechts bleiben Kodi ueberlassen (wir steuern keine
@@ -15,17 +15,17 @@
 
   Installation (bewusst manuell, nicht automatisch):
     Datei kopieren nach:
-      special://profile/keymaps/gerxstream-rabbithole.xml
+      special://profile/keymaps/baka-rabbithole.xml
     danach Kodi neu starten oder in der Konsole: reloadkeymaps
 -->
 <keymap>
   <FullscreenVideo>
     <keyboard>
-      <down>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsRabbithole&amp;action=next)</down>
-      <pagedown>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsRabbithole&amp;action=next)</pagedown>
+      <down>RunPlugin(plugin://plugin.video.baka/?function=livestreamsRabbithole&amp;action=next)</down>
+      <pagedown>RunPlugin(plugin://plugin.video.baka/?function=livestreamsRabbithole&amp;action=next)</pagedown>
     </keyboard>
     <remote>
-      <down>RunPlugin(plugin://plugin.video.gerxstream/?function=livestreamsRabbithole&amp;action=next)</down>
+      <down>RunPlugin(plugin://plugin.video.baka/?function=livestreamsRabbithole&amp;action=next)</down>
     </remote>
   </FullscreenVideo>
 </keymap>

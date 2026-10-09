@@ -187,7 +187,7 @@ def _endFailedDirectory():
 
 def _rejectPluginRoute(sSiteName, sFunction, sReason):
     log(cConfig().getLocalizedString(30166) +
-        " -> [gerxstream]: Rejected plugin route site=%r function=%r: %s" %
+        " -> [baka]: Rejected plugin route site=%r function=%r: %s" %
         (sSiteName, sFunction, sReason), LOGERROR)
     _endFailedDirectory()
 
@@ -211,7 +211,7 @@ except ImportError:
     # fehlgeschlagen abgeschlossen werden, sonst wartet Kodi auf Eintraege, die
     # nie kommen. Danach abbrechen, statt weiterzulaufen und beim ersten Zugriff
     # auf 'resolver' mit NameError zu sterben.
-    log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: resolveurl not available, aborting', LOGERROR)
+    log(cConfig().getLocalizedString(30166) + ' -> [baka]: resolveurl not available, aborting', LOGERROR)
     _endFailedDirectory()
     sys.exit()
 
@@ -254,8 +254,8 @@ def parseUrl():
             updateManager.devUpdates()
             cGui().setEndOfDirectory()
             return
-        elif sFunction == 'gerxstreamUpdate':
-            updateGerXStream()
+        elif sFunction == 'bakaUpdate':
+            updateBaka()
             cGui().setEndOfDirectory()
             return
         elif sFunction == 'pluginInfo':
@@ -362,9 +362,9 @@ def parseUrl():
             if sLink:
                 xbmc.executebuiltin('PlayMedia(' + sLink + ')')
             else:
-                log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: Could not play remote url %s ' % sLink, LOGNOTICE)
+                log(cConfig().getLocalizedString(30166) + ' -> [baka]: Could not play remote url %s ' % sLink, LOGNOTICE)
         except resolver.resolver.ResolverError as e:
-            log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: ResolverError: %s' % e, LOGERROR)
+            log(cConfig().getLocalizedString(30166) + ' -> [baka]: ResolverError: %s' % e, LOGERROR)
         return
     else:
         sFunction = 'load'
@@ -397,7 +397,7 @@ def parseUrl():
             cHosterGui().stream(playMode, sSiteName, sFunction, url, manual=manual)
         return
 
-    log(cConfig().getLocalizedString(30166) + " -> [gerxstream]: Call function '%s' from '%s'" % (sFunction, sSiteName), LOGNOTICE)
+    log(cConfig().getLocalizedString(30166) + " -> [baka]: Call function '%s' from '%s'" % (sFunction, sSiteName), LOGNOTICE)
     # If the hoster gui is called, run the function on it and return
     if sSiteName == 'cHosterGui':
         showHosterGui(sFunction)
@@ -438,7 +438,7 @@ def parseUrl():
             addEpicFavorite(params)
         else:
             _endFailedDirectory()
-    elif sSiteName == 'GerXStream':
+    elif sSiteName == 'Baka':
         oGui = cGui()
         oGui.openSettings()
         # resolves strange errors in the logfile
@@ -456,9 +456,9 @@ def parseUrl():
     elif sSiteName == 'devUpdates':
         from resources.lib import updateManager
         updateManager.devUpdates()
-    # GerXStream aus dem installierten Kodi-Repository aktualisieren
-    elif sSiteName == 'gerxstreamUpdate':
-        updateGerXStream()
+    # Baka aus dem installierten Kodi-Repository aktualisieren
+    elif sSiteName == 'bakaUpdate':
+        updateBaka()
     # Scraper Domain-Check manuell
     elif sSiteName == 'checkDomain':
         cPluginHandler().checkDomain()
@@ -517,7 +517,7 @@ def showMainMenu(sFunction):
     oPluginHandler = cPluginHandler()
     aPlugins = oPluginHandler.getAvailablePlugins()
     if not aPlugins:
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: No activated Plugins found', LOGNOTICE)
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: No activated Plugins found', LOGNOTICE)
         # Open the settings dialog to choose a plugin that could be enabled
         oGui.openSettings()
         oGui.updateDirectory()
@@ -690,7 +690,7 @@ def vodGuiElements(sFunction): # Vod Menü
     oPluginHandler = cPluginHandler()
     aPlugins = oPluginHandler.getAvailablePlugins() # Suche Plugins mit Pluginhandler
     if not aPlugins:
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: No activated Vod Plugins found', LOGNOTICE)
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: No activated Vod Plugins found', LOGNOTICE)
         # Öffne Einstellungen wenn keine VoD SitePlugins vorhanden
         oGui.openSettings()
         oGui.updateDirectory()
@@ -711,13 +711,13 @@ def vodGuiElements(sFunction): # Vod Menü
 def settingsGuiElements():
     ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
 
-    # GUI GerXStream Einstellungen
+    # GUI Baka Einstellungen
     oGuiElement = cGuiElement()
     oGuiElement.setTitle(cConfig().getLocalizedString(30042))
-    oGuiElement.setSiteName('GerXStream')
+    oGuiElement.setSiteName('Baka')
     oGuiElement.setFunction('display_settings')
-    oGuiElement.setThumbnail(os.path.join(ART, 'gerxstream_settings.png'))
-    GerXStreamSettings = oGuiElement
+    oGuiElement.setThumbnail(os.path.join(ART, 'baka_settings.png'))
+    BakaSettings = oGuiElement
 
     # GUI Resolver Einstellungen
     oGuiElement = cGuiElement()
@@ -735,13 +735,13 @@ def settingsGuiElements():
     oGuiElement.setThumbnail(os.path.join(ART, 'manuel_update.png'))
     ResolverUpdate = oGuiElement
 
-    # Kodi aktualisiert GerXStream ueber das installierte Repository.
+    # Kodi aktualisiert Baka ueber das installierte Repository.
     oGuiElement = cGuiElement()
     oGuiElement.setTitle(cConfig().getLocalizedString(30902))
-    oGuiElement.setSiteName('gerxstreamUpdate')
-    oGuiElement.setFunction('gerxstreamUpdate')
+    oGuiElement.setSiteName('bakaUpdate')
+    oGuiElement.setFunction('bakaUpdate')
     oGuiElement.setThumbnail(os.path.join(ART, 'manuel_update.png'))
-    GerXStreamUpdate = oGuiElement
+    BakaUpdate = oGuiElement
 
     # Sicherungen der lokalen Einstellungen, Konten und Epic-Favorites.
     oGuiElement = cGuiElement()
@@ -768,8 +768,8 @@ def settingsGuiElements():
     oGuiElement.setThumbnail(os.path.join(ART, 'settings.png'))
     DomainCheck = oGuiElement
     # Reihenfolge bewusst wie im Einstellungsmenue angezeigt.
-    return (GerXStreamSettings, resolveurlSettings, ResolverUpdate,
-            GerXStreamUpdate, BackupRestore, PluginInfo, DomainCheck)
+    return (BakaSettings, resolveurlSettings, ResolverUpdate,
+            BakaUpdate, BackupRestore, PluginInfo, DomainCheck)
 
 
 def showBackupMenu():
@@ -825,7 +825,7 @@ def runBackupAction(params):
         _rejectPluginRoute('backup', 'runBackupAction', 'unknown backup action')
         return
     cGui().setEndOfDirectory()
-    xbmc.executebuiltin('Container.Update(plugin://plugin.video.gerxstream/?site=backup&function=showBackupMenu,replace)')
+    xbmc.executebuiltin('Container.Update(plugin://plugin.video.baka/?site=backup&function=showBackupMenu,replace)')
 
 
 def globalSearchGuiElement():
@@ -945,8 +945,8 @@ def showEpicFavorites(params):
             element.setMediaType(entry['media_type'])
         element.addItemProperties('epicFavoritesManaged', 'true')
         moveParams = ParameterHandler()
-        element.addItemProperties('GerXStream.Target', epicfavorites.targetForEntry(entry))
-        element.addItemProperties('GerXStream.DisplayTitle', entry['title'])
+        element.addItemProperties('Baka.Target', epicfavorites.targetForEntry(entry))
+        element.addItemProperties('Baka.DisplayTitle', entry['title'])
         moveParams.setParam('path', path)
         moveParams.setParam('entryId', entry['id'])
         _epicContext(element, cConfig().getLocalizedString(30925),
@@ -966,7 +966,7 @@ def showEpicFavorites(params):
 
 
 def addEpicFavorite(params):
-    """Add an item from any GerXStream context menu into a selected folder."""
+    """Add an item from any Baka context menu into a selected folder."""
     from resources.lib import epicfavorites
 
     entry = _watchlistEntryFromParams(params)
@@ -1030,8 +1030,8 @@ def showWatchlistStatus(status):
         element.setDescription(entry['description'])
         element.setTitleSecond(entry.get('source', ''))
         element.addItemProperties('epicFavoritesManaged', 'true')
-        element.addItemProperties('GerXStream.Target', epicfavorites.targetForEntry(entry))
-        element.addItemProperties('GerXStream.DisplayTitle', entry['title'])
+        element.addItemProperties('Baka.Target', epicfavorites.targetForEntry(entry))
+        element.addItemProperties('Baka.DisplayTitle', entry['title'])
         if entry.get('year'):
             element._sYear = entry['year']
         for labelId, function in ((31855, 'setWatchlistStatus'), (30926, 'removeWatchlistEntry')):
@@ -1155,7 +1155,7 @@ def showWatchHistory():
     recent = history.entries()
     oGui = cGui()
     if not recent:
-        oGui.showInfo('GerXStream', cConfig().getLocalizedString(30906))
+        oGui.showInfo('Baka', cConfig().getLocalizedString(30906))
         oGui.setEndOfDirectory()
         return
     total = len(recent)
@@ -1183,7 +1183,7 @@ def showWatchHistory():
         itemParams.setParam('searchTitle', item.get('search_title', title))
         target = item.get('series_target') or item.get('target')
         if target:
-            element.addItemProperties('GerXStream.Target', epicfavorites.targetForEntry(item))
+            element.addItemProperties('Baka.Target', epicfavorites.targetForEntry(item))
             itemParams.setParam('target', target)
             statusParams = ParameterHandler()
             statusParams.addParams({'title': item.get('series_title') or item.get('show_title') or title,
@@ -1212,7 +1212,7 @@ def clearWatchHistory():
     from resources.lib import history
 
     history.clear()
-    cGui().showInfo('GerXStream', cConfig().getLocalizedString(30907))
+    cGui().showInfo('Baka', cConfig().getLocalizedString(30907))
 
 
 def showRandomMovies():
@@ -1253,7 +1253,7 @@ def showBlockedHosterMenu():
         pass
     domains = sorted(domains)
     if not domains:
-        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(30166) + ': keine Hosterliste verfuegbar')
+        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(30166) + ': keine Hosterliste verfuegbar')
         return
 
     selected_raw = cConfig().getSetting('blockedHoster', '')
@@ -1327,7 +1327,7 @@ def _editPreferredHosters(site, siteLabel, current):
         ordered = _orderPreferredHosters(ordered)
     hosterprefs.setForSite(site, ordered)
     summary = ', '.join(ordered) if ordered else cConfig().getLocalizedString(31406)
-    cGui().showInfo('GerXStream', '%s: %s' % (siteLabel, summary), 4)
+    cGui().showInfo('Baka', '%s: %s' % (siteLabel, summary), 4)
 
 
 def showPreferredHosterMenu():
@@ -1342,7 +1342,7 @@ def showPreferredHosterMenu():
             if plugin.get('id') and plugin.get('id') != 'livestreams':
                 sources.append((plugin['id'], plugin.get('name') or plugin['id']))
     except Exception:
-        logger.error('-> [gerxstream]: source list for preferred hosters unavailable')
+        logger.error('-> [baka]: source list for preferred hosters unavailable')
     while True:
         data = hosterprefs.load()
         labels = []
@@ -1383,13 +1383,13 @@ def _runPluginSearches(searchPlugins, searchText, oGui, dialog, monitor):
     # ist bewusst von dem HTTP-Request-Timeout getrennt konfigurierbar.
     workerTimeout = max(5, cConfig().getSettingInt('globalSearchTimeout', 30))
     futures = {}
-    executor = ThreadPoolExecutor(max_workers=maxWorkers, thread_name_prefix='gerxstream-search')
+    executor = ThreadPoolExecutor(max_workers=maxWorkers, thread_name_prefix='baka-search')
     try:
         for count, pluginEntry in enumerate(searchPlugins):
             if dialog.iscanceled() or monitor.abortRequested():
                 return False
             dialog.update((count + 1) * 50 // progressPlugins, cConfig().getLocalizedString(30124) + str(pluginEntry['name']) + '...')
-            log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: Searching for %s at %s' % (searchText, pluginEntry['id']), LOGNOTICE)
+            log(cConfig().getLocalizedString(30166) + ' -> [baka]: Searching for %s at %s' % (searchText, pluginEntry['id']), LOGNOTICE)
             future = executor.submit(_pluginSearch, pluginEntry, searchText)
             futures[future] = (pluginEntry['name'], time.monotonic())
 
@@ -1410,7 +1410,7 @@ def _runPluginSearches(searchPlugins, searchText, oGui, dialog, monitor):
                 future.cancel()
                 completed += 1
                 name = futures[future][0]
-                log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: %s: search timed out after %ss' %
+                log(cConfig().getLocalizedString(30166) + ' -> [baka]: %s: search timed out after %ss' %
                     (name, workerTimeout), LOGERROR)
                 dialog.update(completed * 50 // progressPlugins + 50,
                               name + cConfig().getLocalizedString(30125))
@@ -1428,11 +1428,11 @@ def _runPluginSearches(searchPlugins, searchText, oGui, dialog, monitor):
                 try:
                     oGui.searchResults.extend(future.result() or [])
                 except Exception:
-                    log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: %s: collecting search results failed' % name, LOGERROR)
+                    log(cConfig().getLocalizedString(30166) + ' -> [baka]: %s: collecting search results failed' % name, LOGERROR)
                 dialog.update(completed * 50 // progressPlugins + 50,
                               name + cConfig().getLocalizedString(30125))
         log(cConfig().getLocalizedString(30166) +
-            ' -> [gerxstream]: collected results from %s providers' % completed,
+            ' -> [baka]: collected results from %s providers' % completed,
             LOGNOTICE)
         return True
     finally:
@@ -1504,10 +1504,10 @@ def _collectGlobalSearchResults(searchText, includePlugin):
         if discarded:
             oGui.searchResults = matchingResults
             log(cConfig().getLocalizedString(30166) +
-                ' -> [gerxstream]: discarded %s unrelated results from anime providers' % discarded,
+                ' -> [baka]: discarded %s unrelated results from anime providers' % discarded,
                 LOGNOTICE)
     log(cConfig().getLocalizedString(30166) +
-        ' -> [gerxstream]: rendering %s collected search results' % len(oGui.searchResults),
+        ' -> [baka]: rendering %s collected search results' % len(oGui.searchResults),
         LOGNOTICE)
     return oGui
 
@@ -1519,7 +1519,7 @@ def _renderCollectedSearchResults(oGui, results=None):
     collected = oGui.searchResults if results is None else results
     total = len(collected)
     if total == 0:
-        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(31622))
+        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(31622))
         oGui.setEndOfDirectory(False)
         return False
     for count, result in enumerate(grouped_results(collected), 1):
@@ -1583,7 +1583,7 @@ def searchAlter(params):
     filteredResults = []
     for result in oGui.searchResults:
         guiElement = result['guiElement']
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: Site: %s Titel: %s' % (guiElement.getSiteName(), guiElement.getTitle()), LOGNOTICE)
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: Site: %s Titel: %s' % (guiElement.getSiteName(), guiElement.getTitle()), LOGNOTICE)
         if searchTitle not in guiElement.getTitle():
             continue
         if guiElement._sYear and searchYear and guiElement._sYear != searchYear: continue
@@ -1614,7 +1614,7 @@ def searchTMDB(params):
             return False
         matching = [result for result in originalGui.searchResults if _matchesSelectedTitle(result, params)]
     if not matching:
-        xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(31621) % sSearchText)
+        xbmcgui.Dialog().ok('Baka', cConfig().getLocalizedString(31621) % sSearchText)
         oGui.setEndOfDirectory(False)
         return False
     return _renderCollectedSearchResults(oGui, matching)
@@ -1657,27 +1657,27 @@ def _pluginSearch(pluginEntry, sSearchText):
     oGui.globalSearch = True
     oGui._collectMode = True
     try:
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: %s: search started' % pluginEntry['name'], LOGNOTICE)
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: %s: search started' % pluginEntry['name'], LOGNOTICE)
         with cRequestHandler.backgroundRequests():
             plugin = __import__(pluginEntry['id'], globals(), locals())
             function = getattr(plugin, '_search')
             function(oGui, sSearchText)
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: %s: search finished (%s results)' %
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: %s: search finished (%s results)' %
             (pluginEntry['name'], len(oGui.searchResults)), LOGNOTICE)
         return oGui.searchResults
     except Exception:
-        log(cConfig().getLocalizedString(30166) + ' -> [gerxstream]: ' + pluginEntry['name'] + ': search failed', LOGERROR)
+        log(cConfig().getLocalizedString(30166) + ' -> [baka]: ' + pluginEntry['name'] + ': search failed', LOGERROR)
         import traceback
         log(traceback.format_exc())
         return []
 
 
-def updateGerXStream():
-    """Ask Kodi to check the installed GerXStream repository now."""
+def updateBaka():
+    """Ask Kodi to check the installed Baka repository now."""
     addonId = cConfig().getAddonInfo('id')
     xbmc.executebuiltin('UpdateLocalAddons()')
     xbmc.executebuiltin('UpdateAddon(%s)' % addonId)
-    xbmcgui.Dialog().ok('GerXStream',
+    xbmcgui.Dialog().ok('Baka',
                          'Die Aktualisierung wurde im Kodi-Repository gesucht. '
                          'Bitte die Add-on-Aktualisierungen kurz abschliessen lassen.')
     return True

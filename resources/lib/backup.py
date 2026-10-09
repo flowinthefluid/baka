@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Portable, user-initiated backups for GerXStream settings and local data."""
+"""Portable, user-initiated backups for Baka settings and local data."""
 
 import json
 import os
@@ -14,11 +14,11 @@ from urllib.parse import unquote, urljoin, urlsplit
 import xbmcgui
 from xbmcvfs import File as VfsFile, exists as vfsExists, translatePath
 
-from resources.lib import epicfavorites
+from resources.lib import epicfavorites, legacy
 from resources.lib.config import cConfig
 
 
-FORMAT = 'gerxstream-backup'
+FORMAT = 'baka-backup'
 FORMAT_VERSION = 1
 SECTIONS = ('settings', 'accounts', 'epic_favorites', 'history', 'watched')
 PORTABLE_SECTIONS = ('settings', 'epic_favorites', 'history', 'watched')
@@ -271,11 +271,14 @@ def _decodePayload(content):
         payload = json.loads(content)
     except (TypeError, ValueError):
         return None
-    if (not isinstance(payload, dict) or payload.get('format') != FORMAT or
+    if (not isinstance(payload, dict) or
+            payload.get('format') not in (FORMAT,) + legacy.LEGACY_BACKUP_FORMATS or
             payload.get('format_version') != FORMAT_VERSION or
             not isinstance(payload.get('sections'), dict)):
         return None
-    return payload
+    # Sicherungen aus GerXStream-Zeiten speichern plugin://-Ziele mit der
+    # alten Kennung.
+    return legacy.rewriteTargets(payload)
 
 
 def _requestedSections(section, payload=None):
@@ -441,7 +444,7 @@ def _cloudUrl(filename='', endpoint=None):
 
 
 def _backupFilename(filename):
-    return re.fullmatch(r'gerxstream-[a-z_]+-\d{8}-\d{6}(?:-[a-f0-9]{8})?\.(?:json|zip)', filename) is not None
+    return re.fullmatch(r'(?:baka|gerxstream)-[a-z_]+-\d{8}-\d{6}(?:-[a-f0-9]{8})?\.(?:json|zip)', filename) is not None
 
 
 def _cloudRequest(method, filename='', content=None):
@@ -532,7 +535,7 @@ def _selectedPayload(selected):
 
 def _packageAddon(target):
     root = translatePath(cConfig().getAddonInfo('path'))
-    files = ['addon.xml', 'default.py', 'gerxstream.py', 'service.py', 'changelog.txt', 'license.txt']
+    files = ['addon.xml', 'default.py', 'baka.py', 'service.py', 'changelog.txt', 'license.txt']
     excluded = {'__pycache__', 'cache', 'userdata', 'backups', 'cookies'}
     extensions = {'.py', '.xml', '.json', '.po', '.png', '.jpg', '.jpeg', '.gif', '.webp',
                   '.svg', '.txt', '.ttf', '.m3u', '.m3u8'}
@@ -551,7 +554,7 @@ def _packageAddon(target):
             length += os.path.getsize(path)
             if length > MAX_PACKAGE_LENGTH:
                 raise BackupTransferError('Add-on package exceeds size limit')
-            archive.write(path, 'plugin.video.gerxstream/' + filename.replace(os.sep, '/'))
+            archive.write(path, 'plugin.video.baka/' + filename.replace(os.sep, '/'))
 
 
 def exportAddon():
@@ -567,7 +570,7 @@ def exportAddon():
                                        'files', '', False, False, defaultFolder)
         if not directory:
             return False
-    filename = 'gerxstream-addon-%s-%s.zip' % (time.strftime('%Y%m%d-%H%M%S'), uuid.uuid4().hex[:8])
+    filename = 'baka-addon-%s-%s.zip' % (time.strftime('%Y%m%d-%H%M%S'), uuid.uuid4().hex[:8])
     try:
         with tempfile.TemporaryFile(dir=_backupDirectory()) as package:
             _packageAddon(package)
@@ -612,7 +615,7 @@ def exportBackup(section):
     storage = _storage(dialog)
     if not storage:
         return False
-    filename = 'gerxstream-%s-%s-%s.json' % (section, time.strftime('%Y%m%d-%H%M%S'), uuid.uuid4().hex[:8])
+    filename = 'baka-%s-%s-%s.json' % (section, time.strftime('%Y%m%d-%H%M%S'), uuid.uuid4().hex[:8])
     payload = _selectedPayload(selected) if section == 'custom' else _payload(section)
     if storage == 'nextcloud':
         try:

@@ -17,7 +17,7 @@ def test_episode_directory_uses_start_action_only_when_enabled(monkeypatch, enab
     from conftest import set_setting
     set_setting('autoNextEpisodeEnabled', str(enabled).lower())
     set_setting('hosterSelect', 'List')
-    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.gerxstream/', '5', '?'])
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '5', '?'])
     monkeypatch.setattr(cGui, '_episodeQueues', {})
     monkeypatch.setattr(cGui, '_cGui__createContextMenu',
                         lambda self, element, item, folder, url, episodeStartUrl='': item)
@@ -64,7 +64,7 @@ def test_watched_flag_is_applied_to_directory_item(monkeypatch, tmp_path):
     element = cGuiElement('Movie', 'source', 'getHosters')
     element.setMediaType('movie')
     key = playbackstate.itemKey('source', 'Movie')
-    element.addItemProperties('GerXStream.WatchId', key)
+    element.addItemProperties('Baka.WatchId', key)
     store = playbackstate.WatchedStore(str(tmp_path / 'watched.json'))
     store.mark(key)
     monkeypatch.setattr(playbackstate, '_watched', store)
@@ -84,18 +84,18 @@ def test_watched_flag_is_applied_to_directory_item(monkeypatch, tmp_path):
     monkeypatch.setattr(cGui, 'setInfoTagVideo', lambda *args: None)
     monkeypatch.setattr(hoster.xbmcgui.ListItem, 'getVideoInfoTag', lambda self: tag)
     cGui().createListItem(element)
-    assert values == {'uniqueid': (key, 'gerxstream'), 'playcount': 1, 'resume': (0, 0)}
+    assert values == {'uniqueid': (key, 'baka'), 'playcount': 1, 'resume': (0, 0)}
 
 
 def test_single_episode_queue_is_kept(monkeypatch, tmp_path):
     monkeypatch.setattr(episodequeue, '_path', lambda: str(tmp_path / 'queues.json'))
-    target = 'plugin://plugin.video.gerxstream/?site=aniworld&episode=1'
+    target = 'plugin://plugin.video.baka/?site=aniworld&episode=1'
     assert episodequeue.store('f' * 32, [target]) is True
     assert episodequeue.getTargets('f' * 32) == [target]
 
 
 def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch):
-    targets = ['plugin://plugin.video.gerxstream/?episode=%d' % index
+    targets = ['plugin://plugin.video.baka/?episode=%d' % index
                for index in range(4)]
     queued = []
     starts = []
@@ -131,7 +131,7 @@ def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch
 
 
 def test_episode_queue_seeds_an_empty_kodi_playlist(monkeypatch):
-    targets = ['plugin://plugin.video.gerxstream/?episode=%d' % index
+    targets = ['plugin://plugin.video.baka/?episode=%d' % index
                for index in range(3)]
     queued = []
     window = hoster.xbmcgui.Window(10000)
@@ -167,7 +167,7 @@ def test_episode_queue_seeds_an_empty_kodi_playlist(monkeypatch):
 
 
 def test_episode_resolves_once_and_appends_following_items(monkeypatch):
-    targets = ['plugin://plugin.video.gerxstream/?episode=%d' % i for i in range(3)]
+    targets = ['plugin://plugin.video.baka/?episode=%d' % i for i in range(3)]
     queued = [(targets[0], object())]
     resolved = []
     direct_starts = []

@@ -298,7 +298,7 @@ def _entries(params, kind='filme'):
     gui = cGui()
     minimum = plotinfo.minimumRating(_setting(kind, 'MinImdb'))
     if queries is None:
-        gui.showInfo('GerXStream', cConfig().getLocalizedString(31721))
+        gui.showInfo('Baka', cConfig().getLocalizedString(31721))
         gui.setEndOfDirectory(False)
         return
     if not plotinfo.requireImdbKey(minimum):
@@ -329,7 +329,7 @@ def _entries(params, kind='filme'):
                     break
             aborted = canceled()
     except ValueError as error:
-        gui.showInfo('GerXStream', str(error))
+        gui.showInfo('Baka', str(error))
         gui.setEndOfDirectory(False)
         return
     finally:
@@ -338,7 +338,7 @@ def _entries(params, kind='filme'):
         gui.setEndOfDirectory(False)
         return
     if len(selected) < limit:
-        gui.showInfo('GerXStream', cConfig().getLocalizedString(31704) % (len(selected), limit))
+        gui.showInfo('Baka', cConfig().getLocalizedString(31704) % (len(selected), limit))
     for item in selected:
         # discover/movie liefert 'title', discover/tv 'name'.
         title = item.get('title') or item.get('name')

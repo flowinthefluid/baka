@@ -105,7 +105,7 @@ def _request(query):
     handler = cRequestHandler(ENDPOINT, caching=False, ignoreErrors=True, method='POST',
                               data={'query': query, 'format': 'json'}, allow_insecure_tls=False)
     # Wikidata verlangt einen erkennbaren User-Agent statt eines Browser-UA.
-    handler.addHeaderEntry('User-Agent', 'GerXStream/%s (Kodi add-on; people sorting)'
+    handler.addHeaderEntry('User-Agent', 'Baka/%s (Kodi add-on; people sorting)'
                            % cConfig().getAddonInfo('version'))
     handler.addHeaderEntry('Accept', 'application/sparql-results+json')
     handler.requestTimeout = max(handler.requestTimeout, 30)
@@ -241,7 +241,7 @@ def imdbScores(personIds, profiles):
             ratings[imdbId] = float(entry['rating'])
     pending = [imdbId for imdbId in imdbIds if imdbId not in ratings]
     dialog = xbmcgui.DialogProgress()
-    dialog.create('GerXStream', cConfig().getLocalizedString(31616))
+    dialog.create('Baka', cConfig().getLocalizedString(31616))
     monitor = xbmc.Monitor()
     executor = ThreadPoolExecutor(max_workers=6)
     changed = False

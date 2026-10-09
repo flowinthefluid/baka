@@ -168,7 +168,7 @@ def WindowsBoxes(sTitle, sFileName, metaType, year=''):
                             message = cConfig().getLocalizedString(30877) % name
                         else:
                             message = cConfig().getLocalizedString(30876) % name
-                        xbmcgui.Dialog().notification('GerXStream', message,
+                        xbmcgui.Dialog().notification('Baka', message,
                                                        xbmcgui.NOTIFICATION_INFO, 3000)
                         return
                 sid = item.getProperty('id')
@@ -201,11 +201,11 @@ def WindowsBoxes(sTitle, sFileName, metaType, year=''):
                     self.setProperty('Person_biography', str(meta.get('biography') or ''))
                     self.setFocusId(9000)
                 except Exception as error:
-                    xbmc.log('GerXStream TMDB filmography failed: %s' % type(error).__name__, xbmc.LOGWARNING)
+                    xbmc.log('Baka TMDB filmography failed: %s' % type(error).__name__, xbmc.LOGWARNING)
                     xbmcgui.Dialog().notification('TMDB', cConfig().getLocalizedString(31890),
                                                    xbmcgui.NOTIFICATION_INFO, 3000)
                     return
-                self.setProperty('gerxstream_menu', 'Person')
+                self.setProperty('baka_menu', 'Person')
             elif controlId == 9:
                 sid = self.getProperty('tmdb_id')
                 if metaType == 'movie':
