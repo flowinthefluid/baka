@@ -840,6 +840,8 @@ def test_random_query_filters_are_whitelisted_and_mode_specific():
 
     set_setting('randomExcludedGenres', '10751,16,bogus')
     assert 'without_genres=10751,16' in randommovies._query('random', '')
+    assert 'vote_count.gte=25' in randommovies._query('random', '')
+    set_setting('randomMinVotes', '0')
     assert 'vote_count' not in randommovies._query('random', '')
     assert 'without_genres' not in randommovies._query('genre', '28')
     assert 'with_companies=2' in randommovies._query('company', '2')
@@ -877,7 +879,7 @@ def test_random_kinds_build_media_specific_queries():
     from resources.lib import randommovies
 
     tv = randommovies._query('random', '', 'serien', 'tv')
-    assert 'sort_by=first_air_date.asc' in tv and 'with_genres' not in tv
+    assert 'sort_by=original_name.asc' in tv and 'with_genres' not in tv
     set_setting('randomSeriesExcludedGenres', '10763,10767,28')
     assert 'without_genres=10763,10767' in randommovies._query('random', '', 'serien', 'tv')
     assert 'Action' not in dict(randommovies._genres('serien')).values()
@@ -896,7 +898,7 @@ def test_random_kinds_build_media_specific_queries():
     assert randommovies._queries('dokus', 'genre', '99') is None
 
 
-def test_random_mixed_sampling_is_proportional_and_keeps_media():
+def test_random_mixed_sampling_is_proportional_and_keeps_media(monkeypatch):
     from resources.lib import randommovies
 
     class TMDB:
@@ -908,6 +910,7 @@ def test_random_mixed_sampling_is_proportional_and_keeps_media():
                 {'id': (page - 1) * 20 + offset + 1, key: '%s %d' % (media, offset)}
                 for offset in range(min(20, total - (page - 1) * 20))]}
 
+    monkeypatch.setattr(randommovies, 'MAX_SAMPLE_PAGES', 100)  # ein Titel pro Abfrage
     items = randommovies.sampleCatalogs(TMDB(), {'movie': 'a=1', 'tv': 'b=2'}, 40)
     assert [item['_media'] for item in items].count('movie') == 30
     assert [item['_media'] for item in items].count('tv') == 10
@@ -961,11 +964,29 @@ def test_every_random_kind_has_its_own_settings():
     root = ET.parse(Path(__file__).resolve().parents[1] / 'resources' / 'settings.xml').getroot()
     ids = {setting.get('id') for setting in root.find(".//category[@id='randommovies']").findall('.//setting')}
     for kind in randommovies.KINDS:
-        for name in ('ExcludedGenres', 'ItemsCount', 'MinImdb'):
+        for name in ('ExcludedGenres', 'ItemsCount', 'MinImdb', 'MinVotes'):
             assert randommovies._setting(kind, name) in ids
         if kind != 'filme':
             picker = root.find(".//setting[@id='%s']/data" % randommovies._setting(kind, 'GenresPicker')).text
             assert picker.endswith('randomKind=%s)' % kind)
+
+
+def test_random_sampling_needs_few_pages_for_long_lists():
+    from datetime import date
+    from resources.lib import randommovies
+
+    pages = []
+
+    class TMDB:
+        def getUrl(self, path, page, extra):
+            pages.append(page)
+            return {'total_results': 5000, 'results': [
+                {'id': (page - 1) * 20 + offset + 1, 'title': 'Doku'} for offset in range(20)]}
+
+    items = randommovies.sampleCatalogs(TMDB(), {'movie': 'x=1'}, 250,
+                                        start=date(2000, 1, 1), end=date(2000, 1, 2))
+    assert len(pages) <= randommovies.MAX_SAMPLE_PAGES + 1
+    assert 200 <= len(items) <= 250 and len({item['id'] for item in items}) == len(items)
 
 
 def test_random_sampling_survives_capped_tmdb_totals(monkeypatch):

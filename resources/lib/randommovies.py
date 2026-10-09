@@ -32,6 +32,11 @@ KINDS = {
 
 # TMDB meldet groessere Trefferzahlen nur noch als 20001.
 TMDB_RESULT_CAP = 20000
+# Hoechstens so viele TMDB-Seiten pro Zufallsliste; von jeder Seite werden
+# dann mehrere zufaellige Titel genommen statt einer Abfrage pro Titel.
+MAX_SAMPLE_PAGES = 25
+# Sehr unbekannte Titel (kaum TMDB-Stimmen) fuehrt fast keine Quelle.
+DEFAULT_MIN_VOTES = 25
 
 # Offizielle TMDB-Seriengenres. Die Filmgenres ergeben sich wie bisher aus
 # allen bekannten Genres ohne die reinen Seriengenres.
@@ -138,7 +143,10 @@ def showMenu():
 def _query(mode, value, kind='filme', media='movie'):
     config = KINDS[kind]
     field = 'primary_release_date' if media == 'movie' else 'first_air_date'
-    terms = ['include_adult=false', 'sort_by=%s.asc' % field]
+    # Innerhalb eines Zeitraums nach Originaltitel sortiert: eine zufaellige
+    # Seite mischt so Jahrzehnte statt zwanzig Titel aus derselben Woche.
+    order = 'original_title' if media == 'movie' else 'original_name'
+    terms = ['include_adult=false', 'sort_by=%s.asc' % order]
     with_genres = [config['fixed'][media]] if media in config['fixed'] else []
     if config.get('language'):
         terms.append('with_original_language=' + config['language'])
@@ -161,6 +169,9 @@ def _query(mode, value, kind='filme', media='movie'):
         return None
     if with_genres:
         terms.append('with_genres=' + ','.join(with_genres))
+    votes = max(0, cConfig().getSettingInt(_setting(kind, 'MinVotes'), DEFAULT_MIN_VOTES))
+    if votes:
+        terms.append('vote_count.gte=%d' % votes)
     return '&'.join(terms)
 
 
@@ -190,6 +201,7 @@ class _Catalog(object):
         self.end = end
         self.selected = selected
         self.progress = progress
+        self.perPage = 1
 
     def query(self, first, last, page=1):
         if self.canceled():
@@ -249,10 +261,15 @@ class _Catalog(object):
             if self.canceled():
                 return
             results = (data if page == 1 else self.query(first, last, page)).get('results') or []
-            for offset in offsets:
-                if offset < len(results):
-                    results[offset]['_media'] = self.media
-                    self.selected.append(results[offset])
+            if self.perPage == 1:
+                picked = [results[offset] for offset in offsets if offset < len(results)]
+            else:
+                picked = list(results)
+                random.shuffle(picked)
+                picked = picked[:self.perPage * len(offsets)]
+            for item in picked:
+                item['_media'] = self.media
+                self.selected.append(item)
             self.progress(len(self.selected))
 
 
@@ -273,7 +290,12 @@ def sampleCatalogs(tmdb, queries, count, canceled=lambda: False, start=None, end
         parts.extend((catalog,) + part for part in catalog.parts(
             lambda fraction, index=index: scanned((index + fraction) / len(queries))))
     total = sum(part[3] for part in parts)
-    ranks = sorted(random.sample(range(total), min(count, total)))
+    # Zufaellige Seiten statt einer Seite pro Titel: bei 250 Titeln 25 Seiten
+    # mit je 10 zufaelligen Titeln. Jeder Titel bleibt gleich wahrscheinlich.
+    perPage = min(20, max(1, -(-count // MAX_SAMPLE_PAGES)))
+    ranks = sorted(random.sample(range(total), min(-(-count // perPage), total)))
+    for part in parts:
+        part[0].perPage = perPage
     offset = 0
     for catalog, first, last, size, data in parts:
         catalog.collect(first, last, [rank - offset for rank in ranks if offset <= rank < offset + size], data)

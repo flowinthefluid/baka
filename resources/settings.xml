@@ -1078,6 +1078,12 @@
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
 					<control type="slider" format="number"><popup>false</popup></control>
 				</setting>
+				<setting id="randomMinVotes" type="integer" label="31708" help="32095">
+					<level>0</level>
+					<default>25</default>
+					<constraints><minimum>0</minimum><step>1</step><maximum>100000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
 			</group>
 			<group id="randomSeriesSelection" label="31891">
 				<setting id="randomSeriesGenresPicker" type="action" label="31701" help="31897">
@@ -1103,6 +1109,12 @@
 					<default>0.0</default>
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
 					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+				<setting id="randomSeriesMinVotes" type="integer" label="31708" help="32095">
+					<level>0</level>
+					<default>25</default>
+					<constraints><minimum>0</minimum><step>1</step><maximum>100000</maximum></constraints>
+					<control type="edit" format="integer"/>
 				</setting>
 			</group>
 			<group id="randomAnimeSelection" label="31892">
@@ -1130,6 +1142,12 @@
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
 					<control type="slider" format="number"><popup>false</popup></control>
 				</setting>
+				<setting id="randomAnimeMinVotes" type="integer" label="31708" help="32095">
+					<level>0</level>
+					<default>25</default>
+					<constraints><minimum>0</minimum><step>1</step><maximum>100000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
 			</group>
 			<group id="randomDocsSelection" label="31893">
 				<setting id="randomDocsGenresPicker" type="action" label="31701" help="31897">
@@ -1156,6 +1174,12 @@
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
 					<control type="slider" format="number"><popup>false</popup></control>
 				</setting>
+				<setting id="randomDocsMinVotes" type="integer" label="31708" help="32095">
+					<level>0</level>
+					<default>25</default>
+					<constraints><minimum>0</minimum><step>1</step><maximum>100000</maximum></constraints>
+					<control type="edit" format="integer"/>
+				</setting>
 			</group>
 			<group id="randomKidsSelection" label="31894">
 				<setting id="randomKidsGenresPicker" type="action" label="31701" help="31897">
@@ -1181,6 +1205,12 @@
 					<default>0.0</default>
 					<constraints><minimum>0.0</minimum><step>0.1</step><maximum>10.0</maximum></constraints>
 					<control type="slider" format="number"><popup>false</popup></control>
+				</setting>
+				<setting id="randomKidsMinVotes" type="integer" label="31708" help="32095">
+					<level>0</level>
+					<default>25</default>
+					<constraints><minimum>0</minimum><step>1</step><maximum>100000</maximum></constraints>
+					<control type="edit" format="integer"/>
 				</setting>
 			</group>
 		</category>

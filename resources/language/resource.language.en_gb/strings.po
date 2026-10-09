@@ -4115,3 +4115,7 @@ msgstr "South America"
 msgctxt "#32192"
 msgid "Iceland and the North Atlantic"
 msgstr "Iceland and the North Atlantic"
+
+msgctxt "#32095"
+msgid "Default 25. Only titles with at least this many TMDB votes. Very obscure titles are rarely found by any source; 0 = all titles."
+msgstr "Default 25. Only titles with at least this many TMDB votes. Very obscure titles are rarely found by any source; 0 = all titles."
