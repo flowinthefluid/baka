@@ -632,7 +632,9 @@ def _indexAll(params):
     if page < max(movie.get('total_pages', 1), tv.get('total_pages', 1)):
         params.setParam('catLevel', 'indexall')
         params.setParam('page', str(page + 1))
-        cGui().addNextPage(SITE_IDENTIFIER, 'categories', params)
+        # TMDB liefert hoechstens 500 Seiten aus.
+        cGui().addNextPage(SITE_IDENTIFIER, 'categories', params,
+                           min(max(movie.get('total_pages', 1), tv.get('total_pages', 1)), 500))
     cGui().setView('movies')
     cGui().setEndOfDirectory()
 
@@ -1207,6 +1209,6 @@ def _entries(params):
     if data.get('page', 1) < data.get('total_pages', 1):
         params.setParam('catLevel', 'entries')
         params.setParam('page', str(page + 1))
-        cGui().addNextPage(SITE_IDENTIFIER, 'categories', params)
+        cGui().addNextPage(SITE_IDENTIFIER, 'categories', params, min(int(data.get('total_pages') or 0), 500))
     cGui().setView('movies' if media == 'movie' else 'tvshows')
     cGui().setEndOfDirectory()

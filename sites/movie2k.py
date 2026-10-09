@@ -194,7 +194,7 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
         if curPage < aJson['pager']['totalPages']:
             sNextUrl = entryUrl.replace('page=' + str(curPage), 'page=' + str(curPage + 1))
             params.setParam('sUrl', sNextUrl)
-            oGui.addNextPage(SITE_IDENTIFIER, 'showEntries', params)
+            oGui.addNextPage(SITE_IDENTIFIER, 'showEntries', params, aJson['pager']['totalPages'])
         oGui.setView('tvshows' if isTvshow else 'movies')
         oGui.setEndOfDirectory()
 

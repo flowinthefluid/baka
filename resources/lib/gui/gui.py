@@ -151,7 +151,17 @@ class cGui:
             listitem.setProperty('IsPlayable', 'false' if startEpisodeQueue else 'true')
         xbmcplugin.addDirectoryItem(self.pluginHandle, sUrl, listitem, bIsFolder, iTotal)
 
-    def addNextPage(self, site, function, params=''):
+    def addNextPage(self, site, function, params='', iTotalPages=None):
+        # Vor "Naechste Seite": "Seite X (von Y)"; ein Klick fragt die
+        # Seitenzahl ab (resources/lib/paging.py). Nicht in Sammelsuchen.
+        if params and not self._collectMode and not self.globalSearch:
+            from resources.lib import paging
+            nextParams = dict(params.getAllParameters())
+            jump = paging.describe(ParameterHandler().getAllParameters(), nextParams, iTotalPages)
+            if jump:
+                jumpParams = ParameterHandler()
+                jumpParams.setParam('pageJump', paging.jumpParams(jump, site, function, nextParams))
+                self.addFolder(cGuiElement(paging.label(jump), 'paging', 'jumpToPage'), jumpParams)
         guiElement = cGuiElement(cConfig().getLocalizedString(30279), site, function)
         self.addFolder(guiElement, params)
 

@@ -4118,3 +4118,19 @@ msgstr "Island und Nordatlantik"
 msgctxt "#32095"
 msgid "Default 25. Only titles with at least this many TMDB votes. Very obscure titles are rarely found by any source; 0 = all titles."
 msgstr "Standard 25. Nur Titel mit mindestens so vielen TMDB-Stimmen. Sehr unbekannte Titel findet meist keine Quelle; 0 = alle Titel."
+
+msgctxt "#32096"
+msgid "Page %s of %s"
+msgstr "Seite %s von %s"
+
+msgctxt "#32097"
+msgid "Page %s"
+msgstr "Seite %s"
+
+msgctxt "#32098"
+msgid "Go to page"
+msgstr "Zu Seite springen"
+
+msgctxt "#32099"
+msgid "There is no page %s."
+msgstr "Seite %s gibt es nicht."

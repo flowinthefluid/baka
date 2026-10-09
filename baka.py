@@ -331,6 +331,10 @@ def parseUrl():
         elif sFunction == 'showOtherLanguages':
             showOtherLanguages(params)
             return
+        elif sFunction == 'jumpToPage':
+            from resources.lib import paging
+            paging.jump(params)
+            return
         elif sFunction == 'languageSetup':
             from resources.lib import languages
             languages.chooseLanguages()
