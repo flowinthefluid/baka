@@ -27,6 +27,10 @@ def main():
 
     tools.migrateLegacyAddonData()
     tools.showLegacyInstallHintOnce()
+    # Sprachen einmalig einrichten: GerXStream-Nutzer behalten ihre Auswahl,
+    # alle anderen werden gefragt, welche Sprachen sie verstehen.
+    from resources.lib import languages
+    languages.ensureSetup(interactive=True, migratedFrom=tools.migratedFrom())
 
     try:
         parseUrl()

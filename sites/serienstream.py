@@ -21,12 +21,17 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser, cUtil
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 
 SITE_IDENTIFIER = 'serienstream'
 SITE_NAME = 'SerienStream'
 SITE_ICON = 'serienstream.png'
 CONTENT_CATEGORIES = ('serien', 'animes', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de',)  # Untertitel bei Originalton
+# Sprachkennung der Seite -> (Tonsprache, Untertitel)
+STREAM_LANGUAGES = {'1': ('de', ''), '2': ('en', ''), '3': ('en', 'de')}
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -317,31 +322,10 @@ def showHosters():
                 sUrl = sUrl.replace(sUrl, '')
                 sUrl = sUrl.replace('', '/redirect/' + sID)
                 if cConfig().isBlockedHoster(sName)[0]: continue # Hoster aus settings.xml oder deaktivierten Resolver ausschließen
-                sLanguage = cConfig().getSetting('prefLanguage')
-                if sLanguage == '1':        # Voreingestellte Sprache Deutsch in settings.xml
-                    if '2' in sLang:        # data-lang-key="2" English
-                        continue
-                    if '3' in sLang:        # data-lang-key="3" Englisch mit deutschen Untertitel
-                        continue
-                    if sLang == '1':        # data-lang-key="1" Deutsch
-                        sLang = '(DE)'      # Anzeige der Sprache Deutsch
-                if sLanguage == '2':        # Voreingestellte Sprache Englisch in settings.xml
-                    if '1' in sLang:        # data-lang-key="1" Deutsch
-                        continue
-                    if '3' in sLang:        # data-lang-key="3" Englisch mit deutschen Untertitel
-                        continue
-                    if sLang == '2':        # data-lang-key="2" English
-                        sLang = '(EN)'      # Anzeige der Sprache
-                if sLanguage == '3':        # Voreingestellte Sprache Japanisch in settings.xml
-                    cGui().showLanguage()   # Kein Eintrag in der ausgewählten Sprache verfügbar
+                audio, subs = STREAM_LANGUAGES.get(sLang, ('', ''))
+                if not languages.streamAllowed(audio, subs):
                     continue
-                if sLanguage == '0':  # Alle Sprachen
-                    if sLang == '1':  # data-lang-key="1" Deutsch
-                        sLang = '(DE)'  # Anzeige der Sprache Deutsch
-                    if sLang == '2':  # data-lang-key="2" Englisch
-                        sLang = '(EN)'  # Anzeige der Sprache Englisch
-                    elif sLang == '3':  # data-lang-key="3" Englisch mit deutschen Untertitel
-                        sLang = '(EN) Sub: (DE)'  # Anzeige der Sprache Englisch mit deutschen Untertitel
+                sLang = languages.streamLabel(audio, subs)
                 if 'HD' in aResult2[1]:  # Prüfen ob tuple aResult2 das Kennzeichen HD enthält, dann übersteuern
                     sQuality = '720'
                 else:
@@ -350,7 +334,7 @@ def showHosters():
                     # aus dem Log [serienstream]: ['/redirect/12286260', 'VOE']
                     # hier ist die sUrl = '/redirect/12286260' und der sName 'VOE'
                     # hoster.py 194
-                hoster = {'link': [sUrl, sName], 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang} # Language Code für hoster.py Sprache Prio
+                hoster = {'link': [sUrl, sName], 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang, 'audio': audio, 'subs': subs} # Language Code für hoster.py Sprache Prio
                 hosters.append(hoster)
             if hosters:
                 hosters.append('getHosterUrl')
@@ -368,31 +352,10 @@ def showHosters():
         if isMatch:
             for sLang, sUrl, sName, sQuality in aResult:
                 if cConfig().isBlockedHoster(sName)[0]: continue # Hoster aus settings.xml oder deaktivierten Resolver ausschließen
-                sLanguage = cConfig().getSetting('prefLanguage')
-                if sLanguage == '1':        # Voreingestellte Sprache Deutsch in settings.xml
-                    if '2' in sLang:        # data-lang-key="2"
-                        continue
-                    if '3' in sLang:        # data-lang-key="3"
-                        continue
-                    if sLang == '1':        # data-lang-key="1"
-                        sLang = '(DE)'      # Anzeige der Sprache
-                if sLanguage == '2':        # Voreingestellte Sprache Englisch in settings.xml
-                    if '1' in sLang:        # data-lang-key="1"
-                        continue
-                    if '3' in sLang:        # data-lang-key="3"
-                        continue
-                    if sLang == '2':        # data-lang-key="2"
-                        sLang = '(EN)'      # Anzeige der Sprache
-                if sLanguage == '3':        # Voreingestellte Sprache Japanisch in settings.xml
-                    cGui().showLanguage()   # Kein Eintrag in der ausgewählten Sprache verfügbar
+                audio, subs = STREAM_LANGUAGES.get(sLang, ('', ''))
+                if not languages.streamAllowed(audio, subs):
                     continue
-                if sLanguage == '0':        # Alle Sprachen
-                    if sLang == '1':        # data-lang-key="1"
-                        sLang = '(DE)'      # Anzeige der Sprache
-                    if sLang == '2':        # data-lang-key="2"
-                        sLang = '(EN)'      # Anzeige der Sprache
-                    elif sLang == '3':      # data-lang-key="3"
-                        sLang = '(EN) Sub: (DE)' # Anzeige der Sprache
+                sLang = languages.streamLabel(audio, subs)
                 if 'HD' in aResult2[1]:     # Prüfen ob tuple aResult2 das Kennzeichen HD enthält, dann übersteuern
                     sQuality = '720'
                 else:
@@ -401,7 +364,7 @@ def showHosters():
                     # aus dem Log [serienstream]: ['/redirect/12286260', 'VOE']
                     # hier ist die sUrl = '/redirect/12286260' und der sName 'VOE'
                     # hoster.py 194
-                hoster = {'link': [sUrl, sName], 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang} # Language Code für hoster.py Sprache Prio
+                hoster = {'link': [sUrl, sName], 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang, 'audio': audio, 'subs': subs} # Language Code für hoster.py Sprache Prio
                 hosters.append(hoster)
             if hosters:
                 hosters.append('getHosterUrl')

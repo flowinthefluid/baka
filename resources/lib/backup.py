@@ -109,6 +109,8 @@ def _shareSettingIds():
             allowed[settingId] = ('hosters', [])
         elif settingId == 'mainMenuOrder':
             allowed[settingId] = ('menu', [])
+        elif settingId in ('regionCountries', 'worldCinemaHidden'):
+            allowed[settingId] = ('codes', [])
         elif kind in ('boolean', 'integer') or options:
             allowed[settingId] = (kind, options)
     return allowed
@@ -128,9 +130,12 @@ def _validShareValue(value, rule):
     if not value:
         return True
     if kind == 'menu':
-        return all(item in ('epicFavorites', 'globalSearch', 'sourceCategories',
+        return all(item in ('epicFavorites', 'globalSearch', 'sourceCategories', 'livestreams',
                            'categories', 'random', 'settings', 'history')
                    for item in value.split(','))
+    if kind == 'codes':
+        # Laender- bzw. Eintragskennungen, z.B. "de,at,ch" oder "world_bollywood".
+        return re.fullmatch(r'[a-z_]{2,40}(?:,[a-z_]{2,40}){0,60}', value) is not None
     if kind == 'hosters':
         try:
             names = json.loads(value)

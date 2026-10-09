@@ -35,6 +35,7 @@
 			<group id="content" label="30032">
 				<setting id="prefLanguage" type="string" label="30002" help="30411">
 					<level>0</level>
+					<visible>false</visible>
 					<default>0</default>
 					<constraints>
 						<options>
@@ -395,6 +396,283 @@
 					<control type="button" format="action">
 						<close>true</close>
 					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="languages" label="32060" help="">
+			<group id="langAudio" label="32061">
+				<setting id="langSetup" type="action" label="32075" help="32077">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=languageSetup)</data>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+				<setting id="langAudioPreferred" type="string" label="32062" help="">
+					<level>0</level>
+					<default>auto</default>
+					<constraints>
+						<options>
+							<option label="32063">auto</option>
+							<option label="32000">de</option>
+							<option label="32001">en</option>
+							<option label="32002">ja</option>
+							<option label="32003">es</option>
+							<option label="32004">fr</option>
+							<option label="32005">it</option>
+							<option label="32006">tr</option>
+							<option label="32007">hi</option>
+							<option label="32008">ko</option>
+							<option label="32009">pt</option>
+							<option label="32010">pl</option>
+							<option label="32011">ru</option>
+							<option label="32012">ar</option>
+							<option label="32013">nl</option>
+							<option label="32014">zh</option>
+						</options>
+					</constraints>
+					<control type="spinner" format="string"/>
+				</setting>
+				<setting id="langAudio_de" type="boolean" label="32000" help="32064">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_en" type="boolean" label="32001" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_ja" type="boolean" label="32002" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_es" type="boolean" label="32003" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_fr" type="boolean" label="32004" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_it" type="boolean" label="32005" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_tr" type="boolean" label="32006" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_hi" type="boolean" label="32007" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_ko" type="boolean" label="32008" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_pt" type="boolean" label="32009" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_pl" type="boolean" label="32010" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_ru" type="boolean" label="32011" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_ar" type="boolean" label="32012" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_nl" type="boolean" label="32013" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langAudio_zh" type="boolean" label="32014" help="32064">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+			<group id="langSubs" label="32065">
+				<setting id="langSubs_de" type="boolean" label="32000" help="32066">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_en" type="boolean" label="32001" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_ja" type="boolean" label="32002" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_es" type="boolean" label="32003" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_fr" type="boolean" label="32004" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_it" type="boolean" label="32005" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_tr" type="boolean" label="32006" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_hi" type="boolean" label="32007" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_ko" type="boolean" label="32008" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_pt" type="boolean" label="32009" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_pl" type="boolean" label="32010" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_ru" type="boolean" label="32011" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_ar" type="boolean" label="32012" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_nl" type="boolean" label="32013" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="langSubs_zh" type="boolean" label="32014" help="32066">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+			<group id="langRegion" label="32067">
+				<setting id="regionCountriesEdit" type="action" label="32068" help="32069">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=regionCountries)</data>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+				<setting id="regionCountries" type="string" label="32067">
+					<level>0</level>
+					<default/>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
+				</setting>
+			</group>
+			<group id="langDisplay" label="32076">
+				<setting id="langOtherMode" type="string" label="32070" help="">
+					<level>0</level>
+					<default>folder</default>
+					<constraints>
+						<options>
+							<option label="32071">folder</option>
+							<option label="32072">hide</option>
+						</options>
+					</constraints>
+					<control type="spinner" format="string"/>
+				</setting>
+				<setting id="tmdb_lang" type="string" label="30172" help="">
+					<level>1</level>
+					<default>de</default>
+					<constraints>
+						<options>
+							<option label="30175">en</option>
+							<option label="30176">de</option>
+							<option label="30177">fr</option>
+							<option label="30178">it</option>
+							<option label="30179">nl</option>
+							<option label="30180">sv</option>
+							<option label="30181">cs</option>
+							<option label="30182">da</option>
+							<option label="30183">fi</option>
+							<option label="30184">pl</option>
+							<option label="30185">es</option>
+							<option label="30186">el</option>
+							<option label="30187">tr</option>
+							<option label="30188">uk</option>
+							<option label="30189">ru</option>
+							<option label="30190">kn</option>
+							<option label="30191">ga</option>
+							<option label="30192">hr</option>
+							<option label="30193">hu</option>
+							<option label="30194">ja</option>
+							<option label="30195">no</option>
+							<option label="30196">id</option>
+							<option label="30197">ko</option>
+							<option label="30198">pt</option>
+							<option label="30199">lv</option>
+							<option label="30200">lt</option>
+							<option label="30201">ro</option>
+							<option label="30202">sk</option>
+							<option label="30203">sl</option>
+							<option label="30204">sq</option>
+							<option label="30205">sr</option>
+							<option label="30206">th</option>
+							<option label="30207">vi</option>
+							<option label="30208">bg</option>
+							<option label="30209">fa</option>
+							<option label="30210">hy</option>
+							<option label="30211">ka</option>
+							<option label="30212">ar</option>
+							<option label="30213">af</option>
+							<option label="30214">bs</option>
+							<option label="30215">zh</option>
+							<option label="30216">cn</option>
+							<option label="30217">hi</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30172</heading>
+					</control>
+				</setting>
+				<setting id="langSetupDone" type="boolean" label="32075">
+					<level>0</level>
+					<default>false</default>
+					<visible>false</visible>
+					<control type="toggle"/>
 				</setting>
 			</group>
 		</category>
@@ -949,6 +1227,20 @@
 					<level>0</level>
 					<default>True</default>
 					<control type="toggle"/>
+				</setting>
+				<setting id="worldCinemaEdit" type="action" label="32079" help="32080">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=worldCinema)</data>
+					<control type="button" format="action">
+						<close>true</close>
+					</control>
+				</setting>
+				<setting id="worldCinemaHidden" type="string" label="32079">
+					<level>0</level>
+					<default/>
+					<visible>false</visible>
+					<constraints><allowempty>true</allowempty></constraints>
+					<control type="edit" format="string"/>
 				</setting>
 			</group>
 		</category>
@@ -1846,6 +2138,14 @@
 				<setting id="plugin_hdfilme" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_hdfilme_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -1854,6 +2154,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -1862,6 +2168,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -1870,6 +2182,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -1880,6 +2198,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -1889,6 +2213,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -1903,6 +2233,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -1917,6 +2253,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -1931,6 +2273,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -1949,6 +2297,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -1977,6 +2331,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -1989,6 +2349,14 @@
 				<setting id="plugin_hdfilme_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -1996,6 +2364,9 @@
 				<setting id="plugin_hdfilme_1" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_hdfilme_1_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2004,6 +2375,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2012,6 +2384,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2020,6 +2393,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2030,6 +2404,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2039,6 +2414,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2053,6 +2429,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2067,6 +2444,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2087,6 +2465,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="spinner" format="string">
 						<heading>30278</heading>
@@ -2105,6 +2484,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -2127,6 +2507,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_hdfilme_1">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -2135,6 +2516,9 @@
 				<setting id="plugin_hdfilme_1_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -2261,6 +2645,9 @@
 				<setting id="plugin_kinoger" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_kinoger_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2269,6 +2656,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2277,6 +2665,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2285,6 +2674,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2295,6 +2685,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2304,6 +2695,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2318,6 +2710,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2332,6 +2725,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2350,6 +2744,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinoger">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="spinner" format="string"/>
 				</setting>
@@ -2366,6 +2761,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kinoger">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -2394,6 +2790,7 @@
 
 						<dependency type="visible" operator="is" setting="plugin_kinoger.domain">__custom__</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -2406,6 +2803,9 @@
 				<setting id="plugin_kinoger_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -2413,6 +2813,14 @@
 				<setting id="plugin_kinokiste" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_kinokiste_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2421,6 +2829,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2429,6 +2843,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2437,6 +2857,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2447,6 +2873,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2456,6 +2888,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2470,6 +2908,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2484,6 +2928,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2498,6 +2948,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinokiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -2516,6 +2972,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -2544,6 +3006,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kinokiste">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -2556,6 +3024,14 @@
 				<setting id="plugin_kinokiste_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -2563,6 +3039,26 @@
 				<setting id="plugin_kinox" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_kinox_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2571,6 +3067,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2579,6 +3093,24 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2587,6 +3119,24 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2597,6 +3147,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2606,6 +3174,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2620,6 +3206,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2634,6 +3238,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2661,6 +3283,24 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kinox">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="spinner" format="string">
 						<heading>30278</heading>
@@ -2679,6 +3319,24 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -2707,6 +3365,24 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kinox">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -2719,6 +3395,26 @@
 				<setting id="plugin_kinox_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langAudio_es">true</condition>
+								<condition operator="is" setting="langAudio_fr">true</condition>
+								<condition operator="is" setting="langAudio_it">true</condition>
+								<condition operator="is" setting="langAudio_tr">true</condition>
+								<condition operator="is" setting="langAudio_ja">true</condition>
+								<condition operator="is" setting="langAudio_ko">true</condition>
+								<condition operator="is" setting="langAudio_hi">true</condition>
+								<condition operator="is" setting="langAudio_ru">true</condition>
+								<condition operator="is" setting="langAudio_ar">true</condition>
+								<condition operator="is" setting="langAudio_nl">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+								<condition operator="is" setting="langSubs_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -2726,6 +3422,14 @@
 				<setting id="plugin_kkiste" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_kkiste_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2734,6 +3438,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2742,6 +3452,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2750,6 +3466,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2760,6 +3482,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2769,6 +3497,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2783,6 +3517,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2797,6 +3537,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2811,6 +3557,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kkiste">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -2829,6 +3581,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -2857,6 +3615,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_kkiste">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -2869,6 +3633,14 @@
 				<setting id="plugin_kkiste_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -2876,6 +3648,9 @@
 				<setting id="plugin_megakino" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_megakino_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -2884,6 +3659,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2892,6 +3668,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2900,6 +3677,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2910,6 +3688,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -2919,6 +3698,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -2933,6 +3713,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -2947,6 +3728,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -2961,6 +3743,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_megakino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -2979,6 +3762,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3007,6 +3791,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_megakino">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -3019,6 +3804,9 @@
 				<setting id="plugin_megakino_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3026,6 +3814,9 @@
 				<setting id="plugin_moflix-stream" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_moflix-stream_visible" type="boolean" label="30848" help="30849">
@@ -3033,6 +3824,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3042,6 +3834,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3050,6 +3843,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3060,6 +3854,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3069,6 +3864,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -3083,6 +3879,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -3097,6 +3894,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -3111,6 +3909,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_moflix-stream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -3129,6 +3928,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3157,6 +3957,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_moflix-stream">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -3169,6 +3970,9 @@
 				<setting id="plugin_moflix-stream_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3176,6 +3980,14 @@
 				<setting id="plugin_movie2k" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_movie2k_visible" type="boolean" label="30848" help="30849">
@@ -3183,6 +3995,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3192,6 +4010,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3200,6 +4024,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3210,6 +4040,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3219,6 +4055,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -3233,6 +4075,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -3247,6 +4095,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -3261,6 +4115,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie2k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -3279,6 +4139,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3307,6 +4173,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_movie2k">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -3319,6 +4191,14 @@
 				<setting id="plugin_movie2k_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3326,6 +4206,14 @@
 				<setting id="plugin_movie4k" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_movie4k_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -3334,6 +4222,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3342,6 +4236,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3350,6 +4250,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3360,6 +4266,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3369,6 +4281,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -3383,6 +4301,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -3397,6 +4321,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -3411,6 +4341,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_movie4k">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -3429,6 +4365,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3457,6 +4399,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_movie4k">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -3469,6 +4417,14 @@
 				<setting id="plugin_movie4k_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3476,6 +4432,9 @@
 				<setting id="plugin_netzkino" type="boolean" label="30050" help="30411">
 					<level>0</level>
 					<default>False</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_netzkino_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -3484,6 +4443,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_netzkino">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_netzkino">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3492,6 +4452,7 @@
 					<default>False</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_netzkino">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3500,6 +4461,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_netzkino">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3508,6 +4470,15 @@
 				<setting id="plugin_serienstream" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_serienstream_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -3516,6 +4487,13 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3524,6 +4502,13 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3532,6 +4517,13 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3542,6 +4534,13 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3551,6 +4550,13 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -3565,6 +4571,13 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -3579,6 +4592,13 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -3600,6 +4620,13 @@
 						<dependency type="enable" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
 						<dependency type="visible" setting="bypassDNSlock">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="spinner" format="string"/>
 				</setting>
@@ -3616,6 +4643,13 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3644,6 +4678,13 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_serienstream">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="edit" format="string">
@@ -3656,6 +4697,15 @@
 				<setting id="plugin_serienstream_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+								<condition operator="is" setting="langSubs_de">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3663,6 +4713,9 @@
 				<setting id="plugin_streamcloud" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_streamcloud_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -3671,6 +4724,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3679,6 +4733,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3687,6 +4742,7 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">False</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3697,6 +4753,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3706,6 +4763,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -3720,6 +4778,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -3734,6 +4793,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -3753,6 +4813,7 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_streamcloud">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="spinner" format="string">
 						<heading>30278</heading>
@@ -3771,6 +4832,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -3793,6 +4855,7 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_streamcloud">false</dependency>
 
+						<dependency type="visible" setting="langAudio_de">true</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -3801,6 +4864,9 @@
 				<setting id="plugin_streamcloud_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible" setting="langAudio_de">true</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -3958,6 +5024,14 @@
 				<setting id="plugin_xcine" type="boolean" label="30050" help="30411">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_xcine_allowInsecureTLS" type="boolean" label="30813" help="30814">
@@ -3966,6 +5040,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3974,6 +5054,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3982,6 +5068,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -3992,6 +5084,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -4001,6 +5099,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -4015,6 +5119,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -4029,6 +5139,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -4048,6 +5164,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_xcine">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="spinner" format="string">
 						<heading>30278</heading>
@@ -4066,6 +5188,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 
 					<control type="button" format="action">
@@ -4088,6 +5216,12 @@
 
 						<dependency type="visible" operator="!is" setting="plugin_xcine">false</dependency>
 
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30278</heading>
@@ -6041,6 +7175,14 @@
 				<setting id="plugin_huhu" type="boolean" label="30050" help="">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_huhu_visible" type="boolean" label="30848" help="30849">
@@ -6048,6 +7190,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6057,6 +7205,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_huhu">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6065,6 +7219,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6074,6 +7234,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_huhu">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -6088,6 +7254,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_huhu">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -6102,6 +7274,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_huhu">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_huhu">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -6110,6 +7288,14 @@
 				<setting id="plugin_huhu_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -6117,6 +7303,14 @@
 				<setting id="plugin_kool" type="boolean" label="30050" help="">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_kool_visible" type="boolean" label="30848" help="30849">
@@ -6124,6 +7318,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6133,6 +7333,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kool">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6141,6 +7347,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6150,6 +7362,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kool">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -6164,6 +7382,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kool">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -6178,6 +7402,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_kool">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_kool">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -6186,6 +7416,14 @@
 				<setting id="plugin_kool_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -6193,6 +7431,14 @@
 				<setting id="plugin_oha" type="boolean" label="30050" help="">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_oha_visible" type="boolean" label="30848" help="30849">
@@ -6200,6 +7446,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6209,6 +7461,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_oha">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6217,6 +7475,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6226,6 +7490,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_oha">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -6240,6 +7510,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_oha">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -6254,6 +7530,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_oha">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_oha">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -6262,6 +7544,14 @@
 				<setting id="plugin_oha_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -6269,6 +7559,14 @@
 				<setting id="plugin_vavoo" type="boolean" label="30050" help="">
 					<level>0</level>
                     <default>True</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 				<setting id="plugin_vavoo_visible" type="boolean" label="30848" help="30849">
@@ -6276,6 +7574,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">False</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6285,6 +7589,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_vavoo">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6293,6 +7603,12 @@
 					<default>True</default>
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="toggle"/>
 				</setting>
@@ -6302,6 +7618,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_vavoo">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="button" format="action">
 						<close>true</close>
@@ -6316,6 +7638,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_vavoo">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30826</heading>
@@ -6330,6 +7658,12 @@
 					<dependencies>
 						<dependency type="enable" operator="!is" setting="plugin_vavoo">false</dependency>
 						<dependency type="visible" operator="!is" setting="plugin_vavoo">false</dependency>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
 					</dependencies>
 					<control type="edit" format="string">
 						<heading>30827</heading>
@@ -6338,6 +7672,14 @@
 				<setting id="plugin_vavoo_status" type="string" label="Dummy" help="">
 					<visible>false</visible>
 					<default>true</default>
+					<dependencies>
+						<dependency type="visible">
+							<or>
+								<condition operator="is" setting="langAudio_de">true</condition>
+								<condition operator="is" setting="langAudio_en">true</condition>
+							</or>
+						</dependency>
+					</dependencies>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -6421,60 +7763,6 @@
 				</setting>
 			</group>
 			<group id="extentedtmdbhandler" label="30080">
-				<setting id="tmdb_lang" type="string" label="30172" help="">
-					<level>1</level>
-					<default>de</default>
-					<constraints>
-						<options>
-							<option label="30175">en</option>
-							<option label="30176">de</option>
-							<option label="30177">fr</option>
-							<option label="30178">it</option>
-							<option label="30179">nl</option>
-							<option label="30180">sv</option>
-							<option label="30181">cs</option>
-							<option label="30182">da</option>
-							<option label="30183">fi</option>
-							<option label="30184">pl</option>
-							<option label="30185">es</option>
-							<option label="30186">el</option>
-							<option label="30187">tr</option>
-							<option label="30188">uk</option>
-							<option label="30189">ru</option>
-							<option label="30190">kn</option>
-							<option label="30191">ga</option>
-							<option label="30192">hr</option>
-							<option label="30193">hu</option>
-							<option label="30194">ja</option>
-							<option label="30195">no</option>
-							<option label="30196">id</option>
-							<option label="30197">ko</option>
-							<option label="30198">pt</option>
-							<option label="30199">lv</option>
-							<option label="30200">lt</option>
-							<option label="30201">ro</option>
-							<option label="30202">sk</option>
-							<option label="30203">sl</option>
-							<option label="30204">sq</option>
-							<option label="30205">sr</option>
-							<option label="30206">th</option>
-							<option label="30207">vi</option>
-							<option label="30208">bg</option>
-							<option label="30209">fa</option>
-							<option label="30210">hy</option>
-							<option label="30211">ka</option>
-							<option label="30212">ar</option>
-							<option label="30213">af</option>
-							<option label="30214">bs</option>
-							<option label="30215">zh</option>
-							<option label="30216">cn</option>
-							<option label="30217">hi</option>
-						</options>
-					</constraints>
-					<control type="list" format="string">
-						<heading>30172</heading>
-					</control>
-				</setting>
 				<setting id="Color" type="string" label="30133" help="">
 					<level>2</level>
 					<default>lightblue</default>

@@ -108,7 +108,8 @@ def current_conditions_line(city=None):
     if not city:
         return ''
     units = _units()
-    lang = (cConfig().getSetting('prefLanguage', '') or 'de')[:2] or 'de'
+    from resources.lib import languages
+    lang = languages.preferredLanguage() or 'de'
     cache_key = _CACHE_KEY % (city.lower(), units, lang)
     cached = _cache_get(cache_key)
     if cached:

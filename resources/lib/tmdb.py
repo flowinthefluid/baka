@@ -199,7 +199,8 @@ class cTMDB:
     def get_meta_episodes(self, media_type, name, tmdb_id='', season='', episode='', advanced='false'):
         meta = {}
         if media_type == 'episode' and tmdb_id and season and episode:
-            url = '%stv/%s/season/%s?api_key=%s&language=de' % (self.URL, tmdb_id, season, self.api_key)
+            url = '%stv/%s/season/%s?api_key=%s&language=%s' % (self.URL, tmdb_id, season, self.api_key,
+                                                                  self.lang or 'de')
             Data = cRequestHandler(url, ignoreErrors=True, allow_insecure_tls=False).request()
             if Data:
                 try:

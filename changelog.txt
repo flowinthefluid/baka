@@ -6,6 +6,10 @@
 - Die letzte GerXStream-Version 1.1.0 installiert Baka und das neue Repository automatisch mit und leitet alte Links, Kodi-Favoriten und die Rabbithole-Tastenbelegung an Baka weiter.
 - Sicherungen aus GerXStream-Zeiten bleiben importierbar.
 - Zufallsauswahl in jedem Inhaltsordner: Zufällige Filme, Serien, Animes, Dokus und Kindertitel mit jeweils eigenen Genres, Anzahl und IMDb-Mindestwertung. Korrigiert: Wegen der TMDB-Trefferobergrenze kamen Zufallsfilme bisher nur aus der Frühzeit des Kinos.
+- Sprachen & Regionen: Beim ersten Start einmal die eigenen Sprachen wählen (GerXStream-Nutzer behalten ihre Auswahl). Quellen in anderen Sprachen stehen unter „Weitere Sprachen“ oder werden ausgeblendet; die globale Suche fragt nur Quellen in den eigenen Sprachen ab.
+- Streams werden nach Tonsprache gefiltert und sortiert, auf Wunsch auch Originalton mit Untertiteln. Jede Quelle gibt ihre Sprachen an; die alte Einstellung „Bevorzugte Sprache“ wird übernommen.
+- Meine Länder: Mediatheken (mit Länderebene bei mehreren Ländern) und Live-TV nach Land. Neue Kategorie „Weltkino“ mit Bollywood, K-Drama, Türkischen Serien, Nollywood, Telenovelas u. a. Feste Kategorienamen sind jetzt übersetzt.
+- Korrigiert: kinox-Sprachfilter griff wegen eines fehlerhaften Cookies nicht; movie2k-Suche brach bei „Japanisch“ ab; Wetter-Standbilder öffneten nicht; geteilte Profile mit Livestreams in der Menüreihenfolge wurden abgelehnt.
 - Globale Suche fasst identische Treffer mehrerer Quellen zusammen.
 - JPEG-Webcams: Stop/Zurück beendet die Bildaktualisierung zuverlässig.
 

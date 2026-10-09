@@ -32,6 +32,8 @@ SITE_IDENTIFIER = 'animeloads'
 SITE_NAME = 'Anime-Loads'
 SITE_ICON = 'animeloads.png'
 CONTENT_CATEGORIES = ('animes',)
+SITE_LANGUAGES = ('de', 'ja')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de',)  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

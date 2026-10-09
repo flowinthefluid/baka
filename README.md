@@ -204,7 +204,8 @@ Und wer von xStream kommt: Daten werden beim ersten Start **automatisch
 Baka
 ├── ⭐ Epic-Favorites           ← immer oben, deine Ordnerwelt
 ├── 🔎 Globale Suche            ← alle · Filme · Serien · Animes · Dokus · Kinder
-├── 📂 Alle / Filme / Serien / Animes / Dokus / Kinder   ← Quellen nach Inhalt, oben jeweils 🎲 Zufällig
+├── 📂 Alle / Filme / Serien / Animes / Dokus / Kinder   ← Quellen in deinen Sprachen, oben 🎲 Zufällig,
+│                                                          unten 🌐 Weitere Sprachen
 ├── 📡 Livestreams              ← TV · Sport · Social · Wetter · Webcams · Rabbithole
 ├── 🗂️ Kategorien               ← Trends · Mediatheken · Charts · Genres · Themen · Personen …
 ├── 🕘 Historie
@@ -406,6 +407,27 @@ und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiederga
 ## 🎛️ Feintuning
 
 <details>
+<summary><b>🌐 Sprachen & Regionen</b></summary>
+
+- Beim ersten Start fragt Baka einmal, welche Sprachen du verstehst. Wer von
+  GerXStream kommt, behält seine bisherige Auswahl ohne Rückfrage.
+- **Einstellungen → Sprachen & Regionen**: Tonsprachen (je ein Schalter, dazu die
+  bevorzugte), *Original mit Untertiteln* (z. B. Japanisch mit deutschen
+  Untertiteln), **Meine Länder** und die Sprache für Titel und Beschreibungen.
+- Quellen in deinen Sprachen stehen direkt im Inhaltsordner, alle anderen unter
+  **🌐 Weitere Sprachen** – oder werden ganz ausgeblendet. Die globale Suche fragt
+  nur Quellen in deinen Sprachen ab; ihre Einstellungen erscheinen auch nur dann.
+- Streams werden nach deinen Sprachen gefiltert und sortiert: bevorzugte Tonsprache
+  zuerst, dann weitere Tonsprachen, dann Original mit Untertiteln.
+- **Meine Länder** steuert Mediatheken (bei mehreren Ländern mit Länderebene) und
+  Live-TV. Webcams und Wetter bleiben weltweit. Nichts gewählt bedeutet alle Länder.
+- **Kategorien → Weltkino**: Bollywood, K-Drama, Türkische Serien, Nollywood,
+  Telenovelas und mehr; einzelne Einträge lassen sich in den Kategorien-Einstellungen
+  ausblenden.
+
+</details>
+
+<details>
 <summary><b>🎲 Zufallsauswahl & Kategorien-Filter</b></summary>
 
 - **Zufällige Filme / Serien / Animes / Dokus / Kindertitel** stehen ganz oben im
@@ -531,6 +553,8 @@ SITE_IDENTIFIER    = 'meinequelle'
 SITE_NAME          = 'Meine Quelle'
 SITE_ICON          = 'meinequelle.png'
 CONTENT_CATEGORIES = ('filme', 'serien')   # wo die Quelle im Menü auftaucht
+SITE_LANGUAGES     = ('de', 'en')           # Tonsprachen; () = sprachunabhängig
+SITE_SUBTITLES     = ('de',)                # optional: Untertitel bei Originalton
 
 def load():
     ...   # Menü der Quelle
@@ -548,6 +572,12 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
    ```sh
    python tools/register_site.py meinequelle 30799 "Meine Quelle"
    ```
+   Die Einstellungen der Quelle erscheinen nur, wenn eine ihrer Sprachen gewählt
+   ist. Nach Änderungen an `SITE_LANGUAGES`/`SITE_SUBTITLES`:
+   `python tools/register_site.py --sync-languages`.
+4. Streams mit `languages.tagStream(hoster, audio, subs)` kennzeichnen statt eigener
+   Sprachweichen – Filter, Anzeige und Sortierung kommen dann aus
+   [`languages.py`](resources/lib/languages.py).
 
 **Vor jedem Commit**
 

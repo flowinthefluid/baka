@@ -151,6 +151,19 @@ def migrateLegacyAddonData():
     return bool(copied_files or migrated_settings)
 
 
+def migratedFrom():
+    """Kennung des Vorgaengers, dessen Daten uebernommen wurden, sonst ''."""
+    marker_path = os.path.join(_addonDataPath(CURRENT_ADDON_ID), ADDON_DATA_MIGRATION_MARKER)
+    try:
+        with open(marker_path, encoding='utf-8') as marker_file:
+            for line in marker_file:
+                if line.startswith('migrated_from='):
+                    return line.split('=', 1)[1].strip()
+    except OSError:
+        pass
+    return ''
+
+
 def showLegacyInstallHintOnce():
     """Hinweis auf eine parallel installierte xStream-Altinstallation.
 

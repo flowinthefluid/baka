@@ -437,7 +437,12 @@ class cHosterGui:
 
         # Hoster Sprache über sLang im Siteplugin Prio nach sLang Code Reihenfolge (Deutsch, Englisch, Englisch mit untertitel
         if ranking:
-            if  "languageCode" in ranking[0][1]:
+            if any('audio' in hoster for priority, hoster in ranking):
+                # Einheitliche Sprachangabe: bevorzugte Tonsprache zuerst (languages.py).
+                from resources.lib import languages
+                ranking = sorted(ranking, key=lambda entry: (
+                    languages.streamRank(entry[1].get('audio', ''), entry[1].get('subs', '')), entry[0]))
+            elif "languageCode" in ranking[0][1]:
                 ranking = sorted(ranking, key=lambda ranking: (ranking[1]["languageCode"],ranking[0]))
             else:
                 ranking = sorted(ranking, key=lambda ranking: ranking[0])

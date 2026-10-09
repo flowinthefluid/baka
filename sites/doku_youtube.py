@@ -13,6 +13,7 @@ SITE_IDENTIFIER = 'doku_youtube'
 SITE_NAME = 'YouTube Doku-Kanaele'
 SITE_ICON = 'dokus4me.png'
 CONTENT_CATEGORIES = ('dokus',)
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 SITE_GLOBAL_SEARCH = False
 ENABLE_SETTING = 'plugin_dokus4me'
 INCLUDE_IN_ALL = False

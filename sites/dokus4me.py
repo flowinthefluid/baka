@@ -20,6 +20,8 @@ SITE_IDENTIFIER = 'dokus4me'
 SITE_NAME = 'Dokus4.me'
 SITE_ICON = 'dokus4me.png'
 CONTENT_CATEGORIES = ('dokus',)
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de',)  # Untertitel bei Originalton
 HIDDEN_SOURCE = True
 SITE_GLOBAL_SEARCH = False
 cConfig().setSetting('global_search_' + SITE_IDENTIFIER, 'false')

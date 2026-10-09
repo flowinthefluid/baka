@@ -19,6 +19,7 @@ SITE_IDENTIFIER = 'netzkino'
 SITE_NAME = 'NetzKino'
 SITE_ICON = 'netzkino.png'
 CONTENT_CATEGORIES = ('filme', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

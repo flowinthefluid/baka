@@ -43,6 +43,8 @@ SITE_IDENTIFIER = 'animestream'
 SITE_NAME = 'Anime-Stream'
 SITE_ICON = 'animestream.png'
 CONTENT_CATEGORIES = ('animes',)
+SITE_LANGUAGES = ('de', 'ja')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de',)  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

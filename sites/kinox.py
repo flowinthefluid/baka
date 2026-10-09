@@ -9,6 +9,7 @@ from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.gui.gui import cGui
 from resources.lib.config import cConfig
+from resources.lib import languages
 from json import loads
 #from xbmc import LOGINFO as LOGNOTICE, LOGERROR, log
 
@@ -16,6 +17,8 @@ SITE_IDENTIFIER = 'kinox'
 SITE_NAME = 'KinoX'
 SITE_ICON = 'kinox.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'animes', 'dokus')
+SITE_LANGUAGES = ('de', 'en', 'es', 'fr', 'it', 'tr', 'ja', 'ko', 'hi', 'ru', 'ar', 'nl')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de', 'en')  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -150,15 +153,20 @@ def __getHtmlContent(sUrl=None, ignoreErrors=False):
     return oRequest.request()
 
 
+# kinox-Sprachkennungen -> Tonsprachen (15 ist deutsch/englisch zweisprachig).
+KINOX_LANGUAGES = {
+    '1': ('de',), '2': ('en',), '4': (), '5': ('es',), '6': ('fr',), '7': ('tr',),
+    '8': ('ja',), '9': ('ar',), '11': ('it',), '12': ('hr',), '13': ('sr',),
+    '14': ('bs',), '15': ('de', 'en'), '16': ('nl',), '17': ('ko',), '24': ('el',),
+    '25': ('ru',), '26': ('hi',),
+}
+
+
 def __getPreferredLanguage():
-    sLanguage = cConfig().getSetting('prefLanguage')
-    if sLanguage == '1': # Voreingestellte Sprache Deutsch
-        sPrefLang = 'ListNeededLanguage=25%2C24%2C26%2C2%2C5%2C6%2C7%2C8%2C11%2C15%2C16%2C9%2C12%2C13%2C14%2C17%2C4'
-    elif sLanguage == '2':  # Voreingestellte Sprache Englisch
-        sPrefLang = 'ListNeededLanguage=25%2C24%2C26%2C5%2C6%2C7%2C8%2C11%2C15%2C16%2C9%2C12%2C13%2C14%2C17%2C4%2C1'
-    else:
-        sPrefLang = ''
-    return sPrefLang
+    """Cookie mit den kinox-Sprachen, die ausgeblendet werden sollen."""
+    spoken = set(languages.audioLanguages())
+    hidden = [langId for langId, codes in KINOX_LANGUAGES.items() if not spoken & set(codes)]
+    return 'ListNeededLanguage=%s;' % '%2C'.join(hidden) if hidden else ''
 
 
 def __displayItems(sGui, sHtmlContent):

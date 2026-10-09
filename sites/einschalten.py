@@ -19,6 +19,7 @@ SITE_IDENTIFIER = 'einschalten'
 SITE_NAME = 'Einschalten'
 SITE_ICON = 'einschalten.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

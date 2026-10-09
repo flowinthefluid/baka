@@ -13,12 +13,22 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 
 SITE_IDENTIFIER = 'internetarchive'
 SITE_NAME = 'Internet Archive'
 SITE_ICON = 'internetarchive.png'
 CONTENT_CATEGORIES = ('filme', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+# Sprachangaben des Internet Archive (ISO 639-2 bzw. Klartext) -> ISO 639-1
+ARCHIVE_LANGUAGES = {
+    'ger': 'de', 'deu': 'de', 'german': 'de', 'eng': 'en', 'english': 'en',
+    'fre': 'fr', 'fra': 'fr', 'french': 'fr', 'spa': 'es', 'spanish': 'es',
+    'ita': 'it', 'italian': 'it', 'jpn': 'ja', 'japanese': 'ja', 'tur': 'tr',
+    'por': 'pt', 'pol': 'pl', 'rus': 'ru', 'russian': 'ru', 'ara': 'ar',
+    'dut': 'nl', 'nld': 'nl', 'chi': 'zh', 'zho': 'zh', 'kor': 'ko', 'hin': 'hi',
+}
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -120,37 +130,21 @@ def showCollections(entryUrl=False, sGui=False):
         if not sGui: oGui.showInfo()
         return
 
-    # Filter nach eingestellter Sprache in baka laden
-    sLanguage = cConfig().getSetting('prefLanguage')
-
     for i in aResults:
         if 'identifier' in i and i['identifier'] != '' and 'title' in i and i['title'] != '':
             sId = str(i['identifier'])  # ID des Films / Serie für die weitere URL
             sName = str(i['title'])  # Name des Films / Serie
             #sName = sName.replace('"', '-')
             oGuiElement = cGuiElement(sName, SITE_IDENTIFIER, 'showHosters')
-            # Resultate aus JSON nach voreingestellter Sprache filtern (Deutsch, Englisch, alle Sprachen)
-            if 'language' in i and i['language'] != '':
-                sLang = i['language']
-                if sLanguage == '1': # Voreingestellte Sprache Deutsch in settings.xml
-                    if not sLang in ['ger', 'german', 'Ger', 'German']:
-                       continue
-                if sLanguage == '2':  # Voreingestellte Sprache Englisch in settings.xml
-                    if not sLang in ['eng', 'english', 'English']:
-                        continue
-                if sLanguage == '0': # Alle Sprachen
-                    if not sLang in ['ger', 'eng', 'english', 'English', 'Ger', 'German']:
-                        continue
-            else:
-                i['language'] = 'und'
-                sLang = 'und'
-                if sLanguage == '1': # Voreingestellte Sprache Deutsch in settings.xml
-                        continue
-                if sLanguage == '2':  # Voreingestellte Sprache Englisch in settings.xml
-                        continue
-                if sLanguage == '0': # Alle Sprachen
-                    if not sLang in ['ger', 'eng', 'english', 'und', 'Ger', 'German', 'English']:
-                        continue
+            # Nach den gewaehlten Tonsprachen filtern. Ohne erkennbare Sprache nur,
+            # wenn mehr als eine Sprache gewaehlt ist (frueher: "Alle Sprachen").
+            sLang = str(i.get('language') or '')
+            sAudio = ARCHIVE_LANGUAGES.get(sLang.lower(), '')
+            if sAudio and not languages.streamAllowed(sAudio):
+                continue
+            if not sAudio and len(languages.audioLanguages()) < 2:
+                continue
+            i['language'] = sLang or 'und'
             oGuiElement.setLanguage(i['language'])
 
             #if 'is_series' in i: isTvshow = i['is_series']  # Wenn True dann Serie ToDo Prüfen wie sich Serien verhalten
@@ -195,37 +189,21 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
         if not sGui: oGui.showInfo()
         return
 
-    # Filter nach eingestellter Sprache in baka laden
-    sLanguage = cConfig().getSetting('prefLanguage')
-
     for i in aResults:
         if 'identifier' in i and i['identifier'] != '' and 'title' in i and i['title'] != '':
             sId = str(i['identifier'])  # ID des Films / Serie für die weitere URL
             sName = str(i['title'])  # Name des Films / Serie
             sName = sName.replace(':', '-')
             oGuiElement = cGuiElement(sName, SITE_IDENTIFIER, 'showHosters')
-            # Resultate aus JSON nach voreingestellter Sprache filtern (Deutsch, Englisch, alle Sprachen)
-            if 'language' in i and i['language'] != '':
-                sLang = i['language']
-                if sLanguage == '1': # Voreingestellte Sprache Deutsch in settings.xml
-                    if not sLang in ['ger', 'german']:
-                       continue
-                if sLanguage == '2':  # Voreingestellte Sprache Englisch in settings.xml
-                    if not sLang in ['eng', 'english']:
-                        continue
-                if sLanguage == '0': # Alle Sprachen
-                    if not sLang in ['ger', 'eng', 'english']:
-                        continue
-            else:
-                i['language'] = 'UND'
-                sLang = 'UND'
-                if sLanguage == '1': # Voreingestellte Sprache Deutsch in settings.xml
-                        continue
-                if sLanguage == '2':  # Voreingestellte Sprache Englisch in settings.xml
-                        continue
-                if sLanguage == '0': # Alle Sprachen
-                    if not sLang in ['ger', 'eng', 'english', 'UND']:
-                        continue
+            # Nach den gewaehlten Tonsprachen filtern. Ohne erkennbare Sprache nur,
+            # wenn mehr als eine Sprache gewaehlt ist (frueher: "Alle Sprachen").
+            sLang = str(i.get('language') or '')
+            sAudio = ARCHIVE_LANGUAGES.get(sLang.lower(), '')
+            if sAudio and not languages.streamAllowed(sAudio):
+                continue
+            if not sAudio and len(languages.audioLanguages()) < 2:
+                continue
+            i['language'] = sLang or 'und'
             oGuiElement.setLanguage(i['language'])
 
             #if 'is_series' in i: isTvshow = i['is_series']  # Wenn True dann Serie ToDo Prüfen wie sich Serien verhalten

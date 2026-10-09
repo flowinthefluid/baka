@@ -21,6 +21,7 @@ SITE_IDENTIFIER = 'kids_tube'
 SITE_NAME = 'Kids Tube'
 SITE_ICON = 'kids_tube.png'
 CONTENT_CATEGORIES = ('dokus', 'kinder')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 SITE_GLOBAL_SEARCH = False
 

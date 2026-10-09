@@ -98,7 +98,14 @@ def genre_label(genre_id):
 
 
 def country_label(country_id):
-    return _COUNTRY_LABELS.get((country_id or '').lower(), (country_id or '').upper())
+    code = (country_id or '').lower()
+    try:
+        from resources.lib import languages
+        if code in languages.COUNTRY_CODES and languages.countryLabel(code) != code.upper():
+            return languages.countryLabel(code)
+    except Exception:
+        pass
+    return _COUNTRY_LABELS.get(code, code.upper())
 
 
 def is_known_section(section_id):

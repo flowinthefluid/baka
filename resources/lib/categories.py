@@ -241,6 +241,134 @@ PRESET_QUERIES = {
     'location_mediterranean': ('movie', 'with_origin_country=IT|ES|GR|TR|MA|TN&sort_by=popularity.desc&vote_count.gte=50'),
     'location_south_america': ('movie', 'with_origin_country=AR|BR|CL|CO|PE|UY&sort_by=popularity.desc&vote_count.gte=50'),
     'location_nordatlantic': ('movie', 'with_origin_country=IS|NO|FO&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_bollywood': ('movie', 'with_original_language=hi&sort_by=popularity.desc&vote_count.gte=20'),
+    'world_kdrama': ('tv', 'with_original_language=ko&with_genres=18&sort_by=popularity.desc&vote_count.gte=20'),
+    'world_korean': ('movie', 'with_original_language=ko&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_japanese': ('movie', 'with_original_language=ja&without_genres=16&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_turkish_tv': ('tv', 'with_original_language=tr&sort_by=popularity.desc&vote_count.gte=10'),
+    'world_nollywood': ('movie', 'with_origin_country=NG&sort_by=popularity.desc&vote_count.gte=5'),
+    'world_french': ('movie', 'with_original_language=fr&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_nordic_noir': ('tv', 'with_origin_country=SE|NO|DK|FI|IS&with_genres=80&sort_by=popularity.desc&vote_count.gte=10'),
+    'world_spanish': ('movie', 'with_original_language=es&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_italian': ('movie', 'with_original_language=it&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_chinese': ('movie', 'with_original_language=zh|cn&sort_by=popularity.desc&vote_count.gte=50'),
+    'world_telenovelas': ('tv', 'with_origin_country=MX|BR|CO|AR|VE&with_genres=10766&sort_by=popularity.desc&vote_count.gte=5'),
+}
+
+# Weltkino: Filme und Serien aus anderen Sprachraeumen, ueber TMDB und damit
+# fuer alle aktivierten Quellen. Jeder Eintrag laesst sich ausblenden.
+WORLD_CINEMA = (
+    (32081, 'world_bollywood'), (32082, 'world_kdrama'), (32083, 'world_korean'),
+    (32084, 'world_japanese'), (32085, 'world_turkish_tv'), (32086, 'world_nollywood'),
+    (32087, 'world_french'), (32088, 'world_nordic_noir'), (32089, 'world_spanish'),
+    (32090, 'world_italian'), (32091, 'world_chinese'), (32092, 'world_telenovelas'),
+)
+WORLD_CINEMA_HIDDEN_SETTING = 'worldCinemaHidden'
+
+# Laender je Mediathek-Quelle und je MediathekViewWeb-Sender; sonst Deutschland.
+MEDIATHEK_SITE_COUNTRIES = {
+    'ardmediathek': ('de',), 'arte': ('de', 'fr'), 'mediathekviewweb': ('de', 'at', 'ch'),
+    'netzkino': ('de', 'at', 'ch'), 'rocketbeans': ('de', 'at', 'ch'),
+}
+MEDIATHEK_CHANNEL_COUNTRIES = {
+    'ORF': ('at',), 'SRF': ('ch',), '3Sat': ('de', 'at', 'ch'), 'ARTE.DE': ('de', 'fr'),
+}
+
+# Feste deutsche Namen -> Text-ID, damit sie in der Kodi-Sprache erscheinen.
+LABEL_IDS = {
+    'Superhelden': 32100,
+    'Videospielverfilmungen': 32101,
+    'Weihnachten': 32102,
+    'Zeitreise': 32103,
+    'Postapokalypse': 32104,
+    'Kuenstliche Intelligenz': 32105,
+    'Gefaengnis': 32106,
+    'Wikinger': 32107,
+    'Mittelalter': 32108,
+    'Spionage': 32109,
+    'Kaempfe und Kampfsport': 32110,
+    'Hexen und Magie': 32111,
+    'Gericht und Anwaelte': 32112,
+    'Psychothriller': 32113,
+    'Roadtrip': 32114,
+    'Musik und Bands': 32115,
+    'Roboter': 32116,
+    'Werwoelfe': 32117,
+    'Rache': 32118,
+    'Gefaehrliche Spiele': 32119,
+    'Gefaengnisausbruch': 32120,
+    'Katastrophen': 32121,
+    'Familiengeheimnisse': 32122,
+    'Dystopie': 32123,
+    'Sport': 32124,
+    'Rennen': 32125,
+    'Krieg': 32126,
+    'Uebernatuerliches': 32127,
+    'Antihelden': 32128,
+    'Intrigen': 32129,
+    'Historienstoffe': 32130,
+    'Altes Aegypten': 32131,
+    'Piraten': 32132,
+    'Parallelwelten': 32133,
+    'Verschwoerungen': 32134,
+    'Biografien': 32135,
+    'Militaer': 32136,
+    'Anwaelte und Justiz': 32137,
+    'Polizei und Ermittlungen': 32138,
+    'Sekten und Kulte': 32139,
+    'Schatzsuche': 32140,
+    'Insel-Settings': 32141,
+    'Wuestenabenteuer': 32142,
+    'Seefahrt und Ozean': 32143,
+    'Bergwelten': 32144,
+    'Epidemie und Virus': 32145,
+    'Serienkiller': 32146,
+    'Entfuehrung': 32147,
+    'Verschollene und Vermisste': 32148,
+    'Drogenkartelle': 32149,
+    'Gangster und Unterwelt': 32150,
+    'Korruption': 32151,
+    'Politik und Macht': 32152,
+    'Koenigshaeuser und Adel': 32153,
+    'Geheimdienst und Agenten': 32154,
+    'Hacking und Cyberkriminalitaet': 32155,
+    'Journalismus und Medien': 32156,
+    'Aerzte und Krankenhaus': 32157,
+    'Schule und Universitaet': 32158,
+    'Familie und Erwachsenwerden': 32159,
+    'Freundschaft': 32160,
+    'Liebe und Romantik': 32161,
+    'Tanz': 32162,
+    'Kochen und Essen': 32163,
+    'Geister': 32164,
+    'Daemonen': 32165,
+    'Mystery und Ungeklaertes': 32166,
+    'Psychologie und Trauma': 32167,
+    'Traeume und Albtraeume': 32168,
+    'Paralleluniversen': 32169,
+    'Weltraumforschung': 32170,
+    'Rettung und Katastrophenschutz': 32171,
+    'Historische Stoffe (keine Zeitreise)': 32172,
+    'Antike und Roemisches Reich': 32173,
+    'Ritter und Burgen': 32174,
+    'Cowboys und Wilder Westen': 32175,
+    'Japanisches Feudalzeitalter': 32176,
+    'Mittelalterliche Fantasy': 32177,
+    'TMDB ueber 7.5 (Filme)': 32178,
+    'TMDB ueber 8.0 (Filme)': 32179,
+    'TMDB ueber 7.5 (Serien)': 32180,
+    'TMDB ueber 8.0 (Serien)': 32181,
+    'Drehorte ausserhalb USA': 32182,
+    'Keine Hollywood Produktion': 32183,
+    'Deutschland: deutsche Produktionen': 32184,
+    'Deutschland: Schauplatz / Drehorte': 32185,
+    'Paris und Frankreich': 32186,
+    'London und UK': 32187,
+    'Tokio und Japan': 32188,
+    'Skandinavien': 32189,
+    'Mittelmeerraum': 32190,
+    'Suedamerika': 32191,
+    'Island und Nordatlantik': 32192,
 }
 
 # Genres, die TMDB nur fuer Serien bzw. nur fuer Filme kennt.
@@ -253,6 +381,15 @@ def _label(stringId, fallback=''):
         return cConfig().getLocalizedString(stringId) or fallback
     except Exception:
         return fallback
+
+
+def _t(name):
+    """Fester deutscher Name in der Sprache der Kodi-Oberflaeche."""
+    stringId = LABEL_IDS.get(name)
+    if not stringId:
+        return name
+    text = _label(stringId, name)
+    return name if str(text).startswith('#') else text
 
 
 def _mediaType(params):
@@ -318,12 +455,12 @@ def _root(params):
         params.setParam('catLevel', level)
         _addFolder(_label(stringId, fallback), 'categories', params)
 
-    for level, title in (
-            ('outsideHollywood', 'Ausserhalb Hollywood'),
-            ('companies', 'Produktionsfirmen'),
-            ('locations', 'Beruehmte Drehorte')):
+    for level, stringId, fallback in (
+            ('outsideHollywood', 32078, 'Weltkino'),
+            ('companies', 32093, 'Produktionsfirmen'),
+            ('locations', 32094, 'Beruehmte Drehorte')):
         params.setParam('catLevel', level)
-        _addFolder(title, 'categories', params)
+        _addFolder(_label(stringId, fallback), 'categories', params)
     cGui().setEndOfDirectory()
 
 
@@ -345,8 +482,8 @@ def _mediathekChannels():
         return ()
 
 
-def _mediatheken(params):
-    """Alle Mediatheken des deutschen und oesterreichischen Fernsehens."""
+def _mediathekEntries():
+    """(Laender, Element, Parameter) je Mediathek-Quelle und Sender."""
     if cConfig().getSettingBool('categoryMediathekenAll', True):
         enabled = {site_id: {'name': name} for site_id, name in (
             ('ardmediathek', 'ARD Mediathek'), ('arte', 'arte'),
@@ -355,7 +492,7 @@ def _mediatheken(params):
     else:
         from resources.lib.handler.pluginHandler import cPluginHandler
         enabled = dict((plugin.get('id'), plugin) for plugin in cPluginHandler().getAvailablePlugins())
-    listed = 0
+    entries = []
     for siteId in MEDIATHEK_SITES:
         plugin = enabled.get(siteId)
         if not plugin:
@@ -363,8 +500,7 @@ def _mediatheken(params):
         element = cGuiElement(plugin.get('name') or siteId, siteId, 'load')
         if plugin.get('icon'):
             element.setThumbnail(plugin['icon'])
-        cGui().addFolder(element)
-        listed += 1
+        entries.append((MEDIATHEK_SITE_COUNTRIES.get(siteId, ('de',)), element, None))
     if 'mediathekviewweb' in enabled:
         for label, channel in _mediathekChannels():
             channelParams = ParameterHandler()
@@ -373,9 +509,39 @@ def _mediatheken(params):
             channelParams.setParam('page', '0')
             element = cGuiElement(_label(31501, '%s-Mediathek').replace('%s', label),
                                   'mediathekviewweb', 'showChannel')
-            cGui().addFolder(element, channelParams)
-            listed += 1
-    if not listed:
+            entries.append((MEDIATHEK_CHANNEL_COUNTRIES.get(channel, ('de',)), element, channelParams))
+    return entries
+
+
+def _mediatheken(params):
+    """Mediatheken der gewaehlten Laender.
+
+    Ohne Laenderauswahl bleibt es eine flache Liste aller Mediatheken. Bei
+    mehreren gewaehlten Laendern kommt eine Laenderebene davor.
+    """
+    from resources.lib import languages
+
+    entries = _mediathekEntries()
+    mine = languages.countries()
+    if mine:
+        entries = [entry for entry in entries if set(entry[0]) & set(mine)]
+    available = [code for code in mine if any(code in entry[0] for entry in entries)]
+    country = params.getValue('catCountry') if params else None
+    if len(available) > 1 and country not in available:
+        for code in available:
+            params.setParam('catLevel', 'mediatheken')
+            params.setParam('catCountry', code)
+            _addFolder(languages.countryLabel(code), 'categories', params)
+        cGui().setEndOfDirectory()
+        return
+    if country in available:
+        entries = [entry for entry in entries if country in entry[0]]
+    for countries, element, elementParams in entries:
+        if elementParams is None:
+            cGui().addFolder(element)
+        else:
+            cGui().addFolder(element, elementParams)
+    if not entries:
         cGui().showInfo('Baka', _label(31502, 'Keine Mediathek-Quelle aktiviert'))
     cGui().setEndOfDirectory()
 
@@ -512,7 +678,7 @@ def _collections(params):
         params.setParam('catPerson', '')
         params.setParam('catPreset', '')
         params.setParam('page', '1')
-        _addFolder(name, 'categories', params)
+        _addFolder(_t(name), 'categories', params)
     cGui().setEndOfDirectory()
 
 
@@ -540,7 +706,7 @@ def _keywords(params):
         params.setParam('catDecade', '')
         params.setParam('catPerson', '')
         params.setParam('page', '1')
-        _addFolder(name, 'categories', params)
+        _addFolder(_t(name), 'categories', params)
     cGui().setEndOfDirectory()
 
 
@@ -581,7 +747,7 @@ def _addPresetFolders(params, entries):
         params.setParam('catDecade', '')
         params.setParam('catPerson', '')
         params.setParam('page', '1')
-        _addFolder(title, 'categories', params)
+        _addFolder(_t(title), 'categories', params)
 
 
 def _ratings(params):
@@ -589,9 +755,29 @@ def _ratings(params):
     cGui().setEndOfDirectory()
 
 
+def _worldCinemaHidden():
+    value = cConfig().getSetting(WORLD_CINEMA_HIDDEN_SETTING, '') or ''
+    return set(part.strip() for part in value.split(',') if part.strip())
+
+
 def _outsideHollywood(params):
-    _addPresetFolders(params, OUTSIDE_HOLLYWOOD_PRESETS)
+    """Weltkino: sichtbare Sprachraeume plus die Drehort-/Studio-Filter."""
+    hidden = _worldCinemaHidden()
+    world = [(_label(stringId, key), key) for stringId, key in WORLD_CINEMA if key not in hidden]
+    _addPresetFolders(params, world + list(OUTSIDE_HOLLYWOOD_PRESETS))
     cGui().setEndOfDirectory()
+
+
+def editWorldCinema():
+    import xbmcgui
+
+    hidden = _worldCinemaHidden()
+    selected = xbmcgui.Dialog().multiselect(
+        _label(32079, 'Weltkino'), [_label(stringId, key) for stringId, key in WORLD_CINEMA],
+        preselect=[index for index, (stringId, key) in enumerate(WORLD_CINEMA) if key not in hidden])
+    if selected is not None:
+        cConfig().setSetting(WORLD_CINEMA_HIDDEN_SETTING, ','.join(
+            key for index, (stringId, key) in enumerate(WORLD_CINEMA) if index not in selected))
 
 
 def _companies(params):

@@ -18,6 +18,7 @@ SITE_IDENTIFIER = 'hdfilme_1'
 SITE_NAME = 'HDFilme.to'
 SITE_ICON = 'hdfilme_1.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'animes', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

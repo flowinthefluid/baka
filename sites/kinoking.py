@@ -21,6 +21,7 @@ SITE_IDENTIFIER = 'kinoking'
 SITE_NAME = 'KinoKing'
 SITE_ICON = 'kinoking.png'
 CONTENT_CATEGORIES = ('filme', 'serien')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

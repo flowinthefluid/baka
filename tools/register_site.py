@@ -13,6 +13,12 @@ wird nicht doppelt angelegt.
 Beispiel:
 
     python tools/register_site.py mediaccc 30794 "media.ccc.de"
+
+Die Einstellungen einer Quelle erscheinen nur, wenn eine ihrer Sprachen
+(SITE_LANGUAGES / SITE_SUBTITLES im Site-Plugin) eingeschaltet ist. Nach dem
+Aendern dieser Angaben alle Quellen abgleichen:
+
+    python tools/register_site.py --sync-languages
 """
 
 import argparse
@@ -144,8 +150,10 @@ def labelAlreadyTaken(label):
 
 
 def addSettingsGroup(sid, label, isVod):
-    with io.open(SETTINGS, encoding='utf-8') as fh:
-        content = fh.read()
+    with io.open(SETTINGS, encoding='utf-8', newline='') as fh:
+        raw = fh.read()
+    crlf = '\r\n' in raw
+    content = raw.replace('\r\n', '\n')
     if 'id="plugin_%s"' % sid in content:
         return False
     if labelAlreadyTaken(label):
@@ -157,6 +165,8 @@ def addSettingsGroup(sid, label, isVod):
         raise SystemExit('Einfuegemarke nicht gefunden: %r' % anchor)
     block = GROUP_TEMPLATE.format(sid=sid, label=label)
     content = content.replace(anchor, block + anchor, 1)
+    if crlf:
+        content = content.replace('\n', '\r\n')
     with io.open(SETTINGS, 'w', encoding='utf-8', newline='') as fh:
         fh.write(content)
     return True
@@ -178,6 +188,93 @@ def addPoEntry(path, label, text, isSource):
     return True
 
 
+# --- Sprachen: Einstellungen einer Quelle nur bei passender Sprache zeigen ---
+
+# Sprachen mit eigenem Schalter (entspricht resources/lib/languages.py).
+LANGUAGE_TOGGLES = ('de', 'en', 'ja', 'es', 'fr', 'it', 'tr', 'hi', 'ko', 'pt',
+                    'pl', 'ru', 'ar', 'nl', 'zh')
+_LANGUAGE_DEPENDENCY = re.compile(
+    r'\n[ \t]*<dependency type="visible" setting="lang(?:Audio|Subs)_[a-z]+">true</dependency>'
+    r'|\n[ \t]*<dependency type="visible">\n[ \t]*<or>\n'
+    r'(?:[ \t]*<condition operator="is" setting="lang(?:Audio|Subs)_[a-z]+">true</condition>\n)+'
+    r'[ \t]*</or>\n[ \t]*</dependency>')
+_EMPTY_DEPENDENCIES = re.compile(r'\n[ \t]*<dependencies>\n[ \t]*</dependencies>')
+
+
+def siteLanguages(sid):
+    """SITE_LANGUAGES / SITE_SUBTITLES aus sites/<sid>.py (ohne Import)."""
+    import ast
+
+    path = os.path.join(PROJECT_ROOT, 'sites', sid + '.py')
+    values = {'SITE_LANGUAGES': ('de',), 'SITE_SUBTITLES': ()}
+    with io.open(path, encoding='utf-8') as fh:
+        tree = ast.parse(fh.read())
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and len(node.targets) == 1 and \
+                getattr(node.targets[0], 'id', '') in values:
+            values[node.targets[0].id] = tuple(ast.literal_eval(node.value))
+    return values['SITE_LANGUAGES'], values['SITE_SUBTITLES']
+
+
+def languageDependency(languages, subtitles, indent):
+    conditions = ['langAudio_%s' % code for code in languages if code in LANGUAGE_TOGGLES]
+    conditions += ['langSubs_%s' % code for code in subtitles if code in LANGUAGE_TOGGLES]
+    if not conditions:
+        return ''
+    if len(conditions) == 1:
+        return '%s<dependency type="visible" setting="%s">true</dependency>' % (indent, conditions[0])
+    lines = ['%s<dependency type="visible">' % indent, '%s\t<or>' % indent]
+    lines += ['%s\t\t<condition operator="is" setting="%s">true</condition>' % (indent, setting)
+              for setting in conditions]
+    lines += ['%s\t</or>' % indent, '%s</dependency>' % indent]
+    return '\n'.join(lines)
+
+
+def _withLanguage(setting, dependency):
+    setting = _EMPTY_DEPENDENCIES.sub('', _LANGUAGE_DEPENDENCY.sub('', setting))
+    if not dependency:
+        return setting
+    closing = re.search(r'\n([ \t]*)</dependencies>', setting)
+    if closing:
+        indent = closing.group(1) + '\t'
+        return setting[:closing.start()] + '\n' + dependency.replace('\x00', indent) + setting[closing.start():]
+    control = re.search(r'\n([ \t]*)<control', setting)
+    indent = control.group(1)
+    block = '\n%s<dependencies>\n%s\n%s</dependencies>' % (indent, dependency.replace('\x00', indent + '\t'), indent)
+    return setting[:control.start()] + block + setting[control.start():]
+
+
+def applyLanguageVisibility(content, sid, languages, subtitles):
+    """Haengt die Sprachbedingung an jede Einstellung der Gruppe plugin_<sid>."""
+    group = re.search(r'<group id="plugin_%s" label="[^"]*">.*?</group>' % re.escape(sid), content, re.S)
+    if not group:
+        return content
+    dependency = languageDependency(languages, subtitles, '\x00')
+    body = re.sub(r'<setting [^>]*[^/]>.*?</setting>',
+                  lambda match: _withLanguage(match.group(0), dependency), group.group(0), flags=re.S)
+    return content[:group.start()] + body + content[group.end():]
+
+
+def syncLanguageVisibility(sids=None):
+    """Gleicht die Sprachbedingungen in settings.xml mit den Site-Plugins ab."""
+    with io.open(SETTINGS, encoding='utf-8', newline='') as fh:
+        raw = fh.read()
+    crlf = '\r\n' in raw
+    content = raw.replace('\r\n', '\n')
+    if sids is None:
+        sids = sorted(re.findall(r'<group id="plugin_([a-z0-9_-]+)"', content))
+    for sid in sids:
+        if os.path.isfile(os.path.join(PROJECT_ROOT, 'sites', sid + '.py')):
+            content = applyLanguageVisibility(content, sid, *siteLanguages(sid))
+    if crlf:
+        content = content.replace('\n', '\r\n')
+    if content != raw:
+        with io.open(SETTINGS, 'w', encoding='utf-8', newline='') as fh:
+            fh.write(content)
+        return True
+    return False
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description='Registriert ein Site-Plugin.')
     parser.add_argument('sid', help='SITE_IDENTIFIER, z. B. mediaccc')
@@ -185,6 +282,10 @@ def main(argv=None):
     parser.add_argument('name', help='Anzeigename, z. B. "media.ccc.de"')
     parser.add_argument('--vod', action='store_true',
                         help='in die VoD-Kategorie statt Indexseiten')
+    if (sys.argv[1:] if argv is None else argv)[:1] == ['--sync-languages']:
+        print('settings.xml: %s' % ('Sprachbedingungen abgeglichen' if syncLanguageVisibility()
+                                    else 'bereits aktuell'))
+        return 0
     args = parser.parse_args(argv)
 
     if not re.fullmatch(r'[a-z0-9_-]+', args.sid):
@@ -196,6 +297,8 @@ def main(argv=None):
     done = []
     if addSettingsGroup(args.sid, args.label, args.vod):
         done.append('settings.xml')
+    if syncLanguageVisibility([args.sid]):
+        done.append('Sprachen')
     for lang, path in POFILES.items():
         if addPoEntry(path, args.label, args.name, lang == 'en_gb'):
             done.append(lang)

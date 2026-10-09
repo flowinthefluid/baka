@@ -20,6 +20,7 @@ SITE_IDENTIFIER = 'flixitvstream'
 SITE_NAME = 'Flixitv-Stream.eu'
 SITE_ICON = 'flixitvstream.png'
 CONTENT_CATEGORIES = ('filme', 'serien')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
     SITE_GLOBAL_SEARCH = False

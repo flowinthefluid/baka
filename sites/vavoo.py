@@ -16,6 +16,7 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 from resources.lib.jsonutils import loadResponse
 
@@ -25,6 +26,9 @@ SITE_IDENTIFIER = 'vavoo'
 SITE_NAME = 'Vavoo'
 SITE_ICON = 'vavoo.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+# Sprachkennung der Seite -> (Tonsprache, Untertitel)
+STREAM_LANGUAGES = {'de': ('de', ''), 'en': ('en', '')}
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -233,7 +237,6 @@ def showHosters(sGui=False):
     oRequest.removeNewLines(False)
     jSearch = loadResponse(oRequest.request(), SITE_NAME, sUrl)
     if not isinstance(jSearch, list): return
-    sLanguage = cConfig().getSetting('prefLanguage')
     aResults = jSearch
     if len(aResults) == 0:
         if not sGui: oGui.showInfo()
@@ -261,25 +264,11 @@ def showHosters(sGui=False):
         elif str('Server G2') in sName:
             sName = 'Luluvideo'
         sLang = str(i['language'].split('(')[0].strip())
-        if sLanguage == '1':  # Voreingestellte Sprache Deutsch in settings.xml
-            if 'en' in sLang:
-                continue
-            if sLang == 'de':
-                sLang = '(DE)'  # Anzeige der Sprache Deutsch
-        if sLanguage == '2':  # Voreingestellte Sprache Englisch in settings.xml
-            if 'de' in sLang:
-                continue
-            if sLang == 'en':
-                sLang = '(EN)'  # Anzeige der Sprache Englisch
-        if sLanguage == '3':  # Voreingestellte Sprache Japanisch in settings.xml
-            cGui().showLanguage() # Kein Eintrag in der ausgewählten Sprache verfügbar
+        audio, subs = STREAM_LANGUAGES.get(sLang, ('', ''))
+        if not languages.streamAllowed(audio, subs):
             continue
-        if sLanguage == '0':  # Alle Sprachen
-            if sLang == 'de':
-                sLang = '(DE)'  # Anzeige der Sprache Deutsch
-            if sLang == 'en':
-                sLang = '(EN)'  # Anzeige der Sprache Englisch
-        hoster = {'link': sUrl, 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang}
+        sLang = languages.streamLabel(audio, subs)
+        hoster = {'link': sUrl, 'name': sName, 'displayedName': '%s [I]%s [%sp][/I]' % (sName, sLang, sQuality), 'quality': sQuality, 'languageCode': sLang, 'audio': audio, 'subs': subs}
         hosters.append(hoster)
     if hosters:
         hosters.append('getHosterUrl')

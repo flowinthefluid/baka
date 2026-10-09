@@ -13,6 +13,7 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser, cUtil
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 from json import loads
 from datetime import datetime
@@ -24,6 +25,7 @@ apiJson = None
 
 SITE_NAME = 'Lieblingshoster'
 SITE_ICON = 'api.png'
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
 SITE_IDENTIFIER = 'api_all'
 
 DOMAIN = cConfig().getSetting('plugin_' + SITE_IDENTIFIER + '.domain', 'kinokiste.club')
@@ -51,17 +53,7 @@ if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
 def load():
     logger.info('Load %s' % SITE_NAME)
     params = ParameterHandler()
-    sLanguage = cConfig().getSetting('prefLanguage')
-    # Änderung des Sprachcodes nach voreigestellter Sprache
-    if sLanguage == '0':  # prefLang Alle Sprachen
-        sLang = 'all'
-    if sLanguage == '1':  # prefLang Deutsch
-        sLang = '2'
-    if sLanguage == '2':  # prefLang Englisch
-        sLang = '3'
-    elif sLanguage == '3':  # prefLang Japanisch
-        sLang = cGui().showLanguage()
-        return
+    sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
     params.setParam('sLanguage', sLang)
 
 
@@ -361,10 +353,10 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
         if 'rating' in movie:
             oGuiElement.addItemValue('rating', movie['rating'])
         if 'lang' in movie:
-            if (sLanguage != '1' and movie['lang'] == 2):  # Deutsch
-                oGuiElement.setLanguage('DE')
-            if (sLanguage != '2' and movie['lang'] == 3):  # Englisch
-                oGuiElement.setLanguage('EN')
+            # Sprache nur markieren, wenn mehr als diese eine Sprache gewaehlt ist.
+            sEntryLang = {2: 'de', 3: 'en'}.get(movie['lang'], '')
+            if sEntryLang and languages.audioLanguages() != [sEntryLang]:
+                oGuiElement.setLanguage(sEntryLang.upper())
         oGuiElement.setMediaType('tvshow' if isTvshow else 'movie')
         if 'runtime' in movie:
             isMatch, sRuntime = cParser.parseSingleResult(movie['runtime'], r'\d+')
@@ -477,14 +469,8 @@ def showSearchActor():
 
 def _searchActor(oGui, sName):
     params = ParameterHandler()
-    sLanguage = cConfig().getSetting('prefLanguage')
-    if sLanguage == '0':  # prefLang Alle Sprachen
-        sLang = 'all'
-    if sLanguage == '1':  # prefLang Deutsch
-        sLang = '2'
-    if sLanguage == '2':  # prefLang Englisch
-        sLang = '3'
-    showEntries(URL_CAST % (sLanguage, 'movies', 'new', cParser.quotePlus(sName), '1'), oGui)
+    sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
+    showEntries(URL_CAST % (sLang, 'movies', 'new', cParser.quotePlus(sName), '1'), oGui)
 
 
 def showSearch():
@@ -502,7 +488,6 @@ def SSsearch(sGui=False, sSearchText=False):
     global apiJson
     oGui = sGui if sGui else cGui()
     params = ParameterHandler()
-    sLanguage = cConfig().getSetting('prefLanguage')
 
     # Falls die Daten noch nicht geladen wurden oder neu geladen werden sollen
     if apiJson is None or 'movies' not in apiJson:
@@ -559,10 +544,10 @@ def SSsearch(sGui=False, sSearchText=False):
         if 'rating' in movie:
             oGuiElement.addItemValue('rating', movie['rating'])
         if 'lang' in movie:
-            if (sLanguage != '1' and movie['lang'] == 2):  # Deutsch
-                oGuiElement.setLanguage('DE')
-            if (sLanguage != '2' and movie['lang'] == 3):  # Englisch
-                oGuiElement.setLanguage('EN')
+            # Sprache nur markieren, wenn mehr als diese eine Sprache gewaehlt ist.
+            sEntryLang = {2: 'de', 3: 'en'}.get(movie['lang'], '')
+            if sEntryLang and languages.audioLanguages() != [sEntryLang]:
+                oGuiElement.setLanguage(sEntryLang.upper())
         oGuiElement.setMediaType('tvshow' if isTvshow else 'movie')
         if 'runtime' in movie:
             isMatch, sRuntime = cParser.parseSingleResult(movie['runtime'], r'\d+')
@@ -577,8 +562,7 @@ def SSsearch(sGui=False, sSearchText=False):
 
 def loadMoviesData(ignoreErrors=False):
     global apiJson
-    sLanguage = cConfig().getSetting('prefLanguage')
-    sLang = {'0': 'all', '1': '2', '2': '3'}.get(sLanguage, 'all')
+    sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
 
     try:
         oRequest = cRequestHandler(URL_SEARCH % (sLang, 'new', '1'), caching=True,

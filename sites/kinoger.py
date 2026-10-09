@@ -27,6 +27,7 @@ SITE_IDENTIFIER = 'kinoger'
 SITE_NAME = 'KinoGer'
 SITE_ICON = 'kinoger.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'animes')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

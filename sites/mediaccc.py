@@ -16,12 +16,20 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 
 SITE_IDENTIFIER = 'mediaccc'
 SITE_NAME = 'media.ccc.de'
 SITE_ICON = 'mediaccc.png'
 CONTENT_CATEGORIES = ('dokus',)
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+# Sprachangaben von media.ccc.de (ISO 639-2) -> ISO 639-1
+CCC_LANGUAGES = {
+    'deu': 'de', 'eng': 'en', 'fra': 'fr', 'spa': 'es', 'ita': 'it', 'rus': 'ru',
+    'por': 'pt', 'pol': 'pl', 'jpn': 'ja', 'nld': 'nl', 'tur': 'tr', 'ara': 'ar',
+    'zho': 'zh', 'kor': 'ko', 'hin': 'hi',
+}
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -119,8 +127,6 @@ def _listEvents(aEvents, oGui=None, sGui=False):
         return
 
     params = ParameterHandler()
-    # Filter nach eingestellter Sprache in baka laden
-    sLanguage = cConfig().getSetting('prefLanguage')
     total = len(aEvents)
 
     for event in aEvents:
@@ -131,9 +137,9 @@ def _listEvents(aEvents, oGui=None, sGui=False):
 
         # media.ccc.de liefert ISO-639-2 ('deu', 'eng'), teils mehrsprachig.
         sLang = (event.get('original_language') or '').lower()
-        if sLanguage == '1' and sLang and 'deu' not in sLang:  # nur Deutsch
-            continue
-        if sLanguage == '2' and sLang and 'eng' not in sLang:  # nur Englisch
+        # Nur Vortraege in einer gewaehlten Tonsprache; ohne Angabe immer.
+        sAudios = [CCC_LANGUAGES[code] for code in sLang.split('-') if code in CCC_LANGUAGES]
+        if sLang and not any(languages.streamAllowed(audio) for audio in sAudios):
             continue
 
         oGuiElement = cGuiElement(sName, SITE_IDENTIFIER, 'showHosters')

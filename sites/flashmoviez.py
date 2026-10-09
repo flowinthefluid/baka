@@ -20,6 +20,7 @@ SITE_IDENTIFIER = 'flashmoviez'
 SITE_NAME = 'Flash-Moviez.Tv'
 SITE_ICON = 'flashmoviez.png'
 CONTENT_CATEGORIES = ('filme', 'serien')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
     SITE_GLOBAL_SEARCH = False

@@ -18,6 +18,7 @@ SITE_IDENTIFIER = 'megakino'
 SITE_NAME = 'Megakino'
 SITE_ICON = 'megakino.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

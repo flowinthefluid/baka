@@ -3426,3 +3426,691 @@ msgstr "Markierte Genres sind erlaubt. Titel mit einem abgewaehlten Genre werden
 msgctxt "#31899"
 msgid "Number of titles"
 msgstr "Anzahl Titel"
+
+msgctxt "#32000"
+msgid "German"
+msgstr "Deutsch"
+
+msgctxt "#32001"
+msgid "English"
+msgstr "Englisch"
+
+msgctxt "#32002"
+msgid "Japanese"
+msgstr "Japanisch"
+
+msgctxt "#32003"
+msgid "Spanish"
+msgstr "Spanisch"
+
+msgctxt "#32004"
+msgid "French"
+msgstr "Französisch"
+
+msgctxt "#32005"
+msgid "Italian"
+msgstr "Italienisch"
+
+msgctxt "#32006"
+msgid "Turkish"
+msgstr "Türkisch"
+
+msgctxt "#32007"
+msgid "Hindi"
+msgstr "Hindi"
+
+msgctxt "#32008"
+msgid "Korean"
+msgstr "Koreanisch"
+
+msgctxt "#32009"
+msgid "Portuguese"
+msgstr "Portugiesisch"
+
+msgctxt "#32010"
+msgid "Polish"
+msgstr "Polnisch"
+
+msgctxt "#32011"
+msgid "Russian"
+msgstr "Russisch"
+
+msgctxt "#32012"
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgctxt "#32013"
+msgid "Dutch"
+msgstr "Niederländisch"
+
+msgctxt "#32014"
+msgid "Chinese"
+msgstr "Chinesisch"
+
+msgctxt "#32020"
+msgid "Germany"
+msgstr "Deutschland"
+
+msgctxt "#32021"
+msgid "Austria"
+msgstr "Österreich"
+
+msgctxt "#32022"
+msgid "Switzerland"
+msgstr "Schweiz"
+
+msgctxt "#32023"
+msgid "United Kingdom"
+msgstr "Großbritannien"
+
+msgctxt "#32024"
+msgid "United States"
+msgstr "USA"
+
+msgctxt "#32025"
+msgid "Ireland"
+msgstr "Irland"
+
+msgctxt "#32026"
+msgid "France"
+msgstr "Frankreich"
+
+msgctxt "#32027"
+msgid "Belgium"
+msgstr "Belgien"
+
+msgctxt "#32028"
+msgid "Italy"
+msgstr "Italien"
+
+msgctxt "#32029"
+msgid "Spain"
+msgstr "Spanien"
+
+msgctxt "#32030"
+msgid "Portugal"
+msgstr "Portugal"
+
+msgctxt "#32031"
+msgid "Brazil"
+msgstr "Brasilien"
+
+msgctxt "#32032"
+msgid "Turkey"
+msgstr "Türkei"
+
+msgctxt "#32033"
+msgid "India"
+msgstr "Indien"
+
+msgctxt "#32034"
+msgid "Japan"
+msgstr "Japan"
+
+msgctxt "#32035"
+msgid "South Korea"
+msgstr "Südkorea"
+
+msgctxt "#32036"
+msgid "China"
+msgstr "China"
+
+msgctxt "#32037"
+msgid "Netherlands"
+msgstr "Niederlande"
+
+msgctxt "#32038"
+msgid "Poland"
+msgstr "Polen"
+
+msgctxt "#32039"
+msgid "Russia"
+msgstr "Russland"
+
+msgctxt "#32040"
+msgid "Croatia"
+msgstr "Kroatien"
+
+msgctxt "#32041"
+msgid "Canada"
+msgstr "Kanada"
+
+msgctxt "#32042"
+msgid "Australia"
+msgstr "Australien"
+
+msgctxt "#32043"
+msgid "Mexico"
+msgstr "Mexiko"
+
+msgctxt "#32044"
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgctxt "#32045"
+msgid "Sweden"
+msgstr "Schweden"
+
+msgctxt "#32046"
+msgid "Norway"
+msgstr "Norwegen"
+
+msgctxt "#32047"
+msgid "Denmark"
+msgstr "Dänemark"
+
+msgctxt "#32048"
+msgid "International"
+msgstr "International"
+
+msgctxt "#32060"
+msgid "Languages & regions"
+msgstr "Sprachen & Regionen"
+
+msgctxt "#32061"
+msgid "Audio languages"
+msgstr "Tonsprachen"
+
+msgctxt "#32062"
+msgid "Preferred audio language"
+msgstr "Bevorzugte Tonsprache"
+
+msgctxt "#32063"
+msgid "Automatic (Kodi language)"
+msgstr "Automatisch (Kodi-Sprache)"
+
+msgctxt "#32064"
+msgid "Show sources and streams in this language."
+msgstr "Quellen und Streams in dieser Sprache anzeigen."
+
+msgctxt "#32065"
+msgid "Original with subtitles"
+msgstr "Original mit Untertiteln"
+
+msgctxt "#32066"
+msgid "Also show original-language streams with subtitles in this language, e.g. Japanese with English subtitles."
+msgstr "Auch Streams im Originalton mit Untertiteln in dieser Sprache anzeigen, z. B. Japanisch mit deutschen Untertiteln."
+
+msgctxt "#32067"
+msgid "My countries"
+msgstr "Meine Länder"
+
+msgctxt "#32068"
+msgid "Choose countries"
+msgstr "Länder auswählen"
+
+msgctxt "#32069"
+msgid "Controls media libraries and live TV. Nothing selected means all countries."
+msgstr "Steuert Mediatheken und Live-TV. Nichts ausgewählt bedeutet alle Länder."
+
+msgctxt "#32070"
+msgid "Sources in other languages"
+msgstr "Quellen in anderen Sprachen"
+
+msgctxt "#32071"
+msgid "Show in a separate folder"
+msgstr "In eigenem Ordner zeigen"
+
+msgctxt "#32072"
+msgid "Hide"
+msgstr "Ausblenden"
+
+msgctxt "#32073"
+msgid "Other languages"
+msgstr "Weitere Sprachen"
+
+msgctxt "#32074"
+msgid "Which languages do you understand?"
+msgstr "Welche Sprachen verstehst du?"
+
+msgctxt "#32075"
+msgid "Set up languages again"
+msgstr "Sprachen neu einrichten"
+
+msgctxt "#32076"
+msgid "Display"
+msgstr "Anzeige"
+
+msgctxt "#32077"
+msgid "Asks for your languages and sets audio languages, subtitles and countries to match."
+msgstr "Fragt nach deinen Sprachen und stellt Tonsprachen, Untertitel und Länder passend ein."
+
+msgctxt "#32078"
+msgid "World cinema"
+msgstr "Weltkino"
+
+msgctxt "#32079"
+msgid "World cinema: visible entries"
+msgstr "Weltkino: sichtbare Einträge"
+
+msgctxt "#32080"
+msgid "Which entries appear under Categories > World cinema."
+msgstr "Welche Einträge unter Kategorien > Weltkino erscheinen."
+
+msgctxt "#32081"
+msgid "Bollywood"
+msgstr "Bollywood"
+
+msgctxt "#32082"
+msgid "K-Drama"
+msgstr "K-Drama"
+
+msgctxt "#32083"
+msgid "Korean cinema"
+msgstr "Koreanisches Kino"
+
+msgctxt "#32084"
+msgid "Japanese cinema"
+msgstr "Japanisches Kino"
+
+msgctxt "#32085"
+msgid "Turkish series"
+msgstr "Türkische Serien"
+
+msgctxt "#32086"
+msgid "Nollywood"
+msgstr "Nollywood"
+
+msgctxt "#32087"
+msgid "French cinema"
+msgstr "Französisches Kino"
+
+msgctxt "#32088"
+msgid "Nordic noir"
+msgstr "Skandinavische Krimis"
+
+msgctxt "#32089"
+msgid "Spanish & Latin American cinema"
+msgstr "Spanisches & lateinamerikanisches Kino"
+
+msgctxt "#32090"
+msgid "Italian cinema"
+msgstr "Italienisches Kino"
+
+msgctxt "#32091"
+msgid "Chinese cinema"
+msgstr "Chinesisches Kino"
+
+msgctxt "#32092"
+msgid "Telenovelas"
+msgstr "Telenovelas"
+
+msgctxt "#32093"
+msgid "Production companies"
+msgstr "Produktionsfirmen"
+
+msgctxt "#32094"
+msgid "Famous filming locations"
+msgstr "Berühmte Drehorte"
+
+msgctxt "#32100"
+msgid "Superheroes"
+msgstr "Superhelden"
+
+msgctxt "#32101"
+msgid "Video game adaptations"
+msgstr "Videospielverfilmungen"
+
+msgctxt "#32102"
+msgid "Christmas"
+msgstr "Weihnachten"
+
+msgctxt "#32103"
+msgid "Time travel"
+msgstr "Zeitreise"
+
+msgctxt "#32104"
+msgid "Post-apocalypse"
+msgstr "Postapokalypse"
+
+msgctxt "#32105"
+msgid "Artificial intelligence"
+msgstr "Künstliche Intelligenz"
+
+msgctxt "#32106"
+msgid "Prison"
+msgstr "Gefängnis"
+
+msgctxt "#32107"
+msgid "Vikings"
+msgstr "Wikinger"
+
+msgctxt "#32108"
+msgid "Middle Ages"
+msgstr "Mittelalter"
+
+msgctxt "#32109"
+msgid "Espionage"
+msgstr "Spionage"
+
+msgctxt "#32110"
+msgid "Fights and martial arts"
+msgstr "Kämpfe und Kampfsport"
+
+msgctxt "#32111"
+msgid "Witches and magic"
+msgstr "Hexen und Magie"
+
+msgctxt "#32112"
+msgid "Courts and lawyers"
+msgstr "Gericht und Anwälte"
+
+msgctxt "#32113"
+msgid "Psychological thrillers"
+msgstr "Psychothriller"
+
+msgctxt "#32114"
+msgid "Road trips"
+msgstr "Roadtrip"
+
+msgctxt "#32115"
+msgid "Music and bands"
+msgstr "Musik und Bands"
+
+msgctxt "#32116"
+msgid "Robots"
+msgstr "Roboter"
+
+msgctxt "#32117"
+msgid "Werewolves"
+msgstr "Werwölfe"
+
+msgctxt "#32118"
+msgid "Revenge"
+msgstr "Rache"
+
+msgctxt "#32119"
+msgid "Deadly games"
+msgstr "Gefährliche Spiele"
+
+msgctxt "#32120"
+msgid "Prison break"
+msgstr "Gefängnisausbruch"
+
+msgctxt "#32121"
+msgid "Disasters"
+msgstr "Katastrophen"
+
+msgctxt "#32122"
+msgid "Family secrets"
+msgstr "Familiengeheimnisse"
+
+msgctxt "#32123"
+msgid "Dystopia"
+msgstr "Dystopie"
+
+msgctxt "#32124"
+msgid "Sports"
+msgstr "Sport"
+
+msgctxt "#32125"
+msgid "Racing"
+msgstr "Rennen"
+
+msgctxt "#32126"
+msgid "War"
+msgstr "Krieg"
+
+msgctxt "#32127"
+msgid "Supernatural"
+msgstr "Übernatürliches"
+
+msgctxt "#32128"
+msgid "Antiheroes"
+msgstr "Antihelden"
+
+msgctxt "#32129"
+msgid "Intrigue"
+msgstr "Intrigen"
+
+msgctxt "#32130"
+msgid "Period drama"
+msgstr "Historienstoffe"
+
+msgctxt "#32131"
+msgid "Ancient Egypt"
+msgstr "Altes Ägypten"
+
+msgctxt "#32132"
+msgid "Pirates"
+msgstr "Piraten"
+
+msgctxt "#32133"
+msgid "Parallel worlds"
+msgstr "Parallelwelten"
+
+msgctxt "#32134"
+msgid "Conspiracies"
+msgstr "Verschwörungen"
+
+msgctxt "#32135"
+msgid "Biographies"
+msgstr "Biografien"
+
+msgctxt "#32136"
+msgid "Military"
+msgstr "Militär"
+
+msgctxt "#32137"
+msgid "Courtroom"
+msgstr "Anwälte und Justiz"
+
+msgctxt "#32138"
+msgid "Police investigations"
+msgstr "Polizei und Ermittlungen"
+
+msgctxt "#32139"
+msgid "Cults"
+msgstr "Sekten und Kulte"
+
+msgctxt "#32140"
+msgid "Treasure hunts"
+msgstr "Schatzsuche"
+
+msgctxt "#32141"
+msgid "Island settings"
+msgstr "Insel-Settings"
+
+msgctxt "#32142"
+msgid "Desert adventures"
+msgstr "Wüstenabenteuer"
+
+msgctxt "#32143"
+msgid "Seafaring and ocean"
+msgstr "Seefahrt und Ozean"
+
+msgctxt "#32144"
+msgid "Mountains"
+msgstr "Bergwelten"
+
+msgctxt "#32145"
+msgid "Epidemics and viruses"
+msgstr "Epidemie und Virus"
+
+msgctxt "#32146"
+msgid "Serial killers"
+msgstr "Serienkiller"
+
+msgctxt "#32147"
+msgid "Kidnapping"
+msgstr "Entführung"
+
+msgctxt "#32148"
+msgid "Missing persons"
+msgstr "Verschollene und Vermisste"
+
+msgctxt "#32149"
+msgid "Drug cartels"
+msgstr "Drogenkartelle"
+
+msgctxt "#32150"
+msgid "Gangsters and underworld"
+msgstr "Gangster und Unterwelt"
+
+msgctxt "#32151"
+msgid "Corruption"
+msgstr "Korruption"
+
+msgctxt "#32152"
+msgid "Politics and power"
+msgstr "Politik und Macht"
+
+msgctxt "#32153"
+msgid "Royalty"
+msgstr "Königshäuser und Adel"
+
+msgctxt "#32154"
+msgid "Secret agents"
+msgstr "Geheimdienst und Agenten"
+
+msgctxt "#32155"
+msgid "Hacking and cybercrime"
+msgstr "Hacking und Cyberkriminalität"
+
+msgctxt "#32156"
+msgid "Journalism and media"
+msgstr "Journalismus und Medien"
+
+msgctxt "#32157"
+msgid "Doctors and hospitals"
+msgstr "Ärzte und Krankenhaus"
+
+msgctxt "#32158"
+msgid "School and university"
+msgstr "Schule und Universität"
+
+msgctxt "#32159"
+msgid "Coming of age"
+msgstr "Familie und Erwachsenwerden"
+
+msgctxt "#32160"
+msgid "Friendship"
+msgstr "Freundschaft"
+
+msgctxt "#32161"
+msgid "Love and romance"
+msgstr "Liebe und Romantik"
+
+msgctxt "#32162"
+msgid "Dance"
+msgstr "Tanz"
+
+msgctxt "#32163"
+msgid "Cooking and food"
+msgstr "Kochen und Essen"
+
+msgctxt "#32164"
+msgid "Ghosts"
+msgstr "Geister"
+
+msgctxt "#32165"
+msgid "Demons"
+msgstr "Dämonen"
+
+msgctxt "#32166"
+msgid "Mysteries and the unexplained"
+msgstr "Mystery und Ungeklärtes"
+
+msgctxt "#32167"
+msgid "Psychology and trauma"
+msgstr "Psychologie und Trauma"
+
+msgctxt "#32168"
+msgid "Dreams and nightmares"
+msgstr "Träume und Albträume"
+
+msgctxt "#32169"
+msgid "Multiverse"
+msgstr "Paralleluniversen"
+
+msgctxt "#32170"
+msgid "Space exploration"
+msgstr "Weltraumforschung"
+
+msgctxt "#32171"
+msgid "Rescue missions"
+msgstr "Rettung und Katastrophenschutz"
+
+msgctxt "#32172"
+msgid "Historical fiction"
+msgstr "Historische Stoffe (keine Zeitreise)"
+
+msgctxt "#32173"
+msgid "Ancient Rome"
+msgstr "Antike und Römisches Reich"
+
+msgctxt "#32174"
+msgid "Knights and castles"
+msgstr "Ritter und Burgen"
+
+msgctxt "#32175"
+msgid "Cowboys and the Wild West"
+msgstr "Cowboys und Wilder Westen"
+
+msgctxt "#32176"
+msgid "Feudal Japan"
+msgstr "Japanisches Feudalzeitalter"
+
+msgctxt "#32177"
+msgid "Medieval fantasy"
+msgstr "Mittelalterliche Fantasy"
+
+msgctxt "#32178"
+msgid "TMDB above 7.5 (movies)"
+msgstr "TMDB über 7.5 (Filme)"
+
+msgctxt "#32179"
+msgid "TMDB above 8.0 (movies)"
+msgstr "TMDB über 8.0 (Filme)"
+
+msgctxt "#32180"
+msgid "TMDB above 7.5 (series)"
+msgstr "TMDB über 7.5 (Serien)"
+
+msgctxt "#32181"
+msgid "TMDB above 8.0 (series)"
+msgstr "TMDB über 8.0 (Serien)"
+
+msgctxt "#32182"
+msgid "Filmed outside the USA"
+msgstr "Drehorte außerhalb der USA"
+
+msgctxt "#32183"
+msgid "Not a Hollywood production"
+msgstr "Keine Hollywood-Produktion"
+
+msgctxt "#32184"
+msgid "Germany: German productions"
+msgstr "Deutschland: deutsche Produktionen"
+
+msgctxt "#32185"
+msgid "Germany: setting and locations"
+msgstr "Deutschland: Schauplatz / Drehorte"
+
+msgctxt "#32186"
+msgid "Paris and France"
+msgstr "Paris und Frankreich"
+
+msgctxt "#32187"
+msgid "London and the UK"
+msgstr "London und UK"
+
+msgctxt "#32188"
+msgid "Tokyo and Japan"
+msgstr "Tokio und Japan"
+
+msgctxt "#32189"
+msgid "Scandinavia"
+msgstr "Skandinavien"
+
+msgctxt "#32190"
+msgid "Mediterranean"
+msgstr "Mittelmeerraum"
+
+msgctxt "#32191"
+msgid "South America"
+msgstr "Südamerika"
+
+msgctxt "#32192"
+msgid "Iceland and the North Atlantic"
+msgstr "Island und Nordatlantik"

@@ -11,6 +11,7 @@ muessen.
 
 import json
 import os
+import xbmc
 
 from resources.lib.handler.ParameterHandler import ParameterHandler
 from resources.lib.gui.guiElement import cGuiElement
@@ -22,6 +23,7 @@ from resources.lib.tools import logger
 SITE_IDENTIFIER = 'weathercams'
 SITE_NAME = 'Webcam-Katalog'
 CONTENT_CATEGORIES = ('live',)
+SITE_LANGUAGES = ()  # Tonsprachen, siehe resources/lib/languages.py
 SITE_GLOBAL_SEARCH = False
 ACTIVE = cConfig().getSetting('plugin_' + SITE_IDENTIFIER)
 

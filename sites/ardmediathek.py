@@ -23,6 +23,7 @@ SITE_IDENTIFIER = 'ardmediathek'
 SITE_NAME = 'ARD Mediathek'
 SITE_ICON = 'ardmediathek.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus', 'kinder')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

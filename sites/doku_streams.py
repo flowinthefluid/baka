@@ -6,6 +6,7 @@ SITE_IDENTIFIER = 'doku_streams'
 SITE_NAME = 'Doku-Streams.com'
 SITE_ICON = 'dokus4me.png'
 CONTENT_CATEGORIES = ('dokus',)
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 SITE_GLOBAL_SEARCH = False
 ENABLE_SETTING = 'plugin_dokus4me'
 

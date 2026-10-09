@@ -267,6 +267,9 @@ class cPluginHandler:
             pluginData['categories'] = tuple(plugin.CONTENT_CATEGORIES)
         except Exception:
             pluginData['categories'] = ()
+        # Sprachen der Quelle (resources/lib/languages.py); ohne Angabe deutsch.
+        pluginData['languages'] = tuple(getattr(plugin, 'SITE_LANGUAGES', ('de',)))
+        pluginData['subtitles'] = tuple(getattr(plugin, 'SITE_SUBTITLES', ()))
         try:
             pluginData['enable_setting'] = plugin.ENABLE_SETTING
         except Exception:

@@ -27,6 +27,7 @@ SITE_IDENTIFIER = 'burningseries'
 SITE_NAME = 'BurningSeries'
 SITE_ICON = 'burningseries.png'
 CONTENT_CATEGORIES = ('serien', 'animes', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

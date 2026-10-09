@@ -39,6 +39,8 @@ SITE_IDENTIFIER = 'proxer'
 SITE_NAME = 'Proxer.Me'
 SITE_ICON = 'proxer.png'
 CONTENT_CATEGORIES = ('animes',)
+SITE_LANGUAGES = ('ja',)  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de', 'en')  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

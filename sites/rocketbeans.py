@@ -14,6 +14,7 @@ SITE_IDENTIFIER = 'rocketbeans'
 SITE_NAME = 'Rocket Beans TV'
 SITE_ICON = 'dokus4me.png'
 CONTENT_CATEGORIES = ('serien', 'dokus')
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 SITE_GLOBAL_SEARCH = False
 DOMAIN = 'rocketbeans.tv'
 URL_MAIN = 'https://rocketbeans.tv'

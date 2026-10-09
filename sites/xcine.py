@@ -13,12 +13,14 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 
 SITE_IDENTIFIER = 'xcine'
 SITE_NAME = 'xCine'
 SITE_ICON = 'xcinetop.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
 
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
     SITE_GLOBAL_SEARCH = False
@@ -120,13 +122,7 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False, sSearchPageText =
     for sUrl, sThumbnail, sName, sDummy in aResult:
         if sSearchText and not cParser.search(sSearchText, sName):
             continue
-        sLanguage = cConfig().getSetting('prefLanguage')
-        if (sLanguage == '1' and 'English*' in sName):
-            continue
-        if (sLanguage == '2' and not 'English*' in sName):
-            continue
-        elif sLanguage == '3':
-            cGui().showLanguage()
+        if not languages.streamAllowed('en' if 'English*' in sName else 'de'):
             continue
         isQuality, sQuality = cParser.parseSingleResult(sDummy, 'movie-item__label">([^<]+)')
         isInfoEpisode, sInfoEpisode = cParser.parseSingleResult(sDummy, r'ep-num">e.([\d]+)')

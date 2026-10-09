@@ -37,6 +37,8 @@ SITE_IDENTIFIER = 'anime4'
 SITE_NAME = '4anime'
 SITE_ICON = 'anime4.png'
 CONTENT_CATEGORIES = ('animes',)
+SITE_LANGUAGES = ('de', 'ja')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_SUBTITLES = ('de',)  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):

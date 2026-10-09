@@ -12,12 +12,14 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 
 SITE_IDENTIFIER = 'movie4k'
 SITE_NAME = 'Movie4k'
 SITE_ICON = 'movie4k.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'animes', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
 
 # Global search function is thus deactivated!
 if not cConfig().getSettingBool('global_search_' + SITE_IDENTIFIER, True):
@@ -95,13 +97,7 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False, sSearchPageText =
     for sInfo, sUrl, sName, sDummy in aResult:
         if sSearchText and not cParser.search(sSearchText, sName): continue
         # Abfrage der voreingestellten Sprache
-        sLanguage = cConfig().getSetting('prefLanguage')
-        if (sLanguage == '1' and 'English*' in sName):   # Deutsch
-            continue
-        if (sLanguage == '2' and not 'English*' in sName):   # English
-            continue
-        elif sLanguage == '3':    # Japanisch
-            cGui().showLanguage()
+        if not languages.streamAllowed('en' if 'English*' in sName else 'de'):
             continue
         isInfoEpisode, sInfo = cParser.parseSingleResult(sInfo, r'</span>([\d]+)')  # Episodenanzahl
         isThumbnail, sThumbnail = cParser.parseSingleResult(sDummy, 'data-src="([^"]+)')  # Thumbnail

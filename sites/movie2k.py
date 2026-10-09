@@ -13,6 +13,7 @@ from resources.lib.handler.requestHandler import cRequestHandler
 from resources.lib.tools import logger, cParser
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.config import cConfig
+from resources.lib import languages
 from resources.lib.gui.gui import cGui
 from json import loads
 
@@ -20,6 +21,7 @@ SITE_IDENTIFIER = 'movie2k'
 SITE_NAME = 'Movie2K'
 SITE_ICON = 'movie2k.png'
 CONTENT_CATEGORIES = ('filme', 'serien', 'dokus')
+SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
 
 URL_MAIN = 'https://movie2k.ch/data/browse/?lang=%s&type=%s&order_by=%s&page=%s'  # lang=%s 2 = deutsch / 3 = englisch / all = Alles
 URL_SEARCH = 'https://movie2k.ch/data/browse/?lang=%s&keyword=%s&page=%s&limit=0'
@@ -45,17 +47,7 @@ REFERER = ORIGIN + '/'
 def load():
     logger.info('Load %s' % SITE_NAME)
     params = ParameterHandler()
-    sLanguage = cConfig().getSetting('prefLanguage')
-    # Änderung des Sprachcodes nach voreigestellter Sprache
-    if sLanguage == '0':  # prefLang Alle Sprachen
-        sLang = 'all'
-    if sLanguage == '1':  # prefLang Deutsch
-        sLang = '2'
-    if sLanguage == '2':  # prefLang Englisch
-        sLang = '3'
-    elif sLanguage == '3':  # prefLang Japanisch
-        sLang = cGui().showLanguage()
-        return
+    sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
     params.setParam('sLanguage', sLang)
     cGui().addFolder(cGuiElement(cConfig().getLocalizedString(30502), SITE_IDENTIFIER, 'showMovieMenu'), params)  # Movies
     cGui().addFolder(cGuiElement(cConfig().getLocalizedString(30511), SITE_IDENTIFIER, 'showSeriesMenu'), params)  # Series
@@ -298,11 +290,5 @@ def showSearch():
 
 def _search(oGui, sSearchText):
     params = ParameterHandler()
-    sLanguage = cConfig().getSetting('prefLanguage')
-    if sLanguage == '0':  # prefLang Alle Sprachen
-        sLang = 'all'
-    if sLanguage == '1':  # prefLang Deutsch
-        sLang = '2'
-    if sLanguage == '2':  # prefLang Englisch
-        sLang = '3'
+    sLang = languages.siteValue({'de': '2', 'en': '3'}, 'all')
     showEntries(URL_SEARCH % (sLang, cParser.quotePlus(sSearchText), '1'), oGui, sSearchText)

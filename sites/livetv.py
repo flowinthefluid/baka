@@ -17,6 +17,7 @@ from resources.lib.tools import logger
 SITE_IDENTIFIER = 'livetv'
 SITE_NAME = 'Oeffentlich-rechtliches Live-TV'
 CONTENT_CATEGORIES = ('live',)
+SITE_LANGUAGES = ('de',)  # Tonsprachen, siehe resources/lib/languages.py
 SITE_GLOBAL_SEARCH = False
 ACTIVE = cConfig().getSetting('plugin_' + SITE_IDENTIFIER)
 
