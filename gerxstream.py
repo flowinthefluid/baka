@@ -1522,6 +1522,8 @@ def _collectGlobalSearchResults(searchText, includePlugin):
 
 
 def _renderCollectedSearchResults(oGui, results=None):
+    from resources.lib.searchresults import grouped_results
+
     oGui._collectMode = False
     collected = oGui.searchResults if results is None else results
     total = len(collected)
@@ -1529,7 +1531,7 @@ def _renderCollectedSearchResults(oGui, results=None):
         xbmcgui.Dialog().ok('GerXStream', cConfig().getLocalizedString(31622))
         oGui.setEndOfDirectory(False)
         return False
-    for count, result in enumerate(sorted(collected, key=lambda k: k['guiElement'].getSiteName()), 1):
+    for count, result in enumerate(grouped_results(collected), 1):
         oGui.addFolder(result['guiElement'], result['params'], bIsFolder=result['isFolder'], iTotal=total)
     oGui.setView()
     oGui.setEndOfDirectory()
