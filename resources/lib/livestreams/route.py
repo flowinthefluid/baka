@@ -12,6 +12,7 @@ alle Quellen mit Beschreibung zur manuellen Wahl (Aufgabe 3c).
 """
 
 import os
+import time
 
 import xbmc
 import xbmcgui
@@ -486,9 +487,19 @@ def _play_jpeg_slideshow(channel, source):
     interval = max(3, cConfig().getSettingInt('lsWebcamRefresh', 10))
     monitor = xbmc.Monitor()
     _notify('%s (%s)' % (channel['name'], _label(31220, 'Standbild-Modus')))
-    while not monitor.abortRequested():
-        xbmc.executebuiltin('ShowPicture(%s)' % source['url'])
-        if monitor.waitForAbort(interval):
+    if monitor.abortRequested():
+        return
+    # Wait until Kodi has opened the picture window before checking it.
+    # Stop/Back closes that window; it does not request Kodi shutdown.
+    command = 'ShowPicture(%s)' % source['url']
+    xbmc.executebuiltin(command, True)
+    next_refresh = time.monotonic() + interval
+    while not monitor.abortRequested() and xbmc.getCondVisibility('Window.IsActive(slideshow)'):
+        remaining = next_refresh - time.monotonic()
+        if remaining <= 0:
+            xbmc.executebuiltin(command, True)
+            next_refresh = time.monotonic() + interval
+        elif monitor.waitForAbort(min(0.25, remaining)):
             break
 
 
