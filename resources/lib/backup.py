@@ -25,8 +25,12 @@ PORTABLE_SECTIONS = ('settings', 'epic_favorites', 'history', 'watched')
 LOCAL_FILES = {'history': ('watch_history.json', []), 'watched': ('watched_items.json', {})}
 ACCOUNT_GROUPS = frozenset((
     'aniworldacc', 'serienstreamacc', 'proxeracc', '2captchaacc', '9kwacc',
-    'downloadplugins2', 'downloadplugins3', 'backupcloud',
+    'downloadplugins2', 'downloadplugins3',
 ))
+# WebDAV-Adresse und Zugang zaehlen wie Konten: nie in teilbaren Profilen
+# oder "Einstellungen ohne Konten", auch wenn sie in der Gruppe
+# "Sicherungsziel" stehen.
+ACCOUNT_SETTINGS = frozenset(('backupCloudUrl', 'backupCloudUser', 'backupCloudPassword'))
 MAX_VALUE_LENGTH = 12000
 MAX_BACKUP_LENGTH = 10 * 1024 * 1024
 MAX_PACKAGE_LENGTH = 100 * 1024 * 1024
@@ -81,7 +85,7 @@ def _settingIds():
                 if not settingId or setting.get('type') == 'action':
                     continue
                 settings.add(settingId)
-                if (isAccountGroup or _looksLikeAccount(settingId) or
+                if (isAccountGroup or settingId in ACCOUNT_SETTINGS or _looksLikeAccount(settingId) or
                     setting.findtext('control/hidden', '').casefold() == 'true'):
                     accounts.add(settingId)
     return settings - accounts, accounts

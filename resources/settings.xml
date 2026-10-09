@@ -7944,26 +7944,36 @@
 					<level>0</level>
 					<default/>
 					<constraints><allowempty>true</allowempty><writable>true</writable></constraints>
+					<dependencies>
+						<dependency type="visible" operator="!is" setting="backupStorage">nextcloud</dependency>
+					</dependencies>
 					<control type="button" format="path"><heading>31873</heading></control>
 				</setting>
-			</group>
-			<group id="backupcloud" label="31871">
 				<setting id="backupCloudUrl" type="string" label="31874" help="31877">
 					<level>0</level>
 					<default/>
 					<constraints><allowempty>true</allowempty></constraints>
+					<dependencies>
+						<dependency type="visible" operator="!is" setting="backupStorage">folder</dependency>
+					</dependencies>
 					<control type="edit" format="string"><heading>31874</heading></control>
 				</setting>
 				<setting id="backupCloudUser" type="string" label="31875" help="">
 					<level>0</level>
 					<default/>
 					<constraints><allowempty>true</allowempty></constraints>
+					<dependencies>
+						<dependency type="visible" operator="!is" setting="backupStorage">folder</dependency>
+					</dependencies>
 					<control type="edit" format="string"><heading>31875</heading></control>
 				</setting>
 				<setting id="backupCloudPassword" type="string" label="31876" help="31877">
 					<level>0</level>
 					<default/>
 					<constraints><allowempty>true</allowempty></constraints>
+					<dependencies>
+						<dependency type="visible" operator="!is" setting="backupStorage">folder</dependency>
+					</dependencies>
 					<control type="edit" format="string"><heading>31876</heading><hidden>true</hidden></control>
 				</setting>
 			</group>

@@ -322,3 +322,17 @@ def test_webdav_setup_rejects_http_before_requesting_credentials(monkeypatch):
     assert not backup.configureStorage()
     assert len(inputs) == 1
     assert cConfig().getSettingString('backupCloudUser') == ''
+
+def test_webdav_access_stays_account_data_in_the_backup_target_group():
+    import xml.etree.ElementTree as ET
+    from pathlib import Path
+
+    settings, accounts = backup._settingIds()
+    for setting_id in ('backupCloudUrl', 'backupCloudUser', 'backupCloudPassword'):
+        assert setting_id in accounts and setting_id not in settings
+        assert setting_id not in backup._shareSettingIds()
+    root = ET.parse(Path(__file__).resolve().parents[1] / 'resources' / 'settings.xml').getroot()
+    group = root.find(".//category[@id='backup']/group[@id='backuplocation']")
+    ids = [setting.get('id') for setting in group.findall('setting')]
+    assert ids[-3:] == ['backupCloudUrl', 'backupCloudUser', 'backupCloudPassword']
+    assert root.find(".//group[@id='backupcloud']") is None
