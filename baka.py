@@ -455,6 +455,8 @@ def parseUrl():
             removeWatchlistEntry(params)
         elif sFunction == 'addEpicFavorite':
             addEpicFavorite(params)
+        elif sFunction == 'playEpicList':
+            playEpicList(params)
         else:
             _endFailedDirectory()
     elif sSiteName == 'Baka':
@@ -925,6 +927,47 @@ def _epicContext(element, title, function, params):
     element.addContextItem(context)
 
 
+def _epicFolderContext(element, folderPath):
+    """Kontextmenue einer Watchlist bzw. eines Ordners darin."""
+    for labelId, function in ((32206, 'playEpicList'), (30919, 'createEpicFavoriteFolder'),
+                              (30923, 'renameEpicFavoriteFolder'), (30924, 'deleteEpicFavoriteFolder')):
+        action = ParameterHandler()
+        action.setParam('path', folderPath)
+        _epicContext(element, cConfig().getLocalizedString(labelId), function, action)
+
+
+def playEpicList(params):
+    """Spielt die Filme und Folgen einer Watchlist nacheinander ab.
+
+    Die Eintraege kommen als normale Baka-Routen in die vorhandene
+    Episoden-Warteschlange; Kodi loest jeden erst beim Erreichen auf.
+    """
+    import uuid
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    from resources.lib import epicfavorites, episodequeue
+    from resources.lib.gui.hoster import cHosterGui
+
+    _endFailedDirectory()
+    playable, skipped = epicfavorites.playTargets(params.getValue('path') or '',
+                                                  cPluginHandler().getPluginNames())
+    if not playable:
+        cGui().showInfo(epicfavorites.displayName(), cConfig().getLocalizedString(32203))
+        return
+    queueId = uuid.uuid4().hex
+    targets = []
+    for index, (entry, route) in enumerate(playable):
+        parsed = urlsplit(route)
+        query = dict(parse_qsl(parsed.query))
+        query.update(episodeQueue=queueId, episodeIndex=str(index))
+        targets.append(urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), '')))
+    if not episodequeue.store(queueId, targets):
+        cGui().showInfo(epicfavorites.displayName(), cConfig().getLocalizedString(30930))
+        return
+    if skipped:
+        cGui().showInfo(epicfavorites.displayName(), cConfig().getLocalizedString(32202) % skipped)
+    cHosterGui.playQueue(queueId, 0, everything=True)
+
+
 def _epicRefresh():
     xbmc.executebuiltin('Container.Refresh')
 
@@ -939,14 +982,38 @@ def showEpicFavorites(params):
 
     section = params.getValue('section')
     if not section and not params.exist('path'):
+        # Status-Listen, daneben die eigenen Watchlists (Ordner der obersten
+        # Ebene, darin weitere Ordner moeglich) und "Neue Watchlist".
         oGui = cGui()
-        for key, labelId in (('favorites', 31850), ('planned', 31851), ('watching', 31852),
+        ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
+        for key, labelId in (('planned', 31851), ('watching', 31852),
                              ('completed', 31853), ('dropped', 31854)):
             element = cGuiElement(cConfig().getLocalizedString(labelId), 'epicFavorites', 'showEpicFavorites')
             element.addItemProperties('epicFavoritesManaged', 'true')
             child = ParameterHandler()
             child.setParam('section', key)
             oGui.addFolder(element, child)
+        for watchlist in epicfavorites.watchlists():
+            child = ParameterHandler()
+            child.setParam('path', watchlist['id'])
+            element = cGuiElement(watchlist['name'], 'epicFavorites', 'showEpicFavorites')
+            element.setThumbnail(os.path.join(ART, 'categories.png'))
+            element.addItemProperties('epicFavoritesManaged', 'true')
+            _epicFolderContext(element, watchlist['id'])
+            oGui.addFolder(element, child)
+        if epicfavorites.looseEntries():
+            # Fruehere Favoriten ohne Watchlist bleiben erreichbar.
+            element = cGuiElement(cConfig().getLocalizedString(31850), 'epicFavorites', 'showEpicFavorites')
+            element.addItemProperties('epicFavoritesManaged', 'true')
+            child = ParameterHandler()
+            child.setParam('section', 'favorites')
+            oGui.addFolder(element, child)
+        createParams = ParameterHandler()
+        createParams.setParam('path', '')
+        element = cGuiElement(cConfig().getLocalizedString(32200), 'epicFavorites', 'createEpicFavoriteFolder')
+        element.setThumbnail(os.path.join(ART, 'categories.png'))
+        element.addItemProperties('epicFavoritesManaged', 'true')
+        oGui.addFolder(element, createParams)
         if cConfig().getSettingBool('watchHistoryEnabled', True):
             element = watchHistoryGuiElement()
             element.addItemProperties('epicFavoritesManaged', 'true')
@@ -959,39 +1026,40 @@ def showEpicFavorites(params):
         return
     requestedPath = params.getValue('path')
     path, _folder, folders, entries = epicfavorites.contents(requestedPath)
+    if not path:
+        folders = []  # Watchlists stehen eine Ebene hoeher; hier nur fruehere Favoriten.
     oGui = cGui()
+    ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
 
-    # A visible action is needed for the initially empty root. The same
-    # operation is also available through the long-press context menu of
-    # every existing folder.
-    createParams = ParameterHandler()
-    createParams.setParam('path', path)
-    createElement = cGuiElement(cConfig().getLocalizedString(30919),
-                                'epicFavorites', 'createEpicFavoriteFolder')
-    createElement.setThumbnail(os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art', 'categories.png'))
-    createElement.addItemProperties('epicFavoritesManaged', 'true')
-    oGui.addFolder(createElement, createParams)
+    # "Liste abspielen": Filme und Folgen nacheinander in Kodis Wiedergabeliste.
+    playable, skipped = epicfavorites.playTargets(path, cPluginHandler().getPluginNames())
+    if playable:
+        playParams = ParameterHandler()
+        playParams.setParam('path', path)
+        playElement = cGuiElement(cConfig().getLocalizedString(32201) % len(playable),
+                                  'epicFavorites', 'playEpicList')
+        playElement.setThumbnail(os.path.join(ART, 'movies.png'))
+        playElement.addItemProperties('epicFavoritesManaged', 'true')
+        oGui.addFolder(playElement, playParams)
+
+    if path:
+        # Neuer Ordner in dieser Watchlist; auch per Kontextmenue jedes Ordners.
+        createParams = ParameterHandler()
+        createParams.setParam('path', path)
+        createElement = cGuiElement(cConfig().getLocalizedString(30919),
+                                    'epicFavorites', 'createEpicFavoriteFolder')
+        createElement.setThumbnail(os.path.join(ART, 'categories.png'))
+        createElement.addItemProperties('epicFavoritesManaged', 'true')
+        oGui.addFolder(createElement, createParams)
 
     for folder in folders:
         folderPath = '/'.join(filter(None, (path, folder['id'])))
         folderParams = ParameterHandler()
         folderParams.setParam('path', folderPath)
         element = cGuiElement(folder['name'], 'epicFavorites', 'showEpicFavorites')
-        element.setThumbnail(os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art', 'categories.png'))
+        element.setThumbnail(os.path.join(ART, 'categories.png'))
         element.addItemProperties('epicFavoritesManaged', 'true')
-
-        newFolderParams = ParameterHandler()
-        newFolderParams.setParam('path', folderPath)
-        _epicContext(element, cConfig().getLocalizedString(30919),
-                     'createEpicFavoriteFolder', newFolderParams)
-        renameParams = ParameterHandler()
-        renameParams.setParam('path', folderPath)
-        _epicContext(element, cConfig().getLocalizedString(30923),
-                     'renameEpicFavoriteFolder', renameParams)
-        deleteParams = ParameterHandler()
-        deleteParams.setParam('path', folderPath)
-        _epicContext(element, cConfig().getLocalizedString(30924),
-                     'deleteEpicFavoriteFolder', deleteParams)
+        _epicFolderContext(element, folderPath)
         oGui.addFolder(element, folderParams)
 
     for entry in entries:
@@ -1141,7 +1209,9 @@ def removeWatchlistEntry(params):
 def createEpicFavoriteFolder(params):
     from resources.lib import epicfavorites
 
-    name = _epicFolderName()
+    # Ganz oben entsteht eine neue Watchlist, darunter ein Ordner.
+    name = (_epicFolderName() if params.getValue('path')
+            else cGui().showKeyBoard('', cConfig().getLocalizedString(32204)))
     if name:
         if epicfavorites.createFolder(params.getValue('path'), name):
             _epicRefresh()

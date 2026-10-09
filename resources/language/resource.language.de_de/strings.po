@@ -4134,3 +4134,31 @@ msgstr "Zu Seite springen"
 msgctxt "#32099"
 msgid "There is no page %s."
 msgstr "Seite %s gibt es nicht."
+
+msgctxt "#32200"
+msgid "New watchlist"
+msgstr "Neue Watchlist"
+
+msgctxt "#32201"
+msgid "Play list (%d)"
+msgstr "Liste abspielen (%d)"
+
+msgctxt "#32202"
+msgid "Skipped without a direct source: %d"
+msgstr "Ohne direkte Quelle übersprungen: %d"
+
+msgctxt "#32203"
+msgid "No playable films or episodes in this list."
+msgstr "Keine abspielbaren Filme oder Folgen in dieser Liste."
+
+msgctxt "#32204"
+msgid "Watchlist name"
+msgstr "Name der Watchlist"
+
+msgctxt "#32205"
+msgid "Which watchlist?"
+msgstr "Welche Watchlist?"
+
+msgctxt "#32206"
+msgid "Play list"
+msgstr "Liste abspielen"

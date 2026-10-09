@@ -111,11 +111,13 @@ Animes, Dokus und Kinder mischen Filme und Serien. Optional mit IMDb-Mindestwert
 </td>
 <td valign="top">
 
-### ⭐ Epic-Favorites
-Favoriten mit **Ordnern und Unterordnern**, per Kontextmenü anlegen, verschieben,
-umbenennen. Gespeichert wird nur der Plugin-Aufruf, nie eine Stream-URL – der
-Favorit überlebt also jeden Hoster-Wechsel. Der Name ist frei wählbar, der Ordner
-steht immer ganz oben.
+### ⭐ Epic-Watchlist
+Status-Listen (**Geplant**, **Am Schauen**, **Abgeschlossen**, **Abgebrochen**) und
+daneben **eigene Watchlists** – jede mit Ordnern und Unterordnern, per Kontextmenü
+anlegen, verschieben, umbenennen. **Liste abspielen** legt alle Filme und Folgen
+einer Watchlist wie eine Episodenreihe in Kodis Wiedergabeliste. Gespeichert wird
+nur der Plugin-Aufruf, nie eine Stream-URL – ein Eintrag überlebt jeden
+Hoster-Wechsel.
 
 </td>
 </tr>
@@ -200,7 +202,7 @@ Und wer von xStream kommt: Daten werden beim ersten Start **automatisch
 
 ```text
 Baka
-├── ⭐ Epic-Favorites           ← immer oben, deine Ordnerwelt
+├── ⭐ Epic-Watchlist           ← immer oben: Status-Listen, eigene Watchlists, Historie
 ├── 🔎 Globale Suche            ← alle · Filme · Serien · Animes · Dokus · Kinder
 ├── 📂 Alle / Filme / Serien / Animes / Dokus / Kinder   ← Quellen in deinen Sprachen, oben 🎲 Zufällig,
 │                                                          unten 🌐 Weitere Sprachen

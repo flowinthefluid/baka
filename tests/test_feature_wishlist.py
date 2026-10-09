@@ -109,8 +109,9 @@ def test_watchlist_menu_and_history_timestamp_toggle(monkeypatch, real_strings):
     monkeypatch.setattr(cGui, 'setView', lambda *args: None)
     monkeypatch.setattr(cGui, 'setEndOfDirectory', lambda *args: None)
     main.showEpicFavorites(ParameterHandler())
-    assert [element.getTitle() for element in added] == [
-        'Favorites', 'Geplant', 'Am Schauen', 'Abgeschlossen', 'Abgebrochen', 'Historie']
+    titles = [element.getTitle() for element in added]
+    assert titles[:4] == ['Geplant', 'Am Schauen', 'Abgeschlossen', 'Abgebrochen']
+    assert titles[-2:] == ['Neue Watchlist', 'Historie']
     target = 'plugin://plugin.video.baka/?site=serienstream&function=showSeasons&sUrl=carrie'
     monkeypatch.setattr(history, 'entries', lambda: [{'title': 'CarrieS01E01', 'source': 'serienstream',
                                                      'watched_at': 1700000000, 'series_target': target}])

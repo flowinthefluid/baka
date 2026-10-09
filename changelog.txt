@@ -8,6 +8,9 @@
 - Streams werden nach Tonsprache gefiltert und sortiert, auf Wunsch auch Originalton mit Untertiteln. Jede Quelle gibt ihre Sprachen an; die Einstellung „Bevorzugte Sprache“ entfällt.
 - Meine Länder: Mediatheken (mit Länderebene bei mehreren Ländern) und Live-TV nach Land. Neue Kategorie „Weltkino“ mit Bollywood, K-Drama, Türkischen Serien, Nollywood, Telenovelas u. a. Feste Kategorienamen sind jetzt übersetzt.
 - Korrigiert: kinox-Sprachfilter griff wegen eines fehlerhaften Cookies nicht; movie2k-Suche brach bei „Japanisch“ ab; Wetter-Standbilder öffneten nicht; geteilte Profile mit Livestreams in der Menüreihenfolge wurden abgelehnt.
+- Epic-Watchlist: eigene Watchlists neben Geplant, Am Schauen, Abgeschlossen und Abgebrochen, jeweils mit Ordnern. „Liste abspielen“ legt alle Filme und Folgen einer Watchlist nacheinander in Kodis Wiedergabeliste; Einträge, die nur auf eine Suche zeigen, werden übersprungen. Frühere Favoriten ohne Watchlist bleiben unter „Favoriten“ erreichbar.
+- Seitenanzeige: Vor „Nächste Seite“ steht „Seite X von Y“ (bzw. „Seite X“); ein Klick darauf öffnet eine beliebige Seite.
+- Zufallsauswahl: Neue Mindestzahl an TMDB-Stimmen (Standard 25), damit nur Titel erscheinen, die Quellen auch führen. Eine Liste braucht nur noch rund 25 TMDB-Abfragen statt einer pro Titel (250 Dokus in etwa 7 statt rund 60 Sekunden).
 - Globale Suche fasst identische Treffer mehrerer Quellen zusammen.
 - JPEG-Webcams: Stop/Zurück beendet die Bildaktualisierung zuverlässig.
 

@@ -322,8 +322,22 @@ def entryAt(path, entryId):
     return next((entry for entry in folder['entries'] if entry['id'] == entryId), None)
 
 
+def watchlists():
+    """Eigene Watchlists: die Ordner der obersten Ebene."""
+    return list(_load()['folders'])
+
+
+def looseEntries():
+    """Fruehere Favoriten ohne Watchlist (oberste Ebene)."""
+    return list(_load()['entries'])
+
+
 def chooseFolder(startPath='', allowCreate=True):
-    """Controller-friendly picker: save here, descend, go back, create."""
+    """Controller-friendly picker: save here, descend, go back, create.
+
+    Gespeichert wird immer in einer Watchlist oder einem ihrer Ordner; ganz
+    oben gibt es nur die Auswahl der Watchlist oder eine neue.
+    """
     path = normalisePath(startPath)
     dialog = xbmcgui.Dialog()
     while True:
@@ -332,14 +346,15 @@ def chooseFolder(startPath='', allowCreate=True):
         if node is None:
             path = ''
             node = data
-        entries = [(cConfig().getLocalizedString(30921) % _folderLabel(data, path), 'save')]
+        entries = []
         if path:
+            entries.append((cConfig().getLocalizedString(30921) % _folderLabel(data, path), 'save'))
             entries.append((cConfig().getLocalizedString(30932), 'back'))
         if allowCreate:
-            entries.append((cConfig().getLocalizedString(30919), 'create'))
+            entries.append((cConfig().getLocalizedString(30919 if path else 32200), 'create'))
         entries.extend((folder['name'], folder['id']) for folder in node['folders'])
-        choice = dialog.select('%s: %s' % (displayName(), _folderLabel(data, path)),
-                               [entry[0] for entry in entries])
+        heading = _folderLabel(data, path) if path else cConfig().getLocalizedString(32205)
+        choice = dialog.select('%s: %s' % (displayName(), heading), [entry[0] for entry in entries])
         if choice < 0:
             return None
         action = entries[choice][1]
@@ -349,7 +364,7 @@ def chooseFolder(startPath='', allowCreate=True):
             path = '/'.join(_pathParts(path)[:-1])
             continue
         if action == 'create':
-            name = cGui().showKeyBoard(sHeading=cConfig().getLocalizedString(30920))
+            name = cGui().showKeyBoard(sHeading=cConfig().getLocalizedString(30920 if path else 32204))
             if name and createFolder(path, name):
                 data = _load()
                 parent = _folder(data, path)
@@ -359,6 +374,30 @@ def chooseFolder(startPath='', allowCreate=True):
                     path = '/'.join(filter(None, (path, created['id'])))
             continue
         path = '/'.join(filter(None, (path, action)))
+
+
+def playTargets(path, siteNames):
+    """Plugin-Routen zum Abspielen der Filme und Folgen eines Ordners.
+
+    Nur Eintraege mit direkter Quelle sind abspielbar; Suchen (z.B. aus
+    Kategorien oder Zufall) und Serien zaehlen als uebersprungen.
+    Liefert ``([(eintrag, route)], uebersprungen)``.
+    """
+    node = _folder(_load(), path)
+    if node is None:
+        return [], 0
+    playable, skipped = [], 0
+    for entry in node['entries']:
+        parsed = urlsplit(entry['target'])
+        route = dict(parse_qsl(parsed.query))
+        if entry.get('media_type') not in ('movie', 'episode') or route.get('site') not in siteNames:
+            skipped += 1
+            continue
+        route.update(playMode='play', mediaType=entry['media_type'], MovieTitle=entry['title'])
+        if entry.get('thumbnail'):
+            route['thumb'] = entry['thumbnail']
+        playable.append((entry, urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(route), ''))))
+    return playable, skipped
 
 
 def folderTitle(path=''):

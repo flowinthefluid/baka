@@ -119,12 +119,20 @@ class cHosterGui:
 
     @classmethod
     def _startEpisodeQueue(cls, params):
-        from resources.lib import episodequeue, hosterprefs
         try:
             firstIndex = int(params.getValue('episodeIndex'))
         except (TypeError, ValueError):
             return False
-        queueId = params.getValue('episodeQueue')
+        return cls.playQueue(params.getValue('episodeQueue'), firstIndex, params.getValue('manual') == '1')
+
+    @classmethod
+    def playQueue(cls, queueId, firstIndex, manual=False, everything=False):
+        """Legt eine gespeicherte Liste ab ``firstIndex`` in Kodis Wiedergabeliste.
+
+        Episodenlisten folgen der Einstellung "naechste Folge automatisch";
+        eine abgespielte Watchlist (``everything``) kommt immer ganz hinein.
+        """
+        from resources.lib import episodequeue, hosterprefs
         targets = episodequeue.getTargets(queueId)
         if firstIndex < 0 or firstIndex >= len(targets):
             return False
@@ -132,10 +140,10 @@ class cHosterGui:
         playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
         playlist.clear()
         following = targets[firstIndex:]
-        if not cConfig().getSettingBool('autoNextEpisodeEnabled', False):
+        if not everything and not cConfig().getSettingBool('autoNextEpisodeEnabled', False):
             following = following[:1]
         for position, target in enumerate(following):
-            if position == 0 and params.getValue('manual') == '1':
+            if position == 0 and manual:
                 parts = urlsplit(target)
                 query = dict(parse_qsl(parts.query))
                 query['manual'] = '1'
