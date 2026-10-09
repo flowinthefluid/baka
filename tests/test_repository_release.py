@@ -11,7 +11,7 @@ from tools import build_repo
 
 @pytest.mark.parametrize('pages_url', [
     'https://gerxstream-db50a2.gitlab.io',
-    'https://flowinthefluid.github.io/gerxstream/repo',
+    'https://flowinthefluid.github.io/baka/repo',
 ])
 def test_repository_is_in_catalog_and_datadir(tmp_path, pages_url):
     output = tmp_path / 'public'

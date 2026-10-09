@@ -385,7 +385,7 @@ Baka verarbeitet ständig fremdes HTML, fremde JSON-Antworten und
 
 1. In Kodi unter **Einstellungen → Dateimanager → Quelle hinzufügen** diese Adresse eintragen:
    ```text
-   https://flowinthefluid.github.io/gerxstream/repo/
+   https://flowinthefluid.github.io/baka/repo/
    ```
 2. **Add-ons → Aus ZIP-Datei installieren** → `repository.baka-1.0.7.zip`
 3. **Aus Repository installieren → Baka Repository → Video-Addons → Baka**
@@ -562,7 +562,7 @@ Kodi-Repository mit allen ZIPs. Architektur, Konventionen und Sicherheitsregeln 
 Detail: **[docs/CODING-PLAN.md](docs/CODING-PLAN.md)**.
 
 Quellcode, Tickets und Releases: **[gitlab.com/gerxstream/gerxstream](https://gitlab.com/gerxstream/gerxstream)**
-· Mirror: [github.com/flowinthefluid/gerxstream](https://github.com/flowinthefluid/gerxstream)
+· Mirror: [github.com/flowinthefluid/baka](https://github.com/flowinthefluid/baka)
 
 ---
 

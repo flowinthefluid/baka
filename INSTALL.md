@@ -7,7 +7,7 @@ Dieses Addon nutzt die ID `plugin.video.baka`.
 1. Kodi 22 (primaer) oder Kodi 21 (weicher Fallback)
 2. `script.module.resolveurl` muss installiert sein
 3. Das Baka Repository (`repository.baka`) aus der ZIP-Datei der
-   GitHub-Pages-Quelle installieren (`https://flowinthefluid.github.io/gerxstream/repo/`).
+   GitHub-Pages-Quelle installieren (`https://flowinthefluid.github.io/baka/repo/`).
    Aktuelle Repository-ZIP: `repository.baka-1.0.8.zip`.
    Anschliessend kann Baka über
    **Aus Repository installieren** installiert werden. ResolveURL 5.1.209 wird
