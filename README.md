@@ -561,7 +561,7 @@ Die CI (GitLab und GitHub Actions) führt die Tests aus und baut daraus automati
 Kodi-Repository mit allen ZIPs. Architektur, Konventionen und Sicherheitsregeln im
 Detail: **[docs/CODING-PLAN.md](docs/CODING-PLAN.md)**.
 
-Quellcode, Tickets und Releases: **[gitlab.com/gerxstream/baka](https://gitlab.com/gerxstream/gerxstream)**
+Quellcode, Tickets und Releases: **[gitlab.com/gerxstream/gerxstream](https://gitlab.com/gerxstream/gerxstream)**
 · Mirror: [github.com/flowinthefluid/gerxstream](https://github.com/flowinthefluid/gerxstream)
 
 ---
