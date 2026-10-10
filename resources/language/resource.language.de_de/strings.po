@@ -3603,6 +3603,14 @@ msgctxt "#32048"
 msgid "International"
 msgstr "International"
 
+msgctxt "#32049"
+msgid "Thailand"
+msgstr "Thailand"
+
+msgctxt "#32050"
+msgid "Colombia"
+msgstr "Kolumbien"
+
 msgctxt "#32060"
 msgid "Languages & regions"
 msgstr "Sprachen & Regionen"

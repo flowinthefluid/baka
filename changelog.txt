@@ -1,3 +1,7 @@
+[B]Version: 1.1.3[/B]
+
+- Added United States, China, South Korea, Thailand, Colombia and Brazil as individual entries under Famous filming locations. The existing regional lists remain available. Like the other country lists, these use the production country rather than verified physical filming locations.
+
 [B]Version: 1.1.2[/B]
 
 - Release notes now follow Kodi's interface language: German for German Kodi, English for other languages.
