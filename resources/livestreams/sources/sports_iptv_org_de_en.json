@@ -1,0 +1,5171 @@
+{
+ "version": 1,
+ "retrieved_at": "2026-10-10",
+ "source_url": "https://iptv-org.github.io/?q=category%3Asports",
+ "note": "User-selected Internet streams only; no MagentaTV multicast. HTTP manifests verified; Kodi playback and geoblocking not verified.",
+ "channels": [
+  {
+   "id": "gxs:sports:at:iptv-org-redbulltv.at-en",
+   "name": "Red Bull TV",
+   "section": "sports",
+   "country": "at",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "nature",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RedBullTV.at",
+   "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Red_Bull_TV.png",
+   "epg_id": "RedBullTV.at@AU",
+   "sources": [
+    {
+     "source_id": "iptv-org-f291b615a89270ad",
+     "url": "https://db34cc6127ac459db55cab5f97cd66b9.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-680-WORBAUENFAST-WHALETVPLUS/680/whaletvplus/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-551d0855a53f3f45",
+     "url": "https://3ea22335.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX1JlZEJ1bGxUVl9ITFM/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-7f56ad09aa3190c0",
+     "url": "https://76b17ec8b2424026b8e1523836cc90e7.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-641-WORBEUENFAST-WHALETVPLUS/641/whaletvplus/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-c7f8c9f77acb7619",
+     "url": "https://1a3566cb46914c5499fbc86fbc4ac87e.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-932-WORBUKENFAST-WHALETVPLUS/932/whaletvplus/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-dcdadbc7c23110ef",
+     "url": "https://e7c8f7d5.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX1JlZEJ1bGxUVi0xX0hMUw/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-bf5d18581c2907c8",
+     "url": "https://d1hlbgn3fph0cz.cloudfront.net/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-0ded6a1cac2d691c",
+     "url": "https://0b73ace69ebb45eaa249bb87837cb958.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-644-WORBUSENFAST-LG_US/644/lgtv/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:at:iptv-org-redbulltv.at-de",
+   "name": "Red Bull TV",
+   "section": "sports",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "nature",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RedBullTV.at",
+   "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Red_Bull_TV.png",
+   "epg_id": "RedBullTV.at@DE",
+   "sources": [
+    {
+     "source_id": "iptv-org-1b66e5f705446118",
+     "url": "https://46cfeb23c7f74853bba7a256655a3119.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-582-WORBDACHDEFAST-WHALETVPLUS/582/whaletvplus/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-5ec903f1be993938",
+     "url": "https://769a97d9.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X1JlZEJ1bGxUVl9ITFM/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:at:iptv-org-redbulltv.at-de-en",
+   "name": "Red Bull TV",
+   "section": "sports",
+   "country": "at",
+   "language": [
+    "de",
+    "en"
+   ],
+   "genre": [
+    "nature",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RedBullTV.at",
+   "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Red_Bull_TV.png",
+   "epg_id": "RedBullTV.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2db6d4ec5d18090a",
+     "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de",
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-381afb3d92a3d456",
+     "url": "https://shls-live-enc.edgenextcdn.net/out/v1/ad35123d4ad041068bce26ae67ee3180/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de",
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-617efd40e50abb82",
+     "url": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de",
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:au:iptv-org-cricketgold.au-en",
+   "name": "Cricket Gold",
+   "section": "sports",
+   "country": "au",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:CricketGold.au",
+   "logo": "https://resources.cricket-australia.pulselive.com/cricket-australia/photo/2025/07/25/836eddae-4329-4542-ad17-dcd37e9d951a/Cricket-Gold-1920x1080_noBG.png",
+   "epg_id": "CricketGold.au@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-7dec9f03d6c17f34",
+     "url": "https://streams2.sofast.tv/ptnr-yupptv/title-cricketgold/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b2048bb8-1686-4432-aa50-647245383e0c/manifest.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "au",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-7600ea123c24e423",
+     "url": "https://streams2.sofast.tv/scheduler/scheduleMaster/418.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "au",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-ca07d027725394bf",
+     "url": "https://d382r3rgbxdixq.cloudfront.net/scheduler/scheduleMaster/418.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "au",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "cricket"
+   ]
+  },
+  {
+   "id": "gxs:sports:au:iptv-org-skyracing1.au-en",
+   "name": "Sky Racing 1",
+   "section": "sports",
+   "country": "au",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SkyRacing1.au",
+   "logo": "https://i.imgur.com/Hf0EiaW.png",
+   "epg_id": "SkyRacing1.au@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c5a971f317aac487",
+     "url": "https://636ffd31f0e12.streamlock.net/RacingStream1/RacingStream1/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "au",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:ca:iptv-org-fightnetwork.ca-en",
+   "name": "Fight Network",
+   "section": "sports",
+   "country": "ca",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FightNetwork.ca",
+   "logo": "https://i.imgur.com/vlKPZHR.png",
+   "epg_id": "FightNetwork.ca@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1b93323ed9f24930",
+     "url": "https://a-cdn.klowdtv.com/live2/fight_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ca",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:ca:iptv-org-gameplus.ca-en",
+   "name": "Game+",
+   "section": "sports",
+   "country": "ca",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:GamePlus.ca",
+   "logo": "https://i.imgur.com/Lj69WbR.png",
+   "epg_id": "GamePlus.ca@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-bc0e5374a2acc7f4",
+     "url": "https://a-cdn.klowdtv.com/live2/fntsy_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ca",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ca:iptv-org-hardknocks.ca-en",
+   "name": "Hard Knocks",
+   "section": "sports",
+   "country": "ca",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:HardKnocks.ca",
+   "logo": "https://i.imgur.com/nt9B6jx.png",
+   "epg_id": "HardKnocks.ca@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2d78369d64c85439",
+     "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "ca",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ca:iptv-org-tsntheocho.ca-en",
+   "name": "TSN The Ocho",
+   "section": "sports",
+   "country": "ca",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TSNTheOcho.ca",
+   "logo": "https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CA1400003R3_20240709T002034SQUARE.png",
+   "epg_id": "TSNTheOcho.ca@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a80b16931ec08295",
+     "url": "https://d3pnbvng3bx2nj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rds8g35qfqrnv/TSN_The_Ocho.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ca",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ca:iptv-org-tsn4.ca-en",
+   "name": "TSN4",
+   "section": "sports",
+   "country": "ca",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TSN4.ca",
+   "logo": "https://i.imgur.com/qJyAWU8.png",
+   "epg_id": "TSN4.ca@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-765a0cbe61fec573",
+     "url": "http://109.104.153.220:80/TSN-4/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ca",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:de:iptv-org-morethansportstv.de-de",
+   "name": "More Than Sports TV",
+   "section": "sports",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MoreThanSportsTV.de",
+   "logo": "https://i.imgur.com/SLrjImc.png",
+   "epg_id": "MoreThanSportsTV.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-5909051a30c37414",
+     "url": "https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:de:iptv-org-worldoffreesports.de-de",
+   "name": "World of Freesports",
+   "section": "sports",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:WorldofFreesports.de",
+   "logo": "https://i.imgur.com/lta5Mog.png",
+   "epg_id": "WorldofFreesports.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4f16908648b129c8",
+     "url": "https://mainstreammedia-worldoffreesportsintl-rakuten.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:es:iptv-org-realmadridtvenglish.es-en",
+   "name": "Real Madrid TV English",
+   "section": "sports",
+   "country": "es",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RealMadridTVEnglish.es",
+   "logo": "https://i.imgur.com/5pMo7dL.png",
+   "epg_id": "RealMadridTVEnglish.es@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d786c3982dc98530",
+     "url": "https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_3.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "es",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-db02c1d9ac78aad7",
+     "url": "http://88.212.15.19/live/real_madrid_tv/index.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "es",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:fr:iptv-org-kozoomtv.fr-en",
+   "name": "Kozoom TV",
+   "section": "sports",
+   "country": "fr",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:KozoomTV.fr",
+   "logo": "https://i.imgur.com/M1Ee79b.png",
+   "epg_id": "KozoomTV.fr@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-44e4b2823975eefd",
+     "url": "https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/fdd6f243-f971-4a1a-9510-97ac01d6b37f/manifest.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "fr",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "billiards"
+   ]
+  },
+  {
+   "id": "gxs:sports:fr:iptv-org-tracesportstars.fr-en",
+   "name": "Trace Sport Stars",
+   "section": "sports",
+   "country": "fr",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TraceSportStars.fr",
+   "logo": "https://i.imgur.com/FabFP5A.png",
+   "epg_id": "TraceSportStars.fr@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-43305789a8824413",
+     "url": "https://mumbai-edge.smartplaytv.in/TraceSport/index.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "fr",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-32e19920212b5fee",
+     "url": "https://channels.trace.plus/Traceprod/TRACE_SPORT_STARS_hd/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "fr",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-c5f4adab172b8b03",
+     "url": "https://tracesportstars-klowdtv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "fr",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-89922de4a2192ce0",
+     "url": "https://channels.trace.plus/Traceprod/TRACE_SPORT_STARS_sd/index.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "fr",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-fifaplus.uk-en",
+   "name": "FIFA+",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FIFAPlus.uk",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/FIFA%2B_(2025).svg/960px-FIFA%2B_(2025).svg.png",
+   "epg_id": "FIFAPlus.uk@English",
+   "sources": [
+    {
+     "source_id": "iptv-org-5cfdc2e4da392d77",
+     "url": "https://a62dad94.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0ZJRkFQbHVzRW5nbGlzaF9ITFM/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-42eec6f2ec12492c",
+     "url": "https://ba3e2e93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9GSUZBUGx1c0VuZ2xpc2hfSExT/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-0fa160448d54cd94",
+     "url": "https://d2w9q46ikgrcwx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-of5cbk3sav3w5/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-85765fc3a3049c52",
+     "url": "https://d2w9q46ikgrcwx.cloudfront.net/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-fifaplus.uk-de",
+   "name": "FIFA+",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FIFAPlus.uk",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/FIFA%2B_(2025).svg/960px-FIFA%2B_(2025).svg.png",
+   "epg_id": "FIFAPlus.uk@German",
+   "sources": [
+    {
+     "source_id": "iptv-org-7d7615defcd6b600",
+     "url": "https://4397879b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWRlX0ZJRkFQbHVzR2VybWFuX0hMUw/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-fifapluswomen.uk-en",
+   "name": "FIFA+ Women",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FIFAPlusWomen.uk",
+   "logo": "https://i.imgur.com/xy9ZxVO.png",
+   "epg_id": "FIFAPlusWomen.uk@English",
+   "sources": [
+    {
+     "source_id": "iptv-org-fb2605860cbbe6cb",
+     "url": "https://cffda8ff.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9GSUZBUGx1c3dvbWVuX0hMUw/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-mutv.uk-en",
+   "name": "MUTV",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MUTV.uk",
+   "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1834.png",
+   "epg_id": "MUTV.uk@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-dcedcd6b05733546",
+     "url": "https://fastly.live.brightcove.com/6374054671112/eu-west-1/6058004203001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiYXplMnp5LmVncmVzcy55ODN1ZWIiLCJhY2NvdW50X2lkIjoiNjA1ODAwNDIwMzAwMSIsImVobiI6ImZhc3RseS5saXZlLmJyaWdodGNvdmUuY29tIiwiaXNzIjoiYmxpdmUtcGxheWJhY2stc291cmNlLWFwaSIsInN1YiI6InBhdGhtYXB0b2tlbiIsImF1ZCI6WyI2MDU4MDA0MjAzMDAxIl0sImp0aSI6IjYzNzQwNTQ2NzExMTIifQ.3FmuTna3DAmY7xlhK5fk6LMrosrtrR5VsU2QOgYO5y4/playlist-hls.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-setantasports.uk-en",
+   "name": "Setanta Sports",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SetantaSports.uk",
+   "logo": "https://scontent.flwo7-1.fna.fbcdn.net/v/t39.30808-6/364716463_853281776306116_3365262792418742642_n.jpg?stp=dst-webp_p843x403_q70&_nc_cat=109&ccb=1-7&_nc_sid=cc3e7e&_nc_ohc=cdryMbRE2MwQ7kNvwFeyihF&_nc_oc=Adqncj9xKrtg2aNKgZmuX6LGZlSfpAmh_HQEEkBciEg1tXwQqFuMtohNjM8-Z8hU_Ho&_nc_zt=23&_nc_ht=scontent.flwo7-1.fna&_nc_gid=nGCZSHk6GKFYzjwKY-aGWw&_nc_ss=7b289&oh=00_AQFswjCYfEBKcXRO2DpTL1Dz7arAN-82K47gi8qtwljzrw&oe=6A862750",
+   "epg_id": "SetantaSports.uk@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-64c71821db2167c9",
+     "url": "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/8P7MBSH7RRPL53/20074/index.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-strongmanchampionsleague.uk-en",
+   "name": "Strongman Champions League",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:StrongmanChampionsLeague.uk",
+   "logo": "https://provider-static.plex.tv/epg/cms/production/80fb7204-c306-4759-a0d7-c4e829650c22/StrongmanChampionsLeague_Channel-Logo-Light-1500px.png",
+   "epg_id": "StrongmanChampionsLeague.uk@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-3d340f33a6e8d820",
+     "url": "https://rightsboosterltd-scl-1-be.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-3dba229144cc1626",
+     "url": "https://rightsboosterltd-scl-1-dk.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-fb17ccc3c947409b",
+     "url": "https://rightsboosterltd-scl-1-fi.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-2482185fb30357b3",
+     "url": "https://rightsboosterltd-scl-1-nl.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-4e883012e73ceb3b",
+     "url": "https://rightsboosterltd-scl-1-no.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-aa2be53a62d98164",
+     "url": "https://cb4748b76e2c4b11bb5790666256964b.mediatailor.us-east-1.amazonaws.com/v1/master/0fb304b2320b25f067414d481a779b77db81760d/RakutenTV-eu_StrongmanChampionsLeague/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-3047a1d627f55b58",
+     "url": "https://rightsboosterltd-scl-1-se.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-cdf4559441b85361",
+     "url": "https://rightsboosterltd-scl-1-us.xumo.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "strength"
+   ]
+  },
+  {
+   "id": "gxs:sports:gb:iptv-org-talksport.uk-en",
+   "name": "talkSPORT",
+   "section": "sports",
+   "country": "gb",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:talkSPORT.uk",
+   "logo": "https://upload.wikimedia.org/wikipedia/en/9/9d/Talksport_logo.png",
+   "epg_id": "talkSPORT.uk@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a7a396885ba26770",
+     "url": "https://af7a8b4e.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctZ2JfdGFsa1NQT1JUX0hMUw/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-794a20b01e692fbd",
+     "url": "https://tvsen6.aynaott.com/talkSPORT/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "gb",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ie:iptv-org-setantasports1eurasia.ie-en",
+   "name": "Setanta Sports 1 Eurasia",
+   "section": "sports",
+   "country": "ie",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SetantaSports1Eurasia.ie",
+   "logo": "https://i.imgur.com/zlJK7ca.png",
+   "epg_id": "SetantaSports1Eurasia.ie@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-cc9781d1b11b8153",
+     "url": "http://stream.mcquack.net/234/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ie",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-ddsports.in-en",
+   "name": "DD Sports",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:DDSports.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SPORTS/images/LOGO_HD/image.png",
+   "epg_id": "DDSports.in@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4cef34067f5efd1c",
+     "url": "https://mumbai-edge.smartplaytv.in/DDSportsHD/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-sonysportsten1.in-en",
+   "name": "Sony Sports Ten 1",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SonySportsTen1.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1_HD/images/LOGO_HD/image.png",
+   "epg_id": "SonySportsTen1.in@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-055e2f037c01725c",
+     "url": "http://103.185.24.134:3001/SonyTenSports1/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-95918315ca802fc2",
+     "url": "http://103.151.60.162:2122/play/a01c/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-sonysportsten2.in-en",
+   "name": "Sony Sports Ten 2",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SonySportsTen2.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_2/images/LOGO_HD/image.png",
+   "epg_id": "SonySportsTen2.in@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-9531055dccfe78c9",
+     "url": "http://103.151.60.162:2122/play/a01b/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-sonysportsten5.in-en",
+   "name": "Sony Sports Ten 5",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SonySportsTen5.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_5_HD/images/LOGO_HD/image.png",
+   "epg_id": "SonySportsTen5.in@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-7c3017d62fdc5136",
+     "url": "http://103.151.60.162:2122/play/a028/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-starsports2.in-en",
+   "name": "Star Sports 2",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:StarSports2.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_2/images/LOGO_HD/image.png",
+   "epg_id": "StarSports2.in@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-11cfaa9164389720",
+     "url": "http://103.151.60.162:2122/play/a00v/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-starsportsselect1.in-en",
+   "name": "Star Sports Select 1",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:StarSportsSelect1.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_SELECT_1/images/LOGO_HD/image.png",
+   "epg_id": "StarSportsSelect1.in@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d398f9af64251004",
+     "url": "http://103.151.60.162:2122/play/a026/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-starsportsselect2.in-en",
+   "name": "Star Sports Select 2",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:StarSportsSelect2.in",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_SELECT_2/images/LOGO_HD/image.png",
+   "epg_id": "StarSportsSelect2.in@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0977bbf89e9c01db",
+     "url": "http://tvsen7.aynascope.net/ssport2hd/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-b3074a4129d00bb6",
+     "url": "http://103.151.60.162:2122/play/a027/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:in:iptv-org-tencricket.in-en",
+   "name": "Ten Cricket",
+   "section": "sports",
+   "country": "in",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TenCricket.in",
+   "logo": "https://i.imgur.com/K5XIFuW.png",
+   "epg_id": "TenCricket.in@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0ce80c619e9c2b83",
+     "url": "http://103.151.60.162:2122/play/a0fj/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "in",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "cricket"
+   ]
+  },
+  {
+   "id": "gxs:sports:it:iptv-org-nauticalchannel.it-en",
+   "name": "Nautical Channel",
+   "section": "sports",
+   "country": "it",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:NauticalChannel.it",
+   "logo": "https://i.imgur.com/2ByDyzL.png",
+   "epg_id": "NauticalChannel.it@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-621ed3720d708643",
+     "url": "https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "it",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-eb8074c6b1d9d59c",
+     "url": "https://streams2.sofast.tv/vglive-sk-231198/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "it",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "water"
+   ]
+  },
+  {
+   "id": "gxs:sports:kw:iptv-org-ktvsport.kw-en",
+   "name": "KTV Sport",
+   "section": "sports",
+   "country": "kw",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:KTVSport.kw",
+   "logo": "https://i.imgur.com/R1hGX1d.png",
+   "epg_id": "KTVSport.kw@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a234138a13720881",
+     "url": "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "kw",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:lk:iptv-org-talenttv.lk-en",
+   "name": "Talent TV",
+   "section": "sports",
+   "country": "lk",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TalentTV.lk",
+   "logo": "https://talenttv.lk/logo-footer.png",
+   "epg_id": "TalentTV.lk@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c6a6ed935c6270b9",
+     "url": "http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "lk",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-eece7fcaac4f9668",
+     "url": "https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "lk",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:nl:iptv-org-fastfunbox.nl-en",
+   "name": "Fast&FunBox",
+   "section": "sports",
+   "country": "nl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FastFunBox.nl",
+   "logo": "https://i.imgur.com/a9ZtP17.png",
+   "epg_id": "FastFunBox.nl@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-8bd8eff744efe1a7",
+     "url": "https://dash3.antik.sk/live/test_fast_and_funbox_medium_atk/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "nl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:nl:iptv-org-fightbox.nl-en",
+   "name": "FightBox",
+   "section": "sports",
+   "country": "nl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FightBox.nl",
+   "logo": "https://i.imgur.com/mRsnztA.png",
+   "epg_id": "FightBox.nl@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-9b7fb683ac25f07a",
+     "url": "https://nosignal1.antenaplay.ro/hls/fightbox-hd/index.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "nl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-a9315891bbd400cc",
+     "url": "https://webtvstream.bhtelecom.ba/fightbox.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "nl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:nl:iptv-org-introuble.nl-en",
+   "name": "InTrouble",
+   "section": "sports",
+   "country": "nl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "nature",
+    "series",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:InTrouble.nl",
+   "logo": "https://i.imgur.com/a40chFI.png",
+   "epg_id": "InTrouble.nl@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-b7bdd7c68d68fd2f",
+     "url": "https://amg00861-amg00861c6-rlaxx-uk-3951.playouts.now.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "nl",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-c4cec42c768cd86e",
+     "url": "https://amg00861-amg00861c6-stirr-us-8229.playouts.now.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "nl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:pl:iptv-org-extremesportschannelpolska.pl-en",
+   "name": "Extreme Sports Channel Polska",
+   "section": "sports",
+   "country": "pl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ExtremeSportsChannelPolska.pl",
+   "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Extreme_Sports_Channel.svg/960px-Extreme_Sports_Channel.svg.png",
+   "epg_id": "ExtremeSportsChannelPolska.pl@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d7c526eb7cb00001",
+     "url": "http://57.128.231.171:8080/262/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:pl:iptv-org-golfzone.pl-en",
+   "name": "Golf Zone",
+   "section": "sports",
+   "country": "pl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:GolfZone.pl",
+   "logo": "https://i.ibb.co/ZR8cRj8d/Golf-Zone.png",
+   "epg_id": "GolfZone.pl@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-ef37e74b45163109",
+     "url": "http://57.128.231.171:8080/248/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "golf"
+   ]
+  },
+  {
+   "id": "gxs:sports:pl:iptv-org-racerinternational.pl-en",
+   "name": "RACER International",
+   "section": "sports",
+   "country": "pl",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RACERInternational.pl",
+   "logo": "https://provider-static.plex.tv/epg/cms/production/dd4e5871-4347-49e3-9ea1-a8770ea9c518/RACER_Intl_logo_1500x1000.png",
+   "epg_id": "RACERInternational.pl@FAST",
+   "sources": [
+    {
+     "source_id": "iptv-org-fde542a1f43c2cee",
+     "url": "https://amg00378-mavtv-amg00378c2-rakuten-us-1048.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-rakutenus/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pl",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:pt:iptv-org-fueltv.pt-en",
+   "name": "FUEL TV",
+   "section": "sports",
+   "country": "pt",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FUELTV.pt",
+   "logo": "https://i.imgur.com/I8mviBy.png",
+   "epg_id": "FUELTV.pt@AU",
+   "sources": [
+    {
+     "source_id": "iptv-org-2b30d5b1be35679e",
+     "url": "https://amg01074-fueltv-fueltvau-samsungau-g09kq.amagi.tv/playlist/amg01074-fueltv-fueltvau-samsungau/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pt",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-72a14a9eafb4c859",
+     "url": "https://amg01074-fueltv-fueltvnz-samsungnz-i8ani.amagi.tv/playlist/amg01074-fueltv-fueltvnz-samsungnz/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pt",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-857114f3f69e30bc",
+     "url": "https://amg01074-fueltv-fueltvemeaen-rakuten-b6j62.amagi.tv/hls/amagi_hls_data_rakutenAA-fueltvemeaen/CDN/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "pt",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ru:iptv-org-mmatvcom.ru-en",
+   "name": "MMA-TV.com",
+   "section": "sports",
+   "country": "ru",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MMATVcom.ru",
+   "logo": "https://i.imgur.com/QhdxNsB.png",
+   "epg_id": "MMATVcom.ru@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-52106023c29f25f7",
+     "url": "https://stream8.cinerama.uz/1226/tracks-v1a1/mono.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "ru",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-180458b081233470",
+     "url": "https://fs.uplink.kz/mma/mono.m3u8?token=onlinetv",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ru",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-a96622b2a3ed12ed",
+     "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ru",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:ua:iptv-org-sport1baltic.ua-en",
+   "name": "Sport 1 Baltic",
+   "section": "sports",
+   "country": "ua",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Sport1Baltic.ua",
+   "logo": "https://i.imgur.com/aBY7QK4.png",
+   "epg_id": "Sport1Baltic.ua@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-e554c4f057e98653",
+     "url": "http://stream.mcquack.net/461/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ua",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:ua:iptv-org-sport5.ua-en",
+   "name": "Sport 5",
+   "section": "sports",
+   "country": "ua",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Sport5.ua",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Sport5UA.jpg",
+   "epg_id": "Sport5.ua@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1d25b11fa5b9a50d",
+     "url": "http://stream.mcquack.net/212/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "ua",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-30agolfkingdom.us-en",
+   "name": "30A Golf Kingdom",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:30AGolfKingdom.us",
+   "logo": "https://i.imgur.com/Lv53nh4.png",
+   "epg_id": "30AGolfKingdom.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d513cdcfc18f8e2a",
+     "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "golf"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-accdigitalnetwork.us-en",
+   "name": "ACC Digital Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ACCDigitalNetwork.us",
+   "logo": "https://i.imgur.com/V6Kaqha.png",
+   "epg_id": "ACCDigitalNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c4dc51617bef8577",
+     "url": "https://raycom-accdn-firetv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-bbc89ff13e99471b",
+     "url": "https://d53csymoczzde.cloudfront.net/ACC_Digital_Network.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-1ad93b69d625e096",
+     "url": "https://aegis-cloudfront-1.tubi.video/a1e671ae-d1c2-4e39-99c7-889e83056fd2/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-accnetwork.us-en",
+   "name": "ACC Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ACCNetwork.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/ACC_Network_ESPN_logo.svg/960px-ACC_Network_ESPN_logo.svg.png",
+   "epg_id": "ACCNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-25265cade326df35",
+     "url": "http://23.239.31.26:8989/accnetwork/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-beinsportsxtra.us-en",
+   "name": "beIN SPORTS XTRA",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:beINSPORTSXTRA.us",
+   "logo": "https://i.imgur.com/uJosqHh.png",
+   "epg_id": "beINSPORTSXTRA.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-6cbb62ac3ee0eae3",
+     "url": "https://bein-xtra-bein.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-44d8843a78187045",
+     "url": "https://bein-beinxtrasports-firetv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-d317a538921c256c",
+     "url": "https://d9ssxzmclhfo4.cloudfront.net/bein_sports.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-edbffcffd544f813",
+     "url": "https://aegis-cloudfront-1.tubi.video/651ee7d3-e75b-4748-be86-422d43ff24b6/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-57c5d75de0462897",
+     "url": "https://bein-xtra-xumo.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-beksports.us-en",
+   "name": "BEK Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:BEKSports.us",
+   "logo": "https://i.imgur.com/tpoKVSo.png",
+   "epg_id": "BEKSports.us@West",
+   "sources": [
+    {
+     "source_id": "iptv-org-c230347cbf506841",
+     "url": "https://cdn3.wowza.com/5/ZWQ1K2NYTmpFbGsr/BEK-WOWZA-1/smil:BEKPRIMEW.smil/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-bellatormma.us-en",
+   "name": "Bellator MMA",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:BellatorMMA.us",
+   "logo": "https://i.imgur.com/VBKoLHk.png",
+   "epg_id": "BellatorMMA.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-61e8361f4828947e",
+     "url": "https://jmp2.uk/plu-5ebc8688f3697d00072f7cf8.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-cbssportsgolazonetwork.us-en",
+   "name": "CBS Sports Golazo Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:CBSSportsGolazoNetwork.us",
+   "logo": "https://i.imgur.com/eMjutHS.png",
+   "epg_id": "CBSSportsGolazoNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-28b86585a4514219",
+     "url": "https://dai.google.com/linear/hls/event/7f3Wv6f7QEKfQna22jHqLQ/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "football"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-draftkingsnetwork.us-en",
+   "name": "DraftKings Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:DraftKingsNetwork.us",
+   "logo": "https://i.imgur.com/SFYhgrt.png",
+   "epg_id": "DraftKingsNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2731fa89e99d6662",
+     "url": "https://na.linear.zype.com/e0bd0e23-a958-4e43-8164-4f2fef8876a8/fd3614bd-90bf-4530-a277-65ae3a1720c8-zype/live.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-583e7a7bbbf8607f",
+     "url": "https://d2obyvq5go60aw.cloudfront.net/DraftKings_Network.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-espn8theocho.us-en",
+   "name": "ESPN8: The Ocho",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ESPN8TheOcho.us",
+   "logo": "https://images.fubo.tv/channel-config-ui/station-logos/on-dark/espn_8_the_ocho_bw.png",
+   "epg_id": "ESPN8TheOcho.us@ESPN8TheOchoHD",
+   "sources": [
+    {
+     "source_id": "iptv-org-74267ca89e2fb5b5",
+     "url": "https://d3b6q2ou5kp8ke.cloudfront.net/ESPNTheOcho.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-espnu.us-en",
+   "name": "ESPNU",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ESPNU.us",
+   "logo": "https://i.imgur.com/HiBrysh.png",
+   "epg_id": "ESPNU.us@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-afe4b6fa0be66bfc",
+     "url": "http://85.237.89.160:9590/usa-s/ESPN-U-HD/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-fite247.us-en",
+   "name": "FITE 24/7",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FITE247.us",
+   "logo": "https://i.imgur.com/ESV6qgH.png",
+   "epg_id": "FITE247.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0785236a34835de4",
+     "url": "https://a-cdn.klowdtv.com/live2/fite247_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-88d9e4fe8d2c138e",
+     "url": "https://d3d85c7qkywguj.cloudfront.net/scheduler/scheduleMaster/263.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-flohockey.us-en",
+   "name": "FloHockey",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FloHockey.us",
+   "logo": "https://images.fubo.tv/channel-config-ui/station-logos/on-dark/flohockey-white.png",
+   "epg_id": "FloHockey.us@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-e10aee0ef6935a2f",
+     "url": "https://amg02278-amg02278c2-flosports-worldwide-9916.playouts.now.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "winter"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-floracing.us-en",
+   "name": "FloRacing",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FloRacing.us",
+   "logo": "https://a.jsrdn.com/hls/22883/floracing-247/logo_20231219_225054_24.png",
+   "epg_id": "FloRacing.us@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-28283a1615550316",
+     "url": "https://amg02278-amg02278c1-flosports-worldwide-7592.playouts.now.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-foxdeportes.us-en",
+   "name": "Fox Deportes",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FoxDeportes.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FOX_Deportes_logo.png/960px-FOX_Deportes_logo.png",
+   "epg_id": "FoxDeportes.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4af68f9b53027580",
+     "url": "http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-2981861f30e70d82",
+     "url": "https://live-manifest.production-public.tubi.io/live/d906efca-1302-4e29-b0d9-9a1d7a305d69/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-foxsports1.us-en",
+   "name": "Fox Sports 1",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FoxSports1.us",
+   "logo": "https://i.imgur.com/O9BapV9.png",
+   "epg_id": "FoxSports1.us@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a83aeb8cb94e3297",
+     "url": "http://85.237.89.160:9590/usa-s/FOX-SPORTS-1/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-ftfsports.us-en",
+   "name": "FTF Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FTFSports.us",
+   "logo": "https://m.media-amazon.com/images/I/41snSzsafFL.png",
+   "epg_id": "FTFSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-5fd06d0c37a9981a",
+     "url": "https://1593604785.rsc.cdn77.org/FTF/FTF_SCTE.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-320de1e17d5c8653",
+     "url": "https://1657061170.rsc.cdn77.org/HLS/FTF-LINEAR.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-f96731b62ceaec05",
+     "url": "https://a-cdn.klowdtv.com/live2/ftf_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-fubosportsnetwork.us-en",
+   "name": "Fubo Sports Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:FuboSportsNetwork.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fubo_Sports_Network_2023_Logo.webp/960px-Fubo_Sports_Network_2023_Logo.webp.png",
+   "epg_id": "FuboSportsNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1cc83336001b68af",
+     "url": "https://dnf08l6u6uxnz.cloudfront.net/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-glorykickboxing.us-en",
+   "name": "Glory Kickboxing",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:GloryKickboxing.us",
+   "logo": "https://i.imgur.com/tS7Ub7i.png",
+   "epg_id": "GloryKickboxing.us@Poland",
+   "sources": [
+    {
+     "source_id": "iptv-org-285b2f51b808a87a",
+     "url": "https://6f972d29.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0dsb3J5S2lja2JveGluZ19ITFM/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-lacrossetv.us-en",
+   "name": "Lacrosse TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:LacrosseTV.us",
+   "logo": "https://yt3.googleusercontent.com/ytc/AIdro_m_xSJFydxZ9QBU-85OuchjmzS0Bo0_Tukmk7to8hBfyl8=s512-c-k-c0x00ffffff-no-rj",
+   "epg_id": "LacrosseTV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-342ab3653ae0ab3d",
+     "url": "https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "lacrosse"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-mlb.us-en",
+   "name": "MLB",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MLB.us",
+   "logo": "https://i.imgur.com/ym3su2J.png",
+   "epg_id": "MLB.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-f411b91db92a742a",
+     "url": "https://aegis-cloudfront-1.tubi.video/36ef2f9d-7100-4c4d-b41a-dbf41ab7e461/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "baseball"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-mlbstrikezone.us-en",
+   "name": "MLB Strike Zone",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MLBStrikeZone.us",
+   "logo": "https://i.imgur.com/uMI1ySO.png",
+   "epg_id": "MLBStrikeZone.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-cff07741c58eba09",
+     "url": "http://23.237.104.106:8080/USA_MLB_STRIKE_ZONE/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "baseball"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-monsterjam.us-en",
+   "name": "Monster Jam",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "nature",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MonsterJam.us",
+   "logo": "https://provider-static.plex.tv/epg/cms/production/23824964-562b-4498-9eaa-d6262cb7e0c3/Monster_Jam_Logo_on_Transparent_1500x1000_Casey_Murawski.png",
+   "epg_id": "MonsterJam.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1b3deba3b89ba0d4",
+     "url": "https://4b9627c7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X01vbnN0ZXJKYW1fSExT/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-msg.us-en",
+   "name": "MSG",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MSG.us",
+   "logo": "https://i.imgur.com/SEQFh0P.png",
+   "epg_id": "MSG.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-bd16229a08f000e8",
+     "url": "http://23.237.104.106:8080/USA_MSG/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-nbatv.us-en",
+   "name": "NBA TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:NBATV.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/NBA_TV.svg/960px-NBA_TV.svg.png",
+   "epg_id": "NBATV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4e66e76e59e28932",
+     "url": "http://23.237.104.106:8080/USA_NBA/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-52269ca9c33a3419",
+     "url": "http://rezofoot.tv/NBATV/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-a39c560526fdae4a",
+     "url": "http://198.58.104.90:8989/nba/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "basketball"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-nbcsportsnow.us-en",
+   "name": "NBC Sports NOW",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:NBCSportsNOW.us",
+   "logo": "https://i.imgur.com/EzNf2Yx.png",
+   "epg_id": "NBCSportsNOW.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-8b4714724809f3e5",
+     "url": "https://d4whmvwm0rdvi.cloudfront.net/10007/99993008/hls/master.m3u8?ads.xumo_channelId=99993008",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-4ef6f2ab8ca11ad1",
+     "url": "https://d1m1xk35ma8qfl.cloudfront.net/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-2e61ef872e67d6f8",
+     "url": "https://xumo-xumoent-vc-122-sjv70.fast.nbcuni.com/live/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-nhlnetwork.us-en",
+   "name": "NHL Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:NHLNetwork.us",
+   "logo": "https://i.imgur.com/UNZ8bef.png",
+   "epg_id": "NHLNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-60ae0edc55a24801",
+     "url": "https://nhl-firetv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-f99462cb3575b470",
+     "url": "https://aegis-cloudfront-1.tubi.video/1f4cbb33-cb23-40ab-b54b-2965cc551b32/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "winter"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-nhratv.us-en",
+   "name": "NHRA TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:NHRATV.us",
+   "logo": "https://i.imgur.com/jZgcm4k.png",
+   "epg_id": "NHRATV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1f79dc0bf02b9ab1",
+     "url": "https://d265y4sk8257lt.cloudfront.net/nh.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-768a6579220ab9c8",
+     "url": "https://aegis-cloudfront-1.tubi.video/b8c5eb48-349b-454f-9625-63911ee923f5/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-overtime.us-en",
+   "name": "Overtime",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Overtime.us",
+   "logo": "https://i.imgur.com/9S9k4IK.png",
+   "epg_id": "Overtime.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-3357077bd4cab2e1",
+     "url": "https://d1a8aq6t30gkqj.cloudfront.net/v1/amc_overtime_1/samsungheadend_us/latest/main/hls/playlist_hd.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-pac12insider.us-en",
+   "name": "Pac-12 Insider",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Pac12Insider.us",
+   "logo": "https://i.imgur.com/736QREy.png",
+   "epg_id": "Pac12Insider.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-37a9941cc86d1f12",
+     "url": "https://pac12-vizio.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-pflmma.us-en",
+   "name": "PFL MMA",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:PFLMMA.us",
+   "logo": "https://provider-static.plex.tv/epg/cms/production/96dd0531-b500-4bd4-93ca-763cbf46defe/1500x1000_PFL_SHIELD_DARK_BG_-_Allie_Dinsmore.png",
+   "epg_id": "PFLMMA.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-3086fa16e9517b30",
+     "url": "https://a883593c.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X1BGTE1NQV9ITFM/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-pgatour.us-en",
+   "name": "PGA Tour",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:PGATour.us",
+   "logo": "https://i.imgur.com/J0TY9dG.png",
+   "epg_id": "PGATour.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a51738a555650ee3",
+     "url": "https://d11k1mnrgfposz.cloudfront.net/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "golf"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-racernetwork.us-en",
+   "name": "Racer Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RacerNetwork.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/en/7/74/Racer_Network.jpg",
+   "epg_id": "RacerNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-43e4957e18322fea",
+     "url": "https://amg00378-mavtv-amg00378c3-sportstribal-emea-1325.playouts.now.amagi.tv/mavtv-smn-xm/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-racerselect.us-en",
+   "name": "Racer Select",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RacerSelect.us",
+   "logo": "https://i.imgur.com/CurtYvn.png",
+   "epg_id": "RacerSelect.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0d7979d212f7132b",
+     "url": "https://amg00378-amg00378c4-freelivesports-emea-5637.playouts.now.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-14c29362bbd3f9dd",
+     "url": "https://d85qrcmltdfp8.cloudfront.net/MAVTV_Select.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-rallytv.us-en",
+   "name": "Rally TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RallyTV.us",
+   "logo": "https://i.postimg.cc/WtLq2C7c/logo-Rally-Tv1.png",
+   "epg_id": "RallyTV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-802c4741907cc060",
+     "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "motorsport"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-rightnowtv.us-en",
+   "name": "Right Now TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "series",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RightNowTV.us",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/DISTROTV/LIVECHANNEL/666988e8bac4421ebc533626/images/logo_20231219_221555_29.png",
+   "epg_id": "RightNowTV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-bb3ddceae44381a5",
+     "url": "https://a-cdn.klowdtv.com/live2/rightnowtv_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-5000e6f7d8e724b6",
+     "url": "https://2-fss-1.streamhoster.com/pl_154/amlst:205448-2145652/rightnowtv.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-slopestv.us-en",
+   "name": "Slopes TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SlopesTV.us",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/DISTROTV/LIVECHANNEL/66698903bac4421ebc533641/images/logo_20231219_221909_68.png",
+   "epg_id": "SlopesTV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c5f4a5705e7718e6",
+     "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=2241",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-sportsgrid.us-en",
+   "name": "SportsGrid",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SportsGrid.us",
+   "logo": "https://i.imgur.com/ulGKX30.png",
+   "epg_id": "SportsGrid.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-fbe57d51aa740741",
+     "url": "https://sportsgrid-tribal.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-066314399fdf4948",
+     "url": "https://amg00315-sportsgrid-firetv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-3edec863affbbf5e",
+     "url": "https://sportsgrid-klowdtv.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-5729460f30925db5",
+     "url": "https://sportsgrid-plex.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-e444f09142f1b026",
+     "url": "https://sportsgrid-samsungus.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-stadium.us-en",
+   "name": "Stadium",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Stadium.us",
+   "logo": "https://i.imgur.com/SnZOiER.png",
+   "epg_id": "Stadium.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-64c05dd8b9389252",
+     "url": "https://aegis-cloudfront-1.tubi.video/74681dcc-e6d0-4add-ad67-a22ad9c152e6/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-strongman.us-de",
+   "name": "Strongman",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Strongman.us",
+   "logo": "https://i.imgur.com/bVQBF6R.png",
+   "epg_id": "Strongman.us@Germany",
+   "sources": [
+    {
+     "source_id": "iptv-org-c2640e7396e30553",
+     "url": "https://rightsboosterltd-scl-2-eu.rakuten.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ],
+   "sport": [
+    "strength"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-strongman.us-en",
+   "name": "Strongman",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Strongman.us",
+   "logo": "https://i.imgur.com/bVQBF6R.png",
+   "epg_id": "Strongman.us@UK",
+   "sources": [
+    {
+     "source_id": "iptv-org-d66759cadab88508",
+     "url": "https://rightsboosterltd-scl-1-eu.rakuten.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-e98e6eedf987217c",
+     "url": "https://rightsboosterltd-scl-1-gb.samsung.wurl.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "strength"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-swervecombat.us-en",
+   "name": "Swerve Combat",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SwerveCombat.us",
+   "logo": "https://i.imgur.com/eFZh7aG.png",
+   "epg_id": "SwerveCombat.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-7425f31cf1b04d9d",
+     "url": "https://a-cdn.klowdtv.com/live3/swervecombat_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-6f8f2395ee7bab74",
+     "url": "https://linear-253.frequency.stream/mt/roku/253/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-686e8bdf95221721",
+     "url": "https://linear-253.frequency.stream/dist/stirr/253/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-e0f06a6f5e91ee22",
+     "url": "https://linear-253.frequency.stream/dist/xumo/253/hls/master/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-swervesports.us-en",
+   "name": "Swerve Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SwerveSports.us",
+   "logo": "https://i.imgur.com/GT0Yi2T.png",
+   "epg_id": "SwerveSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-35ece5cab205fec6",
+     "url": "https://a-cdn.klowdtv.com/live3/swervewomenssports_720p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tennischannel.us-en",
+   "name": "Tennis Channel",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TennisChannel.us",
+   "logo": "https://i.imgur.com/tsljAnY.png",
+   "epg_id": "TennisChannel.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-40b8157ff0b07891",
+     "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-1270a2ad564d9494",
+     "url": "http://23.237.104.106:8080/USA_TENNIS/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-e67bb9f63ac73a15",
+     "url": "http://138.59.177.78:9999/play/a0gl/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "tennis"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tennischannel2.us-en",
+   "name": "Tennis Channel 2",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TennisChannel2.us",
+   "logo": "https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png",
+   "epg_id": "TennisChannel2.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-cf0227c9f4ae4afb",
+     "url": "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "tennis"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvsbowlingnetwork.us-en",
+   "name": "TVS Bowling Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSBowlingNetwork.us",
+   "logo": "https://www.watchyour.tv/channels/logo/tvs-bowling-network.jpg",
+   "epg_id": "TVSBowlingNetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2643580f023425ac",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvsbowling/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "bowling"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvsboxing.us-en",
+   "name": "TVS Boxing",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSBoxing.us",
+   "logo": "https://i.imgur.com/30ZoF75.png",
+   "epg_id": "TVSBoxing.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-39b0e148930798ef",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvsboxing/index.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvsclassicsports.us-en",
+   "name": "TVS Classic Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSClassicSports.us",
+   "logo": "https://i.imgur.com/auR0Mi6.png",
+   "epg_id": "TVSClassicSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1c2cabab8bbd0979",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvs/index.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvssports.us-en",
+   "name": "TVS Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSSports.us",
+   "logo": "https://i.imgur.com/Lwwq62E.png",
+   "epg_id": "TVSSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1340eb48b7aab82e",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvssports/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvssportsbureau.us-en",
+   "name": "TVS Sports Bureau",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSSportsBureau.us",
+   "logo": "",
+   "epg_id": "TVSSportsBureau.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-6e6f9a7bbc704335",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvssportsbureau/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvsturbo.us-en",
+   "name": "TVS Turbo",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSTurbo.us",
+   "logo": "https://i.imgur.com/7zYIbU1.png",
+   "epg_id": "TVSTurbo.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-3c0e1fd6587525d9",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvsturbo/index.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-tvswomensports.us-en",
+   "name": "TVS Women Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVSWomenSports.us",
+   "logo": "https://i.imgur.com/8hC4PfF.png",
+   "epg_id": "TVSWomenSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-ebbb7b74fbc6c947",
+     "url": "https://rpn.bozztv.com/gusa/gusa-tvswsn/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-unbeaten.us-en",
+   "name": "Unbeaten",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Unbeaten.us",
+   "logo": "https://i.imgur.com/LmkNt3v.png",
+   "epg_id": "Unbeaten.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-779ade0e9de3eadf",
+     "url": "https://d1t5afz6qed3xk.cloudfront.net/Unbeaten.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-98f55daf8efeb46d",
+     "url": "https://unbeaten-tcl.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-usanetwork.us-en",
+   "name": "USA Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "comedy",
+    "movies",
+    "series",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:USANetwork.us",
+   "logo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/USA_Network_2025_logo.svg/960px-USA_Network_2025_logo.svg.png",
+   "epg_id": "USANetwork.us@East",
+   "sources": [
+    {
+     "source_id": "iptv-org-6b5d51eb49905d2c",
+     "url": "http://190.197.41.183/USA_NETWORK/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-cd9aaca95dfe1551",
+     "url": "http://200.32.231.178/USA_NETWORK/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-willow.us-en",
+   "name": "Willow",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Willow.us",
+   "logo": "https://i.imgur.com/v7nSm7M.png",
+   "epg_id": "Willow.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-7c7bd90931c394c8",
+     "url": "http://tvsen5.aynascope.net/willowhd/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-48dd732b1a780756",
+     "url": "http://tvsen7.aynascope.net/rEBp38Ax/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-25e7f2255ebd1d93",
+     "url": "https://tvsen5.aynaott.com/willowhd/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-willowsports.us-en",
+   "name": "Willow Sports",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:WillowSports.us",
+   "logo": "https://provider-static.plex.tv/epg/cms/production/acf3d1d8-c53e-49ca-86e9-0d9410b106b4/Willow_Sports_dark_Background_1500_1000_color.png",
+   "epg_id": "WillowSports.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c6a8fc01b3af5887",
+     "url": "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/ts-eu-w1-n2/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-affbeb30f9ef3948",
+     "url": "https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-worldpokertour.us-en",
+   "name": "World Poker Tour",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:WorldPokerTour.us",
+   "logo": "https://i.imgur.com/98kLMjj.png",
+   "epg_id": "WorldPokerTour.us@Poland",
+   "sources": [
+    {
+     "source_id": "iptv-org-ff60d20cdfab24ac",
+     "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/playlist.m3u8?ads.xumo_channelId=88883102",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-d892893c3b590a0a",
+     "url": "https://amg00477-samsungelectron-worldpokertour-samsunguk-81igb.amagi.tv/playlist/amg00477-samsungelectron-worldpokertour-samsunguk/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-4b1627fa16d28741",
+     "url": "https://amg00218-wptenterprisesi-worldpokertour-klowdtv-5619e.amagi.tv/playlist/amg00218-wptenterprisesi-worldpokertour-klowdtv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-70f74ad0e09c436b",
+     "url": "https://d2e00kr7m9coe4.cloudfront.net/scheduler/scheduleMaster/406.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-d1be0ea6514416b4",
+     "url": "https://amg00218-wptenterprisesi-worldpokertour-xumo-us.amagi.tv/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-wwenetwork.us-en",
+   "name": "WWE Network",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:WWENetwork.us",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/WWE_Network_logo.svg/500px-WWE_Network_logo.svg.png",
+   "epg_id": "WWENetwork.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0becab3cea3a2016",
+     "url": "http://103.151.60.162:2122/play/a00p/index.m3u8?hls",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "combat"
+   ]
+  },
+  {
+   "id": "gxs:sports:us:iptv-org-xfctv.us-en",
+   "name": "XFC TV",
+   "section": "sports",
+   "country": "us",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:XFCTV.us",
+   "logo": "https://xstreamcp-assets-msp.streamready.in/assets/DISTROTV/LIVECHANNEL/6669890fbac4421ebc533650/images/logo_20231219_224405_58.png",
+   "epg_id": "XFCTV.us@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-9be5135daa2c3b40",
+     "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=2247",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "us",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ],
+   "sport": [
+    "other"
+   ]
+  }
+ ]
+}

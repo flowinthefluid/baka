@@ -388,6 +388,9 @@ class cHosterGui:
         cMyJDownloaderHandler().sendToMyJDownloader(sMediaUrl, sMovieTitle)
 
     def __getPriorities(self, hosterList, filter=True):
+        from resources.lib import languages
+        hosterList = [hoster for hoster in hosterList
+                      if languages.streamAllowed(hoster.get('audio', ''), hoster.get('subs', ''))]
         # Sort hosters based on their resolvers priority.
         ranking = []
         # handles multihosters but is about 10 times slower

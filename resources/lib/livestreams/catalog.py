@@ -28,6 +28,12 @@ def _merge_into(existing, channel, reason):
     """Zwei Kanaele zu einem mit mehreren Quellen zusammenfuehren (mit Log)."""
     known = {s['source_id'] for s in existing['sources']}
     added = 0
+    existing['countries'] = list(dict.fromkeys(existing.get('countries', [existing['country']])
+                                               + channel.get('countries', [channel['country']])))
+    existing['alias_ids'] = list(dict.fromkeys(existing.get('alias_ids', [existing['id']])
+                                              + channel.get('alias_ids', [channel['id']])))
+    existing['epg_ids'] = list(dict.fromkeys(existing.get('epg_ids', [existing.get('epg_id', '')])
+                                            + channel.get('epg_ids', [channel.get('epg_id', '')])))
     for source in channel['sources']:
         if source['source_id'] not in known:
             existing['sources'].append(source)
@@ -102,6 +108,8 @@ def load_all(force=False):
                 logger.debug('-> [livestreams.catalog]: ungueltiger Kanal von %s verworfen'
                              % getattr(provider, 'id', '?'))
     channels = _merge(channels)
+    from resources.lib.livestreams import curation
+    channels = curation.collapse(channels)
     _CACHE['key'] = signature
     _CACHE['channels'] = channels
     logger.info('-> [livestreams.catalog]: %d Kanaele geladen' % len(channels))
@@ -143,7 +151,7 @@ def get_channel(channel_id):
     """
     from resources.lib import contentgate
     for channel in load_all():
-        if channel['id'] == channel_id:
+        if channel['id'] == channel_id or channel_id in channel.get('alias_ids', []):
             if contentgate.is_channel_visible(channel) and _has_approved_source(channel):
                 return channel
             return None
@@ -153,9 +161,9 @@ def get_channel(channel_id):
 def countries_in_section(section_id):
     seen = []
     for channel in channels_by_section(section_id):
-        country = channel.get('country')
-        if country and country not in seen:
-            seen.append(country)
+        for country in channel.get('countries', [channel.get('country')]):
+            if country and country not in seen:
+                seen.append(country)
     return seen
 
 

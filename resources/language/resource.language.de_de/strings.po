@@ -4166,3 +4166,147 @@ msgstr "Liste abspielen"
 msgctxt "#32207"
 msgid "Main menu"
 msgstr "Hauptmenü"
+
+msgctxt "#32208"
+msgid "MagentaTV multicast connection required"
+msgstr "MagentaTV-Multicast-Anschluss erforderlich"
+
+msgctxt "#32300"
+msgid "Movies / series"
+msgstr "Filme / Serien"
+
+msgctxt "#32301"
+msgid "Documentaries"
+msgstr "Dokus"
+
+msgctxt "#32302"
+msgid "Anime"
+msgstr "Animes"
+
+msgctxt "#32303"
+msgid "Do not show"
+msgstr "Nicht anzeigen"
+
+msgctxt "#32304"
+msgid "Japanese original audio with German subtitles"
+msgstr "Japanischer Originalton mit deutschen Untertiteln"
+
+msgctxt "#32305"
+msgid "Original audio with German subtitles"
+msgstr "Originalton mit deutschen Untertiteln"
+
+msgctxt "#32306"
+msgid "Germany / Austria / Switzerland"
+msgstr "Deutschland / Österreich / Schweiz"
+
+msgctxt "#32307"
+msgid "EPG - these channels"
+msgstr "EPG – diese Sender"
+
+msgctxt "#32308"
+msgid "Channels by sport"
+msgstr "Sender nach Sportarten"
+
+msgctxt "#32309"
+msgid "All sports channels"
+msgstr "Alle Sportsender"
+
+msgctxt "#32310"
+msgid "No programme information available"
+msgstr "Keine Programmdaten verfügbar"
+
+msgctxt "#32311"
+msgid "Choose audio and subtitles"
+msgstr "Sprachen und Untertitel auswählen"
+
+msgctxt "#32312"
+msgid "Show this topic"
+msgstr "Dieses Thema anzeigen"
+
+msgctxt "#32313"
+msgid "Languages for each topic"
+msgstr "Sprachen je Thema"
+
+msgctxt "#32314"
+msgid "Choose languages for all topics"
+msgstr "Sprachen für alle Themen wählen"
+
+msgctxt "#32320"
+msgid "Football"
+msgstr "Fußball"
+
+msgctxt "#32321"
+msgid "Motorsport"
+msgstr "Motorsport"
+
+msgctxt "#32322"
+msgid "Tennis"
+msgstr "Tennis"
+
+msgctxt "#32323"
+msgid "Basketball"
+msgstr "Basketball"
+
+msgctxt "#32324"
+msgid "Combat sports"
+msgstr "Kampfsport"
+
+msgctxt "#32325"
+msgid "Winter sports"
+msgstr "Wintersport"
+
+msgctxt "#32326"
+msgid "Cycling"
+msgstr "Radsport"
+
+msgctxt "#32327"
+msgid "Golf"
+msgstr "Golf"
+
+msgctxt "#32328"
+msgid "American football"
+msgstr "American Football"
+
+msgctxt "#32329"
+msgid "Baseball"
+msgstr "Baseball"
+
+msgctxt "#32330"
+msgid "Cricket"
+msgstr "Cricket"
+
+msgctxt "#32331"
+msgid "Water sports"
+msgstr "Wassersport"
+
+msgctxt "#32332"
+msgid "Billiards & snooker"
+msgstr "Billard & Snooker"
+
+msgctxt "#32333"
+msgid "Darts"
+msgstr "Darts"
+
+msgctxt "#32334"
+msgid "Handball"
+msgstr "Handball"
+
+msgctxt "#32335"
+msgid "E-sports"
+msgstr "E-Sport"
+
+msgctxt "#32336"
+msgid "Other / mixed sports"
+msgstr "Weitere / gemischte Sportarten"
+
+msgctxt "#32337"
+msgid "Bowling"
+msgstr "Bowling"
+
+msgctxt "#32338"
+msgid "Lacrosse"
+msgstr "Lacrosse"
+
+msgctxt "#32339"
+msgid "Strength sports"
+msgstr "Kraftsport"

@@ -28,6 +28,7 @@ LANGUAGES = (
     ('pl', 32010), ('ru', 32011), ('ar', 32012), ('nl', 32013), ('zh', 32014),
 )
 LANGUAGE_CODES = tuple(code for code, stringId in LANGUAGES)
+LANGUAGE_SELECTION_CODES = ('en', 'de') + tuple(code for code in LANGUAGE_CODES if code not in ('en', 'de'))
 
 # Laender (ISO 3166-1 alpha-2) fuer Mediatheken, Live-TV und Vorschlaege.
 COUNTRIES = (
@@ -55,6 +56,46 @@ OTHER_MODE_SETTING = 'langOtherMode'        # 'folder' | 'hide'
 COUNTRIES_SETTING = 'regionCountries'       # CSV; leer = alle Laender
 SETUP_SETTING = 'langSetupDone'
 DEFAULT_SOURCE_LANGUAGES = ('de',)
+THEMES = (('movies', 32300, 'Filme / Serien'), ('docs', 32301, 'Dokus'), ('anime', 32302, 'Animes'))
+_CATEGORY_THEMES = {'filme': 'movies', 'serien': 'movies', 'dokus': 'docs', 'animes': 'anime'}
+
+
+def themeForCategory(category):
+    return _CATEGORY_THEMES.get(category, category if category in ('movies', 'docs', 'anime') else '')
+
+
+def currentTheme():
+    from resources.lib.handler.ParameterHandler import ParameterHandler
+    params = ParameterHandler().getAllParameters()
+    explicit = themeForCategory(params.get('contentTheme') or params.get('category') or params.get('randomKind'))
+    if explicit:
+        return explicit
+    # Alte Favoriten haben noch keinen Themenparameter. Reine Animequellen
+    # bleiben trotzdem im Animeprofil; andere Quellen nutzen das allgemeine Profil.
+    if params.get('site') in ('aniworld', 'kayoanime', 'hianime', 'gogoanime', 'animeonsen', 'proxer'):
+        return 'anime'
+    return ''
+
+
+def _profileSetting(theme, field):
+    return 'langProfile_%s_%s' % (theme, field)
+
+
+def themeEnabled(theme):
+    theme = themeForCategory(theme)
+    return not theme or cConfig().getSettingBool(_profileSetting(theme, 'enabled'), True)
+
+
+def _profile(theme=None):
+    theme = currentTheme() if theme is None else themeForCategory(theme)
+    config = cConfig()
+    if not theme or not config.getSettingBool(_profileSetting(theme, 'custom'), False):
+        return None
+    return {'theme': theme, 'enabled': themeEnabled(theme),
+            'audio': [code for code in config.getSetting(_profileSetting(theme, 'audio'), '').split(',')
+                      if code in LANGUAGE_CODES],
+            'subs': [code for code in config.getSetting(_profileSetting(theme, 'subs'), '').split(',')
+                     if code in LANGUAGE_CODES]}
 
 
 def _localized(stringId, fallback):
@@ -87,8 +128,9 @@ def _enabledAudio():
     return [code for code in LANGUAGE_CODES if config.getSettingBool(AUDIO_SETTING % code, code == 'de')]
 
 
-def preferredLanguage():
-    enabled = _enabledAudio()
+def preferredLanguage(theme=None):
+    profile = _profile(theme)
+    enabled = profile['audio'] if profile else _enabledAudio()
     choice = cConfig().getSetting(PREFERRED_SETTING, 'auto')
     if choice in enabled:
         return choice
@@ -98,21 +140,24 @@ def preferredLanguage():
     return enabled[0] if enabled else ''
 
 
-def audioLanguages():
+def audioLanguages(theme=None):
     """Eingeschaltete Tonsprachen, die bevorzugte zuerst."""
-    enabled = _enabledAudio()
-    preferred = preferredLanguage()
+    profile = _profile(theme)
+    enabled = list(profile['audio']) if profile and profile['enabled'] else ([] if profile else _enabledAudio())
+    preferred = preferredLanguage(theme)
     if preferred in enabled:
         enabled.remove(preferred)
         enabled.insert(0, preferred)
     return enabled
 
 
-def subtitleLanguages():
+def subtitleLanguages(theme=None):
     """Untertitelsprachen fuer Originalton-Streams, bevorzugte Tonsprache zuerst."""
     config = cConfig()
-    enabled = [code for code in LANGUAGE_CODES if config.getSettingBool(SUBS_SETTING % code, code == 'de')]
-    order = audioLanguages()
+    profile = _profile(theme)
+    enabled = profile['subs'] if profile and profile['enabled'] else ([] if profile else
+              [code for code in LANGUAGE_CODES if config.getSettingBool(SUBS_SETTING % code, code == 'de')])
+    order = audioLanguages(theme)
     return sorted(enabled, key=lambda code: order.index(code) if code in order else len(order))
 
 
@@ -136,7 +181,9 @@ def suggestedCountries(languageCodes):
     return result
 
 
-def otherLanguagesMode():
+def otherLanguagesMode(theme=None):
+    if _profile(theme):
+        return 'hide'
     return 'hide' if cConfig().getSetting(OTHER_MODE_SETTING, 'folder') == 'hide' else 'folder'
 
 
@@ -147,22 +194,32 @@ def sourceLanguages(plugin):
     return tuple(languages) if languages is not None else DEFAULT_SOURCE_LANGUAGES
 
 
-def sourceVisible(plugin):
+def sourceVisible(plugin, theme=None):
     """Quelle passt zu den gewaehlten Ton- oder Untertitelsprachen."""
+    resolved_theme = currentTheme() if theme is None else themeForCategory(theme)
+    if not themeEnabled(resolved_theme):
+        return False
     languages = sourceLanguages(plugin)
     if not languages:
         return True  # sprachunabhaengig, z.B. Wetter-Webcams
-    if set(languages) & set(audioLanguages()):
+    if set(languages) & set(audioLanguages(theme)):
         return True
-    return bool(set(plugin.get('subtitles') or ()) & set(subtitleLanguages()))
+    if resolved_theme == 'anime' and _profile(theme) and 'ja' not in languages:
+        return False
+    return bool(set(plugin.get('subtitles') or ()) & set(subtitleLanguages(theme)))
 
 
-def splitSources(plugins):
+def splitSources(plugins, theme=None):
     """Teilt Quellen in (eigene Sprachen, andere Sprachen)."""
     mine, others = [], []
     for plugin in plugins:
-        (mine if sourceVisible(plugin) else others).append(plugin)
+        (mine if sourceVisible(plugin, theme) else others).append(plugin)
     return mine, others
+
+
+def sourceVisibleAny(plugin):
+    categories = [category for category in plugin.get('categories', ()) if themeForCategory(category)]
+    return any(sourceVisible(plugin, category) for category in categories) if categories else sourceVisible(plugin)
 
 
 def sourceMainLanguage(plugin):
@@ -173,13 +230,19 @@ def sourceMainLanguage(plugin):
 
 # --- Streams ---------------------------------------------------------------
 
-def streamAllowed(audio, subs=''):
+def streamAllowed(audio, subs='', theme=None):
     """Stream zeigen? Unbekannte Sprache wird nie ausgefiltert."""
+    selected_theme = currentTheme() if theme is None else themeForCategory(theme)
+    if not themeEnabled(selected_theme):
+        return False
     if not audio:
         return True
-    if audio in audioLanguages():
+    if audio in audioLanguages(theme):
         return True
-    return bool(subs) and subs in subtitleLanguages()
+    # Anime-Originalton bedeutet Japanisch mit UT, nicht englische Synchro mit UT.
+    if selected_theme == 'anime' and _profile(theme) and audio != 'ja':
+        return False
+    return bool(subs) and subs in subtitleLanguages(theme)
 
 
 def streamLabel(audio, subs=''):
@@ -241,22 +304,92 @@ def ensureSetup(interactive=True):
     """Fragt beim ersten Start einmalig, welche Sprachen verstanden werden."""
     if cConfig().getSettingBool(SETUP_SETTING, False) or not interactive:
         return False
-    return chooseLanguages()
+    return chooseThemeLanguages(first_run=True)
+
+
+def _themeLabel(theme):
+    return next((_localized(number, fallback) for key, number, fallback in THEMES if key == theme), theme)
+
+
+def _chooseTheme(theme, first_run=False):
+    profile = _profile(theme)
+    audio = profile['audio'] if profile else _enabledAudio()
+    subs = profile['subs'] if profile else subtitleLanguages('')
+    if first_run:
+        kodi = kodiLanguage()
+        audio = [kodi if kodi in LANGUAGE_CODES else 'de']
+        subs = ['de']
+    labels = [_localized(32303, 'Nicht anzeigen')] + [languageLabel(code) for code in LANGUAGE_SELECTION_CODES]
+    original_index = len(labels)
+    labels.append(_localized(32304, 'Japanischer Originalton mit deutschen Untertiteln') if theme == 'anime'
+                  else _localized(32305, 'Originalton mit deutschen Untertiteln'))
+    preselect = [LANGUAGE_SELECTION_CODES.index(code) + 1 for code in audio]
+    if 'de' in subs:
+        preselect.append(original_index)
+    if not themeEnabled(theme):
+        preselect = [0]
+    selected = xbmcgui.Dialog().multiselect(_themeLabel(theme), labels, preselect=preselect)
+    if selected is None:
+        return (theme, audio, subs, themeEnabled(theme)) if first_run else None
+    if 0 in selected:
+        return theme, [], [], False
+    chosen_audio = {code for index, code in enumerate(LANGUAGE_SELECTION_CODES, 1) if index in selected}
+    audio = [code for code in LANGUAGE_CODES if code in chosen_audio]
+    subs = ['de'] if original_index in selected else []
+    return theme, audio, subs, bool(audio or subs)
+
+
+def applyThemeChoice(theme, audio, subs, enabled=True):
+    if theme not in dict((key, number) for key, number, fallback in THEMES):
+        return False
+    config = cConfig()
+    config.setSetting(_profileSetting(theme, 'audio'), ','.join(code for code in LANGUAGE_CODES if code in audio))
+    config.setSetting(_profileSetting(theme, 'subs'), ','.join(code for code in LANGUAGE_CODES if code in subs))
+    config.setSetting(_profileSetting(theme, 'enabled'), 'true' if enabled else 'false')
+    config.setSetting(_profileSetting(theme, 'custom'), 'true')
+    return True
+
+
+def chooseThemeLanguages(first_run=False):
+    # Gather choices before writing, so cancelling a manual edit changes nothing.
+    choices = []
+    for key, number, fallback in THEMES:
+        choice = _chooseTheme(key, first_run)
+        if choice is None:
+            return False
+        choices.append(choice)
+    for choice in choices:
+        applyThemeChoice(*choice)
+    if first_run:
+        audio = list(dict.fromkeys(code for _, selected, _, enabled in choices if enabled for code in selected))
+        subs = list(dict.fromkeys(code for _, _, selected, enabled in choices if enabled for code in selected))
+        kodi = kodiLanguage()
+        preferred = kodi if kodi in audio else (audio[0] if audio else 'de')
+        applyChoice(audio, subs, preferred)
+        cConfig().setSetting('tmdb_lang', preferred)
+    return True
+
+
+def editTheme(theme):
+    if theme not in ('movies', 'docs', 'anime'):
+        return False
+    choice = _chooseTheme(theme)
+    return applyThemeChoice(*choice) if choice is not None else False
 
 
 def chooseLanguages():
     """Fragt, welche Sprachen verstanden werden (auch aus den Einstellungen)."""
     current = _enabledAudio() if cConfig().getSettingBool(SETUP_SETTING, False) else []
     kodi = kodiLanguage()
-    preselect = [LANGUAGE_CODES.index(code) for code in (current or [kodi if kodi in LANGUAGE_CODES else 'de'])]
+    preselect = [LANGUAGE_SELECTION_CODES.index(code) for code in (current or [kodi if kodi in LANGUAGE_CODES else 'de'])]
     selected = xbmcgui.Dialog().multiselect(cConfig().getLocalizedString(32074),
-                                            [languageLabel(code) for code in LANGUAGE_CODES],
+                                            [languageLabel(code) for code in LANGUAGE_SELECTION_CODES],
                                             preselect=preselect)
     if selected is None:
         if current:
             return False
         selected = preselect
-    chosen = [LANGUAGE_CODES[index] for index in selected] or [LANGUAGE_CODES[index] for index in preselect]
+    chosen = [LANGUAGE_SELECTION_CODES[index] for index in selected] or [LANGUAGE_SELECTION_CODES[index] for index in preselect]
     preferred = kodi if kodi in chosen else chosen[0]
     applyChoice(chosen, chosen, preferred)
     # Titel und Beschreibungen von TMDB in der bevorzugten Sprache; alle

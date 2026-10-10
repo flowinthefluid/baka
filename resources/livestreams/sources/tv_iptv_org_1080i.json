@@ -1,0 +1,1595 @@
+{
+ "version": 1,
+ "retrieved_at": "2026-10-10",
+ "source_url": "https://iptv-org.github.io/?q=format%3A1080i",
+ "note": "User-selected Internet streams only; no MagentaTV multicast. HTTP manifests verified; Kodi playback and geoblocking not verified.",
+ "channels": [
+  {
+   "id": "gxs:tv:at:iptv-org-hitradioo3.at",
+   "name": "Hitradio O3",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "music",
+    "public"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:HitradioO3.at",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hitradio_%C3%963.svg/960px-Hitradio_%C3%963.svg.png",
+   "epg_id": "HitradioO3.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-6265b695bb804d8c",
+     "url": "https://studiocam-oe3.mdn.ors.at/orf/studiocam_oe3/q6a/manifest.mpd",
+     "protocol": "dash",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-fcc396095c82bd48",
+     "url": "https://studiocam-oe3.mdn.ors.at/orf/studiocam_oe3/q6a/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-3b6ed9e15ee7abfb",
+     "url": "https://studiocam-oe3.mdn.ors.at/out/u/studiocam_oe3/q6a/manifest_1.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-landletv.at",
+   "name": "Landle TV",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:LandleTV.at",
+   "logo": "https://i.imgur.com/omLVQ4r.png",
+   "epg_id": "LandleTV.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a56ae7d4d2bdaa7d",
+     "url": "https://streaming13.huberwebmedia.at/LiveApp/streams/985585225397790082777809.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-okto.at",
+   "name": "Okto",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Okto.at",
+   "logo": "https://i.imgur.com/9XfhgbS.png",
+   "epg_id": "Okto.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-a107e4d563c2e243",
+     "url": "https://cdn3.wowza.com/1/MHFtazJReW5rOFhP/N2NWNDZ2/hls/live/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-orfiii.at",
+   "name": "ORF III",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "doc",
+    "public"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ORFIII.at",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/ORF_III_Logo_Monochrom.svg/960px-ORF_III_Logo_Monochrom.svg.png",
+   "epg_id": "ORFIII.at@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-76d6bb643f731f18",
+     "url": "https://orf3.mdn.ors.at/orf/orf3/qxa/manifest.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-r9.at",
+   "name": "R9",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:R9.at",
+   "logo": "https://i.imgur.com/SVJiXxh.png",
+   "epg_id": "R9.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2ab607b06334018c",
+     "url": "https://ms01.w24.at/R9/smil:liveeventR9.smil/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-tiroltv.at",
+   "name": "Tirol TV",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TirolTV.at",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/TIROL_TV_Logo_2019.png/960px-TIROL_TV_Logo_2019.png",
+   "epg_id": "TirolTV.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-8b72b0cd8fa43553",
+     "url": "https://streaming14.huberwebmedia.at/LiveApp/streams/livestream.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:at:iptv-org-w24.at",
+   "name": "W24",
+   "section": "tv",
+   "country": "at",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:W24.at",
+   "logo": "https://i.imgur.com/FpVNrxk.png",
+   "epg_id": "W24.at@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-edd2f318430a5599",
+     "url": "https://ms01.w24.at/W24/smil:liveevent.smil/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "at",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-3sat.de",
+   "name": "3sat",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:3sat.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/3sat_2019.svg/960px-3sat_2019.svg.png",
+   "epg_id": "3sat.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-9780defc39a841e5",
+     "url": "https://zdf-hls-18.akamaized.net/hls/live/2016501/dach/high/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-46245d24c7b7c366",
+     "url": "https://dash4.antik.sk/live/test_drei_sat_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-ardalpha.de",
+   "name": "ARD-alpha",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "doc",
+    "public"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ARDalpha.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ARD_alpha.svg/960px-ARD_alpha.svg.png",
+   "epg_id": "ARDalpha.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-b780bc9c457aa25b",
+     "url": "https://mcdn.br.de/br/fs/ard_alpha/hls/de/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-arte.de",
+   "name": "arte",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:arte.de",
+   "logo": "https://i.imgur.com/ecXMjNl.png",
+   "epg_id": "arte.de@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-c4911372dd0ec287",
+     "url": "https://dash4.antik.sk/live/test_arte_avc_25p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-b6b3b0a040844cb1",
+     "url": "https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-augsburgtv.de",
+   "name": "Augsburg TV",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:AugsburgTV.de",
+   "logo": "https://i.imgur.com/27AKMUL.png",
+   "epg_id": "AugsburgTV.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4a6aa6a5697da911",
+     "url": "https://stream02.welocal.stream/stream/fhd-augsburgtv_104951/ngrp:stream_all/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-4a3afea7077a82d2",
+     "url": "https://augsburgtv.iptv-playoutcenter.de/augsburgtv/augsburgtv.stream_1/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-bibeltv.de",
+   "name": "Bibel TV",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:BibelTV.de",
+   "logo": "https://i.imgur.com/RLwmrk3.png",
+   "epg_id": "BibelTV.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-cd58add513aba833",
+     "url": "https://bibint01.iptv-playoutcenter.de/bibint01/bibint01.stream_all/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-comedycentral.de",
+   "name": "Comedy Central",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "comedy"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ComedyCentral.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/960px-Comedy_Central_2018.svg.png",
+   "epg_id": "ComedyCentral.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-e13bdb8e45f93f00",
+     "url": "https://ma.anixa.tv/clips/stream/comedy_central/playlist.php",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-daserste.de",
+   "name": "Das Erste",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:DasErste.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/ARD_Dachmarke_2014.svg/960px-ARD_Dachmarke_2014.svg.png",
+   "epg_id": "DasErste.de@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d7828d16a966fc1a",
+     "url": "https://daserste-live.ard-mcdn.de/daserste/live/hls/int/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-deluxelounge.de",
+   "name": "Deluxe Lounge",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "music"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:DeluxeLounge.de",
+   "logo": "https://i.imgur.com/pgCA35z.png",
+   "epg_id": "DeluxeLounge.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-95836e0eed263bec",
+     "url": "https://jmp2.uk/stvp-CHAJ0500413A",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-deluxemusic.de",
+   "name": "Deluxe Music",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "music"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:DeluxeMusic.de",
+   "logo": "https://i.imgur.com/HimuPPb.png",
+   "epg_id": "DeluxeMusic.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4e9bea170a1f3e12",
+     "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-hrfernsehen.de",
+   "name": "hr-fernsehen",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:hrfernsehen.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/HR-Fernsehen_Logo_2023.svg/960px-HR-Fernsehen_Logo_2023.svg.png",
+   "epg_id": "hrfernsehen.de@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-b384de64a2ba9675",
+     "url": "https://dash4.antik.sk/live/test_hr_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-4f9a99d16fb1e3dc",
+     "url": "https://hrhls.akamaized.net/hls/live/2024525/hrhls/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-hse.de",
+   "name": "HSE",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "shopping"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:HSE.de",
+   "logo": "https://i.imgur.com/IecRNCk.png",
+   "epg_id": "HSE.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-0e1dcab4d474ec1e",
+     "url": "https://hse24.akamaized.net/hls/live/2006663/hse24/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-hseextra.de",
+   "name": "HSE Extra",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "shopping"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:HSEExtra.de",
+   "logo": "https://i.imgur.com/nvMpbip.png",
+   "epg_id": "HSEExtra.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-9436885d5a3d86a1",
+     "url": "https://hse24extra.akamaized.net/hls/live/2006596/hse24extra/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-kika.de",
+   "name": "KiKA",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "kids"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:KiKA.de",
+   "logo": "https://i.imgur.com/vZdNp5S.png",
+   "epg_id": "KiKA.de@HD",
+   "sources": [
+    {
+     "source_id": "iptv-org-d55e015605658b62",
+     "url": "https://dash4.antik.sk/live/test_kika_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-e95d6e4abe886e9e",
+     "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-f8552c6445b8fe4f",
+     "url": "https://kikahls.akamaized.net/hls/live/2022690/livetvkika_ww/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-motorvision.de",
+   "name": "Motorvision",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "series",
+    "sports"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Motorvision.de",
+   "logo": "https://i.imgur.com/v4kj8pI.png",
+   "epg_id": "Motorvision.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-84c52cd15538a18f",
+     "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=535",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    },
+    {
+     "source_id": "iptv-org-cb3af96019daf3ff",
+     "url": "https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-mtv.de",
+   "name": "MTV",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "en"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:MTV.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/960px-MTV_2021_%28brand_version%29.svg.png",
+   "epg_id": "MTV.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-ac746c16577f2e9a",
+     "url": "https://ma.anixa.tv/clips/stream/mtv/playlist.php",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "en"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-nitro.de",
+   "name": "Nitro",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:Nitro.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Nitro_Logo.svg/960px-Nitro_Logo.svg.png",
+   "epg_id": "Nitro.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-89b18305e291c1f7",
+     "url": "https://dash4.antik.sk/live/test_rtl_nitro_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-qvc.de",
+   "name": "QVC",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "shopping"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:QVC.de",
+   "logo": "https://i.imgur.com/EybRtsI.png",
+   "epg_id": "QVC.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-19967790cfff8b4f",
+     "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qvc/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-qvczwei.de",
+   "name": "QVC Zwei",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "shopping"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:QVCZwei.de",
+   "logo": "https://i.imgur.com/f94kPed.png",
+   "epg_id": "QVCZwei.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1a06e80b88188f5f",
+     "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qps/master.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-radiobremenfernsehen.de",
+   "name": "Radio Bremen Fernsehen",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RadioBremenFernsehen.de",
+   "logo": "https://i.imgur.com/wsTOcuX.png",
+   "epg_id": "RadioBremenFernsehen.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-04c74acdee59efdc",
+     "url": "https://rbhlslive.akamaized.net/hls/live/2020435/rbfs/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-rtl.de",
+   "name": "RTL",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RTL.de",
+   "logo": "https://i.imgur.com/94K94k2.png",
+   "epg_id": "RTL.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-5708de316e8b27ae",
+     "url": "https://dash4.antik.sk/live/test_rtl_ger_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-rtlsuper.de",
+   "name": "RTL Super",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RTLSuper.de",
+   "logo": "https://i.imgur.com/KbdK8t9.png",
+   "epg_id": "RTLSuper.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-1360411648cbcf2f",
+     "url": "https://dash4.antik.sk/live/test_super_rtl_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "headers": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+     },
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-rtlzwei.de",
+   "name": "RTL Zwei",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:RTLZwei.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/RTLZWEI_Logo_2019.svg/960px-RTLZWEI_Logo_2019.svg.png",
+   "epg_id": "RTLZwei.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-91aaac60c8d5a988",
+     "url": "https://dash4.antik.sk/live/test_rtl_zwei_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-sat1gold.de",
+   "name": "SAT.1 Gold",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SAT1Gold.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Sat.1_Gold_Logo_2019.svg/960px-Sat.1_Gold_Logo_2019.svg.png",
+   "epg_id": "SAT1Gold.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-49cbc939f8dedfaa",
+     "url": "https://dash4.antik.sk/live/test_sat_eins_gold_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "sd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-sixx.de",
+   "name": "sixx",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:sixx.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Sixx_Logo.svg/960px-Sixx_Logo.svg.png",
+   "epg_id": "sixx.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-4defd45d89de08fa",
+     "url": "https://dash4.antik.sk/live/test_sixx_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-srfernsehen.de",
+   "name": "SR Fernsehen",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SRFernsehen.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/SR_Fernsehen_Logo_2023.svg/960px-SR_Fernsehen_Logo_2023.svg.png",
+   "epg_id": "SRFernsehen.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-b8fcf033ee3731f3",
+     "url": "https://srfs.akamaized.net/hls/live/689649/srfsgeo/index.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-swrfernsehenbadenwurttemberg.de",
+   "name": "SWR Fernsehen Baden-Wurttemberg",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SWRFernsehenBadenWurttemberg.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/SWR_Logo_2023.svg/960px-SWR_Logo_2023.svg.png",
+   "epg_id": "SWRFernsehenBadenWurttemberg.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-be4e1c12e5cb3600",
+     "url": "https://swrbwd-hls.akamaized.net/hls/live/2018672/swrbwd/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-swrfernsehenrheinlandpfalz.de",
+   "name": "SWR Fernsehen Rheinland-Pfalz",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:SWRFernsehenRheinlandPfalz.de",
+   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/SWR_Logo_2023.svg/960px-SWR_Logo_2023.svg.png",
+   "epg_id": "SWRFernsehenRheinlandPfalz.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-f616d5bce5c2b325",
+     "url": "https://swrrpd-hls.akamaized.net/hls/live/2018676/swrrpd/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-tagesschau24.de",
+   "name": "tagesschau24",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:tagesschau24.de",
+   "logo": "https://i.imgur.com/LH0Gctv.png",
+   "epg_id": "tagesschau24.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-eeb792c15bfde1a1",
+     "url": "https://tagesschau.akamaized.net/hls/live/2020115/tagesschau/tagesschau_1/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-tva.de",
+   "name": "TVA",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:TVA.de",
+   "logo": "https://i.imgur.com/Gg6d4Jb.png",
+   "epg_id": "TVA.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-10be619f24b397d0",
+     "url": "https://tvaktuellr.iptv-playoutcenter.de/tvaktuellr/tvaktuellr.stream_1/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "low",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-vox.de",
+   "name": "VOX",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:VOX.de",
+   "logo": "https://i.imgur.com/QPcmfZb.png",
+   "epg_id": "VOX.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-ae81f87bebfe601a",
+     "url": "https://dash4.antik.sk/live/test_vox_tizen/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-zdf.de",
+   "name": "ZDF",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ZDF.de",
+   "logo": "https://i.imgur.com/rtLb6m9.png",
+   "epg_id": "ZDF.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-2bd6cdfdb6b31094",
+     "url": "https://zdf-hls-15.akamaized.net/hls/live/2016498/de/high/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    },
+    {
+     "source_id": "iptv-org-2b06a2c2dc7d4408",
+     "url": "https://dash4.antik.sk/live/test_zdf_avc_25p/playlist.m3u8",
+     "protocol": "hls",
+     "quality": "unknown",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": false,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-zdfinfo.de",
+   "name": "ZDFinfo",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ZDFinfo.de",
+   "logo": "https://i.imgur.com/vtq1IWp.png",
+   "epg_id": "ZDFinfo.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-b6aab8861269af8e",
+     "url": "https://zdf-hls-17.akamaized.net/hls/live/2016500/de/high/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gxs:tv:de:iptv-org-zdfneo.de",
+   "name": "ZDFneo",
+   "section": "tv",
+   "country": "de",
+   "language": [
+    "de"
+   ],
+   "genre": [
+    "public",
+    "series"
+   ],
+   "nsfw": false,
+   "publisher": "iptv-org:ZDFneo.de",
+   "logo": "https://i.imgur.com/1JIIGgL.png",
+   "epg_id": "ZDFneo.de@SD",
+   "sources": [
+    {
+     "source_id": "iptv-org-f2ee58ffbbfff848",
+     "url": "https://zdf-hls-16.akamaized.net/hls/live/2016499/de/high/master.m3u8",
+     "protocol": "hls",
+     "quality": "hd",
+     "official": false,
+     "reliability": "medium",
+     "region": "de",
+     "geo_restricted": true,
+     "last_verified_at": "2026-10-10",
+     "active": true,
+     "rights_evidence_url": "https://github.com/iptv-org/iptv#legal",
+     "verification_method": "http_manifest_only",
+     "language": [
+      "de"
+     ]
+    }
+   ]
+  }
+ ]
+}

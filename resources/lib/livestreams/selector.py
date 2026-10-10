@@ -103,6 +103,11 @@ def describe(source):
     reliability = {'high': 'stabil', 'medium': 'mittel', 'low': 'wackelig'}.get(source.get('reliability'), '')
     region = (source.get('region') or '').upper()
     parts = [p for p in (kind, quality, reliability, region) if p]
+    if source.get('regional_label'):
+        parts.append(source['regional_label'])
+    if source.get('network_required') == 'magentatv':
+        text = cConfig().getLocalizedString(32208)
+        parts.append(text if text and not str(text).startswith('#') else 'MagentaTV-Anschluss erforderlich')
     return ', '.join(parts)
 
 

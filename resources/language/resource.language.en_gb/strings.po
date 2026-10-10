@@ -4167,3 +4167,147 @@ msgstr "Play list"
 msgctxt "#32207"
 msgid "Main menu"
 msgstr "Main menu"
+
+msgctxt "#32208"
+msgid "MagentaTV multicast connection required"
+msgstr "MagentaTV multicast connection required"
+
+msgctxt "#32300"
+msgid "Movies / series"
+msgstr "Movies / series"
+
+msgctxt "#32301"
+msgid "Documentaries"
+msgstr "Documentaries"
+
+msgctxt "#32302"
+msgid "Anime"
+msgstr "Anime"
+
+msgctxt "#32303"
+msgid "Do not show"
+msgstr "Do not show"
+
+msgctxt "#32304"
+msgid "Japanese original audio with German subtitles"
+msgstr "Japanese original audio with German subtitles"
+
+msgctxt "#32305"
+msgid "Original audio with German subtitles"
+msgstr "Original audio with German subtitles"
+
+msgctxt "#32306"
+msgid "Germany / Austria / Switzerland"
+msgstr "Germany / Austria / Switzerland"
+
+msgctxt "#32307"
+msgid "EPG - these channels"
+msgstr "EPG - these channels"
+
+msgctxt "#32308"
+msgid "Channels by sport"
+msgstr "Channels by sport"
+
+msgctxt "#32309"
+msgid "All sports channels"
+msgstr "All sports channels"
+
+msgctxt "#32310"
+msgid "No programme information available"
+msgstr "No programme information available"
+
+msgctxt "#32311"
+msgid "Choose audio and subtitles"
+msgstr "Choose audio and subtitles"
+
+msgctxt "#32312"
+msgid "Show this topic"
+msgstr "Show this topic"
+
+msgctxt "#32313"
+msgid "Languages for each topic"
+msgstr "Languages for each topic"
+
+msgctxt "#32314"
+msgid "Choose languages for all topics"
+msgstr "Choose languages for all topics"
+
+msgctxt "#32320"
+msgid "Football"
+msgstr "Football"
+
+msgctxt "#32321"
+msgid "Motorsport"
+msgstr "Motorsport"
+
+msgctxt "#32322"
+msgid "Tennis"
+msgstr "Tennis"
+
+msgctxt "#32323"
+msgid "Basketball"
+msgstr "Basketball"
+
+msgctxt "#32324"
+msgid "Combat sports"
+msgstr "Combat sports"
+
+msgctxt "#32325"
+msgid "Winter sports"
+msgstr "Winter sports"
+
+msgctxt "#32326"
+msgid "Cycling"
+msgstr "Cycling"
+
+msgctxt "#32327"
+msgid "Golf"
+msgstr "Golf"
+
+msgctxt "#32328"
+msgid "American football"
+msgstr "American football"
+
+msgctxt "#32329"
+msgid "Baseball"
+msgstr "Baseball"
+
+msgctxt "#32330"
+msgid "Cricket"
+msgstr "Cricket"
+
+msgctxt "#32331"
+msgid "Water sports"
+msgstr "Water sports"
+
+msgctxt "#32332"
+msgid "Billiards & snooker"
+msgstr "Billiards & snooker"
+
+msgctxt "#32333"
+msgid "Darts"
+msgstr "Darts"
+
+msgctxt "#32334"
+msgid "Handball"
+msgstr "Handball"
+
+msgctxt "#32335"
+msgid "E-sports"
+msgstr "E-sports"
+
+msgctxt "#32336"
+msgid "Other / mixed sports"
+msgstr "Other / mixed sports"
+
+msgctxt "#32337"
+msgid "Bowling"
+msgstr "Bowling"
+
+msgctxt "#32338"
+msgid "Lacrosse"
+msgstr "Lacrosse"
+
+msgctxt "#32339"
+msgid "Strength sports"
+msgstr "Strength sports"

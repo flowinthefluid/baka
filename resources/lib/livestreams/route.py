@@ -23,13 +23,13 @@ from resources.lib.config import cConfig
 from resources.lib.gui.gui import cGui
 from resources.lib.gui.guiElement import cGuiElement
 from resources.lib.handler.ParameterHandler import ParameterHandler
-from resources.lib.livestreams import catalog, selector, taxonomy, export, epg
+from resources.lib.livestreams import catalog, selector, taxonomy, export, epg, sports, curation
 from resources.lib.tools import logger
 
 SITE_IDENTIFIER = 'livestreams'
 LEVELS = ('root', 'section', 'countries', 'genres', 'country', 'genre',
           'channels', 'cities', 'wcategories', 'sources', 'detail',
-          'weather', 'rabbithole_list', 'yt_cats', 'yt_live', 'tw_live')
+          'weather', 'rabbithole_list', 'yt_cats', 'yt_live', 'tw_live', 'sport_kinds', 'epg')
 ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
 
 
@@ -80,6 +80,8 @@ def route(params=None):
         'yt_cats': yt_categories,
         'yt_live': yt_live,
         'tw_live': tw_live,
+        'sport_kinds': _sport_kinds,
+        'epg': _show_epg,
     }[level]
     handler(params)
 
@@ -128,6 +130,9 @@ def _section(params):
     if section == 'tv':
         _folder(_label(31210, 'Sender nach Laendern'), 'countries', {'section': section}, 'countries.png')
         _folder(_label(31211, 'Sender nach Genre'), 'genres', {'section': section}, 'genre.png')
+    elif section == 'sports':
+        _folder(_label(32308, 'Sender nach Sportarten'), 'sport_kinds', {'section': section}, 'genre.png')
+        _folder(_label(32309, 'Alle Sportsender'), 'channels', {'section': section}, 'sports.png')
     elif section == 'webcam':
         # Webcams: Rabbithole/Zufall oben, dann nach Laendern und nach Kategorie.
         _rabbithole_play_item(oGui)
@@ -154,6 +159,10 @@ def _countries(params):
     countries = contentgate.get_visible_countries(catalog.countries_in_section(section))
     if not countries:
         _empty_state(oGui)
+    if section == 'tv' and any(country in curation.DACH for country in countries):
+        _folder(_label(32306, 'Deutschland / Österreich / Schweiz'), child,
+                {'section': section, 'country': 'dach'}, 'countries.png')
+        countries = [country for country in countries if country not in curation.DACH]
     for country in countries:
         _folder(taxonomy.country_label(country), child,
                 {'section': section, 'country': country}, 'countries.png')
@@ -219,23 +228,68 @@ def _genres(params):
     oGui.setEndOfDirectory()
 
 
-def _channels_filtered(params):
-    oGui = cGui()
+def _filtered_channels(params):
     section = params.getValue('section')
     country = params.getValue('country')
     genre = params.getValue('genre')
     city = params.getValue('city')
+    sport = params.getValue('sport')
     channels = catalog.channels_by_section(section)
     if country:
-        channels = [c for c in channels if c.get('country') == country]
+        wanted = set(curation.DACH) if country == 'dach' else {country}
+        channels = [c for c in channels if wanted & set(c.get('countries') or [c.get('country')])]
     if city:
         channels = [c for c in channels if c.get('city') == city]
     if genre:
         channels = [c for c in channels if genre in (c.get('genre') or [])]
+    if sport:
+        channels = [c for c in channels if sport in sports.kinds(c)]
+    return sorted(channels, key=lambda channel: channel['name'].casefold())
+
+
+def _epg_link(params):
+    filters = {key: params.getValue(key) for key in ('section', 'country', 'genre', 'sport', 'city')
+               if params.getValue(key)}
+    _folder(_label(32307, 'EPG – diese Sender'), 'epg', filters, 'epg.png')
+
+
+def _channels_filtered(params):
+    oGui = cGui()
+    channels = _filtered_channels(params)
+    if not channels:
+        _empty_state(oGui)
+    elif params.getValue('section') in ('tv', 'sports'):
+        _epg_link(params)
+    for channel in channels:
+        _channel_item(oGui, channel)
+    oGui.setEndOfDirectory()
+
+
+def _sport_kinds(params):
+    oGui = cGui()
+    present = {kind for channel in catalog.channels_by_section('sports') for kind in sports.kinds(channel)}
+    for kind in sports.SPORT_IDS:
+        if kind in present:
+            _folder(sports.label(kind), 'channels', {'section': 'sports', 'sport': kind}, 'sports.png')
+    if not present:
+        _empty_state(oGui)
+    oGui.setEndOfDirectory()
+
+
+def _show_epg(params):
+    oGui = cGui()
+    channels = _filtered_channels(params)
     if not channels:
         _empty_state(oGui)
     for channel in channels:
-        _channel_item(oGui, channel)
+        line = _epg_line(channel) or _label(32310, 'Keine Programmdaten verfügbar')
+        element = cGuiElement('%s  –  %s' % (channel['name'], line), SITE_IDENTIFIER, 'route')
+        element.setInfo(line)
+        element.setThumbnail(channel.get('logo') or _art('epg.png'))
+        child = ParameterHandler()
+        child.setParam('lsLevel', 'detail')
+        child.setParam('channel', channel['id'])
+        oGui.addFolder(element, child)
     oGui.setEndOfDirectory()
 
 
@@ -248,9 +302,15 @@ def _guide_path():
 
 def _epg_line(channel):
     guide = _guide_path()
-    if not guide or not channel.get('epg_id'):
+    if not guide or not (channel.get('epg_id') or channel.get('epg_ids')):
         return ''
-    return epg.now_next_line(guide, channel['epg_id'])
+    for identifier in channel.get('epg_ids') or [channel['epg_id']]:
+        if not identifier:
+            continue
+        line = epg.now_next_line(guide, identifier)
+        if line:
+            return line
+    return ''
 
 
 def _channel_item(oGui, channel):
@@ -399,6 +459,11 @@ def _list_item_for(channel, source):
         # Kodi/VideoPlayer spielt RTSP; inputstream.rtsp wird genutzt, falls da.
         if xbmc.getCondVisibility('System.HasAddon(inputstream.rtsp)'):
             list_item.setProperty('inputstream', 'inputstream.rtsp')
+        list_item.setContentLookup(False)
+    elif protocol in ('udp', 'rtp'):
+        # MagentaTV multicast carries MPEG-TS directly; Kodi's VideoPlayer
+        # opens it through FFmpeg, without an adaptive inputstream addon.
+        list_item.setMimeType('video/mp2t')
         list_item.setContentLookup(False)
     # mjpeg/mp4: Direktpfad ohne Sonderbehandlung (best effort).
     vtag = list_item.getVideoInfoTag()

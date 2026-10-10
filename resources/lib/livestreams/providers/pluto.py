@@ -54,7 +54,6 @@ ADULT_CATEGORIES = re.compile(r'sinnlich|erotik|romantik pur|sensual', re.I)
 # Motorsport-/Racing-Sender auch ausserhalb der Sportkategorien.
 RACING_NAMES = re.compile(r'red bull|motor|racing|rally|top gear|speed|motorsport|drift|gp\b', re.I)
 # Auf Wunsch nicht im Katalog.
-EXCLUDED_NAMES = re.compile(r'\bnfl\b|american football|baseball|\bmlb\b|college football', re.I)
 
 
 def _profile_path(name):
@@ -158,11 +157,9 @@ def build_channels(raw_channels, categories, region):
         if not isinstance(raw, dict) or not re.fullmatch(r'[a-f0-9]{24}', str(raw.get('id') or '')):
             continue
         name = str(raw.get('name') or '').strip()
-        if not name or EXCLUDED_NAMES.search(name) or raw.get('plutoOfficeOnly'):
+        if not name or raw.get('plutoOfficeOnly'):
             continue
         names = category_of.get(raw['id'], [])
-        if any(EXCLUDED_NAMES.search(c) for c in names):
-            continue
         genres = set()
         for category in names:
             lowered = category.lower()

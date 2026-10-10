@@ -27,3 +27,8 @@ Thumbs.db
 /repo/
 .venv/
 tests/_profile/
+
+# Local diagnostics, upstream downloads and PowerShell output accidents.
+.cache/
+/System.Management.Automation.Internal.Host.InternalHost/
+/_m2_warnings*.txt

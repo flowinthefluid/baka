@@ -10,12 +10,13 @@ halbgaren Eintraege ins Menue spuelen.
 """
 
 import re
+import ipaddress
 
 from resources.lib.livestreams import taxonomy
 
 _SLUG_RE = re.compile(r'[^a-z0-9]+')
 
-VALID_PROTOCOLS = ('hls', 'dash', 'mp4', 'rtmp', 'rtsp', 'mjpeg', 'jpeg', 'plugin')
+VALID_PROTOCOLS = ('hls', 'dash', 'mp4', 'rtmp', 'rtsp', 'mjpeg', 'jpeg', 'plugin', 'udp', 'rtp')
 VALID_QUALITY = ('uhd', 'hd', 'sd', 'unknown')
 VALID_RELIABILITY = ('high', 'medium', 'low', 'unknown')
 # Quellen, deren Adresse erst beim Abspielen mit frischer Sitzung entsteht.
@@ -49,7 +50,7 @@ def slugify(value):
 
 # Erlaubte URL-Schemata fuer Stream-Quellen. Alles andere (javascript:, data:,
 # file: ...) wird als ungueltig verworfen (fail-closed).
-_ALLOWED_SCHEMES = ('http', 'https', 'rtsp', 'rtmp', 'rtmpe', 'plugin')
+_ALLOWED_SCHEMES = ('http', 'https', 'rtsp', 'rtmp', 'rtmpe', 'plugin', 'udp', 'rtp')
 
 
 def is_valid_stream_url(url):
@@ -63,6 +64,12 @@ def is_valid_stream_url(url):
         return False
     if parsed.scheme not in _ALLOWED_SCHEMES:
         return False
+    if parsed.scheme in ('udp', 'rtp'):
+        try:
+            return bool(ipaddress.ip_address(parsed.hostname).is_multicast
+                        and parsed.port and 1 <= parsed.port <= 65535)
+        except (ValueError, TypeError):
+            return False
     # plugin:// braucht einen Addon-Host, alles andere einen Netzhost.
     if parsed.scheme == 'plugin':
         return bool(parsed.netloc)
@@ -116,6 +123,8 @@ def normalize_source(raw):
         # Aus der URL ableiten, sonst als Fehler behandeln.
         if url.startswith('plugin://'):
             protocol = 'plugin'
+        elif url.startswith(('udp://', 'rtp://')):
+            protocol = url.split(':', 1)[0]
         elif '.m3u8' in url:
             protocol = 'hls'
         elif '.mpd' in url:
@@ -154,6 +163,7 @@ def normalize_source(raw):
         'drm': drm,
         'login_required': login_required,
         'geo_restricted': bool(raw.get('geo_restricted', False)),
+        'network_required': 'magentatv' if raw.get('network_required') == 'magentatv' else '',
         'rights_evidence_url': rights_evidence_url,
         'rights_status': compute_rights_status(official, rights_evidence_url, drm, login_required),
         'last_verified_at': (raw.get('last_verified_at') or '').strip(),
@@ -201,6 +211,7 @@ def normalize_channel(raw):
         'name': name,
         'section': section,
         'country': country,
+        'countries': list(dict.fromkeys([country] + [str(c).lower() for c in raw.get('countries', []) if c])),
         'region': (raw.get('region') or '').strip().lower(),
         'city': (raw.get('city') or '').strip(),
         'language': languages,
@@ -211,6 +222,7 @@ def normalize_channel(raw):
         'canonical_url': (raw.get('canonical_url') or '').strip(),
         'logo': (raw.get('logo') or '').strip(),
         'epg_id': (raw.get('epg_id') or '').strip(),
+        'sport': [str(kind) for kind in raw.get('sport', []) if kind],
         'last_verified_at': (raw.get('last_verified_at') or '').strip(),
         'sources': sources,
     }

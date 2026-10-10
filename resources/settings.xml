@@ -363,6 +363,70 @@
 			</group>
 		</category>
 		<category id="languages" label="32060" help="">
+			<group id="langProfiles" label="32313">
+				<setting id="langProfileEditor" type="action" label="32314">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=themeLanguageSetup)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+			</group>
+			<group id="langProfile_movies" label="32300">
+				<setting id="langProfile_movies_enabled" type="boolean" label="32312">
+					<level>0</level><default>true</default><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_movies_editor" type="action" label="32311">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=themeLanguageSetup&amp;theme=movies)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="langProfile_movies_custom" type="boolean" label="32311">
+					<level>0</level><default>false</default><visible>false</visible><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_movies_audio" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+				<setting id="langProfile_movies_subs" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+			</group>
+			<group id="langProfile_docs" label="32301">
+				<setting id="langProfile_docs_enabled" type="boolean" label="32312">
+					<level>0</level><default>true</default><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_docs_editor" type="action" label="32311">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=themeLanguageSetup&amp;theme=docs)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="langProfile_docs_custom" type="boolean" label="32311">
+					<level>0</level><default>false</default><visible>false</visible><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_docs_audio" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+				<setting id="langProfile_docs_subs" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+			</group>
+			<group id="langProfile_anime" label="32302">
+				<setting id="langProfile_anime_enabled" type="boolean" label="32312">
+					<level>0</level><default>true</default><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_anime_editor" type="action" label="32311">
+					<level>0</level>
+					<data>RunPlugin(plugin://plugin.video.baka/?function=themeLanguageSetup&amp;theme=anime)</data>
+					<control type="button" format="action"><close>true</close></control>
+				</setting>
+				<setting id="langProfile_anime_custom" type="boolean" label="32311">
+					<level>0</level><default>false</default><visible>false</visible><control type="toggle"/>
+				</setting>
+				<setting id="langProfile_anime_audio" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+				<setting id="langProfile_anime_subs" type="string" label="32311">
+					<level>0</level><default></default><visible>false</visible><control type="edit" format="string"/>
+				</setting>
+			</group>
 			<group id="langAudio" label="32061">
 				<setting id="langSetup" type="action" label="32075" help="32077">
 					<level>0</level>

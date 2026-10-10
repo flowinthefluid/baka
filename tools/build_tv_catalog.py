@@ -84,8 +84,8 @@ EXTRA = (
 )
 
 
-def _fetch(url, limit=65536, timeout=15):
-    request = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
+def _fetch(url, limit=65536, timeout=15, headers=None):
+    request = urllib.request.Request(url, headers=dict({'User-Agent': USER_AGENT}, **(headers or {})))
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             return response.status, response.read(limit)

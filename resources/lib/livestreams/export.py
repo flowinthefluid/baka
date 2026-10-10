@@ -66,6 +66,7 @@ def write_guide():
         return 0
     visible_ids = set()
     for channel in catalog.visible_channels():
+        visible_ids.update(identifier for identifier in channel.get('epg_ids', []) if identifier)
         visible_ids.add(channel.get('epg_id') or channel['id'])
     window = cConfig().getSettingInt(_SETTING_EPG_WINDOW, 6)
     return epg.build_guide(urls, visible_ids, guide_path(), window_hours=window)

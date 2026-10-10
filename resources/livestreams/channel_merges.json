@@ -1,0 +1,72 @@
+{
+ "approved": [
+  {
+   "name": "BR",
+   "primary_label": "BR Nord",
+   "primary": "gxs:tv:de:br-fernsehen",
+   "members": [
+    "gxs:tv:de:br-fernsehen",
+    "gxs:tv:de:br-fernsehen-s-d"
+   ]
+  },
+  {
+   "name": "NDR",
+   "primary_label": "NDR Hamburg",
+   "primary": "gxs:tv:de:ndr-fernsehen",
+   "members": [
+    "gxs:tv:at:ndr-fernsehen-international",
+    "gxs:tv:ch:ndr-fernsehen-international",
+    "gxs:tv:de:ndr-fernsehen",
+    "gxs:tv:de:ndr-fernsehen-mecklenburg-vorpommern",
+    "gxs:tv:de:ndr-fernsehen-niedersachsen",
+    "gxs:tv:de:ndr-fernsehen-schleswig-holstein"
+   ]
+  },
+  {
+   "name": "MDR",
+   "primary_label": "MDR Sachsen-Anhalt",
+   "primary": "gxs:tv:de:mdr-fernsehen-sachsen-anhalt",
+   "members": [
+    "gxs:tv:de:mdr-fernsehen",
+    "gxs:tv:de:mdr-fernsehen-sachsen-anhalt"
+   ]
+  },
+  {
+   "name": "rbb",
+   "primary_label": "rbb Berlin",
+   "primary": "gxs:tv:de:rbb-fernsehen-berlin",
+   "members": [
+    "gxs:tv:de:rbb-fernsehen-berlin",
+    "gxs:tv:de:rbb-fernsehen-brandenburg"
+   ]
+  },
+  {
+   "name": "SWR",
+   "primary_label": "SWR Baden-Württemberg",
+   "primary": "gxs:tv:de:swr-fernsehen-baden-w-rttemberg",
+   "members": [
+    "gxs:tv:de:swr-fernsehen-baden-w-rttemberg",
+    "gxs:tv:de:swr-fernsehen-rheinland-pfalz"
+   ]
+  },
+  {
+   "name": "WDR",
+   "primary_label": "WDR Köln",
+   "primary": "gxs:tv:de:wdr-fernsehen",
+   "members": [
+    "gxs:tv:de:wdr-fernsehen",
+    "gxs:tv:de:wdr-fernsehen-aachen",
+    "gxs:tv:de:wdr-fernsehen-bielefeld",
+    "gxs:tv:de:wdr-fernsehen-bonn",
+    "gxs:tv:de:wdr-fernsehen-dortmund",
+    "gxs:tv:de:wdr-fernsehen-duisburg",
+    "gxs:tv:de:wdr-fernsehen-d-sseldorf",
+    "gxs:tv:de:wdr-fernsehen-essen",
+    "gxs:tv:de:wdr-fernsehen-m-nster",
+    "gxs:tv:de:wdr-fernsehen-siegen",
+    "gxs:tv:de:wdr-fernsehen-wuppertal"
+   ]
+  }
+ ],
+ "note": "User approved six regional groups, with MDR Sachsen-Anhalt as primary. Regions stay in source information."
+}

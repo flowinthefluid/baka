@@ -1,0 +1,3256 @@
+{
+  "version": 1,
+  "source_url": "https://db.iptv.blog/multicastadressliste",
+  "retrieved_at": "2026-10-10",
+  "note": "Inactive: user has no compatible MagentaTV multicast connection. Addresses checked against upstream catalogue; playback not verified.",
+  "channels": [
+    {
+      "id": "gxs:tv:de:magentatv-70",
+      "name": "NITRO (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "sports",
+        "series",
+        "movies"
+      ],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-70",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6991/invert_h32_3e55a412683a498ae7e19077ea81b564bb1b271b.png",
+      "epg_id": "RTLNitro.de",
+      "sources": [
+        {
+          "source_id": "magentatv-78",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.143:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-12",
+      "name": "3sat (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-12",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6887/invert_h32_f0fc63107fddc5c72d70a64f90f9672710e3a3d9.png",
+      "epg_id": "3sat.de",
+      "sources": [
+        {
+          "source_id": "magentatv-23",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.2:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-24",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.2:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-425",
+      "name": "a.tv (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-425",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7483/invert_h32_ecd02c711e2a96d79702ef779035c9b03ecb5811.png",
+      "epg_id": "a.tv.de",
+      "sources": [
+        {
+          "source_id": "magentatv-260",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.4:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-450",
+      "name": "ALEX Berlin (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-450",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7514/invert_h32_029de89eb87aea2d6ff51b225067bab393112d51.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-275",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.197:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-426",
+      "name": "allgäu.tv (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-426",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7485/invert_h32_d37488ac6d2572b3cda8b5abc35f2ef632f46d8d.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-261",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.6:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-80",
+      "name": "ARD-alpha (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-80",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7017/invert_h32_4f1286373cd3362649d2e4ae1692ab8a360bf773.png",
+      "epg_id": "ARD-alpha.de",
+      "sources": [
+        {
+          "source_id": "magentatv-90",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.9:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-57",
+      "name": "ARTE (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-57",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6960/invert_h32_a94bb4917f279b02cb739e788c18f38a009f95a0.png",
+      "epg_id": "ARTE.de",
+      "sources": [
+        {
+          "source_id": "magentatv-62",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.10:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-63",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.10:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-400",
+      "name": "Baden TV (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-400",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7473/invert_h32_6b344a2cb60a4ab0c6262c5c8242c830d904971b.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-446",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.35:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-401",
+      "name": "Baden TV Süd (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-401",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7475/invert_h32_35e2e1b57ba6a5f1ef6237c9a5e588e78b937284.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-447",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.50:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-427",
+      "name": "BR Fernsehen Nord (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-427",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9000/invert_h32_693dd457dbe93d68705a05c3fb6069178a314d41.png",
+      "epg_id": "nord.bfs.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-262",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.25:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-21",
+      "name": "BR Fernsehen Süd (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-21",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8988/invert_h32_203c9e34b509b9a484eea386db01f28eb676e396.png",
+      "epg_id": "BR.de",
+      "sources": [
+        {
+          "source_id": "magentatv-36",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.26:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-37",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.26:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-535",
+      "name": "Chemnitz Fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-535",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7600/invert_h32_5375f324b7ffcb882061a48771888ef0f6c74e73.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-312",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.33:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-1",
+      "name": "Das Erste (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-1",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8986/invert_h32_7296be216971cbb439b5b3df7d861d2a074c6d72.png",
+      "epg_id": "ARD.de",
+      "sources": [
+        {
+          "source_id": "magentatv-1",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.35:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-2",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.35:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-536",
+      "name": "Dresden Fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-536",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7602/invert_h32_5498e02c677ec9cb9896e8cd55d0e6a63fa8910f.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-313",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.34:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-429",
+      "name": "Franken Fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-429",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7491/invert_h32_4da0e291ad477a84f868781751e89e3491c1f9b2.png",
+      "epg_id": "FrankenTV.de",
+      "sources": [
+        {
+          "source_id": "magentatv-264",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.64:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-25",
+      "name": "hr-fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-25",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8990/invert_h32_a4ce303342164a3355661c9b4013085c700012ef.png",
+      "epg_id": "HR.de",
+      "sources": [
+        {
+          "source_id": "magentatv-38",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.71:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-39",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.71:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-7",
+      "name": "Kabel Eins (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-7",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6873/invert_h32_e92cc62717350cd0378f1191c21a3512362c65a1.png",
+      "epg_id": "Kabel.de",
+      "sources": [
+        {
+          "source_id": "magentatv-13",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.82:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-89",
+      "name": "Kabel Eins Doku (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-89",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7033/invert_h32_ca3279d86270655d49eb50a361e1dcb4564bf39e.png",
+      "epg_id": "KabelEinsDoku.de",
+      "sources": [
+        {
+          "source_id": "magentatv-95",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.2:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-10",
+      "name": "KiKA (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-10",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6882/invert_h32_7d9a501ddc07382fcfdbb0c0797916ba4e78cacd.png",
+      "epg_id": "Kika.de",
+      "sources": [
+        {
+          "source_id": "magentatv-19",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.85:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-20",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.85:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-402",
+      "name": "L-TV (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-402",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/10410/invert_h32_3fa3bef4ba5fdf86b00da59bef918f3a7f94557b.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-445",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.8:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-542",
+      "name": "Leipzig Fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-542",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7606/invert_h32_8755b09d6bda3c93b0f2d453cedd0a01372982d3.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-314",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.42:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-27",
+      "name": "MDR-Fernsehen Sachsen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-27",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6911/invert_h32_8e11c0abde6c90a68507070c73b443401a24fcff.png",
+      "epg_id": "mdrhd.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-40",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.93:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-41",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.93:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-564",
+      "name": "MDR-Fernsehen Sachsen-Anhalt (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-564",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6911/invert_h32_8e11c0abde6c90a68507070c73b443401a24fcff.png",
+      "epg_id": "MDRS-Anhalt.de",
+      "sources": [
+        {
+          "source_id": "magentatv-316",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.94:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-587",
+      "name": "MDR-Fernsehen Thüringen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-587",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6911/invert_h32_8e11c0abde6c90a68507070c73b443401a24fcff.png",
+      "epg_id": "mdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-318",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.95:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-433",
+      "name": "münchen.tv (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-433",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7497/invert_h32_0c7f41025f6eb921088338aaca24116787652f0c.png",
+      "epg_id": "MunchenTV.de",
+      "sources": [
+        {
+          "source_id": "magentatv-267",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.100:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-466",
+      "name": "NDR Fernsehen Hamburg (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-466",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9032/invert_h32_877b5f560ffa579819efe966537798ae60bdfdac.png",
+      "epg_id": "ndr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-282",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.105:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-476",
+      "name": "NDR Fernsehen Mecklenburg-Vorpommern (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-476",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9036/invert_h32_e22dabca78105a2706689399dcc1d0f0d3fb3b0d.png",
+      "epg_id": "mv.ndr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-289",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.106:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-29",
+      "name": "NDR Fernsehen Niedersachsen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-29",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9030/invert_h32_27d835653792dd637ec31f9178d8eddf211c5363.png",
+      "epg_id": "ndr.de",
+      "sources": [
+        {
+          "source_id": "magentatv-42",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.104:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-43",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.104:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-467",
+      "name": "NDR Fernsehen Schleswig-Holstein (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-467",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9034/invert_h32_38292d4188176354d2066b065343f59a9bece06d.png",
+      "epg_id": "sh.ndr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-283",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.107:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-428",
+      "name": "NIEDERBAYERN TV Deggendorf - Straubing (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-428",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7489/invert_h32_54473a78213a3e6d3c105a071cda873d9e90253e.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-263",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.47:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-431",
+      "name": "NIEDERBAYERN TV Landshut (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-431",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7489/invert_h32_54473a78213a3e6d3c105a071cda873d9e90253e.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-266",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.76:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-438",
+      "name": "NIEDERBAYERN TV Passau (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-438",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7489/invert_h32_54473a78213a3e6d3c105a071cda873d9e90253e.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-271",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.213:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-14",
+      "name": "ntv (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-14",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6892/invert_h32_1c3073dd69376d57149afdb1791c2576724000f2.png",
+      "epg_id": "ntv.de",
+      "sources": [
+        {
+          "source_id": "magentatv-27",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.111:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-434",
+      "name": "Oberpfalz TV (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-434",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7499/invert_h32_7811d290fdadfbcaff34a4286d04ce08646ce231.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-268",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.113:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-515",
+      "name": "OK Weinstraße (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-515",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7587/invert_h32_40ecd27802a1278e73a56d95d6031744ff5c17c5.png",
+      "epg_id": "ok-weinstrasse.de",
+      "sources": [
+        {
+          "source_id": "magentatv-306",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.40:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-512",
+      "name": "OK4 (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-512",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7583/invert_h32_e315a9db459bac39d4da9afe51d562dfe79aaa26.png",
+      "epg_id": "ok4.tv",
+      "sources": [
+        {
+          "source_id": "magentatv-304",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.41:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-513",
+      "name": "OK54 Trier (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-513",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7585/invert_h32_a30adbed633d59fea64013acc4c468cde28315d0.png",
+      "epg_id": "ok54.de",
+      "sources": [
+        {
+          "source_id": "magentatv-305",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.31:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-518",
+      "name": "OK:TV Mainz (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-518",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8850/invert_h32_2da6c5a6ef828f652704db4642b4a6c27230a3f2.png",
+      "epg_id": "oktv-mainz.de",
+      "sources": [
+        {
+          "source_id": "magentatv-308",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.39:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-58",
+      "name": "ONE (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-58",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6962/invert_h32_70b3ed315768d8799f8577aad1003e4b2758b197.png",
+      "epg_id": "One.de",
+      "sources": [
+        {
+          "source_id": "magentatv-64",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.49:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-65",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.49:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-15",
+      "name": "phoenix (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-15",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8804/invert_h32_fa100453c168d165e7ac472273caab7486f948f3.png",
+      "epg_id": "phoenix.de",
+      "sources": [
+        {
+          "source_id": "magentatv-29",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.116:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-30",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.116:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-5",
+      "name": "ProSieben (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-5",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6867/invert_h32_a7f56de9d6b8af8708bda4a48349ab6a3f713ecd.png",
+      "epg_id": "Pro7.de",
+      "sources": [
+        {
+          "source_id": "magentatv-10",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.120:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-69",
+      "name": "ProSieben MAXX (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-69",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6988/invert_h32_8bbd8b6505244eadf79acc39552459c44c052ffa.png",
+      "epg_id": "ProSiebenMaxx.de",
+      "sources": [
+        {
+          "source_id": "magentatv-76",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.122:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-30",
+      "name": "Radio Bremen TV (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-30",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8812/invert_h32_350a2694ba917f0413ece76ce84fbfa51c529196.png",
+      "epg_id": "RadioBremen.de",
+      "sources": [
+        {
+          "source_id": "magentatv-45",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.125:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-44",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.125:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-31",
+      "name": "rbb fernsehen Berlin (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-31",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8994/invert_h32_3e775b623a178c688868bc217eae9b0468da7edd.png",
+      "epg_id": "rbbBerlin.de",
+      "sources": [
+        {
+          "source_id": "magentatv-46",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.129:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-47",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.129:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-457",
+      "name": "rbb fernsehen Brandenburg (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-457",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9002/invert_h32_a29a7c426467de33f9a4cae155a5f108baeea588.png",
+      "epg_id": "rbbbra.rbb-online.de",
+      "sources": [
+        {
+          "source_id": "magentatv-278",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.130:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-403",
+      "name": "Regio TV (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-403",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7479/invert_h32_180dccef4e255e11739783c60d0288cfb9a212c7.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-258",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.10:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-435",
+      "name": "RFO (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-435",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7501/invert_h32_098bc21bca807e35fc390c731a05fdef04384272.png",
+      "epg_id": "Oberbayern.de",
+      "sources": [
+        {
+          "source_id": "magentatv-269",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.132:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-517",
+      "name": "rheinlOKal (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-517",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9823/invert_h32_a2939ef2541b92ee8800dfc39eb6406ca727b5aa.png",
+      "epg_id": "oktv-lu.de",
+      "sources": [
+        {
+          "source_id": "magentatv-307",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.32:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-3",
+      "name": "RTL (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-3",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6861/invert_h32_3f21af88cf184a45ff4c54be37053ddd678e2456.png",
+      "epg_id": "RTL.de",
+      "sources": [
+        {
+          "source_id": "magentatv-6",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.135:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-436",
+      "name": "RTL Bayern (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-436",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8012/invert_h32_2ea855c25865578dcb4e07c95a941e0c8eacd419.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-953",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.39:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-461",
+      "name": "RTL Bremen & Niedersachsen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-461",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7522/invert_h32_66b46a8a0a0e401556b93ef948b3e6d35f4983e8.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-279",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.137:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-468",
+      "name": "RTL Hamburg & Schleswig-Holstein (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-468",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7522/invert_h32_66b46a8a0a0e401556b93ef948b3e6d35f4983e8.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-284",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.139:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-474",
+      "name": "RTL Hessen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-474",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7544/invert_h32_26e37fcb6e6c643894ac842786c46751d6d00259.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-288",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.138:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-493",
+      "name": "RTL Nordrhein-Westfalen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-493",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7555/invert_h32_8582a2d3f54d5b7e40fbb9cd0fb86be651ee4fc2.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-290",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.142:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-406",
+      "name": "RTL Rhein-Neckar (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-406",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8012/invert_h32_2ea855c25865578dcb4e07c95a941e0c8eacd419.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-952",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.48:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-71",
+      "name": "RTLup (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-71",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6994/invert_h32_f0eab07df247d9f64761c2d9f6e12d244d5ed0b5.png",
+      "epg_id": "RTLPlus.de",
+      "sources": [
+        {
+          "source_id": "magentatv-79",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.240:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-8",
+      "name": "RTLZWEI (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-8",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6876/invert_h32_c2f437c77a06daffbcaa14f5caed1b301abda6b7.png",
+      "epg_id": "RTL2.de",
+      "sources": [
+        {
+          "source_id": "magentatv-16",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.140:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-4",
+      "name": "SAT.1 (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-4",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6864/invert_h32_efd5a2c8992cd87d3fcc83b5b2399d12971bf89f.png",
+      "epg_id": "Sat1.de",
+      "sources": [
+        {
+          "source_id": "magentatv-8",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.146:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-437",
+      "name": "SAT.1 Bayern (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-437",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7503/invert_h32_2ba4637e3624ed8c4ca4ae18c4bbe6900b2443b0.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-270",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.147:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-73",
+      "name": "SAT.1 GOLD (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-73",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6999/invert_h32_c4df738dfcdc4307911328c1368b717428f234d8.png",
+      "epg_id": "Sat1Gold.de",
+      "sources": [
+        {
+          "source_id": "magentatv-80",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.149:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-469",
+      "name": "SAT.1 Hamburg und Schleswig-Holstein (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-469",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7537/invert_h32_cedf8f2e1731769ec9d0beb9b90261c695553c99.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-285",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.151:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-462",
+      "name": "SAT.1 Niedersachsen und Bremen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-462",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7525/invert_h32_173ffdfde86e3dc169175f29d317d6649adfb36e.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-280",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.152:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-494",
+      "name": "SAT.1 Nordrhein-Westfalen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-494",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7558/invert_h32_890482e516f4d043b0efb90ff6596ddbe0a3f61a.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-291",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.153:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-522",
+      "name": "SAT.1 Rheinland-Pfalz und Hessen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-522",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7593/invert_h32_942884ff8261358eab7e2916cf2e7f15a2393e4a.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-309",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.154:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-75",
+      "name": "sixx (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-75",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7004/invert_h32_2dc9daa2cdf850169e75d472bd42362f60a0cd7f.png",
+      "epg_id": "Sixx.de",
+      "sources": [
+        {
+          "source_id": "magentatv-84",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.157:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-36",
+      "name": "SR Fernsehen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-36",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8996/invert_h32_9b407c06cb93813dcc59ea3252f86df61e6c6c91.png",
+      "epg_id": "SRFernsehen.de",
+      "sources": [
+        {
+          "source_id": "magentatv-48",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.200:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-49",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.200:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-495",
+      "name": "Studio 47 (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-495",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9827/invert_h32_f093a4773b150548b6985b2a7ea1a26276c1ba37.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-292",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.36:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-9",
+      "name": "Super RTL (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-9",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6879/invert_h32_d83d20be89d5f6899d8885b944b109928f7a3171.png",
+      "epg_id": "SuperRTL.de",
+      "sources": [
+        {
+          "source_id": "magentatv-18",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.201:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-37",
+      "name": "SWR Fernsehen BW (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-37",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6921/invert_h32_033802069c0c3086585d215e0592501669f15f1c.png",
+      "epg_id": "SWR.de",
+      "sources": [
+        {
+          "source_id": "magentatv-50",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.202:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-51",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.202:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-38",
+      "name": "SWR Fernsehen RP (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-38",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6921/invert_h32_033802069c0c3086585d215e0592501669f15f1c.png",
+      "epg_id": "SWR-rp.de",
+      "sources": [
+        {
+          "source_id": "magentatv-52",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.203:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-53",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.203:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-82",
+      "name": "tagesschau24 (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-82",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7041/invert_h32_2d0ef79c908ad450db7ddc28eaf7076a02e162af.png",
+      "epg_id": "tagesschau24.de",
+      "sources": [
+        {
+          "source_id": "magentatv-99",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.205:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-100",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.205:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-77",
+      "name": "TOGGO plus (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-77",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7010/invert_h32_35d704a6beeecc53be277ba5e9342ddca6df5e0a.png",
+      "epg_id": "TOGGOplus.de",
+      "sources": [
+        {
+          "source_id": "magentatv-87",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.11.7:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-440",
+      "name": "TV Mainfranken (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-440",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9600/invert_h32_9979b548622f2de7d70b7883e941c17e5099a47a.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-273",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.218:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-439",
+      "name": "TV Oberfranken (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-439",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7508/invert_h32_e8b0f0a9705be7a5bb89e421970c102c4f409f6f.png",
+      "epg_id": "tvo.de",
+      "sources": [
+        {
+          "source_id": "magentatv-272",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.215:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-430",
+      "name": "tv.ingolstadt (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-430",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7493/invert_h32_7336910781a7700f8778e51765c090ec17698c57.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-265",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.75:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-441",
+      "name": "TVA Ostbayern (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-441",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7512/invert_h32_36b4c7bc96decd699383f26e32769d35e262d1df.png",
+      "epg_id": "",
+      "sources": [
+        {
+          "source_id": "magentatv-274",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.219:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-6",
+      "name": "VOX (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-6",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6870/invert_h32_0e5b4d41d518a068a0bef830d64f848b84ac39d1.png",
+      "epg_id": "Vox.de",
+      "sources": [
+        {
+          "source_id": "magentatv-12",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.221:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-78",
+      "name": "VOXup (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-78",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7012/invert_h32_7475b5f5fce6df60756901f94904c42d2675c6d9.png",
+      "epg_id": "VOXup.de",
+      "sources": [
+        {
+          "source_id": "magentatv-443",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.239:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-496",
+      "name": "WDR Fernsehen Aachen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-496",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9010/invert_h32_83c0013fe581c9eb15c1f610dd8f43e39f88bb58.png",
+      "epg_id": "aachen.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-293",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.223:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-497",
+      "name": "WDR Fernsehen Bielefeld (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-497",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9012/invert_h32_f142deb8fd4d577a1c64aba8dc92bea20024d05e.png",
+      "epg_id": "bielefeld.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-294",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.224:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-498",
+      "name": "WDR Fernsehen Bonn (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-498",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9014/invert_h32_4bbce93a68b0525df00131fb43acdcef6f7e0209.png",
+      "epg_id": "bonn.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-295",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.225:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-499",
+      "name": "WDR Fernsehen Dortmund (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-499",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9016/invert_h32_4405152e684cfc067d6578dd58e8d64118f6d31e.png",
+      "epg_id": "dortmund.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-296",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.226:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-500",
+      "name": "WDR Fernsehen Duisburg (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-500",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9018/invert_h32_2e4fc117ffed277624acd08d02740db5a0016a7e.png",
+      "epg_id": "duisburg.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-297",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.227:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-501",
+      "name": "WDR Fernsehen Düsseldorf (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-501",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9020/invert_h32_6a54625a00acda4b3c67f8a10ae12b062de3616d.png",
+      "epg_id": "dusseldorf.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-298",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.228:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-502",
+      "name": "WDR Fernsehen Essen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-502",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9022/invert_h32_69aae4943b5dbcb68fdc470cd1ef5bda7228d2e2.png",
+      "epg_id": "essen.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-299",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.229:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-39",
+      "name": "WDR Fernsehen Köln (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-39",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/8998/invert_h32_a7d865d0ae870eab9c9d52b4a8d85e0b7ea2b651.png",
+      "epg_id": "WDR.de",
+      "sources": [
+        {
+          "source_id": "magentatv-54",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.222:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-55",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.222:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-503",
+      "name": "WDR Fernsehen Münster (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-503",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9024/invert_h32_f71767aac33b0c5502e4605ed5e8c81f8a3abcd1.png",
+      "epg_id": "munster.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-300",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.230:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-504",
+      "name": "WDR Fernsehen Siegen (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-504",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9026/invert_h32_3ff39dd974f69ee524be38e23dbbe66949cf29ed.png",
+      "epg_id": "siegen.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-301",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.231:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-505",
+      "name": "WDR Fernsehen Wuppertal (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-505",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/9028/invert_h32_85cd7ae66546f976653dccd2719d77da13e38fe1.png",
+      "epg_id": "wuppertal.wdr.daserste.de",
+      "sources": [
+        {
+          "source_id": "magentatv-302",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.232:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-2",
+      "name": "ZDF (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-2",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6859/invert_h32_35d71e6d09f3551cb4053da8487b3028cf9339cd.png",
+      "epg_id": "ZDF.de",
+      "sources": [
+        {
+          "source_id": "magentatv-3",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.234:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-4",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.234:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-81",
+      "name": "ZDFinfo (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-81",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/7019/invert_h32_60641d1e04421f17dd4369382a389b0d7599b736.png",
+      "epg_id": "ZDFinfo.de",
+      "sources": [
+        {
+          "source_id": "magentatv-102",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.237:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-103",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.237:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    },
+    {
+      "id": "gxs:tv:de:magentatv-17",
+      "name": "ZDFneo (MagentaTV)",
+      "section": "tv",
+      "country": "de",
+      "language": [
+        "de"
+      ],
+      "genre": [],
+      "nsfw": false,
+      "publisher": "MagentaTV Multicast",
+      "canonical_url": "https://db.iptv.blog/multicastadressliste#channel-17",
+      "logo": "https://db.iptv.blog/uploads/image_file/image/6900/invert_h32_9f4bcfe2464370144428eeac56b55f1cfb061109.png",
+      "epg_id": "ZDFneo.de",
+      "sources": [
+        {
+          "source_id": "magentatv-33",
+          "display_name": "MagentaTV Multicast HD",
+          "url": "udp://@232.0.20.236:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        },
+        {
+          "source_id": "magentatv-34",
+          "display_name": "MagentaTV Multicast SD",
+          "url": "udp://@232.0.10.236:10000?sources=87.141.215.251",
+          "protocol": "udp",
+          "quality": "sd",
+          "official": true,
+          "rights_evidence_url": "https://db.iptv.blog/multicastadressliste",
+          "login_required": false,
+          "drm": false,
+          "network_required": "magentatv",
+          "active": false,
+          "last_verified_at": "2026-10-10",
+          "verification_method": "upstream_catalogue_only"
+        }
+      ]
+    }
+  ]
+}

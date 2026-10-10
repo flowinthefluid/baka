@@ -339,6 +339,13 @@ def parseUrl():
             from resources.lib import languages
             languages.chooseLanguages()
             return
+        elif sFunction == 'themeLanguageSetup':
+            from resources.lib import languages
+            if params.getValue('theme'):
+                languages.editTheme(params.getValue('theme'))
+            else:
+                languages.chooseThemeLanguages()
+            return
         elif sFunction == 'regionCountries':
             from resources.lib import languages
             languages.editCountries()
@@ -523,6 +530,8 @@ def parseUrl():
 
 
 def showMainMenu(sFunction):
+    from resources.lib import languages
+    languages.ensureSetup(interactive=True)
     ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
     addon_id = cConfig().getAddonInfo('id')
     start_time = time.time()
@@ -556,10 +565,11 @@ def showMainMenu(sFunction):
             'other': 'sources.png',
         }
         categories = oPluginHandler.getContentCategories(aPlugins)
+        categories = [entry for entry in categories if languages.themeEnabled(entry['id'])]
         from resources.lib import languages
         if languages.otherLanguagesMode() == 'hide':
             # Ordner mit ausschliesslich fremdsprachigen Quellen entfallen.
-            categories = [entry for entry in categories if languages.splitSources(entry['plugins'])[0]]
+            categories = [entry for entry in categories if languages.splitSources(entry['plugins'], entry['id'])[0]]
 
         # "Alle" ist ein eigener Hauptordner (alle Anbieter unsortiert),
         # explizit zwischen Globaler Suche und "Filme".
@@ -632,7 +642,7 @@ def showMainMenu(sFunction):
     oGui.setEndOfDirectory()
 
 
-def _addPluginFolders(oGui, plugins):
+def _addPluginFolders(oGui, plugins, category=''):
     for plugin in plugins:
         oGuiElement = cGuiElement()
         oGuiElement.setTitle(plugin['name'])
@@ -640,7 +650,12 @@ def _addPluginFolders(oGui, plugins):
         oGuiElement.setFunction('load')
         if plugin.get('icon'):
             oGuiElement.setThumbnail(plugin['icon'])
-        oGui.addFolder(oGuiElement)
+        params = ParameterHandler()
+        from resources.lib import languages
+        theme = languages.themeForCategory(category)
+        if theme:
+            params.setParam('contentTheme', theme)
+        oGui.addFolder(oGuiElement, params)
 
 
 def showContentCategory(params):
@@ -657,17 +672,21 @@ def showContentCategory(params):
     categoryId = params.getValue('category')
     plugins = cPluginHandler().getPluginsForContentCategory(categoryId)
     oGui = cGui()
-    if not plugins:
+    if not plugins or not languages.themeEnabled(categoryId):
         oGui.showInfo()
+        oGui.setEndOfDirectory()
         return
     ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
     # "Zufaellige Filme/Serien/..." steht oben im passenden Inhaltsordner.
     from resources.lib import randommovies
     if categoryId in randommovies.KINDS:
         oGui.addFolder(*randommovies.menuEntry(categoryId, os.path.join(ART, randommovies.KINDS[categoryId]['art'])))
-    mine, others = languages.splitSources(plugins)
-    _addPluginFolders(oGui, mine)
-    if others and languages.otherLanguagesMode() == 'folder':
+    mine, others = languages.splitSources(plugins, categoryId)
+    if categoryId == 'alle':
+        mine = [plugin for plugin in plugins if languages.sourceVisibleAny(plugin)]
+        others = [plugin for plugin in plugins if plugin not in mine]
+    _addPluginFolders(oGui, mine, categoryId)
+    if others and languages.otherLanguagesMode(categoryId) == 'folder':
         otherParams = ParameterHandler()
         otherParams.setParam('category', categoryId)
         oGuiElement = cGuiElement(cConfig().getLocalizedString(32073), 'sourceCategory', 'showOtherLanguages')
@@ -684,7 +703,10 @@ def showOtherLanguages(params):
     from resources.lib import languages
 
     categoryId = params.getValue('category')
-    mine, others = languages.splitSources(cPluginHandler().getPluginsForContentCategory(categoryId))
+    if not languages.themeEnabled(categoryId) or languages.otherLanguagesMode(categoryId) == 'hide':
+        cGui().setEndOfDirectory()
+        return
+    mine, others = languages.splitSources(cPluginHandler().getPluginsForContentCategory(categoryId), categoryId)
     groups = {}
     for plugin in others:
         groups.setdefault(languages.sourceMainLanguage(plugin), []).append(plugin)
@@ -698,7 +720,7 @@ def showOtherLanguages(params):
             oGui.addFolder(cGuiElement(languages.languageLabel(code), 'sourceCategory', 'showOtherLanguages'),
                            languageParams)
     else:
-        _addPluginFolders(oGui, groups.get(language) or others)
+        _addPluginFolders(oGui, groups.get(language) or others, categoryId)
     oGui.setEndOfDirectory()
 
 
@@ -1592,7 +1614,7 @@ def _collectGlobalSearchResults(searchText, includePlugin):
     # Durchsucht werden nur Quellen in den gewaehlten Sprachen.
     from resources.lib import languages
     searchPlugins = [pluginEntry for pluginEntry in aPlugins
-                     if includePlugin(pluginEntry) and languages.sourceVisible(pluginEntry)]
+                     if includePlugin(pluginEntry) and languages.sourceVisibleAny(pluginEntry)]
 
     dialog = xbmcgui.DialogProgress()
     dialog.create(cConfig().getLocalizedString(30122), cConfig().getLocalizedString(30123))

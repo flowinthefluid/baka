@@ -62,7 +62,7 @@ CATEGORIES = [
 
 def test_pluto_channels_are_built_and_filtered():
     built = dict((c['name'], c) for c in pluto.build_channels(RAW, CATEGORIES, 'de'))
-    assert set(built) == {'Kommissar Rex', 'DAZN Darts x Pluto TV', 'Auto Motor Sport', 'Pluto TV Heiße Nächte'}
+    assert set(built) == {'Kommissar Rex', 'DAZN Darts x Pluto TV', 'NFL Channel', 'Auto Motor Sport', 'Pluto TV Heiße Nächte'}
     assert built['DAZN Darts x Pluto TV']['section'] == 'sports'
     assert built['Auto Motor Sport']['section'] == 'sports'      # Racing ueber den Namen
     assert built['Kommissar Rex']['section'] == 'tv'

@@ -113,7 +113,8 @@ def _shareSettingIds():
             allowed[settingId] = ('hosters', [])
         elif settingId == 'mainMenuOrder':
             allowed[settingId] = ('menu', [])
-        elif settingId in ('regionCountries', 'worldCinemaHidden'):
+        elif settingId in ('regionCountries', 'worldCinemaHidden') or (
+                settingId.startswith('langProfile_') and settingId.endswith(('_audio', '_subs'))):
             allowed[settingId] = ('codes', [])
         elif kind in ('boolean', 'integer') or options:
             allowed[settingId] = (kind, options)

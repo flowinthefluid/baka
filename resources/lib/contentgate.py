@@ -156,13 +156,15 @@ def is_channel_visible(channel):
 
         # 3) Land (falls angegeben).
         country = channel.get('country')
-        if country and not is_country_visible(country):
+        origins = channel.get('countries') or [country]
+        origins = [code for code in origins if is_country_visible(code)]
+        if country and not origins:
             return False
         # 3b) Fernsehen zusaetzlich nach "Meine Laender" (Sprachen & Regionen).
         #     Webcams/Wetter bleiben weltweit, internationale Sender immer.
         if channel.get('section') == 'tv' and country and country.lower() not in ('int', 'xx'):
             from resources.lib import languages
-            if not languages.countryVisible(country):
+            if not any(code.lower() in ('int', 'xx') or languages.countryVisible(code) for code in origins):
                 return False
 
         # 4) Genre: sichtbar, wenn mindestens ein nicht-NSFW-Genre sichtbar ist
