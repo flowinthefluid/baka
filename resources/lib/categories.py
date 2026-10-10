@@ -13,6 +13,8 @@ feste Whitelists geprueft, bevor daraus eine TMDB-Abfrage gebaut wird. Es
 entsteht nie ein Abfrage-String direkt aus einem URL-Parameter (vgl. S8).
 """
 
+import re
+
 from resources.lib.config import cConfig
 from resources.lib.favorites import favoriteActors
 from resources.lib.gui.gui import cGui
@@ -27,7 +29,7 @@ SITE_IDENTIFIER = 'categories'
 # Nur diese Ebenen sind ueber die URL erreichbar.
 LEVELS = ('root', 'indexall', 'genres', 'collections', 'charts', 'decades',
           'keywords', 'peopleMenu', 'people', 'genreList', 'entries',
-          'ratings', 'outsideHollywood', 'companies', 'locations',
+          'ratings', 'outsideHollywood', 'companies', 'locations', 'locationRegion',
           'mediatheken', 'chartList')
 
 MEDIA_TYPES = ('movie', 'tv')
@@ -475,6 +477,7 @@ def showMenu():
         'outsideHollywood': _outsideHollywood,
         'companies': _companies,
         'locations': _locations,
+        'locationRegion': _locations,
         'mediatheken': _mediatheken,
     }[level]
     handler(params)
@@ -827,8 +830,8 @@ def _companies(params):
 
 
 def _locations(params):
-    _addPresetFolders(params, LOCATION_PRESETS)
-    cGui().setEndOfDirectory()
+    from resources.lib import filmregions
+    filmregions.menu(params)
 
 
 def _peopleMenu(params):
@@ -903,7 +906,21 @@ def _addPersonFolder(params, person, title=None):
     params.setParam('catDecade', '')
     params.setParam('catPreset', '')
     params.setParam('page', '1')
-    _addFolder(name, 'categories', params, thumb)
+    element = cGuiElement(name, SITE_IDENTIFIER, 'categories')
+    element.setThumbnail(thumb)
+    if params.getValue('catRole') != 'Directing':
+        from resources.lib.gui.contextElement import cContextElement
+        for action, label in (('hide', 32701), ('boycott', 32702)):
+            context = cContextElement()
+            context.setTitle(_label(label))
+            context.setFile('')
+            context.setFunction('personFilterAction')
+            output = ParameterHandler()
+            output.addParams({'personAction': action, 'personId': personId,
+                              'personName': person.get('name') or name})
+            context.setOutputParameterHandler(output)
+            element.addContextItem(context)
+    cGui().addFolder(element, params)
     return True
 
 
@@ -1050,6 +1067,9 @@ def _people(params):
     people = []
     targetPool = (peopleLimit if sortMode == 'popularity' and groups == {'all'} and peopleLimit
                   else PEOPLE_MAX_LIMIT)
+    from resources.lib import personfilters
+    if role == 'Acting' and personfilters.active():
+        targetPool = PEOPLE_MAX_LIMIT
 
     # Eigene Namen stehen in der gleichen Schauspielerliste, nicht in einem
     # separaten Unterordner. So erscheint ein im Infofenster gespeicherter
@@ -1091,6 +1111,8 @@ def _people(params):
             cGui().setEndOfDirectory(False)
             return
     people = [person for person in people if _personInGroups(person, groups, profiles)]
+    if role == 'Acting':
+        people = personfilters.filterPeople(people)
     if sortMode in ('imdb_best', 'imdb_average'):
         from resources.lib import persondata
         extra = persondata.imdbScores([person.get('id') for person in people], profiles)
@@ -1142,6 +1164,16 @@ def _buildQuery(params):
     # Jahrzehnten.
     presetKey = params.getValue('catPreset') or ''
 
+    if presetKey.startswith(('country:', 'region:')):
+        from resources.lib import filmregions
+        extra = filmregions.query(presetKey)
+        if extra is None:
+            return None, '', page
+        votes = max(0, cConfig().getSettingInt('categoryMinVotes', 0))
+        if votes:
+            extra += '&vote_count.gte=%d' % votes
+        return 'discover/movie', extra, page
+
     if presetKey.startswith('kw:'):
         if presetKey not in {ref for name, ref in KEYWORDS + LOCATION_PRESETS if isinstance(ref, str)}:
             return None, '', page
@@ -1157,6 +1189,12 @@ def _buildQuery(params):
 
     if presetKey in PRESET_QUERIES:
         media, extra = PRESET_QUERIES[presetKey]
+        if presetKey.startswith('location_'):
+            # Country lists must respect the user's setting, including zero.
+            extra = re.sub(r'&?vote_count\.gte=\d+', '', extra)
+            votes = max(0, cConfig().getSettingInt('categoryMinVotes', 0))
+            if votes:
+                extra += '&vote_count.gte=%d' % votes
         return 'discover/%s' % media, extra, page
 
     known = dict((key, (path, extra)) for key, _s, path, extra in CHARTS)

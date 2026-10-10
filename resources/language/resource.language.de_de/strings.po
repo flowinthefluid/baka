@@ -4338,3 +4338,135 @@ msgstr "Lacrosse"
 msgctxt "#32339"
 msgid "Strength sports"
 msgstr "Kraftsport"
+
+msgctxt "#32501"
+msgid "Europe"
+msgstr "Europa"
+
+msgctxt "#32502"
+msgid "Asia"
+msgstr "Asien"
+
+msgctxt "#32503"
+msgid "Africa"
+msgstr "Afrika"
+
+msgctxt "#32504"
+msgid "South America"
+msgstr "Südamerika"
+
+msgctxt "#32505"
+msgid "Caribbean"
+msgstr "Karibik"
+
+msgctxt "#32506"
+msgid "Oceania"
+msgstr "Ozeanien"
+
+msgctxt "#32507"
+msgid "North America"
+msgstr "Nordamerika"
+
+msgctxt "#32508"
+msgid "Other countries and territories"
+msgstr "Weitere Länder und Gebiete"
+
+msgctxt "#32509"
+msgid "All selected countries in this region"
+msgstr "Alle ausgewählten Länder dieser Region"
+
+msgctxt "#32510"
+msgid "Choose film countries"
+msgstr "Filmländer auswählen"
+
+msgctxt "#32511"
+msgid "Show individual countries inside regions"
+msgstr "Einzelne Länder innerhalb der Regionen anzeigen"
+
+msgctxt "#32512"
+msgid "Films by country of origin. The configured minimum votes and ratings apply; filming locations may differ."
+msgstr "Filme nach Herkunftsland. Es gelten deine eingestellten Mindeststimmen und Bewertungen; die Drehorte können abweichen."
+
+msgctxt "#32600"
+msgid "Play episode playlist from first episode"
+msgstr "Folgenliste ab erster Folge abspielen"
+
+msgctxt "#32601"
+msgid "Play episode playlist from here"
+msgstr "Ab hier als Folgenliste abspielen"
+
+msgctxt "#32701"
+msgid "Hide actor"
+msgstr "Ausblenden"
+
+msgctxt "#32702"
+msgid "Boycott actor and their titles"
+msgstr "Boykottieren"
+
+msgctxt "#32703"
+msgid "Exclude actors by citizenship"
+msgstr "Schauspieler nach Staatsangehörigkeit ausblenden"
+
+msgctxt "#32704"
+msgid "Restore hidden actors"
+msgstr "Ausgeblendete Schauspieler wieder anzeigen"
+
+msgctxt "#32705"
+msgid "Remove actor boycotts"
+msgstr "Schauspieler-Boykott aufheben"
+
+msgctxt "#32706"
+msgid "Select actors to restore"
+msgstr "Schauspieler zum Wiederanzeigen auswählen"
+
+msgctxt "#32707"
+msgid "Hide only affects actor lists. Boycott also hides films and series with that actor throughout Baka. Missing cast data is governed by the unknown-data setting."
+msgstr "Ausblenden betrifft nur Schauspielerlisten. Boykottieren blendet auch Filme und Serien mit diesem Darsteller in ganz Baka aus. Bei fehlender Besetzung gilt die Einstellung für unbekannte Produktionsdaten."
+
+msgctxt "#32708"
+msgid "Choose countries or whole regions independently. Uses documented citizenship, not film industry or birthplace. Unknown citizenship stays visible."
+msgstr "Länder oder ganze Regionen unabhängig auswählen. Verwendet dokumentierte Staatsangehörigkeiten, keine Filmbranche oder Geburtsorte. Unbekannte Staatsangehörigkeiten bleiben sichtbar."
+
+msgctxt "#32800"
+msgid "Production filters and boycotts"
+msgstr "Produktionsfilter und Boykott"
+
+msgctxt "#32801"
+msgid "Hide Hollywood throughout Baka"
+msgstr "Hollywood in ganz Baka ausblenden"
+
+msgctxt "#32802"
+msgid "Hide Hollywood in selected sections"
+msgstr "Hollywood in ausgewählten Bereichen ausblenden"
+
+msgctxt "#32803"
+msgid "Hollywood filter strength"
+msgstr "Stärke des Hollywood-Filters"
+
+msgctxt "#32804"
+msgid "Light: direct studio productions"
+msgstr "Leicht: direkte Studioproduktionen"
+
+msgctxt "#32805"
+msgid "Strict: participation and parent companies"
+msgstr "Streng: Beteiligungen und Mutterfirmen"
+
+msgctxt "#32806"
+msgid "Hide titles with unknown data in strict mode or actor boycotts"
+msgstr "Titel mit unbekannten Daten bei strengem Filter oder Schauspieler-Boykott ausblenden"
+
+msgctxt "#32807"
+msgid "Light hides titles when all listed production companies are Hollywood studios. Strict also hides coproductions and known studio subsidiaries. Uses TMDB production and parent-company data, never filming locations. Indirect historical connections may be missing. Actor boycotts use cast data."
+msgstr "Leicht blendet Titel aus, deren aufgeführte Produktionsfirmen ausschließlich Hollywood-Studios sind. Streng erfasst auch Koproduktionen und bekannte Studiotochterfirmen. Verwendet TMDB-Produktionsdaten und Mutterfirmen, niemals Drehorte. Historische indirekte Verbindungen können fehlen. Schauspieler-Boykott verwendet Besetzungsdaten."
+
+msgctxt "#32808"
+msgid "Hidden by your production filter or actor boycott"
+msgstr "Durch deinen Produktionsfilter oder Schauspieler-Boykott ausgeblendet"
+
+msgctxt "#32809"
+msgid "Random titles"
+msgstr "Zufällige Titel"
+
+msgctxt "#32810"
+msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
+msgstr "Filmländer sind optional. Große Länder haben Direktzugriffe; weitere ausgewählte Länder erscheinen innerhalb der Regionen. Keine zusätzlichen Installationsfragen."

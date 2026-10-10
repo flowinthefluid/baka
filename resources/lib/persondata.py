@@ -216,6 +216,46 @@ def filmProfiles(personIds, role='Acting'):
     return result
 
 
+def nationalities(personIds):
+    """Wikidata citizenship (P27), never birthplace or film-production country."""
+    wanted = list(dict.fromkeys(str(value) for value in personIds
+                                if re.fullmatch(r'[1-9]\d{0,9}', str(value))))
+    cache = _loadCache()
+    now = int(time.time())
+    result, missing = {}, []
+    for personId in wanted:
+        entry = cache.get('nationality:' + personId)
+        if isinstance(entry, dict) and now - int(entry.get('ts', 0)) < CACHE_MAX_AGE:
+            result[personId] = entry.get('countries', [])
+        else:
+            missing.append(personId)
+    changed = False
+    for start in range(0, len(missing), BATCH_SIZE):
+        batch = missing[start:start + BATCH_SIZE]
+        query = '''SELECT DISTINCT ?tmdb ?country WHERE {
+          VALUES ?tmdb { %s }
+          ?person wdt:P4985 ?tmdb .
+          OPTIONAL { ?person wdt:P27/wdt:P297 ?country . }
+        }''' % ' '.join('"%s"' % value for value in batch)
+        payload = _request(query) or {}
+        rows = (payload.get('results') or {}).get('bindings')
+        if not isinstance(rows, list):
+            continue
+        found = {value: set() for value in batch}
+        for row in rows:
+            personId = (row.get('tmdb') or {}).get('value')
+            code = (row.get('country') or {}).get('value', '').upper()
+            if personId in found and re.fullmatch('[A-Z]{2}', code):
+                found[personId].add(code)
+        for personId, codes in found.items():
+            result[personId] = sorted(codes)
+            cache['nationality:' + personId] = {'ts': now, 'countries': sorted(codes)}
+            changed = True
+    if changed:
+        _saveCache(cache)
+    return result
+
+
 def summarizeImdb(ratings):
     values = [float(rating) for rating in ratings if rating and 0 < float(rating) <= 10]
     if not values:

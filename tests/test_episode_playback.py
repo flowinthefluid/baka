@@ -38,12 +38,21 @@ def test_episode_directory_uses_start_action_only_when_enabled(monkeypatch, enab
         gui.addFolder(element, params, bIsFolder=True)
     gui.setEndOfDirectory()
     assert len(stored[0]) == 3
-    for index, (url, item, folder) in enumerate(listed):
+    action = dict(parse_qsl(urlsplit(listed[0][0]).query))
+    assert action['episodeStart'] == '1'
+    assert action['episodeAll'] == '1'
+    assert action['episodeIndex'] == '0'
+    assert len(listed) == 4
+    for index, (url, item, folder) in enumerate(listed[1:]):
         query = dict(parse_qsl(urlsplit(url).query))
         original = dict(parse_qsl(urlsplit(stored[0][index]).query))
         assert original['site'] == 'aniworld'
         assert original['episodeIndex'] == str(index)
         assert len(original['watchId']) == 64
+        assert original['playMode'] == 'play'
+        assert original['mediaType'] == 'episode'
+        assert original['MovieTitle'] == 'Episode %d' % (index + 1)
+        assert 'episodeAll=1' in item._context[0][1]
         if enabled:
             assert original['playMode'] == 'play'
             assert original['mediaType'] == 'episode'
@@ -94,7 +103,8 @@ def test_single_episode_queue_is_kept(monkeypatch, tmp_path):
     assert episodequeue.getTargets('f' * 32) == [target]
 
 
-def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch):
+@pytest.mark.parametrize('automatic,explicit', [(True, False), (False, True)])
+def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch, automatic, explicit):
     targets = ['plugin://plugin.video.baka/?episode=%d' % index
                for index in range(4)]
     queued = []
@@ -111,7 +121,7 @@ def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch
     class Params:
         def getValue(self, name):
             return {'episodeStart': '1', 'episodeQueue': 'e' * 32,
-                    'episodeIndex': '2'}.get(name, '')
+                    'episodeIndex': '2', 'episodeAll': '1' if explicit else ''}.get(name, '')
 
     playlist = Playlist()
     monkeypatch.setattr(hoster, 'ParameterHandler', Params)
@@ -120,7 +130,7 @@ def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch
         'play': lambda self, item: starts.append(item)})())
     monkeypatch.setattr(episodequeue, 'getTargets', lambda _key: targets)
     from conftest import set_setting
-    set_setting('autoNextEpisodeEnabled', 'true')
+    set_setting('autoNextEpisodeEnabled', str(automatic).lower())
     try:
         assert hoster.cHosterGui().play() is True
         assert [url for url, _item in queued] == targets[2:]

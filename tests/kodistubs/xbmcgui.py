@@ -23,6 +23,12 @@ class ListItem(object):
         self._path = path
         self._props = {}
         self._art = {}
+        self._context = []
+
+    def addContextMenuItems(self, items, replaceItems=False):
+        if replaceItems:
+            self._context = []
+        self._context.extend(items)
 
     def setProperty(self, k, v):
         self._props[k] = v

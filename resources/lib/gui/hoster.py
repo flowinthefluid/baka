@@ -123,7 +123,9 @@ class cHosterGui:
             firstIndex = int(params.getValue('episodeIndex'))
         except (TypeError, ValueError):
             return False
-        return cls.playQueue(params.getValue('episodeQueue'), firstIndex, params.getValue('manual') == '1')
+        return cls.playQueue(params.getValue('episodeQueue'), firstIndex,
+                             params.getValue('manual') == '1',
+                             everything=params.getValue('episodeAll') == '1')
 
     @classmethod
     def playQueue(cls, queueId, firstIndex, manual=False, everything=False):
@@ -217,6 +219,14 @@ class cHosterGui:
     def play(self, siteResult=False):
         if ParameterHandler().getValue('episodeStart') == '1':
             return self._startEpisodeQueue(ParameterHandler())
+        from resources.lib import productionfilter
+        if not productionfilter.allowed(params=ParameterHandler()):
+            self._playbackHandled = True
+            xbmcgui.Dialog().notification('Baka', cConfig().getLocalizedString(32808))
+            handle = cGui().pluginHandle
+            if handle > 0:
+                xbmcplugin.setResolvedUrl(handle, False, xbmcgui.ListItem())
+            return False
         logger.info('-> [hoster]: attempt to play file')
         data = self._getInfoAndResolve(siteResult)
         if not data:

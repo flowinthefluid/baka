@@ -5,17 +5,8 @@ on:
     branches: [main]
     paths:
       - 'addon.xml'
-      - 'changelog.txt'
-      - 'default.py'
-      - 'baka.py'
-      - 'service.py'
-      - 'pages/**'
       - 'release-inputs/**'
       - 'repository.baka/**'
-      - 'resources/**'
-      - 'sites/**'
-      - 'tools/build_repo.py'
-      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:

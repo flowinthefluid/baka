@@ -350,6 +350,23 @@ def parseUrl():
             from resources.lib import languages
             languages.editCountries()
             return
+        elif sFunction == 'filmLocationCountries':
+            from resources.lib import filmregions
+            filmregions.edit()
+            return
+        elif sFunction == 'productionFilterScopes':
+            from resources.lib import productionfilter
+            productionfilter.editScopes()
+            return
+        elif sFunction in ('actorCountryFilters', 'personFilterAction', 'personFilterManage'):
+            from resources.lib import personfilters
+            if sFunction == 'actorCountryFilters':
+                personfilters.editCountries()
+            elif sFunction == 'personFilterManage':
+                personfilters.manage(params.getValue('personAction'))
+            else:
+                personfilters.action(params)
+            return
         elif sFunction == 'worldCinema':
             from resources.lib import categories
             categories.editWorldCinema()

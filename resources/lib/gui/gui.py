@@ -56,6 +56,19 @@ class cGui:
             return
         if params == '':
             params = ParameterHandler()
+        else:
+            import copy
+            params = copy.deepcopy(params)
+        from resources.lib import productionfilter
+        incoming = ParameterHandler()
+        if not params.getValue('hollywoodScope'):
+            params.setParam('hollywoodScope', productionfilter.scope(
+                params if params.getValue('catLevel') else incoming))
+        if oGuiElement._mediaType in ('movie', 'tvshow', 'season', 'episode'):
+            params.setParam('mediaType', oGuiElement._mediaType)
+        for key in ('filterTmdbID', 'contentTheme'):
+            if not params.getValue(key) and incoming.getValue(key):
+                params.setParam(key, incoming.getValue(key))
         # abort xbmc list creation if user requests abort
         if xbmc.Monitor().abortRequested():
             self.setEndOfDirectory(False)
@@ -66,6 +79,8 @@ class cGui:
                 oGuiElement.getMeta(oGuiElement._mediaType, tmdbID, mode=self.metaMode)
             else:
                 oGuiElement.getMeta(oGuiElement._mediaType, mode=self.metaMode)
+        if not isHoster and not productionfilter.allowed(oGuiElement, params):
+            return False
         # Jede normale Episodenliste erhaelt eine kurzlebige Kennung. Die
         # Liste selbst wird erst bei setEndOfDirectory gespeichert, wenn alle
         # Folgeneintraege bekannt sind. Hoster- und Stream-URLs bleiben dabei
@@ -86,6 +101,11 @@ class cGui:
                 self._episodeQueueKey, {'id': uuid.uuid4().hex, 'targets': []})
             params.setParam('episodeQueue', queue['id'])
             params.setParam('episodeIndex', len(queue['targets']))
+            if not queue['targets']:
+                actionUrl = self._episodeAction(queue['id'], 0)
+                action = xbmcgui.ListItem(label=cConfig().getLocalizedString(32600))
+                action.setProperty('IsPlayable', 'false')
+                xbmcplugin.addDirectoryItem(self.pluginHandle, actionUrl, action, False, 0)
         queueEnabled = trackEpisode and cConfig().getSettingBool('autoNextEpisodeEnabled', False)
         if trackEpisode:
             from resources.lib import epicfavorites
@@ -123,7 +143,11 @@ class cGui:
             sUrl = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), ''))
         contextUrl = sUrl
         if trackEpisode:
-            self._episodeQueues[self._episodeQueueKey]['targets'].append(sUrl)
+            targetParts = urlsplit(sUrl)
+            targetParams = dict(parse_qsl(targetParts.query))
+            targetParams.update(playMode='play', MovieTitle=oGuiElement.getTitle(), mediaType='episode')
+            targetUrl = urlunsplit(targetParts._replace(query=urlencode(targetParams)))
+            self._episodeQueues[self._episodeQueueKey]['targets'].append(targetUrl)
         startEpisodeQueue = (queueEnabled
                              and sUrl.startswith('plugin://plugin.video.baka/'))
         if startEpisodeQueue:
@@ -147,9 +171,19 @@ class cGui:
             bIsFolder = False
         listitem = self.__createContextMenu(oGuiElement, listitem, bIsFolder, contextUrl,
                           sUrl if startEpisodeQueue else '')
+        if trackEpisode:
+            listitem.addContextMenuItems([(cConfig().getLocalizedString(32601),
+                'RunPlugin(%s)' % self._episodeAction(params.getValue('episodeQueue'),
+                                                    params.getValue('episodeIndex')))])
         if not bIsFolder:
             listitem.setProperty('IsPlayable', 'false' if startEpisodeQueue else 'true')
         xbmcplugin.addDirectoryItem(self.pluginHandle, sUrl, listitem, bIsFolder, iTotal)
+
+    def _episodeAction(self, queueId, index):
+        return '%s?%s' % (self.pluginPath, urlencode({
+            'site': 'cHosterGui', 'function': 'play', 'episodeStart': '1',
+            'episodeAll': '1', 'episodeQueue': queueId, 'episodeIndex': index,
+            'mediaType': 'episode'}))
 
     def addNextPage(self, site, function, params='', iTotalPages=None):
         # Vor "Naechste Seite": "Seite X (von Y)"; ein Klick fragt die

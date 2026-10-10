@@ -4339,3 +4339,135 @@ msgstr "Lacrosse"
 msgctxt "#32339"
 msgid "Strength sports"
 msgstr "Strength sports"
+
+msgctxt "#32501"
+msgid "Europe"
+msgstr ""
+
+msgctxt "#32502"
+msgid "Asia"
+msgstr ""
+
+msgctxt "#32503"
+msgid "Africa"
+msgstr ""
+
+msgctxt "#32504"
+msgid "South America"
+msgstr ""
+
+msgctxt "#32505"
+msgid "Caribbean"
+msgstr ""
+
+msgctxt "#32506"
+msgid "Oceania"
+msgstr ""
+
+msgctxt "#32507"
+msgid "North America"
+msgstr ""
+
+msgctxt "#32508"
+msgid "Other countries and territories"
+msgstr ""
+
+msgctxt "#32509"
+msgid "All selected countries in this region"
+msgstr ""
+
+msgctxt "#32510"
+msgid "Choose film countries"
+msgstr ""
+
+msgctxt "#32511"
+msgid "Show individual countries inside regions"
+msgstr ""
+
+msgctxt "#32512"
+msgid "Films by country of origin. The configured minimum votes and ratings apply; filming locations may differ."
+msgstr ""
+
+msgctxt "#32600"
+msgid "Play episode playlist from first episode"
+msgstr ""
+
+msgctxt "#32601"
+msgid "Play episode playlist from here"
+msgstr ""
+
+msgctxt "#32701"
+msgid "Hide actor"
+msgstr ""
+
+msgctxt "#32702"
+msgid "Boycott actor and their titles"
+msgstr ""
+
+msgctxt "#32703"
+msgid "Exclude actors by citizenship"
+msgstr ""
+
+msgctxt "#32704"
+msgid "Restore hidden actors"
+msgstr ""
+
+msgctxt "#32705"
+msgid "Remove actor boycotts"
+msgstr ""
+
+msgctxt "#32706"
+msgid "Select actors to restore"
+msgstr ""
+
+msgctxt "#32707"
+msgid "Hide only affects actor lists. Boycott also hides films and series with that actor throughout Baka. Missing cast data is governed by the unknown-data setting."
+msgstr ""
+
+msgctxt "#32708"
+msgid "Choose countries or whole regions independently. Uses documented citizenship, not film industry or birthplace. Unknown citizenship stays visible."
+msgstr ""
+
+msgctxt "#32800"
+msgid "Production filters and boycotts"
+msgstr ""
+
+msgctxt "#32801"
+msgid "Hide Hollywood throughout Baka"
+msgstr ""
+
+msgctxt "#32802"
+msgid "Hide Hollywood in selected sections"
+msgstr ""
+
+msgctxt "#32803"
+msgid "Hollywood filter strength"
+msgstr ""
+
+msgctxt "#32804"
+msgid "Light: direct studio productions"
+msgstr ""
+
+msgctxt "#32805"
+msgid "Strict: participation and parent companies"
+msgstr ""
+
+msgctxt "#32806"
+msgid "Hide titles with unknown data in strict mode or actor boycotts"
+msgstr ""
+
+msgctxt "#32807"
+msgid "Light hides titles when all listed production companies are Hollywood studios. Strict also hides coproductions and known studio subsidiaries. Uses TMDB production and parent-company data, never filming locations. Indirect historical connections may be missing. Actor boycotts use cast data."
+msgstr ""
+
+msgctxt "#32808"
+msgid "Hidden by your production filter or actor boycott"
+msgstr ""
+
+msgctxt "#32809"
+msgid "Random titles"
+msgstr ""
+
+msgctxt "#32810"
+msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
+msgstr ""

@@ -1275,6 +1275,15 @@
 				</setting>
 			</group>
 		</category>
+		<category id="productionFilters" label="32800">
+			<group id="productionFilterSettings" label="32800">
+				<setting id="hollywoodGlobal" type="boolean" label="32801" help="32807"><level>0</level><default>false</default><control type="toggle"/></setting>
+				<setting id="hollywoodScopesEdit" type="action" label="32802" help="32807"><level>0</level><data>RunPlugin(plugin://plugin.video.baka/?function=productionFilterScopes)</data><control type="button" format="action"><close>true</close></control></setting>
+				<setting id="hollywoodScopes" type="string" label="32802"><level>0</level><default></default><visible>false</visible><constraints><allowempty>true</allowempty></constraints><control type="edit" format="string"/></setting>
+				<setting id="hollywoodMode" type="string" label="32803" help="32807"><level>0</level><default>light</default><constraints><allowempty>true</allowempty><options><option label="32804">light</option><option label="32805">strict</option></options></constraints><control type="spinner" format="string"/></setting>
+				<setting id="productionUnknownHide" type="boolean" label="32806" help="32807"><level>0</level><default>true</default><control type="toggle"/></setting>
+			</group>
+		</category>
 		<category id="categories" label="30507">
 			<group id="categorySelection" label="30507">
 				<setting id="showCategories" type="boolean" label="30824">
@@ -1320,6 +1329,11 @@
 					<control type="edit" format="string"/>
 				</setting>
 			</group>
+			<group id="filmCountrySelection" label="32510">
+				<setting id="filmLocationCountriesEdit" type="action" label="32510" help="32810"><level>0</level><data>RunPlugin(plugin://plugin.video.baka/?function=filmLocationCountries)</data><control type="button" format="action"><close>true</close></control></setting>
+				<setting id="filmLocationCountries" type="string" label="32510"><level>0</level><default></default><visible>false</visible><constraints><allowempty>true</allowempty></constraints><control type="edit" format="string"/></setting>
+				<setting id="filmLocationIndividualCountries" type="boolean" label="32511"><level>0</level><default>true</default><control type="toggle"/></setting>
+			</group>
 		</category>
 		<category id="actors" label="31600">
 			<group id="actorLists" label="31600">
@@ -1364,6 +1378,14 @@
 					<constraints><allowempty>true</allowempty></constraints>
 					<control type="edit" format="string"><heading>30871</heading></control>
 				</setting>
+			</group>
+			<group id="actorVisibility" label="32703">
+				<setting id="actorCountryFilters" type="action" label="32703" help="32708"><level>0</level><data>RunPlugin(plugin://plugin.video.baka/?function=actorCountryFilters)</data><control type="button" format="action"><close>true</close></control></setting>
+				<setting id="actorExcludedCountries" type="string" label="32703"><level>0</level><default></default><visible>false</visible><constraints><allowempty>true</allowempty></constraints><control type="edit" format="string"/></setting>
+				<setting id="hiddenActors" type="string" label="32704"><level>0</level><default>{}</default><visible>false</visible><constraints><allowempty>true</allowempty></constraints><control type="edit" format="string"/></setting>
+				<setting id="boycottedActors" type="string" label="32705"><level>0</level><default>{}</default><visible>false</visible><constraints><allowempty>true</allowempty></constraints><control type="edit" format="string"/></setting>
+				<setting id="hiddenActorsEdit" type="action" label="32704" help="32707"><level>0</level><data>RunPlugin(plugin://plugin.video.baka/?function=personFilterManage&amp;personAction=hide)</data><control type="button" format="action"><close>true</close></control></setting>
+				<setting id="boycottedActorsEdit" type="action" label="32705" help="32707"><level>0</level><data>RunPlugin(plugin://plugin.video.baka/?function=personFilterManage&amp;personAction=boycott)</data><control type="button" format="action"><close>true</close></control></setting>
 			</group>
 		</category>
 		<category id="directors" label="31619">
