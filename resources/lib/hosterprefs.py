@@ -251,8 +251,7 @@ def seenNames(site=None):
 # --------------------------------------------------------------------------
 
 def stickyEnabled():
-    return (cConfig().getSettingBool('autoNextEpisodeEnabled', False)
-            and cConfig().getSetting(STICKY_SETTING, 'ask') == 'sticky')
+    return cConfig().getSetting(STICKY_SETTING, 'ask') == 'sticky'
 
 
 def _window():

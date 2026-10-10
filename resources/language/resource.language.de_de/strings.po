@@ -2219,12 +2219,12 @@ msgid "No series folder is available for this episode. Add the series from its p
 msgstr "Fuer diese Folge ist kein Serienordner gespeichert. Bitte die Serie stattdessen aus der Serienliste des Anbieters hinzufuegen."
 
 msgctxt "#30933"
-msgid "Automatically play next episode"
-msgstr "Naechste Episode automatisch abspielen"
+msgid "Automatically continue playback"
+msgstr "Wiedergabe automatisch fortsetzen"
 
 msgctxt "#30934"
-msgid "Creates a Kodi playlist for the remaining episodes. It advances after a normal end and supports Kodi's Next item action."
-msgstr "Erstellt eine Kodi-Wiedergabeliste fuer die restlichen Episoden. Sie wechselt nach regulaerem Ende weiter und unterstuetzt Kodi 'Naechster Titel'."
+msgid "When enabled, the next episode or film starts after a normal end. When disabled, playback stops. Next item remains available manually in both modes."
+msgstr "Eingeschaltet startet nach dem regulären Ende die nächste Folge oder der nächste Film. Ausgeschaltet stoppt die Wiedergabe. Manuelles Weiterwechseln mit 'Next' ist in beiden Fällen möglich."
 
 msgctxt "#30935"
 msgid "Backup and restore"
@@ -2936,8 +2936,8 @@ msgid "Hoster for the following episodes"
 msgstr "Hoster bei den folgenden Episoden"
 
 msgctxt "#31417"
-msgid "Ask every time: every episode shows the hoster selection. Keep the first episode's hoster: the hoster (and language) chosen for the first episode is used again for the following episodes of the list, so the list plays through. Stop and a new manual start reset it."
-msgstr "Jedes Mal fragen: jede Folge zeigt die Hoster-Auswahl. Hoster der ersten Folge beibehalten: der bei der ersten Folge gewählte Hoster (samt Sprache) wird für die folgenden Folgen wieder genommen, die Liste läuft also durch. Stop und ein neuer manueller Start setzen das zurück; dann wird wieder normal gefragt."
+msgid "Ask every time or reuse the chosen hoster and language for the current list. This also applies to manual Next when automatic continuation is off. If the hoster is unavailable in that language, ask again. Stop and a new start reset the choice."
+msgstr "Jedes Mal fragen oder den gewählten Hoster samt Sprache für die laufende Liste beibehalten. Das gilt auch für manuelles Next bei ausgeschalteter Automatik. Fehlt der Hoster in dieser Sprache, wird erneut gefragt. Stop und ein neuer Start setzen die Wahl zurück."
 
 msgctxt "#31418"
 msgid "Ask every time"

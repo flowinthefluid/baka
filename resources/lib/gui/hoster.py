@@ -27,6 +27,7 @@ class cHosterGui:
         # Wird gesetzt, sobald Kodi einen Stream erhalten hat. Danach darf kein
         # weiterer Hoster mehr versucht werden: Kodi hat das Ergebnis bereits.
         self._playbackHandled = False
+        self._episodeBoundaryChecked = False
 
     # TODO: unify parts of play, download etc.
     def _getInfoAndResolve(self, siteResult):
@@ -128,11 +129,76 @@ class cHosterGui:
                              everything=params.getValue('episodeAll') == '1')
 
     @classmethod
+    def _episodeListItem(cls, target):
+        """Native playlists need labels and episode tags, not only plugin paths."""
+        values = dict(parse_qsl(urlsplit(target).query))
+        title = values.get('MovieTitle') or values.get('title')
+        if not title:
+            title = ('Episode ' + values['episode']) if values.get('episode') else 'Episode'
+        item = xbmcgui.ListItem(label=title, path=target)
+        item.setProperty('IsPlayable', 'true')
+        item.setProperty('ForceResolvePlugin', 'true')
+        tag = item.getVideoInfoTag()
+        tag.setMediaType('movie' if values.get('mediaType') == 'movie' else 'episode')
+        tag.setTitle(title)
+        if values.get('TVShowTitle'):
+            tag.setTvShowTitle(values['TVShowTitle'])
+        for key, setter in (('season', tag.setSeason), ('episode', tag.setEpisode)):
+            try:
+                setter(int(values[key]))
+            except (KeyError, ValueError, TypeError):
+                pass
+        thumb = values.get('thumb') or values.get('trumb')
+        if thumb:
+            item.setArt({'thumb': thumb})
+        return item
+
+    @classmethod
+    def _prepareEpisodeQueue(cls, params, manual=False):
+        """Also prepare remaining episodes when a cached provider route is used."""
+        if (not params.getValue('episodeQueue')
+                or params.getValue('episodeIndex') in (False, None, '')
+                or params.getValue('isHoster') == 'true'
+                or cls._isNativeEpisodePlaylistItem(params)):
+            return False
+        try:
+            index = int(params.getValue('episodeIndex'))
+        except (TypeError, ValueError):
+            return False
+        return cls.playQueue(params.getValue('episodeQueue'), index, manual)
+
+    def _stopAtEpisodeBoundary(self, params):
+        """Reject natural advancement before resolving another hoster.
+
+        Kodi resolves manual Next while the old video is still playing.
+        After EOF it is no longer playing. The Python ended callback arrives
+        after the next plugin resolution, too late to enforce this policy.
+        Only our active queue is affected; a first/manual start is unrestricted.
+        """
+        # A manual transition accepted at entry stays manual even if the old
+        # video ends while the chosen hoster is being resolved.
+        if self._episodeBoundaryChecked:
+            return False
+        self._episodeBoundaryChecked = True
+        cls = self.__class__
+        if (cConfig().getSettingBool('autoNextEpisodeEnabled', False)
+                or not cls._isNativeEpisodePlaylistItem(params)
+                or int(params.getValue('episodeIndex')) == cls._playlistState()[1]
+                or xbmc.Player().isPlayingVideo()):
+            return False
+        xbmc.PlayList(xbmc.PLAYLIST_VIDEO).clear()
+        xbmcgui.Window(10000).clearProperty(cls.EPISODE_PLAYLIST_PROPERTY)
+        from resources.lib import hosterprefs
+        hosterprefs.forgetSticky()
+        xbmcplugin.setResolvedUrl(cGui().pluginHandle, False, xbmcgui.ListItem())
+        return True
+
+    @classmethod
     def playQueue(cls, queueId, firstIndex, manual=False, everything=False):
         """Legt eine gespeicherte Liste ab ``firstIndex`` in Kodis Wiedergabeliste.
 
-        Episodenlisten folgen der Einstellung "naechste Folge automatisch";
-        eine abgespielte Watchlist (``everything``) kommt immer ganz hinein.
+        Die komplette Restliste haelt den manuellen Next-Knopf verfuegbar.
+        Der Automatik-Schalter steuert ausschliesslich den Wechsel nach EOF.
         """
         from resources.lib import episodequeue, hosterprefs
         targets = episodequeue.getTargets(queueId)
@@ -142,17 +208,13 @@ class cHosterGui:
         playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
         playlist.clear()
         following = targets[firstIndex:]
-        if not everything and not cConfig().getSettingBool('autoNextEpisodeEnabled', False):
-            following = following[:1]
         for position, target in enumerate(following):
             if position == 0 and manual:
                 parts = urlsplit(target)
                 query = dict(parse_qsl(parts.query))
                 query['manual'] = '1'
                 target = urlunsplit(parts._replace(query=urlencode(query)))
-            item = xbmcgui.ListItem(path=target)
-            item.setProperty('IsPlayable', 'true')
-            item.setProperty('ForceResolvePlugin', 'true')
+            item = cls._episodeListItem(target)
             playlist.add(target, item)
         import uuid
         xbmcgui.Window(10000).setProperty(cls.EPISODE_PLAYLIST_PROPERTY,
@@ -170,8 +232,6 @@ class cHosterGui:
         The selected episode is already in Kodi's playlist. Replacing and
         playing that playlist again would restart the same video.
         """
-        if not cConfig().getSettingBool('autoNextEpisodeEnabled', False):
-            return False
         try:
             firstIndex = int(params.getValue('episodeIndex'))
         except (TypeError, ValueError):
@@ -188,11 +248,7 @@ class cHosterGui:
             return False
         startIndex = firstIndex if size == 0 else firstIndex + 1
         for target in targets[startIndex:]:
-            queuedItem = xbmcgui.ListItem(path=target)
-            queuedItem.setProperty('IsPlayable', 'true')
-            # Kodi >= 20 otherwise may reuse an old resolver result if the
-            # same episode is played again from this playlist.
-            queuedItem.setProperty('ForceResolvePlugin', 'true')
+            queuedItem = cls._episodeListItem(target)
             playlist.add(target, queuedItem)
         # The nonce distinguishes this live queue from legacy markers which
         # had no reliable lifecycle on Kodi stop events.
@@ -219,6 +275,9 @@ class cHosterGui:
     def play(self, siteResult=False):
         if ParameterHandler().getValue('episodeStart') == '1':
             return self._startEpisodeQueue(ParameterHandler())
+        if self._stopAtEpisodeBoundary(ParameterHandler()):
+            self._playbackHandled = True
+            return True
         from resources.lib import productionfilter
         if not productionfilter.allowed(params=ParameterHandler()):
             self._playbackHandled = True
@@ -241,7 +300,7 @@ class cHosterGui:
         stream_url = (siteResult or {}).get('streamUrl', '')
 
         logger.info('-> [hoster]: play file link: ' + cRequestHandler._safeUrlForLog(data['link']))
-        list_item = xbmcgui.ListItem(path=data['link'])
+        list_item = xbmcgui.ListItem(label=data['title'] or '', path=data['link'])
         #m3u8 und mpd via inputstream, exklusive Filemoon, da IA mit dem Hoster nicht unter Android läuft
         if 'filemoon' not in stream_url:
             if '.m3u8' in data['link'] or '.mpd' in data['link']:
@@ -269,7 +328,8 @@ class cHosterGui:
             info['TVShowTitle'] = data['showTitle']
 
         vtag = list_item.getVideoInfoTag()
-        vtag.setMediaType('video')
+        mediaType = ParameterHandler().getValue('mediaType')
+        vtag.setMediaType(mediaType if mediaType in ('movie', 'episode') else 'video')
         if 'Title' in info:
             try:
                 vtag.setTitle(str(info['Title']))
@@ -548,6 +608,15 @@ class cHosterGui:
         return False
 
     def stream(self, playMode, siteName, function, url, manual=False):
+        params = ParameterHandler()
+        if playMode == 'play' and self._stopAtEpisodeBoundary(params):
+            return True
+        if playMode == 'play' and self._prepareEpisodeQueue(params, manual):
+            return True
+        selectedHoster = params.getValue('selectedHoster')
+        if playMode == 'play' and selectedHoster:
+            self._rememberChoice(params, siteName, {'name': selectedHoster,
+                'languageCode': params.getValue('selectedHosterLanguage') or ''})
         self.dialog = xbmcgui.DialogProgress()
         try:
             self.dialog.create('Baka', cConfig().getLocalizedString(30138))
@@ -655,9 +724,13 @@ class cHosterGui:
 
     def streamAuto(self, playMode, siteName, function):
         params = ParameterHandler()
+        if playMode == 'play' and self._stopAtEpisodeBoundary(params):
+            return True
+        if playMode == 'play' and self._prepareEpisodeQueue(params):
+            return True
         if playMode == 'play' and self._isNativeEpisodePlaylistItem(params):
             manual = cConfig().getSetting('autoNextEpisodeHoster', 'ask') == 'ask'
-            return self.stream(playMode, siteName, function, manual=manual)
+            return self.stream(playMode, siteName, function, '', manual=manual)
         logger.info('-> [hoster]: auto stream initiated')
         self.dialog = xbmcgui.DialogProgress()
         self.dialog.create('Baka', cConfig().getLocalizedString(30138))
@@ -777,6 +850,8 @@ class cHosterGui:
             oGuiElement.setThumbnail(str(params.getValue('thumb')))
             params.setParam('url', hoster['link'])
             params.setParam('isHoster', 'true')
+            params.setParam('selectedHoster', hoster.get('name') or name)
+            params.setParam('selectedHosterLanguage', hoster.get('languageCode') or '')
             oGui.addFolder(oGuiElement, params, iTotal=total, isHoster=True)
         oGui.setEndOfDirectory()
 

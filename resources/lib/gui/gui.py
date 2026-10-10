@@ -101,12 +101,7 @@ class cGui:
                 self._episodeQueueKey, {'id': uuid.uuid4().hex, 'targets': []})
             params.setParam('episodeQueue', queue['id'])
             params.setParam('episodeIndex', len(queue['targets']))
-            if not queue['targets']:
-                actionUrl = self._episodeAction(queue['id'], 0)
-                action = xbmcgui.ListItem(label=cConfig().getLocalizedString(32600))
-                action.setProperty('IsPlayable', 'false')
-                xbmcplugin.addDirectoryItem(self.pluginHandle, actionUrl, action, False, 0)
-        queueEnabled = trackEpisode and cConfig().getSettingBool('autoNextEpisodeEnabled', False)
+        queueEnabled = trackEpisode
         if trackEpisode:
             from resources.lib import epicfavorites
             incoming = ParameterHandler()
@@ -171,19 +166,9 @@ class cGui:
             bIsFolder = False
         listitem = self.__createContextMenu(oGuiElement, listitem, bIsFolder, contextUrl,
                           sUrl if startEpisodeQueue else '')
-        if trackEpisode:
-            listitem.addContextMenuItems([(cConfig().getLocalizedString(32601),
-                'RunPlugin(%s)' % self._episodeAction(params.getValue('episodeQueue'),
-                                                    params.getValue('episodeIndex')))])
         if not bIsFolder:
             listitem.setProperty('IsPlayable', 'false' if startEpisodeQueue else 'true')
         xbmcplugin.addDirectoryItem(self.pluginHandle, sUrl, listitem, bIsFolder, iTotal)
-
-    def _episodeAction(self, queueId, index):
-        return '%s?%s' % (self.pluginPath, urlencode({
-            'site': 'cHosterGui', 'function': 'play', 'episodeStart': '1',
-            'episodeAll': '1', 'episodeQueue': queueId, 'episodeIndex': index,
-            'mediaType': 'episode'}))
 
     def addNextPage(self, site, function, params='', iTotalPages=None):
         # Vor "Naechste Seite": "Seite X (von Y)"; ein Klick fragt die

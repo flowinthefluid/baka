@@ -70,14 +70,14 @@ def test_sticky_hoster_keeps_name_and_language():
     assert hosterprefs.sticky('a' * 32, 'serienstream') is None
 
 
-def test_sticky_needs_both_settings():
+def test_sticky_is_independent_of_automatic_continuation():
     set_setting('autoNextEpisodeEnabled', 'true')
     set_setting(hosterprefs.STICKY_SETTING, 'ask')
     assert not hosterprefs.stickyEnabled()
     set_setting(hosterprefs.STICKY_SETTING, 'sticky')
     assert hosterprefs.stickyEnabled()
     set_setting('autoNextEpisodeEnabled', 'false')
-    assert not hosterprefs.stickyEnabled()
+    assert hosterprefs.stickyEnabled()
 
 
 class _Params(object):
@@ -124,6 +124,7 @@ def test_following_episode_asks_even_with_preferred_autostart(monkeypatch):
 
 
 def test_auto_hoster_mode_delegates_to_selection_for_episode_ask(monkeypatch):
+    set_setting('autoNextEpisodeEnabled', 'true')
     set_setting(hosterprefs.STICKY_SETTING, 'ask')
     monkeypatch.setattr(hoster.cHosterGui, '_isNativeEpisodePlaylistItem',
                         classmethod(lambda cls, _params: True))
@@ -131,7 +132,7 @@ def test_auto_hoster_mode_delegates_to_selection_for_episode_ask(monkeypatch):
     monkeypatch.setattr(hoster.cHosterGui, 'stream',
                         lambda self, *args, **kwargs: calls.append((args, kwargs)))
     hoster.cHosterGui().streamAuto('play', 'serienstream', 'getHosters')
-    assert calls == [(('play', 'serienstream', 'getHosters'), {'manual': True})]
+    assert calls == [(('play', 'serienstream', 'getHosters', ''), {'manual': True})]
 
 
 def test_missing_sticky_hoster_does_not_fall_back_to_preferred_auto(monkeypatch):

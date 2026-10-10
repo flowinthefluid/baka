@@ -156,9 +156,6 @@
 							<option label="31419">sticky</option>
 						</options>
 					</constraints>
-					<dependencies>
-						<dependency type="enable" setting="autoNextEpisodeEnabled">true</dependency>
-					</dependencies>
 					<control type="spinner" format="string"/>
 				</setting>
 				<setting id="maxHoster" type="integer" label="30007" help="">

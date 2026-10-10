@@ -58,11 +58,18 @@ umfangreichen Ausschlüssen können weniger Einträge als die eingestellte Zahl 
 
 ## Folgenliste
 
-Im Staffelordner steht „Folgenliste ab erster Folge abspielen“. Das Kontextmenü
-einer Folge bietet „Ab hier als Folgenliste abspielen“. Diese ausdrückliche Aktion
-legt die verbleibenden Folgen der angezeigten Liste in Kodis Video-Wiedergabeliste,
-auch wenn automatisches Folgenabspielen ansonsten deaktiviert ist. Kodi kann dann
-zur nächsten Folge wechseln und spielt nach dem Ende automatisch weiter.
+Ein Klick auf eine beliebige Folge genügt: Ab dieser Folge stehen die
+verbleibenden Episoden in Kodis Wiedergabeliste. „Nächste Folge“ funktioniert
+unabhängig vom Automatik-Schalter. „Wiedergabe automatisch fortsetzen“ steuert
+nur das reguläre Ende: eingeschaltet weiterwechseln, ausgeschaltet stoppen.
+Das gilt auch für Filme in einer abgespielten Watchlist.
+Eine zusätzliche Zeile zum Abspielen ab Folge 1 ist nicht nötig und wurde entfernt.
+Die Einträge der Wiedergabeliste enthalten Titel, Serie, Staffel und Folgennummer.
+
+Optional lässt sich der gewählte Hoster einschließlich seiner Sprache für die
+laufende Folgenliste beibehalten. Bei Stop wird diese vorübergehende Wahl gelöscht.
+Die Hoster-Wahl gilt ebenfalls für manuelles Weiterwechseln bei ausgeschalteter
+Automatik. Ist der Hoster in der gewählten Sprache nicht verfügbar, wird gefragt.
 
 Ein Serienordner in einer Watchlist ist noch keine Liste einzelner Episoden.
 Die Folgenliste entsteht erst beim Öffnen des Staffelordners. Sie umfasst die

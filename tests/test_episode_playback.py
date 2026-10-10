@@ -10,7 +10,7 @@ from resources.lib import episodequeue, history, playbackstate
 
 
 @pytest.mark.parametrize('enabled', [False, True])
-def test_episode_directory_uses_start_action_only_when_enabled(monkeypatch, enabled):
+def test_episode_directory_always_prepares_manual_next(monkeypatch, enabled):
     from resources.lib.gui.gui import cGui
     from resources.lib.gui.guiElement import cGuiElement
     from resources.lib.handler.ParameterHandler import ParameterHandler
@@ -38,12 +38,8 @@ def test_episode_directory_uses_start_action_only_when_enabled(monkeypatch, enab
         gui.addFolder(element, params, bIsFolder=True)
     gui.setEndOfDirectory()
     assert len(stored[0]) == 3
-    action = dict(parse_qsl(urlsplit(listed[0][0]).query))
-    assert action['episodeStart'] == '1'
-    assert action['episodeAll'] == '1'
-    assert action['episodeIndex'] == '0'
-    assert len(listed) == 4
-    for index, (url, item, folder) in enumerate(listed[1:]):
+    assert len(listed) == 3
+    for index, (url, item, folder) in enumerate(listed):
         query = dict(parse_qsl(urlsplit(url).query))
         original = dict(parse_qsl(urlsplit(stored[0][index]).query))
         assert original['site'] == 'aniworld'
@@ -52,19 +48,11 @@ def test_episode_directory_uses_start_action_only_when_enabled(monkeypatch, enab
         assert original['playMode'] == 'play'
         assert original['mediaType'] == 'episode'
         assert original['MovieTitle'] == 'Episode %d' % (index + 1)
-        assert 'episodeAll=1' in item._context[0][1]
-        if enabled:
-            assert original['playMode'] == 'play'
-            assert original['mediaType'] == 'episode'
-            assert original['MovieTitle'] == 'Episode %d' % (index + 1)
-            assert query['site'] == 'cHosterGui'
-            assert query['episodeStart'] == '1'
-            assert item._props['IsPlayable'] == 'false'
-            assert folder is False
-        else:
-            assert query['site'] == 'aniworld'
-            assert 'episodeStart' not in query
-            assert folder is True
+        assert not item._context
+        assert query['site'] == 'cHosterGui'
+        assert query['episodeStart'] == '1'
+        assert item._props['IsPlayable'] == 'false'
+        assert folder is False
 
 
 def test_watched_flag_is_applied_to_directory_item(monkeypatch, tmp_path):
@@ -103,7 +91,7 @@ def test_single_episode_queue_is_kept(monkeypatch, tmp_path):
     assert episodequeue.getTargets('f' * 32) == [target]
 
 
-@pytest.mark.parametrize('automatic,explicit', [(True, False), (False, True)])
+@pytest.mark.parametrize('automatic,explicit', [(True, False), (False, False), (False, True)])
 def test_episode_action_starts_a_native_playlist_at_selected_episode(monkeypatch, automatic, explicit):
     targets = ['plugin://plugin.video.baka/?episode=%d' % index
                for index in range(4)]
@@ -295,3 +283,128 @@ def test_legacy_marker_is_discarded_before_a_manual_selection(monkeypatch):
 
     assert hoster.cHosterGui._isNativeEpisodePlaylistItem(Params()) is False
     assert window.getProperty(hoster.cHosterGui.EPISODE_PLAYLIST_PROPERTY) == ''
+
+
+@pytest.mark.parametrize('automatic', [False, True])
+def test_manual_episode_five_starts_remaining_queue_without_extra_action(monkeypatch, automatic):
+    from conftest import set_setting
+    set_setting('autoNextEpisodeEnabled', str(automatic).lower())
+    starts = []
+    queued = []
+    targets = ['plugin://plugin.video.baka/?site=source&function=getHosters&episode=%d&MovieTitle=Episode+%d' % (i, i)
+               for i in range(1, 9)]
+    class Playlist:
+        def clear(self):
+            queued.clear()
+        def add(self, url, item):
+            queued.append((url, item))
+    playlist = Playlist()
+    monkeypatch.setattr(hoster.xbmc, 'PlayList', lambda kind: playlist)
+    monkeypatch.setattr(hoster.xbmc, 'Player', lambda: type('Player', (), {'play': lambda self, item: starts.append(item)})())
+    monkeypatch.setattr(episodequeue, 'getTargets', lambda key: targets)
+    monkeypatch.setattr(hoster.cHosterGui, '_isNativeEpisodePlaylistItem', classmethod(lambda cls, params: False))
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '5',
+                        '?episodeQueue=' + 'e' * 32 + '&episodeIndex=4&mediaType=episode'])
+    try:
+        # Even a cached original provider route must prepare the queue before
+        # fetching hosters, exactly once and from the selected episode.
+        assert hoster.cHosterGui().stream('play', 'source', 'getHosters', '') is True
+        assert [url for url, item in queued] == targets[4:]
+        assert [item._label for url, item in queued] == ['Episode 5', 'Episode 6', 'Episode 7', 'Episode 8']
+        assert starts == [playlist]
+    finally:
+        hoster.xbmcgui.Window(10000).clearProperty(hoster.cHosterGui.EPISODE_PLAYLIST_PROPERTY)
+
+
+def test_native_playlist_resolution_does_not_start_another_queue(monkeypatch):
+    from conftest import set_setting
+    set_setting('autoNextEpisodeEnabled', 'true')
+    monkeypatch.setattr(hoster.cHosterGui, '_isNativeEpisodePlaylistItem', classmethod(lambda cls, params: True))
+    monkeypatch.setattr(hoster.cHosterGui, 'playQueue', lambda *args: pytest.fail('native item restarted queue'))
+    monkeypatch.setattr(sys, 'argv', ['', '5', '?episodeQueue=' + 'e' * 32 + '&episodeIndex=4'])
+    assert not hoster.cHosterGui._prepareEpisodeQueue(hoster.ParameterHandler())
+
+
+def test_playlist_labels_and_episode_metadata(monkeypatch):
+    values = {}
+    class Tag:
+        def __getattr__(self, key):
+            return lambda value: values.update({key: value})
+    monkeypatch.setattr(hoster.xbmcgui.ListItem, 'getVideoInfoTag', lambda self: Tag())
+    item = hoster.cHosterGui._episodeListItem('plugin://plugin.video.baka/?MovieTitle=Episode+5&TVShowTitle=Series&season=1&episode=5&thumb=https%3A%2F%2Fexample.test%2Fthumb.jpg')
+    assert item._label == 'Episode 5'
+    assert values == {'setMediaType': 'episode', 'setTitle': 'Episode 5',
+                      'setTvShowTitle': 'Series', 'setSeason': 1, 'setEpisode': 5}
+    assert item._art['thumb'] == 'https://example.test/thumb.jpg'
+    assert item._props['ForceResolvePlugin'] == 'true'
+    assert hoster.cHosterGui._episodeListItem('plugin://plugin.video.baka/?episode=6')._label == 'Episode 6'
+    hoster.cHosterGui._episodeListItem('plugin://plugin.video.baka/?MovieTitle=Film&mediaType=movie')
+    assert values['setMediaType'] == 'movie'
+
+
+@pytest.mark.parametrize('automatic,playing,native,index,stops', [
+    (False, False, True, 1, True),   # Natural end: stop before resolving a hoster.
+    (False, True, True, 1, False),   # Manual Next, including a paused old video.
+    (True, False, True, 1, False),   # Automatic continuation.
+    (False, False, True, 0, False),  # First selected item must start.
+    (False, False, False, 1, False), # An unrelated/stale queue cannot stop a manual start.
+])
+@pytest.mark.parametrize('media_type', ['episode', 'movie'])
+def test_natural_end_policy_does_not_block_manual_next(monkeypatch, automatic, playing, native, index, stops, media_type):
+    from conftest import set_setting
+    set_setting('autoNextEpisodeEnabled', str(automatic).lower())
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '5',
+        '?episodeQueue=' + 'e' * 32 + '&episodeIndex=%d&mediaType=%s' % (index, media_type)])
+    monkeypatch.setattr(hoster.cHosterGui, '_isNativeEpisodePlaylistItem', classmethod(lambda cls, params: native))
+    monkeypatch.setattr(hoster.cHosterGui, '_playlistState', classmethod(lambda cls: ('e' * 32, 0)))
+    monkeypatch.setattr(hoster.xbmc.Player, 'isPlayingVideo', lambda self: playing)
+    calls = []
+    monkeypatch.setattr(hoster.xbmc.PlayList, 'clear', lambda self: calls.append('clear'))
+    monkeypatch.setattr(hoster.xbmcplugin, 'setResolvedUrl', lambda handle, ok, item: calls.append(('resolve', handle, ok)))
+    from resources.lib import hosterprefs
+    monkeypatch.setattr(hosterprefs, 'forgetSticky', lambda: calls.append('forget'))
+    gui = hoster.cHosterGui()
+    assert gui._stopAtEpisodeBoundary(hoster.ParameterHandler()) is stops
+    assert calls == (['clear', 'forget', ('resolve', 5, False)] if stops else [])
+
+
+def test_slow_manual_next_remains_manual_when_previous_video_ends(monkeypatch):
+    from conftest import set_setting
+    set_setting('autoNextEpisodeEnabled', 'false')
+    monkeypatch.setattr(sys, 'argv', ['', '5', '?episodeQueue=' + 'e' * 32 + '&episodeIndex=1'])
+    monkeypatch.setattr(hoster.cHosterGui, '_isNativeEpisodePlaylistItem', classmethod(lambda cls, params: True))
+    monkeypatch.setattr(hoster.cHosterGui, '_playlistState', classmethod(lambda cls: ('e' * 32, 0)))
+    monkeypatch.setattr(hoster.xbmc.Player, 'isPlayingVideo', lambda self: True)
+    gui = hoster.cHosterGui()
+    assert not gui._stopAtEpisodeBoundary(hoster.ParameterHandler())
+    monkeypatch.setattr(hoster.xbmc.Player, 'isPlayingVideo', lambda self: False)
+    monkeypatch.setattr(hoster.xbmc.PlayList, 'clear', lambda self: pytest.fail('Accepted manual Next was cancelled'))
+    assert not gui._stopAtEpisodeBoundary(hoster.ParameterHandler())
+
+
+@pytest.mark.parametrize('entry', ['stream', 'streamAuto', 'play'])
+def test_end_policy_runs_before_hosters_are_requested(monkeypatch, entry):
+    monkeypatch.setattr(hoster.cHosterGui, '_stopAtEpisodeBoundary', lambda self, params: True)
+    monkeypatch.setattr(hoster.cHosterGui, '_getInfoAndResolve', lambda *args: pytest.fail('Stream was resolved after EOF stop'))
+    gui = hoster.cHosterGui()
+    if entry == 'stream':
+        assert gui.stream('play', 'nonexistent_source', 'getHosters', '') is True
+    elif entry == 'streamAuto':
+        assert gui.streamAuto('play', 'nonexistent_source', 'getHosters') is True
+    else:
+        monkeypatch.setattr(sys, 'argv', ['', '5', '?'])
+        assert gui.play() is True
+        assert gui._playbackHandled
+
+
+def test_hoster_folder_carries_choice_for_following_episodes(monkeypatch):
+    monkeypatch.setattr(sys, 'argv', ['plugin://plugin.video.baka/', '5',
+                        '?episodeQueue=' + 'e' * 32 + '&episodeIndex=4&MovieTitle=Episode+5'])
+    listed = []
+    from resources.lib.gui.gui import cGui
+    monkeypatch.setattr(cGui, 'addFolder', lambda self, element, params, **kwargs: listed.append(dict(params.getAllParameters())))
+    monkeypatch.setattr(cGui, 'setEndOfDirectory', lambda self: None)
+    hoster.cHosterGui().showHosterFolder([{'name': 'VOE', 'link': 'https://example.test/', 'languageCode': 'de'}], 'source', 'getHosterUrl')
+    assert listed[0]['selectedHoster'] == 'VOE'
+    assert listed[0]['selectedHosterLanguage'] == 'de'
+    assert listed[0]['episodeIndex'] == '4'

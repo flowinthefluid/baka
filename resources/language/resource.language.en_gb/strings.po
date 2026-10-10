@@ -2324,11 +2324,11 @@ msgid "No series folder is available for this episode. Add the series from its p
 msgstr ""
 
 msgctxt "#30933"
-msgid "Automatically play next episode"
+msgid "Automatically continue playback"
 msgstr ""
 
 msgctxt "#30934"
-msgid "Creates a Kodi playlist for the remaining episodes. It advances after a normal end and supports Kodi's Next item action."
+msgid "When enabled, the next episode or film starts after a normal end. When disabled, playback stops. Next item remains available manually in both modes."
 msgstr ""
 
 msgctxt "#30935"
@@ -2937,8 +2937,8 @@ msgid "Hoster for the following episodes"
 msgstr "Hoster for the following episodes"
 
 msgctxt "#31417"
-msgid "Ask every time: every episode shows the hoster selection. Keep the first episode's hoster: the hoster (and language) chosen for the first episode is used again for the following episodes of the list, so the list plays through. Stop and a new manual start reset it."
-msgstr "Ask every time: every episode shows the hoster selection. Keep the first episode's hoster: the hoster (and language) chosen for the first episode is used again for the following episodes of the list, so the list plays through. Stop and a new manual start reset it."
+msgid "Ask every time or reuse the chosen hoster and language for the current list. This also applies to manual Next when automatic continuation is off. If the hoster is unavailable in that language, ask again. Stop and a new start reset the choice."
+msgstr "Ask every time or reuse the chosen hoster and language for the current list. This also applies to manual Next when automatic continuation is off. If the hoster is unavailable in that language, ask again. Stop and a new start reset the choice."
 
 msgctxt "#31418"
 msgid "Ask every time"

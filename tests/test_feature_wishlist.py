@@ -172,7 +172,9 @@ def test_series_folder_context_survives_reopening_and_episode_navigation(monkeyp
         params = ParameterHandler()
         params.setParam('sUrl', 'serie/carrie/staffel-1/episode-2')
         cGui().addFolder(episode, params)
-        route = dict(parse_qsl(urlsplit(listed[-1][1]).query))
+        wrapper = dict(parse_qsl(urlsplit(listed[-1][1]).query))
+        queue = next(q for q in cGui._episodeQueues.values() if q['id'] == wrapper['episodeQueue'])
+        route = dict(parse_qsl(urlsplit(queue['targets'][int(wrapper['episodeIndex'])]).query))
         assert route['watchlistTarget'] == folder
         assert dict(parse_qsl(urlsplit(folder).query))['sUrl'] == 'serie/carrie?a=one&b=two'
         assert route['watchlistTitle'] in ('Carrie', 'Carrie (2026)')

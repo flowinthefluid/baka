@@ -124,7 +124,7 @@ def test_playing_a_watchlist_queues_every_entry(store, monkeypatch, real_strings
     monkeypatch.setattr(xbmc.PlayList, 'add', lambda self, url, *args: added.append(url), raising=False)
     played = []
     monkeypatch.setattr(xbmc.Player, 'play', lambda self, *args: played.append(True), raising=False)
-    set_setting('autoNextEpisodeEnabled', 'false')  # Watchlists spielen trotzdem komplett
+    set_setting('autoNextEpisodeEnabled', 'false')  # Alle Eintraege fuer manuelles Next vormerken
     from resources.lib.handler.ParameterHandler import ParameterHandler
     params = ParameterHandler()
     params.setParam('path', filmabend)
@@ -134,4 +134,4 @@ def test_playing_a_watchlist_queues_every_entry(store, monkeypatch, real_strings
     assert first['episodeQueue'] == stored['id'] and first['episodeIndex'] == '0'
     assert dict(parse_qsl(urlsplit(added[1]).query))['episodeIndex'] == '1'
     assert infos[-1][1] == 'Ohne direkte Quelle übersprungen: 1'
-    assert cHosterGui.playQueue(stored['id'], 0) is True and len(added) == 3  # Episoden: nur eine
+    assert cHosterGui.playQueue(stored['id'], 0) is True and len(added) == 4
