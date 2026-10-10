@@ -112,6 +112,28 @@ def test_global_filter_cannot_be_disabled_by_other_section():
     assert filters.mode(params(hollywoodScope='anime', contentTheme='anime')) == 'light'
 
 
+@pytest.mark.parametrize('values,expected', [
+    ({'catLevel': 'locations'}, 'locations'),
+    ({'catLevel': 'companies'}, 'companies'),
+    ({'catLevel': 'outsideHollywood'}, 'world'),
+    ({'catLevel': 'people'}, 'people'),
+    ({'catPreset': 'company_disney'}, 'companies'),
+    ({'catPreset': 'country:DE'}, 'locations'),
+    ({'catPerson': '42'}, 'people'),
+])
+def test_child_section_overrides_inherited_category_scope(values, expected):
+    assert filters.scope(params(hollywoodScope='categories', **values)) == expected
+
+
+def test_untyped_hoster_is_checked_but_untyped_menus_are_not(monkeypatch):
+    set_setting('hollywoodGlobal', 'true')
+    set_setting('hollywoodMode', 'strict')
+    monkeypatch.setattr(filters, '_request', lambda *args: {})
+    assert not filters.allowed(cGuiElement('Movie', 'source', 'getHosters'), params())
+    assert not filters.allowed(params=params(MovieTitle='Movie'))
+    assert filters.allowed(cGuiElement('Menu', 'source', 'load'), params())
+
+
 def test_theme_filter_applies_to_random_docs():
     set_setting('hollywoodScopes', 'docs')
     assert filters.mode(params(hollywoodScope='random', randomKind='dokus')) == 'light'

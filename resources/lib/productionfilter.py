@@ -73,9 +73,6 @@ def scope(params=None):
     from resources.lib.handler.ParameterHandler import ParameterHandler
     from resources.lib import languages
     params = params or ParameterHandler()
-    explicit = params.getValue('hollywoodScope')
-    if explicit in dict(SCOPES):
-        return explicit
     preset = params.getValue('catPreset') or ''
     if preset.startswith(('country:', 'region:', 'location_')):
         return 'locations'
@@ -85,8 +82,16 @@ def scope(params=None):
         return 'companies'
     if params.getValue('catPerson'):
         return 'people'
+    levelScope = {'locations': 'locations', 'locationRegion': 'locations',
+                  'outsideHollywood': 'world', 'companies': 'companies',
+                  'peopleMenu': 'people', 'people': 'people'}.get(params.getValue('catLevel'))
+    if levelScope:
+        return levelScope
     if params.getValue('randomKind'):
         return 'random'
+    explicit = params.getValue('hollywoodScope')
+    if explicit in dict(SCOPES):
+        return explicit
     if params.getValue('catLevel'):
         return 'categories'
     return languages.currentTheme() or 'movies'
@@ -138,6 +143,9 @@ def _connected(company, seen=None):
 
 def _identity(element, params):
     media = element._mediaType if element else (params.getValue('mediaType') or params.getValue('searchMedia'))
+    if not media and ((element and element.getFunction() == 'getHosters')
+                      or (not element and params.getValue('MovieTitle'))):
+        media = 'episode' if params.getValue('TVShowTitle') and params.getValue('episode') else 'movie'
     if media not in ('movie', 'tv', 'tvshow', 'season', 'episode'):
         return '', ''
     series = media in ('tv', 'tvshow', 'season', 'episode')
