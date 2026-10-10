@@ -1,3 +1,14 @@
+[B]Version: 1.1.1[/B]
+
+10.10.2026
+
+- Live-TV: NITRO unter Sender nach Ländern -> Deutschland / Österreich / Schweiz. Der DACH-Bereich ist ein gemeinsamer Eintrag.
+- BR, NDR, MDR, rbb, SWR und WDR erscheinen jeweils einmal. MDR nutzt Sachsen-Anhalt als Hauptquelle; Regionalvarianten bleiben als Ersatzquellen in den Senderinformationen. ZDF, ZDFneo und ZDFinfo bleiben eigenständige Sender.
+- Öffentliche DACH-Internetstreams und deutsch-/englischsprachige Sportsender ergänzt. Sport ist nach Sportarten sortiert; MagentaTV-Multicast bleibt deaktiviert.
+- Jede TV-/Sportsenderliste beginnt mit einem EPG für genau diese Sender. Programmdaten kommen aus den konfigurierten XMLTV-Quellen.
+- Filme/Serien, Dokus und Animes haben unabhängige Sprachprofile. Die Sprachabfrage erscheint einmal bei der Ersteinrichtung, nicht erneut nach Updates. Reihenfolge: Nicht anzeigen, Englisch, Deutsch, weitere Sprachen. Japanischer Anime-Originalton mit deutschen Untertiteln schaltet keine englische Synchro frei.
+- Einstellungen: Hauptmenü-Optionen unter Menü anpassen; WebDAV-Zugang unter Sicherungsziel. Repository-Addon unverändert auf 1.0.8.
+
 [B]Version: 1.1.0[/B]
 
 09.10.2026
