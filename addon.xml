@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.baka" name="Baka" version="1.1.3" provider-name="baka">
+<addon id="plugin.video.baka" name="Baka" version="1.1.4" provider-name="baka">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="script.module.requests"/>
@@ -26,8 +26,8 @@
 		<language>de en</language>
 		<platform>all</platform>
 		<license>GPL-3.0-only</license>
-		<news lang="en_GB">1.1.3 - Added United States, China, South Korea, Thailand, Colombia and Brazil as individual entries under Famous filming locations, using the production-country filter shared by the other country lists.</news>
-		<news lang="de_DE">1.1.3 - USA, China, Südkorea, Thailand, Kolumbien und Brasilien als eigene Einträge unter Berühmte Drehorte ergänzt, mit dem Produktionsland-Filter der übrigen Länderlisten.</news>
+		<news lang="en_GB">1.1.4 - Expanded Famous filming locations with Canada, Mexico, South Africa, Kenya, Ghana and Egypt as individual country lists, plus a Central America regional list. These lists use production countries.</news>
+		<news lang="de_DE">1.1.4 - Berühmte Drehorte um Kanada, Mexiko, Südafrika, Kenia, Ghana und Ägypten als einzelne Länderlisten sowie Mittelamerika als regionale Sammelliste erweitert. Die Listen verwenden das Produktionsland.</news>
 		<website>https://github.com/flowinthefluid/baka</website>
 		<source>https://github.com/flowinthefluid/baka</source>
 		<assets>

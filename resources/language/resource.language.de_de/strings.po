@@ -3611,6 +3611,26 @@ msgctxt "#32050"
 msgid "Colombia"
 msgstr "Kolumbien"
 
+msgctxt "#32051"
+msgid "South Africa"
+msgstr "Südafrika"
+
+msgctxt "#32052"
+msgid "Kenya"
+msgstr "Kenia"
+
+msgctxt "#32053"
+msgid "Ghana"
+msgstr "Ghana"
+
+msgctxt "#32054"
+msgid "Egypt"
+msgstr "Ägypten"
+
+msgctxt "#32055"
+msgid "Central America"
+msgstr "Mittelamerika"
+
 msgctxt "#32060"
 msgid "Languages & regions"
 msgstr "Sprachen & Regionen"

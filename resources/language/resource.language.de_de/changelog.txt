@@ -1,3 +1,9 @@
+[B]Version: 1.1.4[/B]
+
+- Kanada, Mexiko, Südafrika, Kenia, Ghana und Ägypten als einzelne Länderlisten unter Berühmte Drehorte ergänzt.
+- Mittelamerika als regionale Sammelliste für Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua und Panama ergänzt. Mexiko hat einen eigenen Eintrag.
+- Die Listen filtern Produktionsländer statt verifizierter physischer Drehorte. Bestehende Bewertungs- und Mindeststimmenfilter gelten weiterhin.
+
 [B]Version: 1.1.3[/B]
 
 - USA, China, Südkorea, Thailand, Kolumbien und Brasilien als eigene Einträge unter Berühmte Drehorte ergänzt. Die bisherigen regionalen Sammellisten bleiben verfügbar. Wie die übrigen Länderlisten verwenden diese Einträge das Produktionsland, keine verifizierten physischen Drehorte.
