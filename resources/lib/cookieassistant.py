@@ -8,7 +8,7 @@ von Hand bleibt, so kurz wie moeglich:
 1. Seite im Browser oeffnen und die Pruefung bestaetigen,
 2. die Anfrage "als cURL kopieren",
 3. einfuegen - direkt in Kodi oder ueber eine kleine Seite, die Baka
-   fuer ein paar Minuten im Heimnetz anbietet (bequem vom PC oder Handy aus).
+   fuer ein paar Minuten im Heimnetz anbietet (bequem vom PC oder Mobilgerät aus).
 
 Cookie **und** User-Agent werden daraus automatisch gelesen und in die
 Einstellungen der Quelle geschrieben. Vollautomatisch (inklusive Erneuerung

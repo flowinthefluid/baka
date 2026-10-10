@@ -2,6 +2,18 @@
 
 Dieses Addon nutzt die ID `plugin.video.baka`.
 
+## Changelog und Umzug
+
+Versionshinweise folgen der Kodi-Oberflächensprache: Deutsch bei deutschem Kodi,
+Englisch als Standard für andere Sprachen. Diese Wahl ist unabhängig von den
+Sprachprofilen für Filme/Serien, Dokus und Animes. Der Changelog ist nach Versionen
+gegliedert.
+
+Baka ist der Nachfolger von GerXStream und verwendet eine eigene Addon-ID.
+Die aktuelle Version startet keine automatische Datenübernahme. Ein separates
+Umzugs-Addon für GerXStream und xStream ist geplant, aber noch nicht veröffentlicht.
+Aufbau und Übernahmeumfang stehen im [Umzugsplan](docs/UMZUG.md).
+
 ## Voraussetzungen
 
 1. Kodi 22 (primaer) oder Kodi 21 (weicher Fallback)
@@ -26,8 +38,8 @@ Dieses Addon nutzt die ID `plugin.video.baka`.
 - Baka und ResolveURL werden über Kodis Add-on-Verwaltung aktualisiert.
 - Direkte Selbst-Updates aus GitHub werden nicht als Veröffentlichungsweg verwendet.
 - GitHub Actions testet jeden neuen Stand und baut auf `main` den Pages-Katalog samt
-   ZIPs aus den Quellen. Nach erfolgreicher Auslieferung steht Version 1.0.32 unter
-   `zips/plugin.video.baka/plugin.video.baka-1.0.32.zip` bereit.
+   ZIPs aus den Quellen. Die aktuelle Version steht anschließend unter
+   `zips/plugin.video.baka/plugin.video.baka-VERSION.zip` bereit.
 
 ## Wiedergabe ab 1.0.34
 
@@ -108,9 +120,9 @@ keinen Cloud-Polling-Job hinzu. Export/Import kann waehrend des jeweiligen
 Aufrufs fuer Dateizugriff, ZIP-Kompression und Netzwerkuebertragung Zeit brauchen.
 
 Geraetepruefung am 09.10.2026: Der lokale Teststand 1.0.37 ist auf Kodi4
-installiert, nicht oeffentlich veroeffentlicht. Der vorhandene Carrie-Favorit
-oeffnet direkt den Filmpalast-Serienordner; dessen Episodenordner zeigt acht
-Folgen. Wiedergabe und Stop oberhalb von 90 Prozent wurden geprueft: identischer
+installiert, nicht oeffentlich veroeffentlicht. Ein vorhandener Serienfavorit
+oeffnet direkt den Anbieterordner samt Episodenliste. Wiedergabe und Stop oberhalb
+von 90 Prozent wurden geprueft: identischer
 Episodenordner, identische Auswahlposition und gespeicherte Gesehen-Markierung.
 Das bestaetigt diesen Ablauf auf dem getesteten Geraet, nicht alle Quellen/Skins.
 Cloud-Uebertragungen einschliesslich optionaler Konten wurden automatisiert mit

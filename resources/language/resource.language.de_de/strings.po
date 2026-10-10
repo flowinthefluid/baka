@@ -3060,8 +3060,8 @@ msgid "Show instructions"
 msgstr "Anleitung anzeigen"
 
 msgctxt "#31473"
-msgid "Paste from PC or phone (recommended)"
-msgstr "Vom PC oder Handy einfügen (empfohlen)"
+msgid "Paste from PC or mobile device (recommended)"
+msgstr "Vom PC oder Mobilgerät einfügen (empfohlen)"
 
 msgctxt "#31474"
 msgid "Paste here in Kodi"
@@ -3088,8 +3088,8 @@ msgid "Cookie deleted"
 msgstr "Cookie gelöscht"
 
 msgctxt "#31480"
-msgid "Only needed for sources behind Cloudflare or DDoS-Guard. Confirm the check in your browser, copy the request 'as cURL' and paste it - cookie and user agent are read automatically, also from your PC or phone."
-msgstr "Nur nötig für Quellen hinter Cloudflare oder DDoS-Guard. Prüfung im Browser bestätigen, die Anfrage „als cURL kopieren“ und einfügen – Cookie und User-Agent werden automatisch ausgelesen, auch bequem vom PC oder Handy aus."
+msgid "Only needed for sources behind Cloudflare or DDoS-Guard. Confirm the check in your browser, copy the request 'as cURL' and paste it - cookie and user agent are read automatically, also from your PC or mobile device."
+msgstr "Nur nötig für Quellen hinter Cloudflare oder DDoS-Guard. Prüfung im Browser bestätigen, die Anfrage „als cURL kopieren“ und einfügen – Cookie und User-Agent werden automatisch ausgelesen, auch bequem vom PC oder Mobilgerät aus."
 
 msgctxt "#31481"
 msgid "cookie stored"
@@ -3120,12 +3120,12 @@ msgid "Kodi has no network address in the home network, or no free port. Please 
 msgstr "Kodi hat keine Adresse im Heimnetz oder keinen freien Port. Bitte „Hier in Kodi einfügen“ verwenden."
 
 msgctxt "#31488"
-msgid "Open in a browser on your PC or phone (same home network):[CR][B]%s[/B][CR]and paste the copied text there."
-msgstr "Im Browser am PC oder Handy (selbes Heimnetz) öffnen:[CR][B]%s[/B][CR]und dort den kopierten Text einfügen."
+msgid "Open in a browser on your PC or mobile device (same home network):[CR][B]%s[/B][CR]and paste the copied text there."
+msgstr "Im Browser am PC oder Mobilgerät (selbes Heimnetz) öffnen:[CR][B]%s[/B][CR]und dort den kopierten Text einfügen."
 
 msgctxt "#31489"
-msgid "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or phone' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]Baka reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
-msgstr "[B]%(source)s – Browser-Sitzung übernehmen[/B][CR][CR]1. https://%(domain)s im Browser öffnen (am besten am PC) und die Prüfung bestätigen, bis die normale Seite erscheint.[CR]2. F12 drücken, Reiter [B]Netzwerk[/B] öffnen, Seite neu laden (F5), die oberste Zeile rechts anklicken und [B]Kopieren > Als cURL kopieren[/B] wählen (Chrome/Edge: „Als cURL (bash) kopieren“).[CR]3. Hier „Vom PC oder Handy einfügen“ wählen und den Text auf der angezeigten Seite einfügen – oder direkt in Kodi einfügen.[CR][CR]Baka liest daraus automatisch das Cookie (%(cookies)s) und den passenden User-Agent.[CR][CR][B]Gut zu wissen[/B][CR]– Cookie und User-Agent gehören zusammen; „als cURL“ enthält beides.[CR]– Das Cookie gilt meist nur für den Internetanschluss (IP), über den es geholt wurde: Browser und Kodi müssen denselben Anschluss nutzen (kein VPN nur auf einem Gerät).[CR]– Cookies laufen je nach Seite nach Stunden bis Tagen ab; dann einfach wiederholen. Vollautomatisch erneuern geht nur mit FlareSolverr (Einstellungen > Allgemein > Netzwerk)."
+msgid "[B]%(source)s - taking over a browser session[/B][CR][CR]1. Open https://%(domain)s in a browser (PC recommended) and complete the check until the normal page appears.[CR]2. Press F12, open the [B]Network[/B] tab, reload the page (F5), right-click the first line and choose [B]Copy > Copy as cURL[/B] (Chrome/Edge: 'Copy as cURL (bash)').[CR]3. Choose 'Paste from PC or mobile device' here and paste the text on the page shown - or paste it directly in Kodi.[CR][CR]Baka reads the cookie (%(cookies)s) and the matching user agent automatically.[CR][CR][B]Good to know[/B][CR]- Cookie and user agent belong together; 'as cURL' contains both.[CR]- The cookie usually only works for the internet connection (IP) it was obtained with: browser and Kodi must use the same connection (no VPN on only one device).[CR]- Cookies expire after hours to days depending on the site; then repeat. Fully automatic renewal is only possible with FlareSolverr (Settings > General > Network)."
+msgstr "[B]%(source)s – Browser-Sitzung übernehmen[/B][CR][CR]1. https://%(domain)s im Browser öffnen (am besten am PC) und die Prüfung bestätigen, bis die normale Seite erscheint.[CR]2. F12 drücken, Reiter [B]Netzwerk[/B] öffnen, Seite neu laden (F5), die oberste Zeile rechts anklicken und [B]Kopieren > Als cURL kopieren[/B] wählen (Chrome/Edge: „Als cURL (bash) kopieren“).[CR]3. Hier „Vom PC oder Mobilgerät einfügen“ wählen und den Text auf der angezeigten Seite einfügen – oder direkt in Kodi einfügen.[CR][CR]Baka liest daraus automatisch das Cookie (%(cookies)s) und den passenden User-Agent.[CR][CR][B]Gut zu wissen[/B][CR]– Cookie und User-Agent gehören zusammen; „als cURL“ enthält beides.[CR]– Das Cookie gilt meist nur für den Internetanschluss (IP), über den es geholt wurde: Browser und Kodi müssen denselben Anschluss nutzen (kein VPN nur auf einem Gerät).[CR]– Cookies laufen je nach Seite nach Stunden bis Tagen ab; dann einfach wiederholen. Vollautomatisch erneuern geht nur mit FlareSolverr (Einstellungen > Allgemein > Netzwerk)."
 
 msgctxt "#31490"
 msgid "The source is reachable with the stored session."

@@ -56,18 +56,21 @@ def platform():
 # zeigt nach Update den Changelog als Popup an
 def changelog():
     addon_path = translatePath(cConfig().getAddonInfo('path'))
-    CHANGELOG_PATH = os.path.join(addon_path, 'changelog.txt')
+    changelog_path = os.path.join(addon_path, 'changelog.txt')
+    # Follow Kodi's interface language, independently of content-language profiles.
+    if xbmc.getLanguage(xbmc.ISO_639_1).lower() == 'de':
+        localized_path = os.path.join(addon_path, 'resources', 'language',
+                                      'resource.language.de_de', 'changelog.txt')
+        if os.path.isfile(localized_path):
+            changelog_path = localized_path
     version = cConfig().getAddonInfo('version')
-    if cConfig().getSetting('changelog_version') == version or not os.path.isfile(CHANGELOG_PATH):
+    if cConfig().getSetting('changelog_version') == version or not os.path.isfile(changelog_path):
         return
-    cConfig().setSetting('changelog_version', version)
     heading = cConfig().getLocalizedString(30275)
-    with open(CHANGELOG_PATH, mode='r', encoding='utf-8') as f:
-        cl_lines = f.readlines()
-    announce = ''
-    for line in cl_lines:
-        announce += line
+    with open(changelog_path, mode='r', encoding='utf-8') as f:
+        announce = f.read()
     textBox(heading, announce)
+    cConfig().setSetting('changelog_version', version)
 
 
 # zeigt die Entwickler Optionen Warnung als Popup an

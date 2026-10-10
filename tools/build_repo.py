@@ -101,10 +101,14 @@ def apply_bump(old, new):
         s = open(shell, encoding='utf-8').read().replace(old, new)
         open(shell, 'w', encoding='utf-8').write(s)
 
-    changelog = os.path.join(PROJECT_DIR, 'changelog.txt')
-    if os.path.exists(changelog):
-        prev = open(changelog, encoding='utf-8').read()
-        open(changelog, 'w', encoding='utf-8').write('[B]%s[/B]\n- Build\n\n%s' % (new, prev))
+    for relative in ('changelog.txt',
+                     'resources/language/resource.language.de_de/changelog.txt'):
+        changelog = os.path.join(PROJECT_DIR, relative)
+        if os.path.exists(changelog):
+            with open(changelog, encoding='utf-8') as fh:
+                prev = fh.read()
+            with open(changelog, 'w', encoding='utf-8') as fh:
+                fh.write('[B]Version: %s[/B]\n\n- Build\n\n%s' % (new, prev))
     print('Version %s -> %s' % (old, new))
 
 

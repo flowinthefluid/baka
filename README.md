@@ -62,6 +62,10 @@ und ein **Webcam-Rabbithole**, aus dem man nachts um drei nicht mehr rauskommt.
 Baka ist der Nachfolger von xStream: komplett auf Python 3 umgebaut, mit eigenem
 Branding, gehärtetem Kern und **Deutsch als erster Sprache**.
 
+**Von GerXStream oder xStream umziehen:** Ein separates Umzugs-Addon im Baka-Repository
+ist geplant. Die aktuelle Baka-Version startet keine automatische Datenübernahme.
+Details zum vorgesehenen Umfang stehen im [Umzugsplan](docs/UMZUG.md).
+
 <p align="center">
   <img src="resources/art/movies.png" width="88" alt="Filme">
   <img src="resources/art/series.png" width="88" alt="Serien">
@@ -172,7 +176,7 @@ sonst nie anzeigen. (IMDb/RT über einen eigenen, kostenlosen OMDb-Key.)
 ### 🍪 Cookie-Assistent
 Quelle hängt hinter Cloudflare oder DDoS-Guard? Im Browser die Prüfung
 bestätigen, Anfrage „als cURL kopieren", einfügen – **direkt in Kodi oder vom
-Handy/PC** über eine kleine Seite, die Baka kurz im Heimnetz anbietet.
+Mobilgerät/PC** über eine kleine Seite, die Baka kurz im Heimnetz anbietet.
 Vollautomatisch geht's mit **FlareSolverr**.
 
 </td>
@@ -191,8 +195,8 @@ Stylesheets, gleicher Theme-Ordner) nachweislich *dieselbe* Installation ist.
 ### 🕘 Historie & 💾 Backup
 Lokale **Wiedergabe-Historie** (bis 1000 Einträge oder unbegrenzt, abschaltbar).
 **Export/Import** für alles oder einzeln: Einstellungen, Konten, Epic-Favorites.
-Und wer von xStream kommt: Daten werden beim ersten Start **automatisch
-übernommen**.
+Für den Umzug aus GerXStream oder xStream ist ein separates
+[Umzugs-Addon geplant](docs/UMZUG.md).
 
 </td>
 </tr>
@@ -398,9 +402,9 @@ Baka verarbeitet ständig fremdes HTML, fremde JSON-Antworten und
 und `inputstream.rtsp` (RTSP-Webcams) – fehlt eines, fällt nur diese Wiedergabeart weg.
 
 > [!NOTE]
-> **Umsteiger von xStream:** Einstellungen, Favoriten und Daten werden beim ersten Start
-> automatisch übernommen, sofern xStream noch installiert ist. Vorhandene Dateien werden
-> nie überschrieben.
+> **Umsteiger von GerXStream oder xStream:** Baka verwendet eine eigene Addon-ID.
+> Die Datenübernahme ist über ein separates [Umzugs-Addon geplant](docs/UMZUG.md),
+> das aus demselben Kodi-Repository installiert werden soll.
 
 ---
 

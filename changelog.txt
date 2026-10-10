@@ -1,310 +1,253 @@
+[B]Version: 1.1.2[/B]
+
+- Release notes now follow Kodi's interface language: German for German Kodi, English for other languages.
+- Revised release notes, removed a provider-specific example and replaced phone-specific wording with mobile device.
+- Clarified the separate migration plan for GerXStream and xStream; Baka does not start an automatic data transfer.
+
 [B]Version: 1.1.1[/B]
 
-10.10.2026
-
-- Live-TV: NITRO unter Sender nach Ländern -> Deutschland / Österreich / Schweiz. Der DACH-Bereich ist ein gemeinsamer Eintrag.
-- BR, NDR, MDR, rbb, SWR und WDR erscheinen jeweils einmal. MDR nutzt Sachsen-Anhalt als Hauptquelle; Regionalvarianten bleiben als Ersatzquellen in den Senderinformationen. ZDF, ZDFneo und ZDFinfo bleiben eigenständige Sender.
-- Öffentliche DACH-Internetstreams und deutsch-/englischsprachige Sportsender ergänzt. Sport ist nach Sportarten sortiert; MagentaTV-Multicast bleibt deaktiviert.
-- Jede TV-/Sportsenderliste beginnt mit einem EPG für genau diese Sender. Programmdaten kommen aus den konfigurierten XMLTV-Quellen.
-- Filme/Serien, Dokus und Animes haben unabhängige Sprachprofile. Die Sprachabfrage erscheint einmal bei der Ersteinrichtung, nicht erneut nach Updates. Reihenfolge: Nicht anzeigen, Englisch, Deutsch, weitere Sprachen. Japanischer Anime-Originalton mit deutschen Untertiteln schaltet keine englische Synchro frei.
-- Einstellungen: Hauptmenü-Optionen unter Menü anpassen; WebDAV-Zugang unter Sicherungsziel. Repository-Addon unverändert auf 1.0.8.
+- Live TV: NITRO is available under Channels by country -> Germany / Austria / Switzerland, now combined into one entry.
+- BR, NDR, MDR, rbb, SWR and WDR each appear once. MDR uses Sachsen-Anhalt as its primary source; regional variants remain as fallback sources in the channel information. ZDF, ZDFneo and ZDFinfo remain separate channels.
+- Added public DACH internet streams and German- and English-language sports channels. Sports channels are grouped by sport; MagentaTV multicast remains disabled.
+- Every TV and sports channel list starts with an EPG for those channels. Programme data comes from the configured XMLTV sources.
+- Movies/series, documentaries and anime have independent language profiles. The language prompt appears once during initial setup, without repeating after updates. Order: Do not show, English, German, other languages. Japanese anime audio with German subtitles does not enable English dubbing.
+- Settings: main menu options are grouped under Customise menu; WebDAV credentials under Backup destination. The repository add-on remains at 1.0.8.
 
 [B]Version: 1.1.0[/B]
 
-09.10.2026
-
-- GerXStream heißt jetzt Baka (plugin.video.baka, repository.baka). Neue Addon-ID, Daten werden nicht übernommen.
-- Zufallsauswahl in jedem Inhaltsordner: Zufällige Filme, Serien, Animes, Dokus und Kindertitel mit jeweils eigenen Genres, Anzahl und IMDb-Mindestwertung. Korrigiert: Wegen der TMDB-Trefferobergrenze kamen Zufallsfilme bisher nur aus der Frühzeit des Kinos.
-- Sprachen & Regionen: Beim ersten Start einmal die eigenen Sprachen wählen. Quellen in anderen Sprachen stehen unter „Weitere Sprachen“ oder werden ausgeblendet; die globale Suche fragt nur Quellen in den eigenen Sprachen ab.
-- Streams werden nach Tonsprache gefiltert und sortiert, auf Wunsch auch Originalton mit Untertiteln. Jede Quelle gibt ihre Sprachen an; die Einstellung „Bevorzugte Sprache“ entfällt.
-- Meine Länder: Mediatheken (mit Länderebene bei mehreren Ländern) und Live-TV nach Land. Neue Kategorie „Weltkino“ mit Bollywood, K-Drama, Türkischen Serien, Nollywood, Telenovelas u. a. Feste Kategorienamen sind jetzt übersetzt.
-- Korrigiert: kinox-Sprachfilter griff wegen eines fehlerhaften Cookies nicht; movie2k-Suche brach bei „Japanisch“ ab; Wetter-Standbilder öffneten nicht; geteilte Profile mit Livestreams in der Menüreihenfolge wurden abgelehnt.
-- Epic-Watchlist: eigene Watchlists neben Geplant, Am Schauen, Abgeschlossen und Abgebrochen, jeweils mit Ordnern. „Liste abspielen“ legt alle Filme und Folgen einer Watchlist nacheinander in Kodis Wiedergabeliste; Einträge, die nur auf eine Suche zeigen, werden übersprungen. Frühere Favoriten ohne Watchlist bleiben unter „Favoriten“ erreichbar.
-- Seitenanzeige: Vor „Nächste Seite“ steht „Seite X von Y“ (bzw. „Seite X“); ein Klick darauf öffnet eine beliebige Seite.
-- Zufallsauswahl: Neue Mindestzahl an TMDB-Stimmen (Standard 25), damit nur Titel erscheinen, die Quellen auch führen. Eine Liste braucht nur noch rund 25 TMDB-Abfragen statt einer pro Titel (250 Dokus in etwa 7 statt rund 60 Sekunden).
-- Globale Suche fasst identische Treffer mehrerer Quellen zusammen.
-- JPEG-Webcams: Stop/Zurück beendet die Bildaktualisierung zuverlässig.
+- Baka is the successor to GerXStream (plugin.video.baka, repository.baka) and uses its own add-on ID. A separate migration add-on is planned for transferring existing GerXStream or xStream data; this version does not start an automatic transfer.
+- Random selections in every content folder: movies, series, anime, documentaries and children's titles, each with separate genres, result count and minimum IMDb rating. Fixed random movies being limited to early cinema because of TMDB's result cap.
+- Languages and regions: choose your languages once on first start. Sources in other languages appear under Other languages or can be hidden; global search only queries sources in your selected languages.
+- Streams are filtered and sorted by audio language, with optional original audio and subtitles. Each source declares its languages; the Preferred language setting has been removed.
+- My countries: media libraries and live TV grouped by country, with an additional country level when several are selected. Added World cinema with Bollywood, K-drama, Turkish series, Nollywood, telenovelas and more. Fixed category names are now translated.
+- Fixed kinox language filtering failing because of an invalid cookie, movie2k search failing for Japanese, weather still images not opening, and shared profiles with live streams in the menu order being rejected.
+- Epic-Watchlist: custom watchlists alongside Planned, Watching, Completed and Dropped, each with folders. Play list queues all movies and episodes in Kodi; entries that only point to a search are skipped. Older favourites without a watchlist remain accessible under Favourites.
+- Page navigation: Page X of Y (or Page X) appears before Next page; select it to jump to any page.
+- Random selections: a new minimum TMDB vote count (default 25) favours titles likely to be available from sources. A list now needs about 25 TMDB requests instead of one per title (250 documentaries in roughly 7 instead of 60 seconds).
+- Global search combines matching results from multiple sources.
+- JPEG webcams: Stop/Back reliably ends image refreshing.
 
 [B]Version: 1.0.38[/B]
 
-09.10.2026
+- Configure HTTPS-WebDAV, such as Nextcloud, directly through Backup destination in the import/export menu. Includes destination folder, HTTPS address, username and masked app password; cancelling retains existing settings. Import/export actions return to the backup menu.
+- Complete backups or selected sections with optional accounts. Separate account-free settings profiles, favourites/watchlists, history, watched flags and an installable add-on ZIP. Manual cloud snapshots without automatic synchronisation. Google Drive/OneDrive use external synchronised folders, without direct OAuth sign-in.
+- Fixed TMDB filmographies: person requests use a valid page; missing biography or birthday fields no longer block the dialogue transition. Movie and series credits replace previous lists, invalid entries are skipped and errors are displayed.
+- The playback service no longer triggers an extra Container.Refresh after stopping above 90 percent. Series favourites, episode lists, playback and returning to the same folder and selection after Stop were verified in the preceding Android test build.
+- Account backups and local WebDAV credentials remain unencrypted; use private storage and separate app passwords. A real cloud transfer including accounts has not yet been tested with a user account.
+- 1.0.37 was a local test build without a public release. The repository remains at 1.0.8.
 
-- HTTPS-WebDAV, z.B. Nextcloud, direkt im Import-/Export-Menue ueber Sicherungsziel einrichten konfigurieren. Zielordner, HTTPS-Adresse, Benutzername und maskiertes App-Passwort; Abbruch behaelt vorhandene Einstellungen. Import-/Export-Aktionen kehren zum Sicherungsmenue zurueck.
-- Gesamtsicherung oder ausgewaehlte Bereiche inklusive optionaler Konten. Separates kontofreies Einstellungsprofil, Favorites/Watchlist, Historie, Gesehen-Markierungen und installierbare Add-on-ZIP. Manuelle Cloud-Snapshots; keine automatische Synchronisierung. Google Drive/OneDrive ueber externe synchronisierte Ordner, keine direkte OAuth-Anmeldung.
-- TMDB-Filmografie korrigiert: Personenabfrage nutzt eine gueltige Seite; null/fehlende Biografie- und Geburtstagsfelder verhindern den Dialogwechsel nicht mehr. Film- und Seriencredits werden angezeigt, vorherige Listen ersetzt und ungueltige Eintraege ausgelassen. Fehler werden angezeigt statt still verschluckt.
-- Playback-Dienst loest nach Stop oberhalb 90 Prozent keinen zusaetzlichen Container.Refresh aus. Carrie-Favorit, acht Episoden, Wiedergabe und identischer Ordner/Auswahlposition nach Stop wurden im vorausgehenden Android-Teststand verifiziert.
-- Kontensicherungen und lokale WebDAV-Zugangsdaten bleiben unverschluesselt; nur privaten Speicher und separate App-Passwoerter verwenden. Echte Cloud-Kontouebertragung noch nicht mit einem Nutzerkonto getestet.
-- 1.0.37 war ein lokaler Teststand und wurde nicht oeffentlich veroeffentlicht. Repository bleibt auf 1.0.8.
+[B]Version: 1.0.37 (local test build)[/B]
 
-[B]Version: 1.0.37 (lokaler Teststand)[/B]
-
-09.10.2026
-
-- Freie Mehrfachauswahl der Sicherungsbereiche fuer Export und Import; optional inklusive Konten in die private Cloud. Nicht ausgewaehlte Bereiche bleiben beim Import unveraendert.
-- Teilbares Einstellungsprofil: Auswahlwerte, Schalter, Zahlen, Hoster-Reihenfolge und Hauptmenue-Anordnung ohne Konten, Tokens, Cookies, Cloud-Zugangsdaten oder Geraetepfade.
-- Geraetestand ohne Konten uebertraegt dieses Profil plus Favorites-Ordner, Watchlist-Statuslisten, Historie und Gesehen-Markierungen. Gesamtsicherung mit Konten bleibt separat und erfordert eine Warnungsbestaetigung.
-- Manueller Export/Import ueber Kodi-Dateipfade und echte synchronisierte Cloud-Ordner (Google Drive, OneDrive, Nextcloud). Nextcloud alternativ direkt per HTTPS-WebDAV mit App-Passwort. Keine automatische Synchronisierung oder direkte Google-/Microsoft-Anmeldung.
-- Installierbare Add-on-ZIP getrennt vom Profil exportierbar. Keine Cache-/Profillog-Dateien oder userdata im Paket; Einstellungen separat importieren.
-- Begrenzt gelesene Dateien/Cloud-Antworten, keine Weiterleitungen mit Cloud-Zugangsdaten, eindeutige Snapshot-Dateinamen und abgewiesenes Ueberschreiben in Nextcloud.
-- Der Playback-Dienst startet nach Stop keinen zweiten Container.Refresh mehr. Die 90-Prozent-Gesehen-Markierung bleibt erhalten.
-- Oeffentliche Version bleibt vorerst 1.0.36. Kein interner FTP-Server hinzugefuegt.
+- Select any combination of backup sections for export/import, optionally including accounts in a private cloud. Unselected sections remain unchanged during import.
+- Shareable settings profiles include choices, switches, numbers, hoster order and main menu order, without accounts, tokens, cookies, cloud credentials or device paths.
+- Account-free device snapshots transfer the settings profile plus favourite folders, watchlist status lists, history and watched flags. Complete backups including accounts remain separate and require confirmation of a warning.
+- Manual export/import through Kodi file paths and synchronised cloud folders (Google Drive, OneDrive, Nextcloud). Nextcloud also supports HTTPS-WebDAV with an app password. No automatic synchronisation or direct Google/Microsoft sign-in.
+- Export an installable add-on ZIP separately from the profile. No cache files, profile logs or userdata in the package; import settings separately.
+- Bounded file/cloud response reads, no redirects carrying cloud credentials, unique snapshot filenames and overwrite protection in Nextcloud.
+- The playback service no longer starts a second Container.Refresh after Stop. Watched marking at 90 percent is retained.
+- The public version remains 1.0.36 for this test build. No internal FTP server was added.
 
 [B]Version: 1.0.36[/B]
 
-09.10.2026
-
-- Filmpalast-Fall aus den Android-Logs beruecksichtigt: Die Quelle nennt die Serie selbst Carrie S01E08. Solche Folgen-Endungen werden in Watchlist-Serientiteln entfernt, damit neuere Folgen keine zweite Serie erzeugen.
-- Vorhandene Favoriten mit Serien-Medientyp erhalten beim Einlesen ebenfalls den bereinigten Titel; Anbieterordner und Ordnerstruktur bleiben erhalten.
-- Historie verwendet den bereinigten Seriennamen plus die tatsaechlich gewaehlte Staffel/Folge statt der Folgen-Endung im Anbietertitel.
-- Android-Logs der alten Version bestaetigen GetDirectory-Fehler beim Epic-Favorites-Wrapper. Das direkte Anbieter-Routing aus 1.0.35 bleibt erhalten; erfolgreicher Android-Aufruf nach dem Update noch nicht verifiziert.
-- Nach dem Update Kodi neu starten. Repository bleibt auf 1.0.8.
+- Existing favourites with the series media type also receive cleaned series titles when loaded; provider folders and folder structure are retained.
+- History uses the cleaned series name and the selected season/episode instead of the episode suffix in the provider title.
+- Android logs from the previous version confirm GetDirectory errors in the Epic-Favourites wrapper. Direct provider routing from 1.0.35 is retained; a successful Android call after this update had not yet been verified.
+- Restart Kodi after updating. The repository remains at 1.0.8.
 
 [B]Version: 1.0.35[/B]
 
-09.10.2026
-
-- Epic-Favorites heisst standardmaessig Epic-Watchlist. Eigene Namen und vorhandene Ordner/Unterordner bleiben erhalten.
-- Unterpunkte: Favorites, Geplant, Am Schauen, Abgeschlossen, Abgebrochen und Historie. Eintraege der Statuslisten koennen auch in eigene Favorites-Ordner kopiert werden.
-- Neue Serien-Favoriten und Statuslisten speichern die ganze Serie statt einzelner Folgen und oeffnen den konkreten Anbieterordner. Serienjahr wird angezeigt, sofern vorhanden.
-- Am Schauen aktualisiert sich erst bei tatsaechlichem Wiedergabestart und merkt sich den zuletzt benutzten Anbieter. Abgeschlossen und Abgebrochen bleiben bewusst gesetzte Statuswerte; eine gesehene Folge schliesst nicht die ganze Serie ab.
-- Historie bleibt episodenbezogen. Neue Eintraege oeffnen direkt den gespeicherten Anbieterordner; alte Eintraege ohne Anbieterroute behalten die Suchfunktion.
-- Zeitstempel der Historie sind separat ein-/ausschaltbar und standardmaessig aus. Sortierung nach letzter Wiedergabe bleibt erhalten.
-- Gespeicherte Favoriten verwenden Kodi-Plugin-Routen direkt statt eines zweiten Wrapper-Aufrufs. Kurzlebige Folgenqueue-Kennungen werden nicht in neuen Favoriten gespeichert.
-- Nach dem Update Kodi neu starten. Automatisierte Tests mit Kodi-Stubs bestanden; Carrie-Wiedergabe auf Android mangels ADB-Zugriff noch nicht verifiziert.
-- Repository bleibt auf 1.0.8; bestehende Update-URLs unveraendert.
+- Epic-Favourites is now named Epic-Watchlist by default. Custom names and existing folders/subfolders are retained.
+- Sections: Favourites, Planned, Watching, Completed, Dropped and History. Status list entries can also be copied into custom favourite folders.
+- New series favourites and status lists save the entire series instead of individual episodes and open the specific provider folder. The series year is shown when available.
+- Watching updates only when playback actually starts and remembers the last provider. Completed and Dropped remain explicitly chosen statuses; watching one episode does not complete the entire series.
+- History remains episode-specific. New entries open the saved provider folder directly; older entries without a provider route retain search behaviour.
+- History timestamps can be enabled separately and are off by default. Sorting by last playback is retained.
+- Saved favourites use Kodi plugin routes directly instead of a second wrapper call. Temporary episode queue IDs are not saved in new favourites.
+- Restart Kodi after updating. Automated tests with Kodi stubs passed; Android series playback had not yet been verified because ADB was unavailable.
+- The repository remains at 1.0.8; existing update URLs are unchanged.
 
 [B]Version: 1.0.34[/B]
 
-09.10.2026
-
-- Serienfortsetzung startet eine native Kodi-Playlist ab der gewaehlten Folge; damit ist auch der Sprung zur naechsten Folge moeglich.
-- Hoster-Nachfrage und gemerkter Hoster gelten auch bei allgemeiner automatischer Hoster-Auswahl. Fehlt der gemerkte Hoster, wird erneut gefragt.
-- Filme und Folgen werden ab 90 Prozent dauerhaft als gesehen gespeichert, auch beim anschliessenden Stoppen oder Ueberspringen des Abspanns. Keine automatische Weiterschaltung bei 90 Prozent.
-- Stabiler Wiedergabekontext und Gesehen-Kennungen ueber Folgenwechsel und umgeleitete Streams hinweg; der Hintergrunddienst bleibt zur Fortschrittsmessung aktiv.
-- Nach dem Update Kodi neu starten. Automatisierte Tests mit Kodi-Stubs bestanden; echter Android-Kodi-Playerablauf noch nicht verifiziert.
-- Repository bleibt auf 1.0.8; bestehende Update-URLs unveraendert.
+- Series continuation starts a native Kodi playlist from the selected episode, allowing a jump to the next episode.
+- Hoster prompts and remembered hosters also apply to general automatic hoster selection. If the remembered hoster is unavailable, the user is asked again.
+- Movies and episodes are permanently marked as watched at 90 percent, including when stopping or skipping the credits. No automatic advance at 90 percent.
+- Stable playback context and watched IDs across episode changes and redirected streams; the background service remains active for progress tracking.
+- Restart Kodi after updating. Automated tests with Kodi stubs passed; the real Android Kodi player flow had not yet been verified.
+- The repository remains at 1.0.8; existing update URLs are unchanged.
 
 [B]Version: 1.0.32[/B]
 
-09.10.2026
-
-- ARD-Mediathek mit eingebetteten Beitraegen und echten Serien-/Sendungsordnern; ARTE-Kollektionen und einzelne Themenbereiche bleiben sichtbar.
-- MediathekViewWeb-Sender mit neuen Videos, Themenfiltern und senderbezogener Suche. Themenfilter sind Suchbegriffe, keine redaktionellen Genres.
-- Netzkino und Rocket Beans TV unter Mediatheken; Rocket Beans mit neuen Folgen, Sendungen A-Z, Staffeln und Seitennavigation.
-- Freie Rocket-Beans-Videos starten ueber das offizielle YouTube-Add-on. Supporter-Wiedergabe und Red-Bull-TV-Mediathek sind noch nicht integriert.
-- Rocket-Beans-Konto unter Konten mit An-/Abmeldung, optionalem Zwei-Faktor-Code und persoenlichen Abos. Passwort wird nach erfolgreicher Anmeldung entfernt; Kodi speichert die Sitzung lokal, nicht verschluesselt. Echte Konto-Anmeldung noch nicht mit einem Testkonto bestaetigt, Browser-Captcha kann die Anmeldung verhindern.
-- Globale Suche behandelt ARD-Serienordner und ARTE-Kollektionen nicht als abspielbare Filme.
-- Repository bleibt auf Version 1.0.7; bestehende Update-URLs unveraendert.
+- ARD media library with embedded videos and real series/programme folders; ARTE collections and individual topics remain visible.
+- MediathekViewWeb channels with new videos, topic filters and channel-specific search. Topic filters are search terms rather than editorial genres.
+- Netzkino and Rocket Beans TV under Media libraries; Rocket Beans includes new episodes, programmes A-Z, seasons and page navigation.
+- Free Rocket Beans videos play through the official YouTube add-on. Supporter playback and the Red Bull TV media library are not yet integrated.
+- Rocket Beans accounts under Accounts with sign-in/out, optional two-factor code and personal subscriptions. The password is removed after successful sign-in; Kodi stores the session locally without encryption. Real account sign-in has not yet been confirmed with a test account; a browser CAPTCHA can prevent sign-in.
+- Global search no longer treats ARD series folders and ARTE collections as playable movies.
+- The repository remains at 1.0.7; existing update URLs are unchanged.
 
 [B]Version: 1.0.31[/B]
 
-09.10.2026
-
-- Zufallsfilme oeffnen zuerst Random, Nach Genre oder Nach Filmproduktion; Standard bleibt 250 Filme.
-- Zufallsauswahl aus dem datierten, erschienenen TMDB-Katalog statt einer Popularitaetsauswahl; Datumsbereiche umgehen das TMDB-Seitenlimit. Unbekannte Erscheinungsdaten und Erwachsenenmarkierungen bleiben ausgeschlossen.
-- Eigene Einstellungsseite fuer erlaubte Random-Genres, Anzahl und echte IMDb-Mindestwertung ueber OMDb. Abgewaehlte Genres gelten nicht fuer gezielte Genre-/Firmenauswahl.
-- Kategorien mit eigener Einstellungsseite fuer IMDb-/TMDB-Mindestwertungen und Mindeststimmen; IMDb braucht einen OMDb-Schluessel, fehlende Wertungen werden ausgeschlossen. Starke Filter koennen weniger Zufallstreffer liefern.
-- Oeffentlich-rechtliche Mediatheken standardmaessig direkt sichtbar, unabhaengig von den Suchquellenschaltern; in den Kategorie-Einstellungen abschaltbar.
-- Alle in Aktuelle Trends umbenannt, Charts nach Filmen und Serien getrennt, Sammlungen unter Themen integriert und separaten Bewertungsmenuepunkt entfernt.
-- Themen verlangen exakte TMDB-Schlagwoerter statt fachfremder Ersatzlisten. Wildnis als Schauplatz praezisiert; Natur- und Tierdokumentationen mit Dokumentarfilm-Filter ergaenzt.
-- Repository bleibt auf Version 1.0.7; bestehende Update-URLs unveraendert.
+- Random movies first offers Random, By genre or By production company; the default remains 250 movies.
+- Random selections use TMDB's dated, released catalogue instead of popularity rankings; date ranges avoid TMDB's page limit. Unknown release dates and adult titles remain excluded.
+- Separate settings for allowed random genres, result count and actual minimum IMDb rating through OMDb. Deselected genres do not affect targeted genre/company selections.
+- Categories have separate settings for minimum IMDb/TMDB ratings and vote counts; IMDb requires an OMDb key and missing ratings are excluded. Restrictive filters can produce fewer random results.
+- Public broadcasters' media libraries are visible by default, independently of search source switches; they can be disabled in category settings.
+- All was renamed Current trends, charts split into movies and series, collections integrated under Topics and the separate ratings menu removed.
+- Topics require exact TMDB keywords rather than unrelated fallback lists. Wilderness is clarified as a setting; nature and wildlife documentaries use a documentary filter.
+- The repository remains at 1.0.7; existing update URLs are unchanged.
 
 [B]Version: 1.0.30[/B]
 
-09.10.2026
-
-- Leere Auswahlwerte in den Schauspieler- und Regisseur-Einstellungen ersetzt, um einen nativen Kodi-Absturz beim Laden der Einstellungen zu vermeiden.
-- Vorhandene Personensortierung bleibt beim Uebernehmen der bisherigen Einstellung erhalten.
-- Neue Versionsnummer fuer die Auslieferung der Korrektur; GerXStream Repository auf 1.0.7 aktualisiert.
+- Replaced empty actor/director setting choices to prevent a native Kodi crash when loading settings.
+- Existing person sorting is retained when applying the previous setting.
+- A new version delivers the fix; GerXStream Repository updated to 1.0.7.
 
 [B]Version: 1.0.29[/B]
 
-05.10.2026
-
-- Zufallsfilme und TMDB-Kategorien suchen die ausgewaehlten Titel mit Originaltitel, Jahr und Medientyp statt unpassende Provider-Listen zu oeffnen.
-- Fehlende Suchtreffer und abgebrochene Suchen behalten die vorherige Liste bei.
-- Kein Katalogabruf beim Import der Quellen; Hintergrundsuchen unterdruecken Netzwerk-Dialoge, auch bei Lese-Timeouts.
-- Schauspieler und Regisseure mit eigenen Einstellungsbereichen, A-Z, IMDb nach bestem Film oder ungewichtetem Durchschnitt (OMDb-Schluessel erforderlich).
-- Produktionsgruppen mehrfach waehlbar: Alle, Hollywood, Deutsche, Japanische, Koreanische, Indische und Other; Laender und Filmografien aus Wikidata.
-- Anzahl nach Filtern und Sortieren einstellbar, z. B. Top 100; 0 zeigt alle passenden Eintraege im geladenen Pool von bis zu 500 beliebten Personen plus eigenen Schauspielern. Keine weltweite Rangliste; Daten koennen unvollstaendig sein.
-- IMDb-Filmwertungen werden quellenuebergreifend 14 Tage gespeichert, um das API-Limit zu schonen.
-- Indexseiten 1 und 2 zu Indexseiten zusammengefuehrt; vorhandene Quelleneinstellungen bleiben erhalten. Suche bleibt an ihrer bisherigen Stelle.
+- Random movies and TMDB categories search selected titles using original title, year and media type instead of opening unrelated provider lists.
+- Missing results and cancelled searches retain the previous list.
+- Importing sources no longer fetches their catalogue; background searches suppress network dialogues, including read timeouts.
+- Separate actor/director settings, A-Z, IMDb by best movie or unweighted average (OMDb key required).
+- Select multiple production groups: All, Hollywood, German, Japanese, Korean, Indian and Other; countries and filmographies come from Wikidata.
+- Configure the count after filtering and sorting, such as Top 100; 0 shows all matching entries in the loaded pool of up to 500 popular people plus custom actors. This is not a worldwide ranking and data can be incomplete.
+- IMDb movie ratings are cached across sources for 14 days to reduce API usage.
+- Index pages 1 and 2 were combined into Index pages; existing source settings are retained. Search remains in its previous position.
 
 [B]Version: 1.0.28[/B]
 
-26.09.2026
-
-- Live-TV: rund 220 frei empfangbare Sender aus Deutschland, Oesterreich und der Schweiz (ARD mit allen Dritten und WDR-Lokalzeiten, ZDF, ZDFneo, ZDFinfo, 3sat, phoenix, KiKA, arte, DW, WELT, ORF III, ORF Kids, ServusTV, Regionalsender, Offene Kanaele, Bundestag u. v. m.), nur von offiziellen Sender-Servern.
-- Live-TV: Pluto TV mit rund 190 kostenlosen Sendern ueber die offizielle Schnittstelle, abschaltbar in den Livestream-Einstellungen.
-- Sport-Bereich: Red Bull TV, DAZN Darts, Snooker, Tennis Channel, Auto Motor Sport, Top Gear, FIFA+, More Than Sports u. a. (ohne Baseball und American Football).
-- Kategorien > Mediatheken: ARD Mediathek, Arte, MediathekViewWeb und die Mediatheken aller Sender (ZDF, ZDFneo, ZDFinfo, 3sat, phoenix, ORF, SRF, KiKA, Dritte, DW ...).
-- Bevorzugte Hoster je Quelle (sortieren, filtern oder automatisch starten) und Kontextmenue "Mit Hoster-Auswahl abspielen".
-- Naechste Episode: optional den Hoster der ersten Folge beibehalten.
-- Einstellungen auf die Kodi-Stufen Einfach/Standard/Fortgeschritten/Experte verteilt.
-- Historie bis 1000 Eintraege oder unbegrenzt.
-- Beschreibung optional mit IMDb/Rotten-Tomatoes/TMDB-Wertung, Regie und Darstellern.
-- Personen nach Filmanzahl oder Oscars/Grammys sortierbar.
-- Cookie-Assistent fuer Quellen hinter Cloudflare/DDoS-Guard (Einfuegen als cURL, auch vom PC oder Handy).
+- Live TV: around 220 free channels from Germany, Austria and Switzerland (ARD with regional channels and WDR local editions, ZDF, ZDFneo, ZDFinfo, 3sat, phoenix, KiKA, arte, DW, WELT, ORF III, ORF Kids, ServusTV, regional channels, community channels, Bundestag and more), using official broadcaster servers only.
+- Live TV: Pluto TV with around 190 free channels through its official API, optional in live stream settings.
+- Sports: Red Bull TV, DAZN Darts, Snooker, Tennis Channel, Auto Motor Sport, Top Gear, FIFA+, More Than Sports and more (without baseball and American football in this version).
+- Categories > Media libraries: ARD, Arte, MediathekViewWeb and broadcaster libraries (ZDF, ZDFneo, ZDFinfo, 3sat, phoenix, ORF, SRF, KiKA, regional channels, DW and more).
+- Preferred hosters per source (sort, filter or start automatically) and the Play with hoster selection context action.
+- Next episode: optionally retain the first episode's hoster.
+- Settings distributed across Kodi's Basic/Standard/Advanced/Expert levels.
+- History supports up to 1,000 entries or an unlimited count.
+- Optional descriptions include IMDb/Rotten Tomatoes/TMDB ratings, directors and cast.
+- Sort people by film count or Oscars/Grammys.
+- Cookie assistant for sources behind Cloudflare/DDoS-Guard (paste as cURL, including from a PC or mobile device).
 
 [B]Version: 1.0.27[/B]
 
-25.09.2026
-
-- Manuell gestartete Episoden werden nicht mehr durch einen alten Wiedergabelisten-Marker uebersprungen.
-- Doku-YouTube importiert nur noch vorhandene Doku-Ansichten.
-- Zugangsdaten und Token werden vor dem Protokollieren von Anfrage-URLs geschwaerzt.
-- Das Vollbild wird erst nach dem Kodi-AV-Start aktiviert.
-- Oeffentliche Webcam- und Wetterkamera-Kataloge wurden erweitert und nach Kategorien strukturiert.
-- Nicht aufloesbare Hoster-Antworten werden als normaler Quellfehler behandelt statt einen Traceback auszugeben.
+- Manually started episodes are no longer skipped because of an old playlist marker.
+- Documentary YouTube only imports existing documentary views.
+- Credentials and tokens are redacted before request URLs are logged.
+- Full screen activates only after Kodi's AV start.
+- Expanded public webcam/weather camera catalogues and grouped them by category.
+- Unresolvable hoster responses are treated as normal source errors instead of producing a traceback.
 
 [B]Version: 1.0.26[/B]
 
-25.09.2026
-
-- Kodi spielt die ausgewaehlte Folge nur einmal ab; die naechsten Folgen werden an seine bestehende Wiedergabeliste angehaengt.
+- Kodi plays the selected episode once and appends subsequent episodes to its existing playlist.
 
 [B]Version: 1.0.25[/B]
 
-25.09.2026
-
-- Offene Kodi-Dialoge vor dem Vollbildwechsel synchron schliessen.
+- Close open Kodi dialogues synchronously before switching to full screen.
 
 [B]Version: 1.0.24[/B]
 
-25.09.2026
-
-- Wiedergabeaufruf kehrt nach dem Videostart zurueck und aktiviert Kodis Vollbildfenster.
+- Playback calls return after the video starts and activate Kodi's full screen window.
 
 [B]Version: 1.0.23[/B]
 
-25.09.2026
-
-- Webcam-Katalog nach Kategorien, mit Betreiberquelle und Pruefdatum.
-- Webcam-Eintraege sind von der Providerlogik in einen versionierten Katalog ausgelagert.
+- Webcam catalogue organised by category, with operator source and verification date.
+- Webcam entries moved out of provider logic into a versioned catalogue.
 
 [B]Version: 1.0.22[/B]
 
-24.09.2026
-
-- Epic-Favorites vor der globalen Suche eingefuegt
-- Eigene, verschachtelte Favoritenordner direkt per Kontextmenue anlegbar
-- Eintraege koennen beim Hinzufuegen in einen Zielordner gelegt sowie spaeter verschoben oder entfernt werden
-- Anzeigename von Epic-Favorites ist in den Einstellungen konfigurierbar
-- Staffeln werden optional als echte Kodi-Wiedergabeliste gestartet
-- Kodi "Naechster Titel" wechselt waehrend der Wiedergabe direkt zur folgenden Episode
-- Der Wechsel erfolgt ohne Unterbrechung; manuelles Stoppen beendet die Wiedergabe
-- Ex-/Import fuer Gesamtsicherungen sowie einzelne Einstellungen, Konten und Epic-Favorites ergaenzt
+- Epic-Favourites added before global search.
+- Create custom nested favourite folders directly through the context menu.
+- Choose a destination folder when adding entries; move or remove them later.
+- Configure the Epic-Favourites display name in settings.
+- Optionally start seasons as native Kodi playlists.
+- Kodi's Next item switches directly to the next episode during playback.
+- Episode changes happen without interruption; manually stopping ends playback.
+- Added export/import for complete backups, individual settings, accounts and Epic-Favourites.
 
 [B]Version: 1.0.21[/B]
 
-23.09.2026
-
-- Wiedergabe-Historie mit Schalter, Begrenzung und Zuruecksetzen ergaenzt
-- Dokuquellen getrennt; YouTube-Doku-Kanaele nur unter Dokus
-- Lieblingshoster unter Alle Quellen oben oder unten positionierbar
-- Anime-Stream, KinoKing sowie Fehlerbehandlung fuer JSON- und Timeout-Quellen verbessert
+- Added playback history with enable switch, limit and reset.
+- Separate documentary sources; documentary YouTube channels only appear under Documentaries.
+- Position favourite hosters at the top or bottom of All sources.
+- Improved Anime-Stream, KinoKing and error handling for JSON/timeout sources.
 
 [B]Version: 1.0.20[/B]
 
-21.09.2026
-
-- Kodi-Repository auf GitLab Pages umgestellt
+- Kodi repository moved to GitLab Pages.
 
 [B]Version: 1.0.19[/B]
 
-21.09.2026
-
-- Anzahl der beliebten Schauspieler und Regisseure getrennt einstellbar (Standard: 500 / 100)
+- Separate result counts for popular actors and directors (default: 500 / 100).
 
 [B]Version: 1.0.18[/B]
 
-21.09.2026
-
-- Kategorien, Jahrzehnte und Schauspieler-Suchen akzeptieren wieder fehlende optionale Filterparameter
-- Beliebte Schauspieler/Regisseure: Standard auf 100 reduziert, Anzahl (25 bis 500) und Sortierung einstellbar
-- Leere Hoster-Antworten werden als fehlender Stream behandelt statt mit IndexError abzubrechen
-- Quellfehler zeigen keinen abgeschnittenen Python-Trace mehr auf dem Fernseher; Details bleiben im Kodi-Protokoll
+- Categories, decades and actor searches accept missing optional filter parameters again.
+- Popular actors/directors: default reduced to 100, with configurable count (25 to 500) and sorting.
+- Empty hoster responses are treated as missing streams instead of failing with IndexError.
+- Source errors no longer display truncated Python traces on the TV; details remain in Kodi's log.
 
 [B]Version: 1.0.17[/B]
 
-21.09.2026
-
-- Globale Suchen: movie2k kann bei Cloudflare keinen Hinweisdialog mehr aus dem Such-Worker oeffnen
-- Unpassende, zwischengespeicherte Treffer reiner Anime-Quellen werden aus allgemeinen Suchen entfernt
-- Die Ergebnisliste wird ohne zweiten Fortschrittsdialog direkt an Kodi uebergeben
+- Global search: movie2k cannot open a Cloudflare notice from a search worker.
+- Removed unsuitable cached results from anime-only sources in general searches.
+- Results are passed directly to Kodi without a second progress dialogue.
 
 [B]Version: 1.0.16[/B]
 
-21.09.2026
-
-- Cloudflare- und DDoS-Hinweise unterbrechen automatische globale Suchen nicht mehr; die betroffene Quelle wird protokolliert und uebersprungen
+- Cloudflare and DDoS notices no longer interrupt automatic global searches; affected sources are logged and skipped.
 
 [B]Version: 1.0.15[/B]
 
-21.09.2026
-
-- Globale Suche: die Abbruchpruefung blockiert unter Kodi 22 nicht mehr den Hauptthread; fertiggestellte Quellen werden jetzt gesammelt und angezeigt
+- Global search: cancellation checks no longer block Kodi 22's main thread; completed sources are collected and displayed.
 
 [B]Version: 1.0.14[/B]
 
-21.09.2026
-
-- Globale Suche nutzt unter Kodi 22/Python 3.14 keine blockierende ThreadPool-Wartefunktion mehr; alle fertiggestellten Quellen werden anschliessend gerendert
+- Global search no longer uses a blocking ThreadPool wait under Kodi 22/Python 3.14; all completed sources are rendered afterwards.
 
 [B]Version: 1.0.13[/B]
 
-20.09.2026
-
-- Globale Suche sammelt Treffer im Hintergrund ohne Kodi-UI-Aufrufe aus Worker-Threads; das verhindert den bisherigen Stillstand nach einer Quelle
-- Timeout pro Anbieter ist unter GerXStream Einstellungen konfigurierbar (Standard: 30 Sekunden)
-- Support-Informationen repariert und um installierte GerXStream-Version, CPU und Arbeitsspeicher erweitert
-- Einstellungsmenue neu geordnet: GerXStream, Resolver, Resolver aktualisieren, GerXStream aktualisieren, Support, Domain-Aktualisierung
+- Global search collects results in the background without Kodi UI calls from worker threads, preventing the previous stall after one source.
+- Configure provider timeouts in GerXStream settings (default: 30 seconds).
+- Repaired support information and added installed GerXStream version, CPU and memory.
+- Reordered settings menu: GerXStream, Resolver, Update resolver, Update GerXStream, Support, Update domains.
 
 [B]Version: 1.0.12[/B]
 
-20.09.2026
-
-- Globale Suche isoliert die Ergebnisse jeder Quelle und zeigt vorhandene Treffer trotz haengender Anbieter an
-- Quellen mit einer Suche laenger als 30 Sekunden werden protokolliert und uebersprungen
+- Global search isolates results from each source and displays available results despite stalled providers.
+- Sources taking longer than 30 seconds are logged and skipped.
 
 [B]Version: 1.0.11[/B]
 
-20.09.2026
-
-- Globale Suche bleibt nutzbar, wenn eine Quelle durch DDoS-Guard oder Cloudflare geschuetzt ist
-- Hinweis zum Bot-Schutz wird nach der Suche angezeigt und nennt die betroffene Quelle
-- Quellen, Kategorien, Favoriten und Anzeige wurden erweitert und ueberarbeitet
+- Global search remains usable when a source is protected by DDoS-Guard or Cloudflare.
+- Bot protection notices appear after the search and identify the affected source.
+- Expanded and revised sources, categories, favourites and display.
 
 [B]Version: 1.0.1[/B]
 
-20.09.2026
-
-- ResolveURL 5.1.209 wird jetzt direkt vom GerXStream Repository bereitgestellt
-- Nicht benoetigte Debug-Abhaengigkeiten pydevd und Web-PDB entfernt
+- ResolveURL 5.1.209 is now provided directly by GerXStream Repository.
+- Removed unnecessary pydevd and Web-PDB debugging dependencies.
 
 [B]Version: 1.0.0[/B]
 
-19.09.2026
+- First public GerXStream release.
+- New branding: icon, banner and clearlogo in the purple/emerald GerXStream design.
+- Kodi 22 Piers as the target platform, with Kodi 21 Omega supported as a fallback.
+- Completed InfoTag metadata: title, director, writer, rating, first air date and series status are now transferred correctly.
+- Kids-Tube: restored YouTube search using only the user's API key from the YouTube add-on.
+- Fixed numerous encoding and regex issues in site plugins (accents, special characters and search patterns).
+- Disabled self-updates until a dedicated repository is available.
 
-- Erste öffentliche Version von GerXStream
-- Neues Branding: Icon, Banner, Clearlogo im violett-smaragdgrünen GerXStream-Design
-- Kodi 22 "Piers" als Zielplattform, Kodi 21 "Omega" als Fallback unterstützt
-- InfoTag-Metadaten vervollständigt: Titel, Regie, Drehbuch, Bewertung, Erstausstrahlung und Serienstatus werden jetzt korrekt übernommen
-- Kids-Tube: YouTube-Suche wiederhergestellt, nutzt ausschließlich den eigenen API-Schlüssel aus dem YouTube-Addon
-- Zahlreiche Encoding- und Regex-Fehler in den Site-Plugins bereinigt (Umlaute, Sonderzeichen, Suchmuster)
-- Selbst-Update-Mechanismus deaktiviert, bis ein eigenes Repository bereitsteht
+[B]Prerelease development: security[/B]
 
-14.09.2026
+- Security hardening: URL routing restricted to a fixed entry-point whitelist.
+- TLS certificate verification enabled by default; removed eval() on external data.
+- Added timeouts for all HTTP requests.
 
-- Sicherheitshärtung: URL-Routing auf eine feste Whitelist an Einstiegsfunktionen beschränkt
-- TLS-Zertifikatsprüfung standardmäßig aktiv, kein eval() mehr auf Fremddaten
-- Timeouts für alle HTTP-Anfragen ergänzt
+[B]Prerelease development: data transfer[/B]
 
-09.09.2026
+- Automatic transfer of existing settings, favourites and data on first start, when an older installation is present.
+- Various site plugin fixes (global search, pagination and genres).
 
-- Automatische Übernahme bestehender Einstellungen, Favoriten und Daten beim ersten Start (sofern eine ältere Installation vorhanden ist)
-- Diverse Bugfixes in den Site-Plugins (globale Suche, Paginierung, Genres)
+[B]Project start[/B]
 
-05.09.2026
-
-- Projektstart: Grundgerüst und Addon-ID plugin.video.gerxstream festgelegt
+- Project started: base structure and add-on ID plugin.video.gerxstream established.

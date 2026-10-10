@@ -445,7 +445,7 @@ def notifyOnce(siteId, kind, url='', interactive=True):
             'und die Pruefung dort bestaetigen. Danach hilft der '
             'Cookie-Assistent (Einstellungen > Allgemein > Netzwerk) beim '
             'Uebernehmen - dort genuegt es, die Anfrage im Browser "als cURL" '
-            'zu kopieren und einzufuegen, auch bequem vom Handy oder PC aus. '
+            'zu kopieren und einzufuegen, auch bequem vom Mobilgerät oder PC aus. '
             'Benoetigt wird das Cookie %s zusammen mit dem User-Agent des '
             'Browsers.' % (label, names))
     source = urlparse(url).netloc or siteId

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.baka" name="Baka" version="1.1.1" provider-name="baka">
+<addon id="plugin.video.baka" name="Baka" version="1.1.2" provider-name="baka">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="script.module.requests"/>
@@ -26,9 +26,10 @@
 		<language>de en</language>
 		<platform>all</platform>
 		<license>GPL-3.0-only</license>
-		<news>1.1.0 - Baka: Sprachen und Regionen (eigene Sprachen, Weitere Sprachen, Weltkino, Mediatheken nach Land), eigene Watchlists mit Liste abspielen, Seitenanzeige mit Sprung zu jeder Seite, Zufallsauswahl in jedem Inhaltsordner mit bekannteren Titeln und viel schneller. Neue Addon-ID: Daten aus GerXStream werden nicht uebernommen.</news>
-		<website>https://gitlab.com/gerxstream/gerxstream</website>
-		<source>https://gitlab.com/gerxstream/gerxstream</source>
+		<news lang="en_GB">1.1.2 - Release notes follow Kodi's interface language (German or English fallback). Revised release notes and mobile device wording. GerXStream/xStream data transfer is planned through a separate migration add-on; Baka does not start an automatic transfer.</news>
+		<news lang="de_DE">1.1.2 - Der Changelog folgt Kodis Oberflächensprache (Deutsch oder Englisch als Standard). Überarbeitete Versionshinweise und Bezeichnung Mobilgerät. Der Datenumzug aus GerXStream/xStream ist über ein separates Umzugs-Addon geplant; Baka startet keine automatische Übernahme.</news>
+		<website>https://github.com/flowinthefluid/baka</website>
+		<source>https://github.com/flowinthefluid/baka</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
