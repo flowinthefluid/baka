@@ -1,9 +1,9 @@
-# Gesammelte Änderungen
+# Änderungen in Baka 1.1.5
 
-Dieser Arbeitsstand bleibt vorerst auf Baka 1.1.4. Es gibt keine neue
-veröffentlichte Version. Quellcode-Commits lösen künftig keine Veröffentlichung
-auf GitHub Pages aus; dafür ist eine Änderung der Addon-/Repository-Version
-oder ein ausdrücklich gestarteter Veröffentlichungs-Workflow erforderlich.
+Die in Baka 1.1.4 gesammelten Änderungen werden mit Baka 1.1.5 veröffentlicht.
+Quellcode-Commits allein lösen keine Veröffentlichung auf GitHub Pages aus;
+dafür ist eine Änderung der Addon-/Repository-Version oder ein ausdrücklich
+gestarteter Veröffentlichungs-Workflow erforderlich.
 
 ## Sprachwahl und Seitensuche
 
@@ -101,7 +101,7 @@ auf Deutsch und Englisch vorhanden.
 
 Umfang, Quellenprüfung und Lücken stehen in der
 [internationalen Senderübersicht](SENDERLISTE-INTERNATIONAL.md).
-Die Änderungen bleiben gesammelt in 1.1.4, ohne neues Release.
+Die Erweiterung wird mit Baka 1.1.5 veröffentlicht.
 
 ## Folgenliste
 

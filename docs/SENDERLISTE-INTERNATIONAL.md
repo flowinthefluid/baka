@@ -1,6 +1,6 @@
 # Internationale TV-Erweiterung
 
-Gesammelter Arbeitsstand in Version 1.1.4; kein neues Release.
+Die in Baka 1.1.4 gesammelte Erweiterung wird mit Version 1.1.5 veröffentlicht.
 
 Quelle: [IPTV-org](https://github.com/iptv-org/iptv) und dessen Länder-, Feed- und Stream-Metadaten.
 

@@ -1,3 +1,14 @@
+[B]Version: 1.1.5[/B]
+
+- Source catalogs now match the selected audio or subtitle languages for each theme. This applies to all 15 supported languages and their combinations. Movies/series, documentaries and anime remain independent; excluded sources do not reappear under All. The catalog filter can be disabled separately.
+- Initial setup preselects only Kodi's interface language. Original audio with German subtitles is optional; the language prompt does not repeat after updates.
+- Each list has one page search. Existing source-specific page searches are retained; missing ones are added. Removed the duplicate Page 1 entry and kept page jumps available on identifiable final pages.
+- Starting an episode creates a playlist from that episode with readable episode labels. Manual Next works even with automatic continuation disabled; that switch now controls only whether playback advances at the normal end. The selected hoster and language can be retained for the current playlist, with a prompt if unavailable.
+- Country browsing offers Germany, United States, Canada, France, United Kingdom and Japan directly, with other countries under configurable regions. These lists use production countries; existing rating and vote-count settings apply without a hidden minimum.
+- Added optional light and strict Hollywood production filters, globally or for selected themes and areas. Light retains mixed co-productions; strict excludes recognized studio and parent-company involvement. Coverage depends on available metadata and does not identify every indirect business relationship.
+- Actors can be hidden from people lists or boycotted to exclude titles with that person in the recorded cast. Nationality and regional filters apply separately to people lists; hidden and boycotted people can be managed in settings.
+- Expanded international Live TV with non-sports channels from Japan, China, Russia, Ukraine, United States, United Kingdom, France, Mexico, Canada and Europe. Each channel appears once with alternative feeds, preferring HD/UHD and using SD as fallback. Live-TV countries can be selected independently; no new sports channels were added.
+
 [B]Version: 1.1.4[/B]
 
 - Added Canada, Mexico, South Africa, Kenya, Ghana and Egypt as individual country lists under Famous filming locations.

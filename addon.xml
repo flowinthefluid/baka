@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.baka" name="Baka" version="1.1.4" provider-name="baka">
+<addon id="plugin.video.baka" name="Baka" version="1.1.5" provider-name="baka">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="script.module.requests"/>
@@ -26,8 +26,8 @@
 		<language>de en</language>
 		<platform>all</platform>
 		<license>GPL-3.0-only</license>
-		<news lang="en_GB">1.1.4 - Expanded Famous filming locations with Canada, Mexico, South Africa, Kenya, Ghana and Egypt as individual country lists, plus a Central America regional list. These lists use production countries.</news>
-		<news lang="de_DE">1.1.4 - Berühmte Drehorte um Kanada, Mexiko, Südafrika, Kenia, Ghana und Ägypten als einzelne Länderlisten sowie Mittelamerika als regionale Sammelliste erweitert. Die Listen verwenden das Produktionsland.</news>
+		<news lang="en_GB">1.1.5 - Source catalog filters for all selected languages, one page search per list, manual next episode independent of automatic continuation, configurable country groups, optional production and actor filters, and expanded international Live TV without additional sports channels.</news>
+		<news lang="de_DE">1.1.5 - Anbieterkataloge nach allen gewählten Sprachen filtern, eine Seitensuche pro Liste, manuelle nächste Folge unabhängig von automatischer Fortsetzung, einstellbare Ländergruppen, optionale Produktions- und Schauspielerfilter sowie internationales Live-TV ohne zusätzliche Sportsender.</news>
 		<website>https://github.com/flowinthefluid/baka</website>
 		<source>https://github.com/flowinthefluid/baka</source>
 		<assets>

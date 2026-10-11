@@ -1,3 +1,14 @@
+[B]Version: 1.1.5[/B]
+
+- Anbieterkataloge passen jetzt zu den gewählten Ton- oder Untertitelsprachen des jeweiligen Themas. Das gilt für alle 15 angebotenen Sprachen und ihre Kombinationen. Filme/Serien, Dokus und Anime bleiben unabhängig; ausgeschlossene Quellen erscheinen auch unter Alle nicht wieder. Der Katalogfilter lässt sich separat abschalten.
+- Die Ersteinrichtung wählt nur Kodis Oberflächensprache vor. Originalton mit deutschen Untertiteln ist optional; die Sprachabfrage wird nach Updates nicht wiederholt.
+- Jede Liste enthält eine Seitensuche. Vorhandene quellspezifische Seitensuchen bleiben erhalten, fehlende werden ergänzt. Der doppelte Eintrag Page 1 entfällt; auf erkennbaren letzten Seiten bleibt der Seitensprung verfügbar.
+- Beim Start einer Folge entsteht eine Wiedergabeliste ab dieser Folge mit lesbaren Episodentiteln. Manuelles Weiter funktioniert auch bei ausgeschalteter automatischer Fortsetzung; der Schalter steuert nur den Wechsel am regulären Ende. Hoster und Sprache können für die laufende Liste beibehalten werden; fehlen sie, wird gefragt.
+- Die Länderübersicht bietet Deutschland, USA, Kanada, Frankreich, Großbritannien und Japan direkt sowie weitere Länder unter einstellbaren Regionen. Diese Listen verwenden Produktionsländer; die eigenen Bewertungs- und Stimmenfilter gelten ohne versteckten Mindestwert.
+- Optionale leichte und strenge Hollywood-Produktionsfilter für ganz Baka oder ausgewählte Themen und Bereiche ergänzt. Leicht lässt gemischte Koproduktionen sichtbar; streng schließt erkannte Studio- und Mutterfirmenbeteiligungen aus. Die Erkennung hängt von verfügbaren Metadaten ab und erfasst nicht jede indirekte Geschäftsbeziehung.
+- Schauspieler lassen sich aus Personenlisten ausblenden oder boykottieren, um Titel mit dieser Person in der hinterlegten Besetzung auszuschließen. Staatsangehörigkeits- und Regionenfilter gelten separat für Personenlisten; ausgeblendete und boykottierte Personen sind in den Einstellungen verwaltbar.
+- Internationales Live-TV um Nicht-Sportsender aus Japan, China, Russland, Ukraine, USA, Großbritannien, Frankreich, Mexiko, Kanada und Europa erweitert. Jeder Sender erscheint einmal mit Ersatzquellen; HD/UHD wird bevorzugt, SD dient als Ersatz. Live-TV-Länder sind unabhängig auswählbar; keine neuen Sportsender ergänzt.
+
 [B]Version: 1.1.4[/B]
 
 - Kanada, Mexiko, Südafrika, Kenia, Ghana und Ägypten als einzelne Länderlisten unter Berühmte Drehorte ergänzt.
