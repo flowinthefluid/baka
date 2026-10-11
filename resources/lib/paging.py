@@ -61,11 +61,33 @@ def describe(current, nextParams, total=None):
                    if 'page' in key.lower() or 'url' in key.lower()]
     for key, finder in candidates:
         old = str(current.get(key, '') or '')
+        if key.lower() in ('page', 'ipage', 'spage') and old in ('', '0') and str(nextParams[key]) == '2':
+            return {'key':key, 'template':'{page}', 'page':1, 'first':old or '1',
+                    'total':int(total) if total and int(total) >= 1 else 0}
         found = finder(old, str(nextParams[key]))
         if found:
             template, page = found
             return {'key': key, 'template': template, 'page': page, 'first': old,
-                    'total': int(total) if total and int(total) > page else 0}
+                    'total': int(total) if total and int(total) >= page else 0}
+    return None
+
+
+def describeCurrent(current):
+    """Letzte Seite ohne Next-Link: nur ausdrueckliche Seitenparameter/URLs."""
+    for key, value in current.items():
+        value = str(value or '')
+        if key.lower() in ('page', 'ipage', 'spage') and value.isdigit():
+            match = re.fullmatch(r'\d+', value)
+        elif key in ('sUrl', 'entryUrl'):
+            match = re.search(r'(?:/page/|[?&]page=)(\d+)', value)
+        else:
+            continue
+        if match:
+            page = int(match.group(1) if match.lastindex else match.group())
+            if 1 < page <= MAX_PAGE:
+                start,end = match.span(1) if match.lastindex else match.span()
+                return {'key':key, 'template':value[:start]+'{page}'+value[end:],
+                        'page':page, 'first':'', 'total':0}
     return None
 
 
@@ -74,15 +96,18 @@ def _text(stringId, fallback, *args):
     from resources.lib.config import cConfig
 
     try:
-        return cConfig().getLocalizedString(stringId) % args
+        text = cConfig().getLocalizedString(stringId)
+        return (text if text and not text.startswith('#') else fallback) % args
     except (TypeError, ValueError):
         return fallback % args
 
 
 def label(jump):
+    prefix = _text(30284, '[I]Start page search  >>> [/I] Page ')
     if jump['total']:
-        return '[I]%s[/I]' % _text(32096, 'Seite %s von %s', jump['page'], jump['total'])
-    return '[I]%s[/I]' % _text(32097, 'Seite %s', jump['page'])
+        return '%s%s%s%s%s' % (prefix, jump['page'], _text(30285, ' of '),
+                               jump['total'], _text(30286, ' Pages [I]<<<[/I]'))
+    return '%s%s [I]<<<[/I]' % (prefix, jump['page'])
 
 
 def jumpParams(jump, site, function, nextParams):
@@ -103,7 +128,8 @@ def targetUrl(data, page, pluginPath='plugin://plugin.video.baka/'):
     template = str(data.get('template', ''))
     if '{page}' not in template:
         return None
-    params[str(data['key'])] = data['first'] if page == 1 and data.get('first') else template.replace('{page}', str(page))
+    params[str(data['key'])] = (data['first'] if page == 1 and int(data.get('page', 0)) == 1
+                              and data.get('first') else template.replace('{page}', str(page)))
     query = dict(site=data['site'], function=data['function'])
     query.update(params)
     return '%s?%s' % (pluginPath, urlencode(query))

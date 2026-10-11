@@ -23,9 +23,12 @@ apiJson = None
 
 # Domain Abfrage ###
 
-SITE_NAME = 'Lieblingshoster'
+SITE_NAME = cConfig().getLocalizedString(30727)
+if not SITE_NAME or SITE_NAME.startswith('#'):
+    SITE_NAME = 'Favorite hoster'
 SITE_ICON = 'api.png'
 SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_CATALOG_LANGUAGES = ()  # Baka erzeugt den Katalog in der Kodi-Sprache.
 SITE_IDENTIFIER = 'api_all'
 
 DOMAIN = cConfig().getSetting('plugin_' + SITE_IDENTIFIER + '.domain', 'kinokiste.club')
@@ -372,7 +375,7 @@ def showEntries(entryUrl=False, sGui=False, sSearchText=False):
         if curPage < aJson['pager']['totalPages']:
             sNextUrl = entryUrl.replace('page=' + str(curPage), 'page=' + str(curPage + 1))
             params.setParam('sUrl', sNextUrl)
-            oGui.addNextPage(SITE_IDENTIFIER, 'showEntries', params)
+            oGui.addNextPage(SITE_IDENTIFIER, 'showEntries', params, aJson['pager']['totalPages'])
         oGui.setView('tvshows' if isTvshow else 'movies')
         oGui.setEndOfDirectory()
 

@@ -4471,6 +4471,14 @@ msgctxt "#32810"
 msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
 msgstr "Filmländer sind optional. Große Länder haben Direktzugriffe; weitere ausgewählte Länder erscheinen innerhalb der Regionen. Keine zusätzlichen Installationsfragen."
 
+msgctxt "#32902"
+msgid "Also filter the language of source catalogs"
+msgstr "Auch die Sprache der Anbieterkataloge filtern"
+
+msgctxt "#32903"
+msgid "Source catalogs must match the audio or subtitle languages selected for that theme. A German provider stays hidden for English-only viewing even if it offers some English films. Disable to use all providers with matching audio or subtitles. Live TV has its own country selection."
+msgstr "Anbieterkataloge müssen zu den gewählten Ton- oder Untertitelsprachen des jeweiligen Themas passen. Ein deutscher Anbieter bleibt bei ausschließlich englischer Auswahl verborgen, auch wenn er einzelne englische Filme anbietet. Ausschalten, um alle Anbieter mit passendem Ton oder passenden Untertiteln zu verwenden. Live-TV hat seine eigene Länderauswahl."
+
 msgctxt "#32900"
 msgid "Apply My countries to live TV"
 msgstr "Meine Länder auch für Live-TV verwenden"

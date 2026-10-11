@@ -31,6 +31,7 @@ SITE_NAME = 'KayoAnime'
 SITE_ICON = 'kayoanime.png'
 CONTENT_CATEGORIES = ('animes',)
 SITE_LANGUAGES = ('ja', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_CATALOG_LANGUAGES = ('en',)
 SITE_SUBTITLES = ('en',)  # Untertitel bei Originalton
 
 # Global search function is thus deactivated!

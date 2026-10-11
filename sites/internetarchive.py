@@ -21,6 +21,7 @@ SITE_NAME = 'Internet Archive'
 SITE_ICON = 'internetarchive.png'
 CONTENT_CATEGORIES = ('filme', 'dokus')
 SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_CATALOG_LANGUAGES = ('en',)
 # Sprachangaben des Internet Archive (ISO 639-2 bzw. Klartext) -> ISO 639-1
 ARCHIVE_LANGUAGES = {
     'ger': 'de', 'deu': 'de', 'german': 'de', 'eng': 'en', 'english': 'en',

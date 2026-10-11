@@ -584,9 +584,10 @@ def showMainMenu(sFunction):
         categories = oPluginHandler.getContentCategories(aPlugins)
         categories = [entry for entry in categories if languages.themeEnabled(entry['id'])]
         from resources.lib import languages
-        if languages.otherLanguagesMode() == 'hide':
-            # Ordner mit ausschliesslich fremdsprachigen Quellen entfallen.
-            categories = [entry for entry in categories if languages.splitSources(entry['plugins'], entry['id'])[0]]
+        # Jede Kategorie folgt ihrem eigenen Profil; Alle zeigt deren Union.
+        categories = [entry for entry in categories
+                      if languages.otherLanguagesMode(entry['id']) != 'hide'
+                      or languages.splitSources(entry['plugins'], entry['id'])[0]]
 
         # "Alle" ist ein eigener Hauptordner (alle Anbieter unsortiert),
         # explizit zwischen Globaler Suche und "Filme".
@@ -669,7 +670,7 @@ def _addPluginFolders(oGui, plugins, category=''):
             oGuiElement.setThumbnail(plugin['icon'])
         params = ParameterHandler()
         from resources.lib import languages
-        theme = languages.themeForCategory(category)
+        theme = languages.sourceTheme(plugin, category)
         if theme:
             params.setParam('contentTheme', theme)
         oGui.addFolder(oGuiElement, params)
@@ -699,9 +700,6 @@ def showContentCategory(params):
     if categoryId in randommovies.KINDS:
         oGui.addFolder(*randommovies.menuEntry(categoryId, os.path.join(ART, randommovies.KINDS[categoryId]['art'])))
     mine, others = languages.splitSources(plugins, categoryId)
-    if categoryId == 'alle':
-        mine = [plugin for plugin in plugins if languages.sourceVisibleAny(plugin)]
-        others = [plugin for plugin in plugins if plugin not in mine]
     _addPluginFolders(oGui, mine, categoryId)
     if others and languages.otherLanguagesMode(categoryId) == 'folder':
         otherParams = ParameterHandler()

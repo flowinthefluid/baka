@@ -42,6 +42,41 @@ def test_jump_links_open_the_chosen_page():
     assert paging.targetUrl(dict(data, site='../../evil'), 3) is None
 
 
+def test_jump_from_later_page_back_to_one():
+    jump=paging.describe({'sUrl':'https://x/films/page/3/'},{'sUrl':'https://x/films/page/4/'},37)
+    data=json.loads(paging.jumpParams(jump,'hdfilme','showEntries',{'sUrl':'https://x/films/page/4/'}))
+    assert dict(parse_qsl(urlsplit(paging.targetUrl(data,1)).query))['sUrl']=='https://x/films/page/1/'
+
+
+def test_zero_means_first_page_but_is_not_a_valid_jump_number():
+    jump=paging.describe({'page':'0'},{'page':'2'})
+    assert jump['page']==1
+    data=json.loads(paging.jumpParams(jump,'dokus4me','showEntries_2',{'page':'2'}))
+    assert dict(parse_qsl(urlsplit(paging.targetUrl(data,1)).query))['page']=='0'
+    assert paging.targetUrl(data,0) is None
+
+
+def test_last_page_search_only_uses_unambiguous_page_parameters():
+    assert paging.describeCurrent({'sUrl':'https://x/films/page/37/'})['page']==37
+    assert paging.describeCurrent({'page':'2'})['template']=='{page}'
+    assert paging.describeCurrent({'entryUrl':'https://x/?page=9'})['page']==9
+    assert paging.describeCurrent({'entryUrl':'https://x/films/2026/','episode':'5'}) is None
+    assert paging.describeCurrent({'sNextPage':'https://x/page/2/','page':'1'}) is None
+
+
+def test_last_page_gets_search_even_without_next_link(monkeypatch):
+    from resources.lib.gui.gui import cGui
+    import xbmcplugin
+    monkeypatch.setattr(sys,'argv',['plugin://plugin.video.baka/','1','?site=example&function=showEntries&page=7'])
+    rows=[]
+    monkeypatch.setattr(cGui,'addFolder',lambda self,el,params='',*args,**kwargs:rows.append(el.getFunction()))
+    monkeypatch.setattr(cGui,'setView',lambda *args:None)
+    for name in ('setPluginCategory','addSortMethod','endOfDirectory'):
+        monkeypatch.setattr(xbmcplugin,name,lambda *args,**kwargs:None,raising=False)
+    cGui().setEndOfDirectory()
+    assert rows==['jumpToPage']
+
+
 def test_page_label_sits_between_last_entry_and_next_page(monkeypatch):
     from resources.lib.gui import gui as gui_module
     from resources.lib.handler.ParameterHandler import ParameterHandler
@@ -56,7 +91,7 @@ def test_page_label_sits_between_last_entry_and_next_page(monkeypatch):
     oGui = gui_module.cGui()
     oGui.addNextPage('megakino', 'showEntries', params, 12)
     assert [function for function, title in added] == ['jumpToPage', 'showEntries']
-    assert added[0][1] == '[I]Seite 3 von 12[/I]'
+    assert added[0][1] == '[I]Start page search  >>> [/I] Page 3 of 12 Pages [I]<<<[/I]'
 
     added.clear()
     oGui.globalSearch = True
@@ -89,3 +124,32 @@ def test_jump_dialog_updates_the_container(monkeypatch):
         numeric=lambda *args: '900', notification=lambda *args: calls.append('notification')), raising=False)
     paging.jump(params)
     assert calls == ['notification']
+
+
+def test_existing_search_prevents_duplicate_across_gui_instances(monkeypatch,real_strings):
+    from resources.lib.gui.gui import cGui
+    from resources.lib.handler.ParameterHandler import ParameterHandler
+    monkeypatch.setattr(sys,'argv',['plugin://plugin.video.baka/','1','?site=hdfilme&sUrl=https%3A%2F%2Fx%2Ffilms%2F'])
+    rows=[]
+    monkeypatch.setattr(cGui,'addFolder',lambda self,el,params='',*args,**kwargs:rows.append((el.getTitle(),el.getFunction())))
+    cGui().searchNextPage('Start page search >>> Page 1 of 37 Pages <<<','hdfilme','showSearchPage',ParameterHandler())
+    params=ParameterHandler()
+    params.setParam('sUrl','https://x/films/page/2/')
+    cGui().addNextPage('hdfilme','showEntries',params)
+    assert [function for title,function in rows]==['showSearchPage','showEntries']
+    assert all(title!='Page 1' for title,function in rows)
+
+
+def test_missing_search_uses_same_label_and_preserves_theme(monkeypatch,real_strings):
+    from resources.lib.gui.gui import cGui
+    from resources.lib.handler.ParameterHandler import ParameterHandler
+    monkeypatch.setattr(sys,'argv',['plugin://plugin.video.baka/','1','?site=example&page=1&contentTheme=docs'])
+    rows=[]
+    monkeypatch.setattr(cGui,'addFolder',lambda self,el,params='',*args,**kwargs:rows.append((el.getTitle(),el.getFunction(),params)))
+    params=ParameterHandler()
+    params.setParam('page','2')
+    cGui().addNextPage('example','showEntries',params,37)
+    assert rows[0][0]=='[I]Seitensuche starten  >>> [/I] Seite 1 von 37 Seiten [I]<<<[/I]'
+    data=json.loads(rows[0][2].getValue('pageJump'))
+    assert data['params']['contentTheme']=='docs'
+    assert dict(parse_qsl(urlsplit(paging.targetUrl(data,5)).query))['page']=='5'

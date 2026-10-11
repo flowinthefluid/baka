@@ -23,6 +23,8 @@ def clean_settings():
     """Vor jedem Test die Settings und den cConfig-Singleton zuruecksetzen."""
     import xbmcaddon
     xbmcaddon._reset()
+    from resources.lib.gui.gui import cGui
+    cGui._pageSearches.clear()
     # cConfig cached Addon-Instanzen; die zeigen weiter auf denselben _STORE,
     # daher genuegt das Leeren des Stores. Der Singleton bleibt bestehen.
     yield

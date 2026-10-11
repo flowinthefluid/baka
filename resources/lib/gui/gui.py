@@ -20,6 +20,7 @@ class cGui:
     # cGui-Objekt. Die Queue muss deshalb pro Kodi-Verzeichnis geteilt und
     # nicht nur an einer einzelnen Instanz haengen.
     _episodeQueues = {}
+    _pageSearches = set()
 
     # This class "abstracts" a list of xbmc listitems.
     def __init__(self):
@@ -171,20 +172,27 @@ class cGui:
         xbmcplugin.addDirectoryItem(self.pluginHandle, sUrl, listitem, bIsFolder, iTotal)
 
     def addNextPage(self, site, function, params='', iTotalPages=None):
-        # Vor "Naechste Seite": "Seite X (von Y)"; ein Klick fragt die
-        # Seitenzahl ab (resources/lib/paging.py). Nicht in Sammelsuchen.
-        if params and not self._collectMode and not self.globalSearch:
+        # Eine vorhandene Seitensuche behalten, sonst dieselbe Navigation
+        # zentral ergaenzen. Nicht in Sammelsuchen.
+        if (params and not self._collectMode and not self.globalSearch
+                and self._episodeQueueKey not in self._pageSearches):
             from resources.lib import paging
             nextParams = dict(params.getAllParameters())
             jump = paging.describe(ParameterHandler().getAllParameters(), nextParams, iTotalPages)
             if jump:
+                for key in ('contentTheme', 'hollywoodScope'):
+                    if key not in nextParams and ParameterHandler().getValue(key):
+                        nextParams[key] = ParameterHandler().getValue(key)
                 jumpParams = ParameterHandler()
                 jumpParams.setParam('pageJump', paging.jumpParams(jump, site, function, nextParams))
-                self.addFolder(cGuiElement(paging.label(jump), 'paging', 'jumpToPage'), jumpParams)
+                self.searchNextPage(paging.label(jump), 'paging', 'jumpToPage', jumpParams)
         guiElement = cGuiElement(cConfig().getLocalizedString(30279), site, function)
         self.addFolder(guiElement, params)
 
     def searchNextPage(self, sTitle, site, function, params=''):
+        if self._collectMode or self.globalSearch or self._episodeQueueKey in self._pageSearches:
+            return
+        self._pageSearches.add(self._episodeQueueKey)
         guiElement = cGuiElement(sTitle, site, function)
         self.addFolder(guiElement, params)
 
@@ -463,6 +471,18 @@ class cGui:
 
     def setEndOfDirectory(self, success=True):
         # mark the listing as completed, this is mandatory
+        if (success and not self._collectMode and not self.globalSearch
+                and self._episodeQueueKey not in self._pageSearches):
+            from resources.lib import paging
+            current = ParameterHandler().getAllParameters()
+            jump = paging.describeCurrent(current)
+            if (jump and current.get('site') and current.get('function')
+                    and current['function'] not in ('showSearchPage', 'jumpToPage')):
+                jumpParams = ParameterHandler()
+                jumpParams.setParam('pageJump', paging.jumpParams(
+                    jump, current['site'], current['function'], current))
+                self.searchNextPage(paging.label(jump), 'paging', 'jumpToPage', jumpParams)
+        self._pageSearches.discard(self._episodeQueueKey)
         episodeQueue = self._episodeQueues.pop(self._episodeQueueKey, None)
         if episodeQueue and episodeQueue['targets']:
             from resources.lib import episodequeue

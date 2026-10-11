@@ -5,6 +5,29 @@ veröffentlichte Version. Quellcode-Commits lösen künftig keine Veröffentlich
 auf GitHub Pages aus; dafür ist eine Änderung der Addon-/Repository-Version
 oder ein ausdrücklich gestarteter Veröffentlichungs-Workflow erforderlich.
 
+## Sprachwahl und Seitensuche
+
+Tonsprachen, Untertitel und Anbieterkataloge sind getrennte Angaben. Mit
+„Auch die Sprache der Anbieterkataloge filtern“ passen Anbieter zusätzlich zu
+den gewählten Ton- oder Untertitelsprachen des jeweiligen Themas. Bei rein
+englischer Auswahl erscheint ein deutscher Anbieter wie HD-Filme nicht mehr,
+auch wenn er einzelne englische Filme enthält. Wer solche Anbieter verwenden
+möchte, kann den Katalogfilter abschalten; die Ton-/Untertitelfilter bleiben aktiv.
+Live-TV behält seine unabhängige Länderauswahl.
+
+Die Ersteinrichtung wählt nur die Kodi-Sprache vor. Originalton mit deutschen
+Untertiteln ist ausdrücklich optional. Filme/Serien, Dokus und Anime bleiben
+unabhängig. „Alle“ zeigt die Vereinigung der erlaubten Quellen dieser Profile
+und öffnet keine ausgeschlossenen Sprachen über einen zusätzlichen Ordner.
+Reine Anime- und Dokuquellen tragen ihr Profil auch aus „Alle“ weiter.
+
+Eine Liste enthält genau eine Seitensuche. Vorhandene quellspezifische
+Seitensuchen bleiben erhalten; andernfalls ergänzt Baka „Seitensuche starten
+>>> Seite X von Y Seiten <<<“ mit bekanntem Gesamtwert oder „Seite X <<<“ ohne
+Gesamtwert. Der zusätzliche Eintrag „Page 1“ entfällt. Auf erkennbaren späteren
+Seiten ohne Next-Link bleibt der Seitensprung verfügbar. Globale Sammelsuchen
+erhalten keine Seitensuche.
+
 ## Länderübersicht
 
 Deutschland, USA, Kanada, Frankreich, Großbritannien und Japan stehen direkt

@@ -24,6 +24,7 @@ SITE_NAME = 'media.ccc.de'
 SITE_ICON = 'mediaccc.png'
 CONTENT_CATEGORIES = ('dokus',)
 SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
+SITE_CATALOG_LANGUAGES = ('de', 'en')
 # Sprachangaben von media.ccc.de (ISO 639-2) -> ISO 639-1
 CCC_LANGUAGES = {
     'deu': 'de', 'eng': 'en', 'fra': 'fr', 'spa': 'es', 'ita': 'it', 'rus': 'ru',

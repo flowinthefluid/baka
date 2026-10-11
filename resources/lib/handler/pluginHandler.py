@@ -79,7 +79,8 @@ class cPluginHandler:
                 globalSearchStatus = cConfig().getSetting('global_search_' + fileName)
             except Exception:
                 pass
-            if fileName not in pluginDB or modTime > plugin['modified'] or globalSearchStatus:
+            if (fileName not in pluginDB or 'catalog_languages' not in plugin
+                    or modTime > plugin['modified'] or globalSearchStatus):
                 log(cConfig().getLocalizedString(30166) + ' -> [pluginHandler]: load plugin Informations for ' + str(fileName), LOGNOTICE)
                 # try to import plugin
                 pluginData = self.__getPluginData(fileName, self.defaultFolder)
@@ -270,6 +271,9 @@ class cPluginHandler:
         # Sprachen der Quelle (resources/lib/languages.py); ohne Angabe deutsch.
         pluginData['languages'] = tuple(getattr(plugin, 'SITE_LANGUAGES', ('de',)))
         pluginData['subtitles'] = tuple(getattr(plugin, 'SITE_SUBTITLES', ()))
+        # Ein englischer Film macht einen deutschen Anbieterkatalog nicht englisch.
+        pluginData['catalog_languages'] = tuple(getattr(plugin, 'SITE_CATALOG_LANGUAGES',
+                                                       ('de',) if pluginData['languages'] else ()))
         try:
             pluginData['enable_setting'] = plugin.ENABLE_SETTING
         except Exception:

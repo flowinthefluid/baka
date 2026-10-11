@@ -11,6 +11,7 @@ Quellen geben ihre Sprachen als Modul-Attribute an::
     SITE_LANGUAGES = ('de', 'en')   # Tonspuren; () = sprachunabhaengig
     SITE_SUBTITLES = ('de',)        # Untertitel, z.B. Japanisch mit DE-UT
     SITE_REGIONS = ('de', 'at')     # nur bei regional gebundenen Quellen
+    SITE_CATALOG_LANGUAGES = ('de',)  # Sprache des Anbieterkatalogs, getrennt vom Ton
 
 Fehlt SITE_LANGUAGES, gilt die Quelle als deutsch - so waren alle Quellen
 vor der Internationalisierung.
@@ -72,7 +73,8 @@ def currentTheme():
         return explicit
     # Alte Favoriten haben noch keinen Themenparameter. Reine Animequellen
     # bleiben trotzdem im Animeprofil; andere Quellen nutzen das allgemeine Profil.
-    if params.get('site') in ('aniworld', 'kayoanime', 'hianime', 'gogoanime', 'animeonsen', 'proxer'):
+    if params.get('site') in ('aniworld', 'anime4', 'animeloads', 'animetoast', 'animestream',
+                              'kayoanime', 'hianime', 'gogoanime', 'animeonsen', 'proxer'):
         return 'anime'
     return ''
 
@@ -184,6 +186,11 @@ def suggestedCountries(languageCodes):
 def otherLanguagesMode(theme=None):
     if _profile(theme):
         return 'hide'
+    # "Alle" und die Hauptansicht sind die Vereinigung der Themenprofile,
+    # keine zweite Moeglichkeit, ausgeschlossene Sprachen einzublenden.
+    if not themeForCategory(theme or currentTheme()) and any(
+            cConfig().getSettingBool(_profileSetting(key, 'custom'), False) for key, _, _ in THEMES):
+        return 'hide'
     return 'hide' if cConfig().getSetting(OTHER_MODE_SETTING, 'folder') == 'hide' else 'folder'
 
 
@@ -202,24 +209,40 @@ def sourceVisible(plugin, theme=None):
     languages = sourceLanguages(plugin)
     if not languages:
         return True  # sprachunabhaengig, z.B. Wetter-Webcams
+    catalog_languages = plugin.get('catalog_languages') or ()
+    if (catalog_languages and cConfig().getSettingBool('langSourceCatalogFilter', True)
+            and not set(catalog_languages) & set(audioLanguages(theme) + subtitleLanguages(theme))):
+        return False
     if set(languages) & set(audioLanguages(theme)):
         return True
     if resolved_theme == 'anime' and _profile(theme) and 'ja' not in languages:
         return False
-    return bool(set(plugin.get('subtitles') or ()) & set(subtitleLanguages(theme)))
+    subtitles = set(plugin.get('subtitles') or ()) & set(subtitleLanguages(theme))
+    return any(audio != sub for audio in languages for sub in subtitles)
 
 
 def splitSources(plugins, theme=None):
     """Teilt Quellen in (eigene Sprachen, andere Sprachen)."""
     mine, others = [], []
     for plugin in plugins:
-        (mine if sourceVisible(plugin, theme) else others).append(plugin)
+        visible = sourceVisibleAny(plugin) if theme == 'alle' else sourceVisible(plugin, theme)
+        (mine if visible else others).append(plugin)
     return mine, others
 
 
 def sourceVisibleAny(plugin):
     categories = [category for category in plugin.get('categories', ()) if themeForCategory(category)]
     return any(sourceVisible(plugin, category) for category in categories) if categories else sourceVisible(plugin)
+
+
+def sourceTheme(plugin, category):
+    """Themenprofil auch bei reinen Anime-/Dokuquellen im Ordner Alle tragen."""
+    explicit = themeForCategory(category)
+    if explicit:
+        return explicit
+    themes = {themeForCategory(value) for value in plugin.get('categories', ())}
+    themes.discard('')
+    return next(iter(themes)) if len(themes) == 1 else ''
 
 
 def sourceMainLanguage(plugin):
@@ -242,7 +265,7 @@ def streamAllowed(audio, subs='', theme=None):
     # Anime-Originalton bedeutet Japanisch mit UT, nicht englische Synchro mit UT.
     if selected_theme == 'anime' and _profile(theme) and audio != 'ja':
         return False
-    return bool(subs) and subs in subtitleLanguages(theme)
+    return bool(subs) and audio != subs and subs in subtitleLanguages(theme)
 
 
 def streamLabel(audio, subs=''):
@@ -318,7 +341,7 @@ def _chooseTheme(theme, first_run=False):
     if first_run:
         kodi = kodiLanguage()
         audio = [kodi if kodi in LANGUAGE_CODES else 'de']
-        subs = ['de']
+        subs = []  # Untertitel/Originalton nur nach bewusster Auswahl.
     labels = [_localized(32303, 'Nicht anzeigen')] + [languageLabel(code) for code in LANGUAGE_SELECTION_CODES]
     original_index = len(labels)
     labels.append(_localized(32304, 'Japanischer Originalton mit deutschen Untertiteln') if theme == 'anime'

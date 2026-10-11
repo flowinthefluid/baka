@@ -77,7 +77,7 @@ def test_new_users_are_asked_once_and_service_never_asks(monkeypatch):
     monkeypatch.setattr(languages.xbmcgui.Dialog, 'multiselect', lambda self, heading, labels, preselect=None:
                         asked.append(preselect) or next(responses), raising=False)
     assert languages.ensureSetup(interactive=True)
-    assert asked == [[1, 16], [1, 16], [1, 16]]
+    assert asked == [[1], [1], [1]]
     assert languages.audioLanguages() == ['en', 'de'] and languages.preferredLanguage() == 'en'
     assert languages.audioLanguages('anime') == ['de']
     from resources.lib.config import cConfig
