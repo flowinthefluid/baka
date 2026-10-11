@@ -1,5 +1,27 @@
 # Änderungen in Baka 1.1.6
 
+## Gesammelte Webcam-Erweiterung
+
+Noch ohne neue Versionsnummer: Die begonnenen Extraktoren für WorldCam,
+SkylineWebcams, Panoramablick, EarthCam und LiveWorldWebcams wurden übernommen.
+Der deduplizierte Katalog, Orts- und Themenwege, Weltzeitgruppen, Wetterlagen und
+Statistik sind unter [Webcams weltweit](WEBCAMS-WELTWEIT.md) beschrieben.
+
+Abgleich mit dem Gespräch: Zufallsserien samt eigenen Filtern, unabhängige
+Themensprachen mit Einmal-Abfrage, mehrsprachige Quellen mit Inhaltsfilter,
+einheitliche Seitensuche, DACH-Senderzusammenführung, internationaler TV-Katalog,
+Sportartenordner und EPG-Verweise sind im vorhandenen Stand implementiert.
+Die Länderstruktur sowie Produktions-/Personenfilter und vom Automatikschalter
+unabhängiges manuelles Next sind ebenfalls vorhanden und durch Tests abgedeckt.
+Die Webcam-Erweiterung schließt die zuletzt offenen Inhalts- und Menüpunkte.
+
+Die vorher bestätigten Entscheidungen bleiben erhalten: keine Umdatierung der
+Git-Historie, Changelog ohne Datumszeilen, keine neue Version beim Sammeln,
+keine Änderung des Repository-Addons. Das GerXStream-/xStream-Umzugs-Addon bleibt
+nach der ausdrücklichen Wahl „Zunächst Changelog korrigieren“ geplant und wird
+nicht als bereits verfügbare Datenübernahme ausgegeben. Geräteprüfungen sind
+von lokalen Tests und dem Quellcode-Push getrennt zu dokumentieren.
+
 Die in Baka 1.1.4 gesammelten Änderungen wurden mit Baka 1.1.5 veröffentlicht.
 Baka 1.1.6 korrigiert den zu strengen Filter für mehrsprachige Quellen.
 Quellcode-Commits allein lösen keine Veröffentlichung auf GitHub Pages aus;

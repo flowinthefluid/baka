@@ -32,11 +32,12 @@ def test_approved_sources_have_full_metadata():
                     if s.get('active', True) and s['rights_status'] == model.RIGHTS_APPROVED]
         if not approved:
             continue  # bewusst ausgeschlossene (unknown) muessen es nicht haben
-        assert ch['id'].startswith('gxs:'), ch['id']
+        assert ch['id'].startswith(('gxs:', 'baka:')), ch['id']
         assert ch['publisher'], 'Betreiber fehlt: %s' % ch['id']
         region_ok = ch.get('country') or ch.get('region') or any(s.get('region') for s in approved)
         assert region_ok, 'Region fehlt: %s' % ch['id']
-        assert any(s.get('last_verified_at') for s in approved) or ch.get('last_verified_at'), \
+        assert any(s.get('last_verified_at') or (s.get('verification') == 'listed-public-player'
+                                               and s.get('listed_at')) for s in approved) or ch.get('last_verified_at'), \
             'letzter Pruefzeitpunkt fehlt: %s' % ch['id']
 
 

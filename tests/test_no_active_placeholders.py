@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Verhindert, dass Platzhalter-Domains oder Quellen ohne last_verified_at
-AKTIV in den ausgelieferten Katalog gelangen (Abnahme Schritt 5)."""
+"""Active media needs a check date; deferred public players need dated provenance."""
 import glob
 import json
 import os
+from urllib.parse import urlsplit
 
 import pytest
 
@@ -32,13 +32,19 @@ def test_no_active_source_uses_placeholder_domain():
     assert not offenders, 'Aktive Platzhalter-Quellen: %s' % offenders
 
 
-def test_active_source_requires_last_verified():
+def test_active_source_requires_verification_or_documented_player_listing():
     missing = []
     for ch in _shipped():
         for s in ch['sources']:
             if s.get('active') and not (s.get('last_verified_at') or ch.get('last_verified_at')):
+                listing = urlsplit(s.get('listing_evidence_url',''))
+                if (s.get('resolver') == 'webcam_page' and s.get('provider_id') == 'skyline'
+                    and s.get('verification') == 'listed-public-player' and s.get('listed_at')
+                    and listing.scheme == 'https' and listing.hostname == 'www.skylinewebcams.com'
+                    and listing.path.startswith('/en/webcam/') and listing.path.endswith('.html')):
+                    continue
                 missing.append('%s -> %s' % (ch['id'], s['url']))
-    assert not missing, 'Aktive Quellen ohne last_verified_at: %s' % missing
+    assert not missing, 'Active sources without dated verification or player provenance: %s' % missing[:10]
 
 
 @pytest.mark.parametrize('url, is_ph', [

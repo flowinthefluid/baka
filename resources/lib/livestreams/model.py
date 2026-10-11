@@ -20,7 +20,7 @@ VALID_PROTOCOLS = ('hls', 'dash', 'mp4', 'rtmp', 'rtsp', 'mjpeg', 'jpeg', 'plugi
 VALID_QUALITY = ('uhd', 'hd', 'sd', 'unknown')
 VALID_RELIABILITY = ('high', 'medium', 'low', 'unknown')
 # Quellen, deren Adresse erst beim Abspielen mit frischer Sitzung entsteht.
-VALID_RESOLVERS = ('pluto',)
+VALID_RESOLVERS = ('pluto', 'webcam_page')
 
 # Rechte-Status einer Variante. Fail-closed: alles ausser 'approved' bleibt aus
 # dem Standardkatalog fern (siehe catalog.approved_channels).
@@ -159,6 +159,7 @@ def normalize_source(raw):
         'region': (raw.get('region') or raw.get('country') or '').lower(),
         'language': [str(l).lower() for l in (raw.get('language') or []) if l],
         'headers': {str(k): str(v) for k, v in headers.items()},
+        'cache_bust': bool(raw.get('cache_bust', False)),
         # --- Rechte / Verifikation (fail-closed) ---
         'drm': drm,
         'login_required': login_required,
@@ -167,6 +168,9 @@ def normalize_source(raw):
         'rights_evidence_url': rights_evidence_url,
         'rights_status': compute_rights_status(official, rights_evidence_url, drm, login_required),
         'last_verified_at': (raw.get('last_verified_at') or '').strip(),
+        'verification': str(raw.get('verification') or ''),
+        'listed_at': str(raw.get('listed_at') or ''),
+        'listing_evidence_url': str(raw.get('listing_evidence_url') or ''),
         'priority': int(raw.get('priority', 0)) if str(raw.get('priority', '')).lstrip('-').isdigit() else 0,
         'resolver': raw.get('resolver') if raw.get('resolver') in VALID_RESOLVERS else '',
         'active': active,
@@ -214,6 +218,11 @@ def normalize_channel(raw):
         'countries': list(dict.fromkeys([country] + [str(c).lower() for c in raw.get('countries', []) if c])),
         'region': (raw.get('region') or '').strip().lower(),
         'city': (raw.get('city') or '').strip(),
+        'continent': (raw.get('continent') or '').strip().lower(),
+        'coordinates': raw.get('coordinates') if isinstance(raw.get('coordinates'), dict) else {},
+        'coordinate_evidence_url': str(raw.get('coordinate_evidence_url') or ''),
+        'weather_station': raw.get('weather_station') if isinstance(raw.get('weather_station'), dict) else {},
+        'directory_urls': [str(url) for url in raw.get('directory_urls', []) if url],
         'language': languages,
         'genre': genres,
         'nsfw': nsfw,

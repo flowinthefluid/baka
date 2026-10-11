@@ -13,6 +13,7 @@ alle Quellen mit Beschreibung zur manuellen Wahl (Aufgabe 3c).
 
 import os
 import time
+from urllib.parse import urlencode
 
 import xbmc
 import xbmcgui
@@ -27,9 +28,10 @@ from resources.lib.livestreams import catalog, selector, taxonomy, export, epg, 
 from resources.lib.tools import logger
 
 SITE_IDENTIFIER = 'livestreams'
-LEVELS = ('root', 'section', 'countries', 'genres', 'country', 'genre',
+LEVELS = ('root', 'section', 'continents', 'countries', 'genres', 'country', 'genre',
           'channels', 'cities', 'wcategories', 'sources', 'detail',
-          'weather', 'rabbithole_list', 'yt_cats', 'yt_live', 'tw_live', 'sport_kinds', 'epg')
+          'weather', 'rabbithole_list', 'yt_cats', 'yt_live', 'tw_live', 'sport_kinds', 'epg',
+          'world_now', 'webcam_stats', 'weather_world', 'weather_countries', 'weather_kinds')
 ART = os.path.join(cConfig().getAddonInfo('path'), 'resources', 'art')
 
 
@@ -67,6 +69,7 @@ def route(params=None):
         'root': _root,
         'section': _section,
         'countries': _countries,
+        'continents': _continents,
         'genres': _genres,
         'country': _channels_filtered,
         'genre': _channels_filtered,
@@ -82,6 +85,11 @@ def route(params=None):
         'tw_live': tw_live,
         'sport_kinds': _sport_kinds,
         'epg': _show_epg,
+        'world_now': _world_now,
+        'webcam_stats': _webcam_stats,
+        'weather_world': _weather_world,
+        'weather_countries': _weather_countries,
+        'weather_kinds': _weather_kinds,
     }[level]
     handler(params)
 
@@ -137,8 +145,11 @@ def _section(params):
         # Webcams: Rabbithole/Zufall oben, dann nach Laendern und nach Kategorie.
         _rabbithole_play_item(oGui)
         _folder(_label(31222, 'Zufaellig (250)'), 'rabbithole_list', {}, 'sources.png')
-        _folder(_label(31210, 'Nach Laendern'), 'countries', {'section': section}, 'countries.png')
-        _folder(_label(31211, 'Nach Kategorie'), 'wcategories', {'section': section}, 'genre.png')
+        _folder(_label(32918, 'Nach Kontinent, Land und Stadt'), 'continents', {'section': section}, 'countries.png')
+        _folder(_label(32925, 'Nach Themen'), 'wcategories', {'section': section}, 'genre.png')
+        _folder(_label(32940, 'Around the World Right Now'), 'world_now', {'section': section}, 'webcam.png')
+        _folder(_label(32959, 'Weather right now'), 'weather_world', {'section': section}, 'weather.png')
+        _folder(_label(32949, 'Webcam statistics'), 'webcam_stats', {'section': section}, 'webcam.png')
     else:
         # Andere Bereiche: direkt die Kanalliste.
         for channel in channels:
@@ -155,8 +166,13 @@ def _countries(params):
     oGui = cGui()
     section = params.getValue('section')
     # Webcams: Land -> Stadt; sonst Land -> Kanaele.
-    child = 'cities' if section == 'webcam' else 'country'
-    countries = contentgate.get_visible_countries(catalog.countries_in_section(section))
+    child = 'cities' if section in ('webcam', 'weather') else 'country'
+    channels = _filtered_channels(params)
+    countries = list(dict.fromkeys(c['country'] for c in channels))
+    if section in ('webcam', 'weather'):
+        countries.sort(key=lambda code: taxonomy.country_label(code).casefold())
+    if section not in ('webcam', 'weather'):
+        countries = contentgate.get_visible_countries(catalog.countries_in_section(section))
     if not countries:
         _empty_state(oGui)
     if section == 'tv' and any(country in curation.DACH for country in countries):
@@ -169,12 +185,26 @@ def _countries(params):
     oGui.setEndOfDirectory()
 
 
+def _continents(params):
+    from resources.lib.livestreams import webcam_geography
+    oGui = cGui()
+    channels = _filtered_channels(params)
+    present = {webcam_geography.continent(channel) for channel in channels}
+    for key, label in webcam_geography.CONTINENTS:
+        if key in present:
+            _folder(_label(label, key), 'countries',
+                    {'section': params.getValue('section'), 'continent': key}, 'countries.png')
+    if not present:
+        _empty_state(oGui)
+    oGui.setEndOfDirectory()
+
+
 def _cities(params):
     """Staedte innerhalb eines Landes (Webcams). Kanaele ohne Stadt direkt."""
     oGui = cGui()
     section = params.getValue('section')
     country = params.getValue('country')
-    channels = [c for c in catalog.channels_by_section(section) if c.get('country') == country]
+    channels = _filtered_channels(params)
     cities = []
     for channel in channels:
         city = channel.get('city')
@@ -197,16 +227,92 @@ def _wcategories(params):
     oGui = cGui()
     section = params.getValue('section')
     present = catalog.genres_in_section(section)
+    channels = catalog.channels_by_section(section)
     shown = 0
     for cat in taxonomy.WEBCAM_CATEGORY_IDS:
         if cat == contentgate.NSFW_GENRE:
             continue
         if cat in present and contentgate.is_genre_visible(cat):
-            _folder(taxonomy.genre_label(cat), 'channels',
+            count = sum(cat in (channel.get('genre') or []) for channel in channels)
+            _folder('%s (%d)' % (taxonomy.genre_label(cat), count), 'channels',
                     {'section': section, 'genre': cat}, 'genre.png')
             shown += 1
     if shown == 0:
         _empty_state(oGui)
+    oGui.setEndOfDirectory()
+
+
+def _world_now(params):
+    from resources.lib.livestreams import webcam_now
+    oGui = cGui()
+    groups = webcam_now.group_channels(_filtered_channels(params))
+    for key, string_id in webcam_now.GROUPS:
+        _folder('%s (%d)' % (_label(string_id, key), len(groups[key])), 'channels',
+                {'section': 'webcam', 'solar': key}, 'webcam.png')
+    _folder(_label(32918, 'Explore continents, countries and cities'), 'continents',
+            {'section': 'webcam'}, 'countries.png')
+    oGui.setEndOfDirectory()
+
+
+def _webcam_stats(params):
+    from resources.lib.livestreams import webcam_now
+    oGui = cGui()
+    stats = webcam_now.statistics(catalog.load_all())
+    visible = webcam_now.statistics(catalog.visible_channels())
+    for key, string_id in (('cameras', 32950), ('countries', 32951), ('locations', 32952),
+                           ('positioned', 32953), ('sources', 32954), ('stations', 32955)):
+        _info_item(oGui, '%s: %d' % (_label(string_id, key), stats[key]))
+    _info_item(oGui, '%s: %d' % (_label(32956, 'Visible cameras'), visible['cameras']))
+    for host, count in sorted(stats['directories'].items()):
+        _info_item(oGui, '%s: %d' % (host, count))
+    for topic in taxonomy.WEBCAM_CATEGORY_IDS:
+        count = visible['topics'].get(topic, 0)
+        if count:
+            _folder('%s (%d)' % (taxonomy.genre_label(topic), count), 'channels',
+                    {'section': 'webcam', 'genre': topic}, 'genre.png')
+    oGui.setEndOfDirectory()
+
+
+def _weather_world(params):
+    from resources.lib.livestreams import webcam_geography, webcam_now
+    oGui = cGui()
+    channels = [channel for channel in _filtered_channels(params) if webcam_now.coordinates(channel)]
+    present = {webcam_geography.continent(channel) for channel in channels}
+    for key, string_id in webcam_geography.CONTINENTS:
+        if key in present:
+            _folder(_label(string_id, key), 'weather_countries',
+                    {'section': params.getValue('section'), 'continent': key}, 'countries.png')
+    if not present:
+        _empty_state(oGui)
+    oGui.setEndOfDirectory()
+
+
+def _weather_countries(params):
+    from resources.lib.livestreams import webcam_now
+    oGui = cGui()
+    countries = {channel['country'] for channel in _filtered_channels(params)
+                 if webcam_now.coordinates(channel)}
+    for country in sorted(countries, key=taxonomy.country_label):
+        _folder(taxonomy.country_label(country), 'weather_kinds',
+                {'section': params.getValue('section'), 'country': country}, 'weather.png')
+    if not countries:
+        _empty_state(oGui)
+    oGui.setEndOfDirectory()
+
+
+def _weather_kinds(params):
+    from resources.lib.livestreams import webcam_weather
+    oGui = cGui()
+    progress = xbmcgui.DialogProgress()
+    progress.create('Baka', _label(32959, 'Weather right now'))
+    try:
+        groups = webcam_weather.group_channels(_filtered_channels(params), cancelled=progress.iscanceled)
+    finally:
+        progress.close()
+    for key, string_id in webcam_weather.GROUPS:
+        filters = {name: params.getValue(name) for name in ('section', 'country', 'continent') if params.getValue(name)}
+        filters['weatherKind'] = key
+        _folder('%s (%d)' % (_label(string_id, key), len(groups[key])), 'channels', filters, 'weather.png')
     oGui.setEndOfDirectory()
 
 
@@ -235,6 +341,9 @@ def _filtered_channels(params):
     city = params.getValue('city')
     sport = params.getValue('sport')
     channels = catalog.channels_by_section(section)
+    if params.getValue('continent'):
+        from resources.lib.livestreams import webcam_geography
+        channels = [c for c in channels if webcam_geography.continent(c) == params.getValue('continent')]
     if country:
         wanted = set(curation.DACH) if country == 'dach' else {country}
         channels = [c for c in channels if wanted & set(c.get('countries') or [c.get('country')])]
@@ -244,6 +353,12 @@ def _filtered_channels(params):
         channels = [c for c in channels if genre in (c.get('genre') or [])]
     if sport:
         channels = [c for c in channels if sport in sports.kinds(c)]
+    if params.getValue('solar') and section in ('webcam', 'weather'):
+        from resources.lib.livestreams import webcam_now
+        channels = webcam_now.group_channels(channels).get(params.getValue('solar'), [])
+    if params.getValue('weatherKind') and section in ('webcam', 'weather'):
+        from resources.lib.livestreams import webcam_weather
+        channels = webcam_weather.group_channels(channels).get(params.getValue('weatherKind'), [])
     return sorted(channels, key=lambda channel: channel['name'].casefold())
 
 
@@ -451,7 +566,7 @@ def _list_item_for(channel, source):
         else:
             list_item.setMimeType('application/vnd.apple.mpegurl')
         if source.get('headers'):
-            header = '&'.join('%s=%s' % (k, v) for k, v in source['headers'].items())
+            header = urlencode(source['headers'])
             list_item.setProperty('inputstream.adaptive.stream_headers', header)
             list_item.setProperty('inputstream.adaptive.manifest_headers', header)
         list_item.setContentLookup(False)
@@ -490,7 +605,7 @@ def _play_channel(channel, forced_source_id=None, use_resolve=True):
         ordered = [s for s in ordered if s['source_id'] == forced_source_id] or ordered
 
     # JPEG-Standbild-Kameras laufen als Slideshow, nicht ueber den VideoPlayer.
-    if ordered and ordered[0]['protocol'] == 'jpeg':
+    if ordered and ordered[0]['protocol'] == 'jpeg' and not ordered[0].get('resolver'):
         if use_resolve:
             _resolve_fail()  # kein Video aufzuloesen
         _play_jpeg_slideshow(channel, ordered[0])
@@ -499,12 +614,24 @@ def _play_channel(channel, forced_source_id=None, use_resolve=True):
     handle = cGui().pluginHandle
     from resources.lib.player import cPlayer
 
+    resolved = False
     for index, source in enumerate(ordered):
+        if source.get('resolver') == 'webcam_page':
+            from resources.lib.livestreams import webcam_extract
+            source = webcam_extract.resolve_source(source)
+            if not source:
+                continue
+            if source['protocol'] == 'jpeg':
+                if use_resolve:
+                    _resolve_fail()
+                _play_jpeg_slideshow(channel, source)
+                return True
         list_item = _list_item_for(channel, source)
         logger.info('-> [livestreams.route]: play %s Quelle %s (%d/%d)'
                     % (channel['name'], source['source_id'], index + 1, len(ordered)))
-        if use_resolve and index == 0 and handle > 0:
+        if use_resolve and not resolved and handle > 0:
             xbmcplugin.setResolvedUrl(handle, True, list_item)
+            resolved = True
         else:
             xbmc.Player().play(list_item.getPath(), list_item)
         if cPlayer().startPlayer():
@@ -513,6 +640,8 @@ def _play_channel(channel, forced_source_id=None, use_resolve=True):
         selector.mark_failed(channel['id'], source['source_id'])
         if index + 1 < len(ordered):
             _notify(_label(31213, 'Quelle nicht erreichbar - versuche naechste'))
+    if use_resolve and not resolved:
+        _resolve_fail()
     _notify(_label(31214, 'Keine Quelle spielbar'))
     return False
 
@@ -556,12 +685,26 @@ def _play_jpeg_slideshow(channel, source):
         return
     # Wait until Kodi has opened the picture window before checking it.
     # Stop/Back closes that window; it does not request Kodi shutdown.
-    command = 'ShowPicture(%s)' % source['url']
+    def picture_command(url):
+        if source.get('cache_bust'):
+            url += ('&' if '?' in url else '?') + '_baka_ts=' + str(time.time_ns())
+        return 'ShowPicture(%s)' % url
+    command = picture_command(source['url'])
     xbmc.executebuiltin(command, True)
     next_refresh = time.monotonic() + interval
     while not monitor.abortRequested() and xbmc.getCondVisibility('Window.IsActive(slideshow)'):
         remaining = next_refresh - time.monotonic()
         if remaining <= 0:
+            if source.get('resolver_page'):
+                from resources.lib.livestreams import webcam_extract
+                fresh = webcam_extract.resolve(source['resolver_page'])
+                if not fresh or fresh['protocol'] != 'jpeg':
+                    break
+                if monitor.abortRequested() or not xbmc.getCondVisibility('Window.IsActive(slideshow)'):
+                    break
+                command = picture_command(fresh['url'])
+            elif source.get('cache_bust'):
+                command = picture_command(source['url'])
             xbmc.executebuiltin(command, True)
             next_refresh = time.monotonic() + interval
         elif monitor.waitForAbort(min(0.25, remaining)):
@@ -660,14 +803,12 @@ def weather(params):
         oGui.setEndOfDirectory()
         return
 
-    if len(countries) > 1:
-        # Nach Land gruppieren.
-        for country in countries:
-            _folder(taxonomy.country_label(country), 'channels',
-                    {'section': 'weather', 'country': country}, 'countries.png')
-    else:
-        for channel in channels:
-            _channel_item(oGui, channel)
+    if channels:
+        _folder(_label(32918, 'Nach Kontinent, Land und Stadt'), 'continents',
+                {'section': 'weather'}, 'countries.png')
+        _folder(_label(32919, 'Alle Wetterstationen'), 'channels', {'section': 'weather'}, 'weather.png')
+        _folder(_label(32925, 'Themes'), 'wcategories', {'section': 'weather'}, 'genre.png')
+        _folder(_label(32959, 'Weather right now'), 'weather_kinds', {'section': 'weather'}, 'weather.png')
     oGui.setEndOfDirectory()
 
 

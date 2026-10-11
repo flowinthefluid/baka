@@ -77,3 +77,13 @@ def test_already_shutting_down_does_not_open_webcam(picture_viewer):
     picture_viewer['abort_at'] = 0
     _show_camera()
     assert picture_viewer['pictures'] == []
+
+
+def test_stop_during_current_image_resolution_does_not_reopen(picture_viewer, monkeypatch):
+    from resources.lib.livestreams import webcam_extract
+    def refresh(_page):
+        picture_viewer['active'] = False
+        return {'url':'https://camera.test/new.jpg','protocol':'jpeg'}
+    monkeypatch.setattr(webcam_extract, 'resolve', refresh)
+    route._play_jpeg_slideshow({'name':'View'}, {'url':'https://camera.test/old.jpg','resolver_page':'https://camera.test/page'})
+    assert len(picture_viewer['pictures']) == 1

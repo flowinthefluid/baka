@@ -4479,3 +4479,207 @@ msgstr ""
 msgctxt "#32901"
 msgid "When enabled, live TV also follows My countries under Languages & regions. Disable to choose live-TV countries independently using the country filter below. Film, documentary and anime preferences stay independent."
 msgstr ""
+
+msgctxt "#32910"
+msgid "Africa"
+msgstr ""
+
+msgctxt "#32911"
+msgid "Asia"
+msgstr ""
+
+msgctxt "#32912"
+msgid "Europe"
+msgstr ""
+
+msgctxt "#32913"
+msgid "North America"
+msgstr ""
+
+msgctxt "#32914"
+msgid "South America"
+msgstr ""
+
+msgctxt "#32915"
+msgid "Oceania"
+msgstr ""
+
+msgctxt "#32916"
+msgid "Antarctica"
+msgstr ""
+
+msgctxt "#32917"
+msgid "Other locations"
+msgstr ""
+
+msgctxt "#32918"
+msgid "Continents, countries and cities"
+msgstr ""
+
+msgctxt "#32919"
+msgid "All weather stations"
+msgstr ""
+
+msgctxt "#32920"
+msgid "Lakes"
+msgstr ""
+
+msgctxt "#32921"
+msgid "Rivers"
+msgstr ""
+
+msgctxt "#32922"
+msgid "Volcanoes"
+msgstr ""
+
+msgctxt "#32923"
+msgid "Waterfalls"
+msgstr ""
+
+msgctxt "#32924"
+msgid "Rocky Mountains"
+msgstr ""
+
+msgctxt "#32925"
+msgid "Themes"
+msgstr ""
+
+msgctxt "#32930"
+msgid "Mountain landscapes"
+msgstr ""
+
+msgctxt "#32931"
+msgid "Deserts"
+msgstr ""
+
+msgctxt "#32932"
+msgid "Highways and roads"
+msgstr ""
+
+msgctxt "#32933"
+msgid "Sports venues"
+msgstr ""
+
+msgctxt "#32934"
+msgid "Snow landscapes"
+msgstr ""
+
+msgctxt "#32935"
+msgid "Forests"
+msgstr ""
+
+msgctxt "#32936"
+msgid "Islands"
+msgstr ""
+
+msgctxt "#32937"
+msgid "Airports"
+msgstr ""
+
+msgctxt "#32938"
+msgid "Railways"
+msgstr ""
+
+msgctxt "#32939"
+msgid "Coasts"
+msgstr ""
+
+msgctxt "#32940"
+msgid "Around the World Right Now"
+msgstr ""
+
+msgctxt "#32941"
+msgid "Near sunrise"
+msgstr ""
+
+msgctxt "#32942"
+msgid "Near sunset"
+msgstr ""
+
+msgctxt "#32943"
+msgid "In daylight"
+msgstr ""
+
+msgctxt "#32944"
+msgid "At night"
+msgstr ""
+
+msgctxt "#32945"
+msgid "Golden hour"
+msgstr ""
+
+msgctxt "#32946"
+msgid "Blue hour"
+msgstr ""
+
+msgctxt "#32947"
+msgid "Twilight"
+msgstr ""
+
+msgctxt "#32948"
+msgid "Without exact coordinates"
+msgstr ""
+
+msgctxt "#32949"
+msgid "Webcam statistics"
+msgstr ""
+
+msgctxt "#32950"
+msgid "Unique cameras"
+msgstr ""
+
+msgctxt "#32951"
+msgid "Countries and territories"
+msgstr ""
+
+msgctxt "#32952"
+msgid "Cities and locations"
+msgstr ""
+
+msgctxt "#32953"
+msgid "Cameras with exact coordinates"
+msgstr ""
+
+msgctxt "#32954"
+msgid "Source links"
+msgstr ""
+
+msgctxt "#32955"
+msgid "Documented weather stations"
+msgstr ""
+
+msgctxt "#32956"
+msgid "Visible cameras"
+msgstr ""
+
+msgctxt "#32959"
+msgid "Weather right now"
+msgstr ""
+
+msgctxt "#32960"
+msgid "Current storms and thunderstorms"
+msgstr ""
+
+msgctxt "#32961"
+msgid "Current snowfall"
+msgstr ""
+
+msgctxt "#32962"
+msgid "Rain and showers"
+msgstr ""
+
+msgctxt "#32963"
+msgid "Fog"
+msgstr ""
+
+msgctxt "#32964"
+msgid "Clear skies"
+msgstr ""
+
+msgctxt "#32965"
+msgid "Cloudy skies"
+msgstr ""
+
+msgctxt "#32966"
+msgid "No current weather data"
+msgstr ""

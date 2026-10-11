@@ -11,4 +11,6 @@ def test_public_webcams_and_weather_camera_are_visible():
 
     assert 'gxs:webcam:de:alpspix' in webcam_ids
     assert 'gxs:webcam:de:wank-gipfel' in webcam_ids
-    assert 'gxs:weather:de:zugspitze-gipfel' in weather_ids
+    assert 'gxs:weather:de:zugspitze-gipfel' in webcam_ids
+    assert 'gxs:weather:de:zugspitze-gipfel' not in weather_ids
+    assert 'baka:webcam:at:sonnblick-observatorium' in weather_ids

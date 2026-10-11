@@ -50,6 +50,21 @@ GENRES = (
     ('city',     (31124, 'Stadt')),
     ('ski',      (31125, 'Ski & Schnee')),
     ('weather',  (31126, 'Wetter')),
+    ('lake',     (32920, 'Seen')),
+    ('river',    (32921, 'Fluesse')),
+    ('volcano',  (32922, 'Vulkane')),
+    ('waterfall',(32923, 'Wasserfaelle')),
+    ('rockies',  (32924, 'Rocky Mountains')),
+    ('mountain_landscape', (32930, 'Mountain landscapes')),
+    ('desert',   (32931, 'Deserts')),
+    ('roads',    (32932, 'Highways and roads')),
+    ('sports_venues', (32933, 'Sports venues')),
+    ('snow_landscape', (32934, 'Snow landscapes')),
+    ('forest',   (32935, 'Forests')),
+    ('island',   (32936, 'Islands')),
+    ('airport',  (32937, 'Airports')),
+    ('railway',  (32938, 'Railways')),
+    ('coast',    (32939, 'Coasts')),
 )
 GENRE_IDS = tuple(gid for gid, _ in GENRES)
 _GENRE_LABELS = dict(GENRES)
@@ -57,7 +72,9 @@ _GENRE_LABELS = dict(GENRES)
 # Welche Genres im Webcam-Baum als thematischer Weg angeboten werden.
 WEBCAM_CATEGORY_IDS = ('landmark', 'building', 'mountains', 'animals', 'birds',
                        'beach', 'pier', 'park', 'traffic', 'city', 'ski',
-                       'nature', 'weather')
+                       'nature', 'weather', 'lake', 'river', 'volcano', 'waterfall', 'rockies',
+                       'mountain_landscape', 'desert', 'roads', 'sports_venues', 'snow_landscape',
+                       'forest', 'island', 'airport', 'railway', 'coast')
 
 # --- Laender (Kern; weitere kommen aus dem Katalog dazu) -------------------
 COUNTRIES = (
@@ -74,6 +91,8 @@ COUNTRIES = (
     ('int', 'International'),
 )
 _COUNTRY_LABELS = dict(COUNTRIES)
+_COUNTRY_LABELS.update({'bl':'Saint Barthélemy', 'bq':'Bonaire, Sint Eustatius, Saba',
+                        'cw':'Curaçao', 'sx':'Sint Maarten', 'je':'Jersey'})
 
 
 def _localized(string_id, fallback):

@@ -34,6 +34,21 @@ def _merge_into(existing, channel, reason):
                                               + channel.get('alias_ids', [channel['id']])))
     existing['epg_ids'] = list(dict.fromkeys(existing.get('epg_ids', [existing.get('epg_id', '')])
                                             + channel.get('epg_ids', [channel.get('epg_id', '')])))
+    existing['genre'] = list(dict.fromkeys(existing.get('genre', []) + channel.get('genre', [])))
+    existing['directory_urls'] = list(dict.fromkeys(existing.get('directory_urls', [])
+                                                    + channel.get('directory_urls', [])))
+    if not existing.get('city') and channel.get('city'):
+        existing['city'] = channel['city']
+    if existing.get('country') == 'int' and channel.get('country') != 'int':
+        existing['country'] = channel['country']
+    if not existing.get('continent') and channel.get('continent'):
+        existing['continent'] = channel['continent']
+    if not existing.get('coordinates') and channel.get('coordinates'):
+        existing['coordinates'] = channel['coordinates']
+        existing['coordinate_evidence_url'] = channel.get('coordinate_evidence_url', '')
+    from resources.lib.livestreams import webcam_geography
+    if webcam_geography.is_weather_station(channel):
+        existing['weather_station'] = channel['weather_station']
     for source in channel['sources']:
         if source['source_id'] not in known:
             existing['sources'].append(source)
@@ -70,10 +85,16 @@ def _merge(channels):
             target, reason = by_id[cid], 'gleiche ID'
         elif canon and canon in by_canon:
             target, reason = by_canon[canon], 'gleiche canonical_url'
-        elif triple in by_triple:
+        elif triple in by_triple and not (channel['section'] == 'webcam' and canon
+                                         and by_triple[triple].get('canonical_url')
+                                         and canon != by_triple[triple]['canonical_url']):
             target, reason = by_triple[triple], 'gleicher Publisher+Name'
         if target is not None:
             _merge_into(target, channel, reason)
+            by_id[cid] = target
+            if canon:
+                by_canon[canon] = target
+            by_triple[triple] = target
             continue
         merged.append(channel)
         by_id[cid] = channel
@@ -140,6 +161,10 @@ def visible_channels():
 
 
 def channels_by_section(section_id):
+    if section_id == 'weather':
+        from resources.lib.livestreams import webcam_geography
+        return [c for c in visible_channels() if c['section'] in ('webcam', 'weather')
+                and webcam_geography.is_weather_station(c)]
     return [c for c in visible_channels() if c['section'] == section_id]
 
 

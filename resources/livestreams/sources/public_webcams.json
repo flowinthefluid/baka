@@ -8,24 +8,31 @@
       "section": "webcam",
       "country": "de",
       "city": "Hildesheim",
-      "language": ["de"],
-      "genre": ["city", "landmark"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "city",
+        "landmark"
+      ],
       "nsfw": false,
       "publisher": "Stadt Hildesheim / Terra Livestream",
       "canonical_url": "https://www.terra-livestream.eu/hildesheim-lilie/",
-      "sources": [{
-        "source_id": "terra-hildesheim-hls",
-        "display_name": "Terra Livestream",
-        "url": "https://www.terra-livestream.eu/hildesheim-lilie/hildesheim-lilie.m3u8",
-        "protocol": "hls",
-        "quality": "hd",
-        "official": false,
-        "rights_evidence_url": "https://www.terra-livestream.eu/hildesheim-lilie/",
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+      "sources": [
+        {
+          "source_id": "terra-hildesheim-hls",
+          "display_name": "Terra Livestream",
+          "url": "https://www.terra-livestream.eu/hildesheim-lilie/hildesheim-lilie.m3u8",
+          "protocol": "hls",
+          "quality": "hd",
+          "official": false,
+          "rights_evidence_url": "https://www.terra-livestream.eu/hildesheim-lilie/",
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
     },
     {
       "id": "gxs:webcam:de:kellenhusen-strand",
@@ -33,24 +40,32 @@
       "section": "webcam",
       "country": "de",
       "city": "Kellenhusen",
-      "language": ["de"],
-      "genre": ["beach", "pier"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "beach",
+        "pier",
+        "coast"
+      ],
       "nsfw": false,
       "publisher": "Kellenhusen / Nordwind",
       "canonical_url": "https://www.kellenhusen.de/",
-      "sources": [{
-        "source_id": "nordwind-kellenhusen-hls",
-        "display_name": "Nordwind Livestream",
-        "url": "https://srv-streaming-02.nordwind-ev.de/hls/kellenhusen.m3u8",
-        "protocol": "hls",
-        "quality": "hd",
-        "official": false,
-        "rights_evidence_url": "https://www.kellenhusen.de/",
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+      "sources": [
+        {
+          "source_id": "nordwind-kellenhusen-hls",
+          "display_name": "Nordwind Livestream",
+          "url": "https://srv-streaming-02.nordwind-ev.de/hls/kellenhusen.m3u8",
+          "protocol": "hls",
+          "quality": "hd",
+          "official": false,
+          "rights_evidence_url": "https://www.kellenhusen.de/",
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
     },
     {
       "id": "gxs:webcam:de:seebruck-hafen",
@@ -58,24 +73,31 @@
       "section": "webcam",
       "country": "de",
       "city": "Seebruck",
-      "language": ["de"],
-      "genre": ["pier", "nature"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "pier",
+        "nature"
+      ],
       "nsfw": false,
       "publisher": "Seebruck / Terra Livestream",
       "canonical_url": "https://www.terra-livestream.eu/seebruck-hafen/",
-      "sources": [{
-        "source_id": "terra-seebruck-hls",
-        "display_name": "Terra Livestream",
-        "url": "https://www.terra-livestream.eu/seebruck-hafen/seebruck-hafen.m3u8",
-        "protocol": "hls",
-        "quality": "hd",
-        "official": false,
-        "rights_evidence_url": "https://www.terra-livestream.eu/seebruck-hafen/",
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+      "sources": [
+        {
+          "source_id": "terra-seebruck-hls",
+          "display_name": "Terra Livestream",
+          "url": "https://www.terra-livestream.eu/seebruck-hafen/seebruck-hafen.m3u8",
+          "protocol": "hls",
+          "quality": "hd",
+          "official": false,
+          "rights_evidence_url": "https://www.terra-livestream.eu/seebruck-hafen/",
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
     },
     {
       "id": "gxs:webcam:de:alpspix",
@@ -83,23 +105,31 @@
       "section": "webcam",
       "country": "de",
       "city": "Garmisch-Partenkirchen",
-      "language": ["de"],
-      "genre": ["mountains", "landmark"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "mountains",
+        "landmark",
+        "mountain_landscape"
+      ],
       "nsfw": false,
       "publisher": "Bayerische Zugspitzbahn / Panomax",
       "canonical_url": "https://alpspix.panomax.com",
-      "sources": [{
-        "source_id": "panomax-alpspix-jpeg",
-        "display_name": "AlpspiX Livecam",
-        "url": "https://live-image.panomax.com/cams/150/mobile_800x600.jpg",
-        "protocol": "jpeg",
-        "quality": "hd",
-        "official": true,
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+      "sources": [
+        {
+          "source_id": "panomax-alpspix-jpeg",
+          "display_name": "AlpspiX Livecam",
+          "url": "https://live-image.panomax.com/cams/150/mobile_800x600.jpg",
+          "protocol": "jpeg",
+          "quality": "hd",
+          "official": true,
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
     },
     {
       "id": "gxs:webcam:de:wank-gipfel",
@@ -107,47 +137,105 @@
       "section": "webcam",
       "country": "de",
       "city": "Garmisch-Partenkirchen",
-      "language": ["de"],
-      "genre": ["mountains", "nature"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "mountains",
+        "nature",
+        "mountain_landscape"
+      ],
       "nsfw": false,
       "publisher": "Bayerische Zugspitzbahn / Panomax",
       "canonical_url": "https://wank.panomax.com",
-      "sources": [{
-        "source_id": "panomax-wank-jpeg",
-        "display_name": "Wank Livecam",
-        "url": "https://live-image.panomax.com/cams/149/mobile_800x600.jpg",
-        "protocol": "jpeg",
-        "quality": "hd",
-        "official": true,
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+      "sources": [
+        {
+          "source_id": "panomax-wank-jpeg",
+          "display_name": "Wank Livecam",
+          "url": "https://live-image.panomax.com/cams/149/mobile_800x600.jpg",
+          "protocol": "jpeg",
+          "quality": "hd",
+          "official": true,
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
     },
     {
       "id": "gxs:weather:de:zugspitze-gipfel",
-      "name": "Wetter-Webcam Zugspitze - Gipfelterrasse",
-      "section": "weather",
+      "name": "Webcam Zugspitze - Gipfelterrasse",
+      "section": "webcam",
       "country": "de",
       "city": "Garmisch-Partenkirchen",
-      "language": ["de"],
-      "genre": ["mountains", "weather"],
+      "language": [
+        "de"
+      ],
+      "genre": [
+        "mountains",
+        "mountain_landscape"
+      ],
       "nsfw": false,
       "publisher": "Bayerische Zugspitzbahn / Panomax",
       "canonical_url": "https://zugspitze.panomax.com",
-      "sources": [{
-        "source_id": "panomax-zugspitze-weather-jpeg",
-        "display_name": "Zugspitze Wetterbild",
-        "url": "https://live-image.panomax.com/cams/128/mobile_800x600.jpg",
-        "protocol": "jpeg",
-        "quality": "hd",
+      "sources": [
+        {
+          "source_id": "panomax-zugspitze-weather-jpeg",
+          "display_name": "Zugspitze Wetterbild",
+          "url": "https://live-image.panomax.com/cams/128/mobile_800x600.jpg",
+          "protocol": "jpeg",
+          "quality": "hd",
+          "official": true,
+          "last_verified_at": "2026-09-25",
+          "reliability": "high",
+          "region": "de",
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "baka:webcam:at:sonnblick-observatorium",
+      "name": "Sonnblick Observatory",
+      "section": "webcam",
+      "country": "at",
+      "city": "Rauris",
+      "coordinates": {
+        "latitude": 47.053979,
+        "longitude": 12.957484
+      },
+      "coordinate_evidence_url": "https://www.foto-webcam.eu/webcam/sonnblick/",
+      "genre": [
+        "mountains",
+        "weather",
+        "nature",
+        "mountain_landscape",
+        "snow_landscape"
+      ],
+      "language": [],
+      "nsfw": false,
+      "publisher": "GeoSphere Austria / Sonnblick Observatory",
+      "canonical_url": "https://www.foto-webcam.eu/webcam/sonnblick/",
+      "weather_station": {
         "official": true,
-        "last_verified_at": "2026-09-25",
-        "reliability": "high",
-        "region": "de",
-        "active": true
-      }]
+        "name": "Sonnblick Observatory",
+        "operator": "GeoSphere Austria",
+        "evidence_url": "https://www.geosphere.at/de/daten/datengrundlage/observatorien",
+        "camera_evidence_url": "https://www.sonnblick.net/de/daten/webcams/"
+      },
+      "sources": [
+        {
+          "source_id": "sonnblick-current-image",
+          "url": "https://www.foto-webcam.eu/webcam/sonnblick/current/1200.jpg",
+          "protocol": "jpeg",
+          "quality": "hd",
+          "official": true,
+          "rights_evidence_url": "https://www.sonnblick.net/de/daten/webcams/",
+          "last_verified_at": "2026-10-11",
+          "cache_bust": true,
+          "active": true
+        }
+      ]
     }
   ]
 }
