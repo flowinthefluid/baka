@@ -67,32 +67,6 @@ Gleichnamige, aber technisch unterschiedliche Betreiber werden nur dann als
 separate Quelle aufgenommen, wenn ein eigener serverseitiger Katalog und ein
 direkter, rechtlich unbedenklicher Wiedergabepfad nachgewiesen sind.
 
-## Bewusst nicht eingebaut
-
-| Gruppe | Grund |
-|---|---|
-| Alle unter den Ueberschriften **Hentai** und **XXX** der Nutzerliste genannten Domains | Auf einem erheblichen Teil dieser Angebote ist sexualisierte Darstellung von Figuren, die minderjaehrig wirken koennen, regulaerer Bestandteil. Deshalb keine Suche, keine Wiedergabe und auch keine Warteliste dafuer. |
-| bugmenot.com | Geteilte, fremde Zugangsdaten werden weder gesucht noch automatisiert eingesetzt. Bestehende Login-Felder sind ausschliesslich fuer eigene Zugangsdaten. |
-| 4everproxy.com, hide.me, proxfree.com, proxysite.com, anonymouse.org, unblockvideos.com, stopcensoring.me sowie oeffentliche SOCKS-/VPN-Listen | Kein Proxy- oder DNS-Sperren-Umgehungsdienst im Addon. Oeffentliche Proxies koennen Verkehr und Zugangsdaten manipulieren; Zugriffsbeschraenkungen werden nicht umgangen. |
-| thepiratebay.org, xrel.to, PreDB-/Scene-Datenbanken, Torrent-, FTP- und Release-Suchen | Kein Torrent-, Release- oder Filesharing-Client im Addon. Das ist weder ein VoD-Katalog noch ein sicherer Wiedergabeweg. |
-
-## Live-Angebote: separat, nicht als VoD eingebaut
-
-Die Domains aus den Abschnitten **Sport**, **Live-TV** und **Live Kino** der
-Nutzerliste werden nicht stillschweigend als VoD-Scraper behandelt. Sport-
-Aggregatoren sind zeitkritische Einbettungsketten; viele enthalten
-offensichtlich lizenzpflichtige Live-Uebertragungen. Das Add-on hat nun eine
-getrennte Quelle `sites/livetv.py` fuer direkte HLS-Livestreams
-oeffentlich-rechtlicher Sender, aber es scraped weder `www.online-tv.de` noch
-andere Live-TV-Aggregatoren. Eine opt-in M3U/XMLTV-/EPG-Funktion bleibt ein
-eigenes Thema. Details stehen in `LIVE-UND-BACKLOG.md`.
-
-## Vollstaendiger Abgleich der zuletzt gesendeten Domainliste
-
-Die Tabelle ist absichtlich domaingenau. `Vorhanden` bedeutet, dass kein
-zweites Plugin angelegt wird; es ist keine Aussage ueber die dauerhafte
-Erreichbarkeit oder die Lizenz eines Drittangebots. `Nicht aufgenommen`
-benennt den konkreten Grund.
 
 | Domain | Ergebnis |
 |---|---|
