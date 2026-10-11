@@ -1655,7 +1655,7 @@ msgid "SerienHD"
 msgstr ""
 
 msgctxt "#30727"
-msgid "API Suchmaschine"
+msgid "Favorite hoster"
 msgstr "Lieblingshoster"
 
 msgctxt "#30728"

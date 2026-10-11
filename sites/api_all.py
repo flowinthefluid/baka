@@ -27,6 +27,7 @@ SITE_NAME = cConfig().getLocalizedString(30727)
 if not SITE_NAME or SITE_NAME.startswith('#'):
     SITE_NAME = 'Favorite hoster'
 SITE_ICON = 'api.png'
+CONTENT_CATEGORIES = ('filme', 'serien')
 SITE_LANGUAGES = ('de', 'en')  # Tonsprachen, siehe resources/lib/languages.py
 SITE_CATALOG_LANGUAGES = ()  # Baka erzeugt den Katalog in der Kodi-Sprache.
 SITE_IDENTIFIER = 'api_all'

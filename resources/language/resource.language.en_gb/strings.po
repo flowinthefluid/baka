@@ -1760,8 +1760,8 @@ msgid "SerienHD"
 msgstr ""
 
 msgctxt "#30727"
-msgid "API Suchmaschine"
-msgstr "Favorite hoster"
+msgid "Favorite hoster"
+msgstr ""
 
 msgctxt "#30728"
 msgid "Moflix-Stream"
