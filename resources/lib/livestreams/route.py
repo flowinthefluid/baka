@@ -786,6 +786,7 @@ def weather(params):
     """
     oGui = cGui()
     from resources.lib.livestreams.providers import weather as weather_provider
+    from resources.lib.livestreams import webcam_now
 
     # Live-Wetterzeilen je konfigurierter Stadt (Open-Meteo keyless / OWM).
     lines = weather_provider.city_lines()
@@ -795,20 +796,24 @@ def weather(params):
         oGui.addFolder(info, ParameterHandler(), bIsFolder=False)
 
     channels = catalog.channels_by_section('weather')
+    has_world_weather = any(webcam_now.coordinates(channel)
+                            for channel in catalog.channels_by_section('webcam'))
     countries = contentgate.get_visible_countries(
         [c for c in (ch.get('country') for ch in channels) if c])
 
-    if not lines and not channels:
+    if not lines and not channels and not has_world_weather:
         _empty_state(oGui)
         oGui.setEndOfDirectory()
         return
 
+    if has_world_weather:
+        _folder(_label(32959, 'Weather right now'), 'weather_world',
+                {'section': 'webcam'}, 'weather.png')
     if channels:
         _folder(_label(32918, 'Nach Kontinent, Land und Stadt'), 'continents',
                 {'section': 'weather'}, 'countries.png')
         _folder(_label(32919, 'Alle Wetterstationen'), 'channels', {'section': 'weather'}, 'weather.png')
         _folder(_label(32925, 'Themes'), 'wcategories', {'section': 'weather'}, 'genre.png')
-        _folder(_label(32959, 'Weather right now'), 'weather_kinds', {'section': 'weather'}, 'weather.png')
     oGui.setEndOfDirectory()
 
 

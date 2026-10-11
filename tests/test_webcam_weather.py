@@ -39,3 +39,22 @@ def test_network_failure_and_cancellation_leave_cameras_unknown(monkeypatch):
         raise OSError('Offline')
     assert weather.group_channels([camera], fetch=fetch)['unknown'] == [camera]
     assert weather.group_channels([camera], fetch=lambda url: pytest.fail('Cancelled'), cancelled=lambda: True)['unknown'] == [camera]
+
+
+@pytest.mark.parametrize('has_station', [False, True])
+def test_weather_menu_opens_world_weather_instead_of_station_only(monkeypatch, has_station):
+    from resources.lib.handler.ParameterHandler import ParameterHandler
+    from resources.lib.livestreams import route
+    camera = {'id': 'camera', 'country': 'ca', 'coordinates': {'latitude': 51, 'longitude': -115}}
+    station = {'id': 'station', 'country': 'at'}
+    monkeypatch.setattr(weather.weather, 'city_lines', lambda: [])
+    monkeypatch.setattr(route.catalog, 'channels_by_section',
+                        lambda section: [camera] if section == 'webcam' else ([station] if has_station else []))
+    entries = []
+    monkeypatch.setattr(route, '_folder', lambda title, level, params, *args: entries.append((level, params)))
+    monkeypatch.setattr(route, '_empty_state', lambda gui: pytest.fail('World weather is available'))
+    route.weather(ParameterHandler())
+    assert ('weather_world', {'section': 'webcam'}) in entries
+    assert not any(level == 'weather_kinds' for level, params in entries)
+    if has_station:
+        assert ('channels', {'section': 'weather'}) in entries

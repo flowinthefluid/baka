@@ -108,10 +108,13 @@ nicht. Die Statistik unterscheidet den Katalogumfang von aktuell sichtbaren Kame
 ## Wetterlagen
 
 Unter **Aktuelles Wetter** werden nach Kontinent und Land aktuelle Stürme und
-Gewitter, Schneefall, Regen/Schauer, Nebel, klarer Himmel und Bewölkung angeboten. Im
-eigentlichen Wetterbereich bleibt die Auswahl auf belegte Wetterstationen
-beschränkt, einschließlich der Sonnblick-Schneelandschaft. Allgemeine Reisekameras
-haben zusätzlich dieselbe Wetterauswahl im Webcam-Bereich.
+Gewitter, Schneefall, Regen/Schauer, Nebel, klarer Himmel und Bewölkung angeboten.
+Der Einstieg im Wetter-Hauptmenü verwendet dieselbe weltweite Kameraauswahl wie
+im Webcam-Bereich, nicht nur die belegten Wetterstationen. Ohne weitere
+Benutzerfilter stehen 1.009 freigegebene Kameras mit Koordinaten in 89 Ländern
+auf sechs Kontinenten bereit. Die separate Stationsliste bleibt auf belegte
+Wetterstationen beschränkt, einschließlich der Sonnblick-Schneelandschaft.
+Allgemeine Reisekameras werden dadurch nicht zu Wetterstationen umdeklariert.
 
 Open-Meteo liefert die Wetterdaten für nachgewiesene Koordinaten. WMO-Codes
 95/96/99 oder Windböen ab 75 km/h zählen als Sturm/Gewitter; dies sind
@@ -123,7 +126,7 @@ gebündelten Anfragen geladen. Der Webcam-Hauptordner ruft kein Weltwetter ab.
 
 ## Geprüfter Arbeitsstand
 
-Der Quellcode wurde mit 1.274 Tests geprüft. Der Katalogcheck meldet keine
+Der Quellcode wurde mit 1.276 Tests geprüft. Der Katalogcheck meldet keine
 ungültigen Einträge oder doppelten IDs. Der lokale Kodi-Build trägt weiterhin
 Version 1.1.6; Paketintegrität und Python-3.8-Syntax sind geprüft.
 
