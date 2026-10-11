@@ -35,8 +35,8 @@ Filmaufnahmen und normale Verzeichnislinks werden nicht als Livekameras
 
 ## Offizielle Wetterstationen
 
-Im Bereich **Wetter** erscheinen Kameras nur mit einer ausdrücklich belegten
-Stationszuordnung. Name und Betreiber-Nachweis gehören zum Datensatz.
+Unter **Alle Wetterstationen** erscheinen Kameras nur mit einer ausdrücklich
+belegten Stationszuordnung. Name und Betreiber-Nachweis gehören zum Datensatz.
 Ein Wetterwidget, Temperaturtext oder der Name „Wetter-Webcam“ reicht nicht.
 
 Das [Sonnblick-Observatorium](https://www.geosphere.at/de/daten/datengrundlage/observatorien)
@@ -46,14 +46,38 @@ Die Sonnblick-Kamera erscheint bei Wetter und bei den Webcams.
 Die Zugspitzbahn-Panoramakamera bleibt unter Webcams; ihre bisherige interne ID
 bleibt für vorhandene Favoriten erhalten.
 
+Die Stationsliste enthält jetzt sieben belegte Standorte, nicht alle Stationen
+weltweit. Ihre Anzahl wird am Menüeintrag angezeigt:
+
+- Sonnblick-Observatorium (GeoSphere Austria).
+- [Barrow Atmospheric Baseline Observatory](https://gml.noaa.gov/obop/brw/livecamera.html)
+    und [South Pole Atmospheric Research Observatory](https://gml.noaa.gov/obop/spo/livecamera.html)
+    (NOAA, am Südpol mit NSF).
+- [Casey, Davis, Mawson und Macquarie Island](https://www.antarctica.gov.au/antarctic-operations/webcams/)
+    (Australian Antarctic Division mit Wetterbeobachtungen von AAD/BoM).
+
+Die australischen Bildadressen werden bei jedem Öffnen und Aktualisieren aus
+der ausgewählten Stationsseite gelesen. Zeitraffer und fremde Vorschaubilder
+werden nicht als aktuelle Stationsaufnahme verwendet. Die Bilder werden nicht
+im Addon verteilt; die [Betreiberbedingungen zur privaten Anzeige](https://www.antarctica.gov.au/about-us/copyright/)
+bleiben maßgeblich. Am 11. Oktober waren die NOAA-Bilder sowie Casey, Davis und
+Mawson vom selben Tag erreichbar. Macquarie Island lieferte zuletzt ein Bild vom
+9. Oktober. Erreichbarkeit garantiert deshalb keine Bildaktualität; maßgeblich
+ist der Zeitstempel des Betreibers. Die gestörten Mauna-Loa-Kameras wurden nicht
+als aktuelle Quellen hinzugefügt.
+
+**Kontinent → Land → Stadt** im Wetter-Hauptmenü öffnet den weltweiten
+Webcam-Katalog, nicht nur die Stationsliste. Der Kontinentfilter bleibt beim
+Weiterklicken zu Ländern, Städten und Kameras erhalten.
+
 ## Umfang und Prüfung
 
-Der gesammelte Stand enthält **3.305 unterschiedliche Kameraeinträge** nach
+Der gesammelte Stand enthält **3.311 unterschiedliche Kameraeinträge** nach
 Zusammenführung, verteilt auf **115 Länder/Gebiete** und alle sieben Kontinente.
 Bewegliche Kameras kommen unter „Weitere Standorte“ hinzu. Die fünf neuen
 Verzeichnisse liefern 3.360 Einträge vor Zusammenführung: SkylineWebcams 2.156,
 LiveWorldWebcams 1.053, Panoramablick 121, EarthCam 17 und WorldCam 13.
-Die bereits vorhandenen Panoramakameras und Sonnblick ergänzen diesen Bestand.
+Die vorhandenen Panoramakameras und sieben Stationskameras ergänzen diesen Bestand.
 
 Dies ist ein wachsender Katalog, kein vollständiger Spiegel der fünf Websites.
 Skyline-Einträge stammen aus öffentlichen Länderlisten; deren konkrete Player
@@ -98,7 +122,7 @@ Die Berechnung beschreibt den Sonnenstand, nicht aktuelle Bewölkung oder ob der
 Kamerastream gerade online ist. Es wird keine Kartendarstellung vorgetäuscht;
 der Ortszugriff öffnet Kontinente, Länder und Städte in Kodi.
 
-**1.011 eindeutige Kameras** besitzen belegte Koordinaten. Bei den übrigen wird
+**1.017 eindeutige Kameras** besitzen belegte Koordinaten. Bei den übrigen wird
 keine Position aus dem Land oder Stadtnamen erfunden; sie stehen zusätzlich unter
 „Ohne genaue Koordinaten“. Die Statistik zählt Kameras, Länder/Gebiete, Standorte,
 Quellenlinks und belegte Wetterstationen. Themenzahlen und die fünf Verzeichnisse
@@ -111,8 +135,8 @@ Unter **Aktuelles Wetter** werden nach Kontinent und Land aktuelle Stürme und
 Gewitter, Schneefall, Regen/Schauer, Nebel, klarer Himmel und Bewölkung angeboten.
 Der Einstieg im Wetter-Hauptmenü verwendet dieselbe weltweite Kameraauswahl wie
 im Webcam-Bereich, nicht nur die belegten Wetterstationen. Ohne weitere
-Benutzerfilter stehen 1.009 freigegebene Kameras mit Koordinaten in 89 Ländern
-auf sechs Kontinenten bereit. Die separate Stationsliste bleibt auf belegte
+Benutzerfilter stehen 1.015 freigegebene Kameras mit Koordinaten in 90 Ländern
+auf sieben Kontinenten bereit. Die separate Stationsliste bleibt auf belegte
 Wetterstationen beschränkt, einschließlich der Sonnblick-Schneelandschaft.
 Allgemeine Reisekameras werden dadurch nicht zu Wetterstationen umdeklariert.
 
@@ -126,7 +150,7 @@ gebündelten Anfragen geladen. Der Webcam-Hauptordner ruft kein Weltwetter ab.
 
 ## Geprüfter Arbeitsstand
 
-Der Quellcode wurde mit 1.276 Tests geprüft. Der Katalogcheck meldet keine
+Der Quellcode wurde mit 1.287 Tests geprüft. Der Katalogcheck meldet keine
 ungültigen Einträge oder doppelten IDs. Der lokale Kodi-Build trägt weiterhin
 Version 1.1.6; Paketintegrität und Python-3.8-Syntax sind geprüft.
 
@@ -143,3 +167,16 @@ blieben beim Austausch bytegleich und die Einstellungen auch nach dem Start.
 Backups und Screenshots liegen ausschließlich lokal im ignorierten dist-Bereich.
 Die LEAP-S1 wurde nicht verändert. Die übrigen Kameras sind nicht einzeln auf
 dem Gerät getestet; Verzeichnisfund oder Extraktor-Test ist kein Abspielnachweis.
+
+Die spätere Ortslink-Korrektur und sechs zusätzlichen Stationskameras wurden
+auf demselben USB-Tablet mit neuer Sicherung installiert. Die 233
+Laufzeitdateien und das beim Austausch unveränderte Profil sind geprüft.
+Die anschließende native Menüprüfung blieb blockiert: Kodi4Android beendete
+sich beim Start, noch vor einer erfolgreichen JSON-RPC-Abfrage. Der
+Android-Absturzpuffer zeigt einen SIGSEGV in `libkodi.so` beim Zerstören der
+Anzeigefläche (`CXBMCApp::surfaceDestroyed` / `XBMC_DestroyDisplay`), nicht
+einen Python-Traceback. Auch ein erneuter Start ohne Benachrichtigungsleiste
+stellte die Steuerung nicht wieder her. Die neuen Stationsmenüs und die
+Ortskette sind deshalb lokal, aber noch nicht in dieser Geräteinstallation
+abschließend bestätigt. Die oben beschriebenen früheren Gerätetests bleiben
+von diesem späteren Startfehler getrennt.

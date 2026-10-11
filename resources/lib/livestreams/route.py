@@ -180,8 +180,11 @@ def _countries(params):
                 {'section': section, 'country': 'dach'}, 'countries.png')
         countries = [country for country in countries if country not in curation.DACH]
     for country in countries:
+        filters = {'section': section, 'country': country}
+        if section in ('webcam', 'weather') and params.getValue('continent'):
+            filters['continent'] = params.getValue('continent')
         _folder(taxonomy.country_label(country), child,
-                {'section': section, 'country': country}, 'countries.png')
+                filters, 'countries.png')
     oGui.setEndOfDirectory()
 
 
@@ -211,7 +214,10 @@ def _cities(params):
         if city and city not in cities:
             cities.append(city)
     for city in sorted(cities):
-        _folder(city, 'channels', {'section': section, 'country': country, 'city': city},
+        filters = {'section': section, 'country': country, 'city': city}
+        if params.getValue('continent'):
+            filters['continent'] = params.getValue('continent')
+        _folder(city, 'channels', filters,
                 'countries.png')
     # Kanaele ohne Stadtangabe direkt anzeigen.
     loose = [c for c in channels if not c.get('city')]
@@ -796,12 +802,13 @@ def weather(params):
         oGui.addFolder(info, ParameterHandler(), bIsFolder=False)
 
     channels = catalog.channels_by_section('weather')
+    webcams = catalog.channels_by_section('webcam')
     has_world_weather = any(webcam_now.coordinates(channel)
-                            for channel in catalog.channels_by_section('webcam'))
+                            for channel in webcams)
     countries = contentgate.get_visible_countries(
         [c for c in (ch.get('country') for ch in channels) if c])
 
-    if not lines and not channels and not has_world_weather:
+    if not lines and not channels and not webcams:
         _empty_state(oGui)
         oGui.setEndOfDirectory()
         return
@@ -809,10 +816,12 @@ def weather(params):
     if has_world_weather:
         _folder(_label(32959, 'Weather right now'), 'weather_world',
                 {'section': 'webcam'}, 'weather.png')
-    if channels:
+    if webcams:
         _folder(_label(32918, 'Nach Kontinent, Land und Stadt'), 'continents',
-                {'section': 'weather'}, 'countries.png')
-        _folder(_label(32919, 'Alle Wetterstationen'), 'channels', {'section': 'weather'}, 'weather.png')
+                {'section': 'webcam'}, 'countries.png')
+    if channels:
+        _folder('%s (%d)' % (_label(32919, 'Alle Wetterstationen'), len(channels)),
+            'channels', {'section': 'weather'}, 'weather.png')
         _folder(_label(32925, 'Themes'), 'wcategories', {'section': 'weather'}, 'genre.png')
     oGui.setEndOfDirectory()
 

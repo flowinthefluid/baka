@@ -71,6 +71,32 @@ def test_weather_requires_explicit_station_name_and_evidence():
     assert geo.is_weather_station({'weather_station':{'official':True,'name':'Station','operator':'Weather service','evidence_url':'https://operator.test/station/'}})
 
 
+@pytest.mark.parametrize('channel_id', ['baka:webcam:us:barrow-observatory',
+                                     'baka:webcam:aq:south-pole-observatory'])
+def test_noaa_observatories_are_documented_weather_stations(channel_id):
+    station = catalog.get_channel(channel_id)
+    assert station is not None
+    assert geo.is_weather_station(station)
+    assert station['weather_station']['camera_evidence_url'] == station['canonical_url']
+    assert station['coordinate_evidence_url'].startswith('https://gml.noaa.gov/')
+    assert station in catalog.channels_by_section('weather')
+    assert catalog.approved_sources(station)[0]['protocol'] == 'jpeg'
+
+
+@pytest.mark.parametrize('station,directory', [('casey', 'casey'), ('davis', 'davis'),
+                                            ('mawson', 'mawson'), ('macquarie-island', 'macca')])
+def test_antarctic_station_resolves_its_current_image_not_timelapse(station, directory):
+    page = 'https://www.antarctica.gov.au/operations/webcams/' + station + '/'
+    image = 'https://images.antarctica.gov.au/webcams/' + directory + '/2026/10/11/current.jpg'
+    document = ('<img src="https://images.antarctica.gov.au/webcams/other/archive.jpg">'
+                '<video><source src="/timelapse.mp4"></video><img src="' + image + '">')
+    media, links = extract.extract(document, page)
+    assert [item['url'] for item in media] == [image]
+    assert media[0]['protocol'] == 'jpeg'
+    assert links == []
+    assert extract.extract('<img src="/thumbnail.jpg"><source src="/timelapse.mp4">', page) == ([], [])
+
+
 def _camera(cid, url, genres, directory):
     return model.normalize_channel({'id':cid,'name':'The view','publisher':directory,'canonical_url':url,'section':'webcam','country':'ca','city':'Canmore','genre':genres,'directory_urls':['https://'+directory+'.test/view/'],'nsfw':False,'sources':[{'url':'https://'+directory+'.test/view/','resolver':'webcam_page','source_id':cid,'official':True}]})
 
@@ -96,6 +122,31 @@ def test_country_navigation_ignores_movie_country_preferences(monkeypatch):
     route._countries(p)
     assert {e[1]['country'] for e in entries} == {'ca','us'}
     assert all(e[0]=='cities' for e in entries)
+    assert all(entry[1]['continent'] == 'north_america' for entry in entries)
+
+
+@pytest.mark.parametrize('channel_id', ['baka:webcam:aq:casey-station', 'baka:webcam:aq:davis-station',
+                                     'baka:webcam:aq:mawson-station', 'baka:webcam:au:macquarie-island-station'])
+def test_australian_stations_use_documented_locations_and_current_page(channel_id):
+    station = catalog.get_channel(channel_id)
+    assert station in catalog.channels_by_section('weather')
+    assert geo.is_weather_station(station)
+    assert station['coordinates']['latitude'] < -50
+    source = catalog.approved_sources(station)[0]
+    assert source['resolver'] == 'webcam_page'
+    assert source['url'] == station['weather_station']['camera_evidence_url']
+    assert source['rights_evidence_url'].endswith('/copyright/')
+
+
+def test_city_navigation_keeps_continent_country_and_city(monkeypatch):
+    monkeypatch.setattr(route, '_filtered_channels', lambda params: [{'city': 'Canmore'}])
+    entries = []
+    monkeypatch.setattr(route, '_folder', lambda title, level, params, thumb: entries.append((level, params)))
+    params = ParameterHandler()
+    params.addParams({'section': 'webcam', 'continent': 'north_america', 'country': 'ca'})
+    route._cities(params)
+    assert entries == [('channels', {'section': 'webcam', 'continent': 'north_america',
+                                    'country': 'ca', 'city': 'Canmore'})]
 
 
 def test_resolved_headers_preserve_referer_query_values():

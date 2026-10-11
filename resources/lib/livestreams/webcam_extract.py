@@ -46,6 +46,18 @@ def extract(text, page):
     host = (urlsplit(page).hostname or '').lower()
     tags = Page(text).tags
     media, links = [], []
+    if host == 'www.antarctica.gov.au' and '/webcams/' in urlsplit(page).path:
+        station = urlsplit(page).path.rstrip('/').rsplit('/', 1)[-1]
+        directory = {'casey': 'casey', 'davis': 'davis', 'mawson': 'mawson',
+                     'macquarie-island': 'macca'}.get(station)
+        if directory:
+            for tag, attrs in tags:
+                image = urlsplit(urljoin(page, attrs.get('src') or ''))
+                if (tag == 'img' and image.hostname == 'images.antarctica.gov.au'
+                        and image.path.startswith('/webcams/' + directory + '/')
+                        and image.path.lower().endswith('.jpg')):
+                    return [_media(image.geturl(), 'jpeg', page)], []
+            return [], []
     youtube = re.search(r"new\s+YT\.Player\([^;]{0,2500}?videoId\s*:\s*['\"]([A-Za-z0-9_-]{11})['\"]", text)
     if youtube:
         media.append({'url':'plugin://plugin.video.youtube/play/?video_id=' + youtube.group(1),

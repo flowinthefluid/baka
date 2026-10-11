@@ -55,6 +55,8 @@ def test_weather_menu_opens_world_weather_instead_of_station_only(monkeypatch, h
     monkeypatch.setattr(route, '_empty_state', lambda gui: pytest.fail('World weather is available'))
     route.weather(ParameterHandler())
     assert ('weather_world', {'section': 'webcam'}) in entries
+    assert ('continents', {'section': 'webcam'}) in entries
+    assert ('continents', {'section': 'weather'}) not in entries
     assert not any(level == 'weather_kinds' for level, params in entries)
     if has_station:
         assert ('channels', {'section': 'weather'}) in entries
