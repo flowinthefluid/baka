@@ -24,7 +24,9 @@ def main():
     # and dynamically fetched Pluto channels intentionally are not simulated.
     visible = [c for c in channels if c['nsfw'] is False and any(
         s['active'] and s['rights_status'] == model.RIGHTS_APPROVED for s in c['sources'])]
-    tv = sorted((c for c in visible if c['section'] == 'tv'), key=lambda c: c['name'].casefold())
+    tv = sorted((c for c in visible if c['section'] == 'tv' and
+                 set(c.get('countries') or [c['country']]) & {'de', 'at', 'ch'}),
+                key=lambda c: c['name'].casefold())
     sport = [c for c in visible if c['section'] == 'sports']
     lines = ['# Baka: lokale Senderliste', '',
         'Stand: %s. Nur lokale Änderungen; keine Übertragung auf die TV-Box.' % date.today().strftime('%d.%m.%Y'), '',

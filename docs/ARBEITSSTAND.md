@@ -56,6 +56,23 @@ historische Unternehmensprüfung.
 Die Personenauswahl füllt innerhalb ihres begrenzten Kandidatenpools nach. Bei
 umfangreichen Ausschlüssen können weniger Einträge als die eingestellte Zahl bleiben.
 
+## Internationales Live-TV
+
+Der mitgelieferte TV-Katalog wird um erreichbare Nicht-Sportsender aus Japan,
+China, Russland, Ukraine, USA, Großbritannien, Frankreich, Mexiko, Kanada
+und Europa erweitert. Auflösungs- und Feedvarianten bleiben hinter einem
+Sendereintrag. HD/UHD wird bevorzugt, SD dient als Ersatz. Bereits freigegebene
+Regional-Hauptquellen bleiben erhalten; Sportkataloge wurden nicht erweitert.
+
+Live-TV kann seine Länder unabhängig von „Meine Länder“ verwenden. Der neue
+Schalter steht bei den Live-TV-Länderfiltern; vorhandene Film-, Doku- und
+Anime-Vorlieben werden dadurch nicht verändert. Die Länderbezeichnungen sind
+auf Deutsch und Englisch vorhanden.
+
+Umfang, Quellenprüfung und Lücken stehen in der
+[internationalen Senderübersicht](SENDERLISTE-INTERNATIONAL.md).
+Die Änderungen bleiben gesammelt in 1.1.4, ohne neues Release.
+
 ## Folgenliste
 
 Ein Klick auf eine beliebige Folge genügt: Ab dieser Folge stehen die

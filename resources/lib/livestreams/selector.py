@@ -4,7 +4,7 @@
 
 Trennt bewusst Katalogdaten (welche Quellen gibt es) von der Playback-Frage
 (welche zuerst). Reihenfolge: zuletzt fehlgeschlagene ans Ende, offizielle vor
-inoffiziellen, hoehere Qualitaet vor niedrigerer, hoehere Zuverlaessigkeit
+inoffiziellen (bei Fernsehen zuerst die Qualitaet), hoehere Qualitaet vor niedrigerer, hoehere Zuverlaessigkeit
 zuerst - danach der Nutzerwunsch ``preferedQuality``.
 """
 
@@ -90,7 +90,8 @@ def order_sources(channel, sources=None):
         reliability = _RELIABILITY_RANK.get(source.get('reliability'), 3)
         # Abstand zum Qualitaetswunsch als leichte Zusatzsortierung.
         pref_gap = abs(quality - pref)
-        return (recently_failed, priority, official, quality, reliability, pref_gap)
+        preference = (quality, official) if channel.get('section') == 'tv' else (official, quality)
+        return (recently_failed, priority, *preference, reliability, pref_gap)
 
     return sorted(candidates, key=sort_key)
 

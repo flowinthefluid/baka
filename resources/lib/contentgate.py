@@ -34,6 +34,7 @@ SECTION_SETTINGS = {
 
 SETTING_COUNTRY_MODE = 'lsCountryMode'      # 'all' | 'whitelist' | 'blacklist'
 SETTING_COUNTRIES = 'lsCountries'           # CSV aus Laendercodes
+SETTING_TV_REGION_COUNTRIES = 'lsTvUseRegionCountries'
 SETTING_GENRES_HIDDEN = 'lsGenresHidden'    # CSV aus versteckten Genre-Slugs
 
 # NSFW-Schluesselwoerter als *zweite* Verteidigungslinie fuer Fremdquellen
@@ -162,7 +163,8 @@ def is_channel_visible(channel):
             return False
         # 3b) Fernsehen zusaetzlich nach "Meine Laender" (Sprachen & Regionen).
         #     Webcams/Wetter bleiben weltweit, internationale Sender immer.
-        if channel.get('section') == 'tv' and country and country.lower() not in ('int', 'xx'):
+        if (channel.get('section') == 'tv' and country and country.lower() not in ('int', 'xx')
+                and cConfig().getSettingBool(SETTING_TV_REGION_COUNTRIES, True)):
             from resources.lib import languages
             if not any(code.lower() in ('int', 'xx') or languages.countryVisible(code) for code in origins):
                 return False
@@ -203,6 +205,8 @@ def visibility_fingerprint():
         '1' if is_nsfw_enabled() else '0',
         (cfg.getSetting(SETTING_COUNTRY_MODE, 'all') or 'all'),
         ','.join(sorted(_csv(cfg.getSetting(SETTING_COUNTRIES, '')))),
+        '1' if cfg.getSettingBool(SETTING_TV_REGION_COUNTRIES, True) else '0',
+        ','.join(sorted(_csv(cfg.getSetting('regionCountries', '')))),
         ','.join(sorted(_csv(cfg.getSetting(SETTING_GENRES_HIDDEN, '')))),
     ]
     for sid in sorted(SECTION_SETTINGS):

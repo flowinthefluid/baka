@@ -105,6 +105,14 @@ def country_label(country_id):
             return languages.countryLabel(code)
     except Exception:
         pass
+    if code in _COUNTRY_LABELS:
+        return _COUNTRY_LABELS[code]
+    try:
+        from resources.lib import filmregions
+        if code.upper() in filmregions.catalog():
+            return filmregions.name(code.upper())
+    except Exception:
+        pass
     return _COUNTRY_LABELS.get(code, code.upper())
 
 

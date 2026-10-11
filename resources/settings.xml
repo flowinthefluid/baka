@@ -820,6 +820,11 @@
 				</setting>
 			</group>
 			<group id="lsCountries" label="30969">
+				<setting id="lsTvUseRegionCountries" type="boolean" label="32900" help="32901">
+					<level>1</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="lsCountryMode" type="string" label="30970" help="">
 					<level>1</level>
 					<default>all</default>

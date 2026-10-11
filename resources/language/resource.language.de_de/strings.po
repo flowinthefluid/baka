@@ -4470,3 +4470,11 @@ msgstr "Zufällige Titel"
 msgctxt "#32810"
 msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
 msgstr "Filmländer sind optional. Große Länder haben Direktzugriffe; weitere ausgewählte Länder erscheinen innerhalb der Regionen. Keine zusätzlichen Installationsfragen."
+
+msgctxt "#32900"
+msgid "Apply My countries to live TV"
+msgstr "Meine Länder auch für Live-TV verwenden"
+
+msgctxt "#32901"
+msgid "When enabled, live TV also follows My countries under Languages & regions. Disable to choose live-TV countries independently using the country filter below. Film, documentary and anime preferences stay independent."
+msgstr "Eingeschaltet folgt Live-TV zusätzlich der Auswahl Meine Länder unter Sprachen & Regionen. Ausschalten, um die Live-TV-Länder unabhängig über den Länderfilter darunter auszuwählen. Die Vorlieben für Filme, Dokus und Anime bleiben unabhängig."

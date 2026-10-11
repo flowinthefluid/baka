@@ -4471,3 +4471,11 @@ msgstr ""
 msgctxt "#32810"
 msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
 msgstr ""
+
+msgctxt "#32900"
+msgid "Apply My countries to live TV"
+msgstr ""
+
+msgctxt "#32901"
+msgid "When enabled, live TV also follows My countries under Languages & regions. Disable to choose live-TV countries independently using the country filter below. Film, documentary and anime preferences stay independent."
+msgstr ""
