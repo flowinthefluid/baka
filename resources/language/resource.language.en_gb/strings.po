@@ -4472,14 +4472,6 @@ msgctxt "#32810"
 msgid "Film countries are optional. Major countries have shortcuts; other selected countries appear inside regions. No additional installation questions."
 msgstr ""
 
-msgctxt "#32902"
-msgid "Also filter the language of source catalogs"
-msgstr ""
-
-msgctxt "#32903"
-msgid "Source catalogs must match the audio or subtitle languages selected for that theme. A German provider stays hidden for English-only viewing even if it offers some English films. Disable to use all providers with matching audio or subtitles. Live TV has its own country selection."
-msgstr ""
-
 msgctxt "#32900"
 msgid "Apply My countries to live TV"
 msgstr ""

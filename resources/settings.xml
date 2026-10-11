@@ -627,11 +627,6 @@
 				</setting>
 			</group>
 			<group id="langDisplay" label="32076">
-				<setting id="langSourceCatalogFilter" type="boolean" label="32902" help="32903">
-					<level>1</level>
-					<default>true</default>
-					<control type="toggle"/>
-				</setting>
 				<setting id="langOtherMode" type="string" label="32070" help="">
 					<level>0</level>
 					<default>folder</default>

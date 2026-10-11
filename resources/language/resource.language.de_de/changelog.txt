@@ -1,3 +1,9 @@
+[B]Version: 1.1.6[/B]
+
+- Fehler aus 1.1.5 behoben: Mehrsprachige Quellen wurden verborgen, wenn ihre Webseitensprache von der gewählten Inhaltssprache abwich. Quellen mit passenden Tonsprachen oder ausdrücklich gewählten Untertiteln sind wieder sichtbar; rein deutsche Quellen bleiben bei rein englischer Auswahl ausgeblendet.
+- Einzelne Inhalte und Streams folgen weiterhin den gewählten Sprachen, unabhängig für Filme/Serien, Dokus und Anime. Das gilt für alle 15 angebotenen Sprachen einschließlich mehrsprachiger Anbieter.
+- Katalog-Sprachfilter entfernt. Sein gespeicherter Wert aus 1.1.5 wird nach dem Update automatisch ignoriert; kein Zurücksetzen der Einstellungen und keine erneute Einrichtung nötig.
+
 [B]Version: 1.1.5[/B]
 
 - Anbieterkataloge passen jetzt zu den gewählten Ton- oder Untertitelsprachen des jeweiligen Themas. Das gilt für alle 15 angebotenen Sprachen und ihre Kombinationen. Filme/Serien, Dokus und Anime bleiben unabhängig; ausgeschlossene Quellen erscheinen auch unter Alle nicht wieder. Der Katalogfilter lässt sich separat abschalten.

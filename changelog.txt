@@ -1,3 +1,9 @@
+[B]Version: 1.1.6[/B]
+
+- Fixed 1.1.5 hiding multilingual sources when their website language differed from the selected content language. Sources with matching audio or explicitly selected subtitles are visible again; German-only sources stay hidden in English-only profiles.
+- Individual contents and streams still follow the selected languages independently for movies/series, documentaries and anime. This applies to all 15 supported languages, including mixed-language providers.
+- Removed the catalog-language filter. Its saved value from 1.1.5 is ignored automatically after updating; no settings reset or repeated setup is needed.
+
 [B]Version: 1.1.5[/B]
 
 - Source catalogs now match the selected audio or subtitle languages for each theme. This applies to all 15 supported languages and their combinations. Movies/series, documentaries and anime remain independent; excluded sources do not reappear under All. The catalog filter can be disabled separately.

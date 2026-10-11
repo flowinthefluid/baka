@@ -11,7 +11,7 @@ Quellen geben ihre Sprachen als Modul-Attribute an::
     SITE_LANGUAGES = ('de', 'en')   # Tonspuren; () = sprachunabhaengig
     SITE_SUBTITLES = ('de',)        # Untertitel, z.B. Japanisch mit DE-UT
     SITE_REGIONS = ('de', 'at')     # nur bei regional gebundenen Quellen
-    SITE_CATALOG_LANGUAGES = ('de',)  # Sprache des Anbieterkatalogs, getrennt vom Ton
+    SITE_CATALOG_LANGUAGES = ('de',)  # Nur Metadaten; kein Filter fuer Inhalte
 
 Fehlt SITE_LANGUAGES, gilt die Quelle als deutsch - so waren alle Quellen
 vor der Internationalisierung.
@@ -209,10 +209,9 @@ def sourceVisible(plugin, theme=None):
     languages = sourceLanguages(plugin)
     if not languages:
         return True  # sprachunabhaengig, z.B. Wetter-Webcams
-    catalog_languages = plugin.get('catalog_languages') or ()
-    if (catalog_languages and cConfig().getSettingBool('langSourceCatalogFilter', True)
-            and not set(catalog_languages) & set(audioLanguages(theme) + subtitleLanguages(theme))):
-        return False
+    # Entscheidend sind die angebotenen Inhalte. Die Sprache von Menues oder
+    # Filmtiteln darf mehrsprachige Anbieter nicht ausschliessen. Auch ein
+    # gespeicherter Katalogfilter aus 1.1.5 wird deshalb nicht mehr ausgewertet.
     if set(languages) & set(audioLanguages(theme)):
         return True
     if resolved_theme == 'anime' and _profile(theme) and 'ja' not in languages:

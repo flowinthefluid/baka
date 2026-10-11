@@ -25,15 +25,17 @@ def provider(cid, catalogs, audio=('de','en'), categories=('filme','serien','dok
 
 
 @pytest.mark.parametrize('selected', languages.LANGUAGE_CODES)
-@pytest.mark.parametrize('catalog', languages.LANGUAGE_CODES)
+@pytest.mark.parametrize('available', languages.LANGUAGE_CODES)
 @pytest.mark.parametrize('theme', [key for key, _, _ in languages.THEMES])
-def test_catalog_filter_for_every_language_pair_and_theme(selected, catalog, theme):
+def test_content_filter_for_every_language_pair_and_theme(selected, available, theme):
     for key, _, _ in languages.THEMES:
         languages.applyThemeChoice(key, [selected], [])
     languages.applyChoice([selected], [], selected)
-    source = provider('catalog_fixture', [catalog], audio=(selected,),
+    catalog = next(code for code in languages.LANGUAGE_CODES if code != selected)
+    set_setting('langSourceCatalogFilter', 'true')  # Persisted 1.1.5 settings cannot hide hybrids.
+    source = provider('catalog_fixture', [catalog], audio=(available,),
                       categories=('filme', 'serien', 'dokus', 'animes'))
-    expected = catalog == selected
+    expected = available == selected
     assert languages.sourceVisible(source, theme) is expected
     assert languages.sourceVisibleAny(source) is expected
     assert languages.splitSources([source], 'alle') == (
@@ -88,16 +90,18 @@ def test_installation_preselects_only_each_supported_kodi_language(monkeypatch, 
     assert len(asked) == 3
 
 
-def test_german_provider_with_english_films_hidden_in_english_profile():
+def test_hybrid_provider_visible_but_german_only_provider_hidden_in_english_profile():
     english_only()
-    german = provider('hdfilme', ['de'])
+    german = provider('german_only', ['de'], audio=('de',))
+    hybrid = provider('hdfilme', ['de'])
     english = provider('english', ['en'])
     assert not languages.sourceVisible(german,'movies')
     assert not languages.sourceVisibleAny(german)
     assert languages.sourceVisible(english,'movies')
-    assert languages.splitSources([german,english],'alle') == ([english],[german])
-    set_setting('langSourceCatalogFilter','false')
-    assert languages.sourceVisible(german,'movies')  # Explicit alternative: matching audio only.
+    assert languages.sourceVisible(hybrid,'movies')
+    assert languages.splitSources([german,hybrid,english],'alle') == ([hybrid,english],[german])
+    assert languages.streamAllowed('en', theme='movies')
+    assert not languages.streamAllowed('de', theme='movies')
 
 
 def test_optional_german_original_subtitles_and_themes_remain_independent():
@@ -108,7 +112,7 @@ def test_optional_german_original_subtitles_and_themes_remain_independent():
     assert languages.sourceVisibleAny(anime)
     assert languages.streamAllowed('ja','de','anime')
     assert not languages.streamAllowed('de','de','anime')
-    assert not languages.sourceVisible(provider('hdfilme',['de']),'movies')
+    assert not languages.sourceVisible(provider('german_only',['de'],audio=('de',)),'movies')
     assert languages.sourceTheme(anime,'alle') == 'anime'
     assert languages.sourceTheme(provider('docs',['en'],categories=('dokus',)),'alle') == 'docs'
 
@@ -117,16 +121,17 @@ def test_all_folder_uses_profiles_without_reintroducing_excluded_languages(monke
     english_only()
     monkeypatch.setitem(sys.modules,'resolveurl',types.ModuleType('resolveurl'))
     main=importlib.import_module('baka')
-    german=provider('hdfilme',['de'])
+    german=provider('german_only',['de'],audio=('de',))
+    hybrid=provider('hdfilme',['de'])
     english=provider('english',['en'])
-    monkeypatch.setattr(main.cPluginHandler,'getPluginsForContentCategory',lambda self,cat:[german,english])
+    monkeypatch.setattr(main.cPluginHandler,'getPluginsForContentCategory',lambda self,cat:[german,hybrid,english])
     added=[]
     monkeypatch.setattr(main.cGui,'addFolder',lambda self,el,params=None,*args:added.append((el.getTitle(),el.getFunction())))
     monkeypatch.setattr(main.cGui,'setEndOfDirectory',lambda *args:None)
     params=ParameterHandler()
     params.setParam('category','alle')
     main.showContentCategory(params)
-    assert added == [('english','load')]
+    assert added == [('hdfilme','load'),('english','load')]
     assert languages.otherLanguagesMode('alle') == 'hide'
     assert languages.otherLanguagesMode('movies') == 'hide'
     added.clear()
@@ -145,7 +150,8 @@ def test_english_installation_has_no_automatic_german_option(monkeypatch):
         assert languages.audioLanguages(theme) == ['en']
         assert languages.subtitleLanguages(theme) == []
     assert languages.subtitleLanguages('') == []
-    assert not languages.sourceVisibleAny(provider('hdfilme',['de']))
+    assert not languages.sourceVisibleAny(provider('german_only',['de'],audio=('de',)))
+    assert languages.sourceVisibleAny(provider('hdfilme',['de']))
     assert not languages.ensureSetup()  # No repeat prompt on updates.
 
 
@@ -174,4 +180,30 @@ def test_old_plugin_cache_gets_catalog_language_even_with_newer_timestamp(tmp_pa
     available=handler.getAvailablePlugins()
     assert available[0]['catalog_languages'] == ['de']
     english_only()
-    assert not languages.sourceVisibleAny(available[0])
+    assert languages.sourceVisibleAny(available[0])
+
+
+@pytest.mark.parametrize('selected', languages.LANGUAGE_CODES)
+def test_hybrid_sources_keep_only_selected_content_for_every_language(selected):
+    other = next(code for code in languages.LANGUAGE_CODES if code != selected)
+    for theme, _, _ in languages.THEMES:
+        languages.applyThemeChoice(theme, [selected], [])
+        source = provider('hybrid', [other], audio=(other, selected))
+        assert languages.sourceVisible(source, theme)
+        assert languages.streamAllowed(selected, theme=theme)
+        assert not languages.streamAllowed(other, theme=theme)
+
+
+def test_actual_hdfilme_listing_filters_german_films_without_hiding_source(monkeypatch):
+    from sites import hdfilme
+    english_only()
+    set_setting('langSourceCatalogFilter', 'true')
+    assert languages.sourceVisible(provider('hdfilme', ['de'], hdfilme.SITE_LANGUAGES), 'movies')
+    html = ''.join('<div class="box-product"><h3><a href="https://fixture/'+str(i)+'">'+title+
+                   '</a></h3><li><p>2025 </p></li>'
+                   for i, title in enumerate(('Deutscher Film', 'Deutscher Titel *English*', 'English title')))
+    monkeypatch.setattr(hdfilme.cRequestHandler, 'request', lambda self: html)
+    shown = []
+    gui = types.SimpleNamespace(addFolder=lambda element, *args: shown.append(element.getTitle()))
+    hdfilme.showEntries('https://fixture/list', sGui=gui)
+    assert shown == ['Deutscher Titel (2025)']

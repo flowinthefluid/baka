@@ -1,26 +1,27 @@
-# Änderungen in Baka 1.1.5
+# Änderungen in Baka 1.1.6
 
-Die in Baka 1.1.4 gesammelten Änderungen werden mit Baka 1.1.5 veröffentlicht.
+Die in Baka 1.1.4 gesammelten Änderungen wurden mit Baka 1.1.5 veröffentlicht.
+Baka 1.1.6 korrigiert den zu strengen Filter für mehrsprachige Quellen.
 Quellcode-Commits allein lösen keine Veröffentlichung auf GitHub Pages aus;
 dafür ist eine Änderung der Addon-/Repository-Version oder ein ausdrücklich
 gestarteter Veröffentlichungs-Workflow erforderlich.
 
 ## Sprachwahl und Seitensuche
 
-Tonsprachen, Untertitel und Anbieterkataloge sind getrennte Angaben. Mit
-„Auch die Sprache der Anbieterkataloge filtern“ passen Anbieter zusätzlich zu
-den gewählten Ton- oder Untertitelsprachen des jeweiligen Themas. Bei rein
-englischer Auswahl erscheint ein deutscher Anbieter wie HD-Filme nicht mehr,
-auch wenn er einzelne englische Filme enthält. Wer solche Anbieter verwenden
-möchte, kann den Katalogfilter abschalten; die Ton-/Untertitelfilter bleiben aktiv.
+Quellen werden anhand ihrer angebotenen Tonsprachen und Untertitel ausgewählt.
+Die Sprache ihrer Webseiten, Menüs oder Filmtitel schließt sie nicht aus.
+Eine gemischte Quelle wie HD-Filme bleibt bei englischer Auswahl sichtbar;
+ihre als deutsch erkannten Inhalte werden weiterhin ausgefiltert. Rein deutsche
+Quellen bleiben bei rein englischer Auswahl verborgen. Der Katalogfilter aus
+1.1.5 wurde entfernt; ein gespeicherter Schalterwert wird automatisch ignoriert.
 Live-TV behält seine unabhängige Länderauswahl.
 
 Dieselbe Regel gilt für alle 15 angebotenen Sprachen, einschließlich Spanisch,
 Französisch, Japanisch und Chinesisch. Mehrere gewählte Sprachen sind gemeinsam
 erlaubt. Beispielsweise können Filme/Serien spanische und französische Quellen,
 Dokus ausschließlich französische Quellen und Anime ausschließlich japanische
-Quellen anzeigen. Ein passender Anbieterkatalog allein genügt nicht: Auch Ton
-oder ausdrücklich gewählte Untertitel müssen zum jeweiligen Profil passen.
+Quellen mit passenden Inhalten anzeigen. Entscheidend sind Tonsprachen oder
+ausdrücklich gewählte Untertitel, nicht die Sprache des Anbieterkatalogs.
 
 Die Ersteinrichtung wählt nur die Kodi-Sprache vor. Originalton mit deutschen
 Untertiteln ist ausdrücklich optional. Filme/Serien, Dokus und Anime bleiben
