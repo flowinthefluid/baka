@@ -15,6 +15,13 @@ auch wenn er einzelne englische Filme enthält. Wer solche Anbieter verwenden
 möchte, kann den Katalogfilter abschalten; die Ton-/Untertitelfilter bleiben aktiv.
 Live-TV behält seine unabhängige Länderauswahl.
 
+Dieselbe Regel gilt für alle 15 angebotenen Sprachen, einschließlich Spanisch,
+Französisch, Japanisch und Chinesisch. Mehrere gewählte Sprachen sind gemeinsam
+erlaubt. Beispielsweise können Filme/Serien spanische und französische Quellen,
+Dokus ausschließlich französische Quellen und Anime ausschließlich japanische
+Quellen anzeigen. Ein passender Anbieterkatalog allein genügt nicht: Auch Ton
+oder ausdrücklich gewählte Untertitel müssen zum jeweiligen Profil passen.
+
 Die Ersteinrichtung wählt nur die Kodi-Sprache vor. Originalton mit deutschen
 Untertiteln ist ausdrücklich optional. Filme/Serien, Dokus und Anime bleiben
 unabhängig. „Alle“ zeigt die Vereinigung der erlaubten Quellen dieser Profile
